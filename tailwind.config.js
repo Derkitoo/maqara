@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}', './*.tsx'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        arabic: ['Amiri', 'serif'],
+      },
+    },
   },
   plugins: [],
 };

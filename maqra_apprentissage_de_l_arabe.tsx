@@ -1,34 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { 
-  Flame, 
-  Info, 
-  BookOpen, 
-  LayoutGrid, 
-  UserCircle, 
-  Plus, 
+import {
+  Flame,
+  Info,
   X,
   Check,
   ArrowLeft,
   Volume2,
   RotateCcw,
-  Heart,
-  Star,
   Sparkles,
   Mic,
   Send,
   Keyboard,
-  Timer,
   Zap,
-  Network,
   Play,
-  Trophy,
   Crown,
-  CheckCircle,
-  Loader2,
-  Target,
-  Settings,
-  AlignLeft,
-  BookMarked
+  CheckCircle
 } from 'lucide-react';
 
 const DrawingCanvas = ({ backgroundLetter }) => {
@@ -120,7 +106,7 @@ const DrawingCanvas = ({ backgroundLetter }) => {
   return (
     <div className="relative w-full aspect-square bg-white rounded-3xl border-4 border-dashed border-gray-200 overflow-hidden shadow-inner flex flex-col">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 select-none">
-        <span className="text-[200px] font-bold text-gray-900 leading-none">{backgroundLetter}</span>
+        <span className="font-arabic text-[200px] font-bold text-gray-900 leading-none">{backgroundLetter}</span>
       </div>
       <canvas
         ref={canvasRef}
@@ -141,47 +127,6 @@ const DrawingCanvas = ({ backgroundLetter }) => {
   );
 };
 
-const CircularProgress = ({ progress, total, isGreen }) => {
-  const radius = 18;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (progress / total) * circumference;
-
-  return (
-    <div className="relative flex items-center justify-center w-12 h-12">
-      <svg className="w-full h-full transform -rotate-90">
-        <circle
-          cx="24"
-          cy="24"
-          r={radius}
-          stroke="currentColor"
-          strokeWidth="4"
-          fill="transparent"
-          className="text-gray-200"
-        />
-        {progress > 0 && (
-          <circle
-            cx="24"
-            cy="24"
-            r={radius}
-            stroke="currentColor"
-            strokeWidth="4"
-            fill="transparent"
-            strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset}
-            strokeLinecap="round"
-            className={isGreen ? "text-gray-800" : "text-gray-900"}
-            style={{ transition: "stroke-dashoffset 0.5s ease-in-out" }}
-          />
-        )}
-      </svg>
-      <div className="absolute flex flex-col items-center justify-center">
-        <span className="text-sm font-bold leading-none">{progress > 0 ? progress : ''}</span>
-        {progress === 0 && <span className="text-xl font-bold leading-none -mt-1 text-gray-400">0</span>}
-      </div>
-    </div>
-  );
-};
-
 const loadSavedProgress = () => {
   try {
     const raw = localStorage.getItem('maqra_progress');
@@ -192,11 +137,10 @@ const loadSavedProgress = () => {
 };
 
 export default function ArabicLearningApp() {
-  const [activeFilter, setActiveFilter] = useState('All');
 
   const [currentScreen, setCurrentScreen] = useState(() => {
     try {
-      return localStorage.getItem('maqra_onboarded') ? 'dashboard' : 'onboarding';
+      return localStorage.getItem('maqra_onboarded') ? 'launch' : 'onboarding';
     } catch (e) {
       return 'onboarding';
     }
@@ -373,8 +317,9 @@ export default function ArabicLearningApp() {
     {
       id: 1,
       dateGroup: 'Aujourd\'hui (1)',
-      title: 'Qaïda : Sons & Emphatiques (القاعدة النورانية)',
-      description: 'Maîtrisez la phonétique exacte et la distinction entre sons lourds et légers.',
+      icon: '🔤',
+      title: 'Qaïda',
+      description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 2,
       total: 3,
       tags: ['Phonétique', 'Bases'],
@@ -384,34 +329,37 @@ export default function ArabicLearningApp() {
     {
       id: 2,
       dateGroup: 'Août 13 (1)',
-      title: 'Lecture Coranique Guidée (Juz Amma)',
-      description: 'Décoder les versets courts avec un accompagnement syllabique et audio natif.',
+      icon: '📖',
+      title: 'Lecture Coranique',
+      description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
       total: 8,
       tags: ['Coran', 'Fluidité'],
-      color: 'bg-blue-50',
+      color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
     },
     {
        id: 3,
        dateGroup: 'Août 12 (2)',
-       title: 'Fréquence Lexicale (Règle 80/20)',
-       description: 'Apprenez les 300 mots clés qui composent 80% du vocabulaire coranique.',
+       icon: '⭐',
+       title: 'Fréquence Lexicale',
+       description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
        total: 10,
        tags: ['Vocabulaire', 'Coran'],
-       color: 'bg-yellow-50',
+       color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
     },
     {
        id: 4,
        dateGroup: 'Concepts Avancés',
-       title: 'Le Secret des Racines (التصريف)',
-       description: 'Découvrez la matrice trilitère (K-T-B) et la morphologie classique (Sarf).',
+       icon: '📘',
+       title: 'Le Secret des Racines',
+       description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
        total: 1,
        tags: ['Morphologie', 'Grammaire'],
-       color: 'bg-indigo-50',
+       color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
     }
     ];
@@ -853,8 +801,6 @@ export default function ArabicLearningApp() {
     ]
   ];
 
-  const filters = ['All', 'Aujourd\'hui (1)', 'Août 13 (1)', 'Août 12 (2)'];
-
   const streakData = [
     { date: 'Août 10', status: 'fire' },
     { date: 'Août 11', status: 'fire' },
@@ -881,11 +827,18 @@ export default function ArabicLearningApp() {
     if (onboardingStep === 3) {
       const timer = setTimeout(() => {
         try { localStorage.setItem('maqra_onboarded', 'true'); } catch(e){}
-        setCurrentScreen('dashboard');
-      }, 2500);
+        setCurrentScreen('launch');
+      }, 2200);
       return () => clearTimeout(timer);
     }
   }, [onboardingStep]);
+
+  useEffect(() => {
+    if (currentScreen === 'launch') {
+      const timer = setTimeout(() => setCurrentScreen('dashboard'), 1300);
+      return () => clearTimeout(timer);
+    }
+  }, [currentScreen]);
 
   useEffect(() => {
     try {
@@ -1041,99 +994,66 @@ export default function ArabicLearningApp() {
   };
 
   const renderDashboard = () => (
-    <div className="flex-1 flex flex-col relative overflow-hidden">
+    <div className="flex-1 flex flex-col relative overflow-hidden bg-[#f3efe4]">
       <div className="flex-1 overflow-y-auto px-6 pb-32 hide-scrollbar">
         <div className="flex justify-between items-center mt-4 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Maqra</h1>
-          <div className="flex items-center space-x-1 bg-yellow-100 px-3 py-1.5 rounded-full border border-yellow-200">
-            <Star className="text-yellow-500" fill="currentColor" size={16}/>
+          <h1 className="text-[30px] font-extrabold text-gray-900 tracking-tight">Maqra</h1>
+          <div className="flex items-center space-x-1.5 bg-yellow-100 px-3.5 py-1.5 rounded-full border border-yellow-200">
+            <span className="text-yellow-500">★</span>
             <span className="text-sm font-bold text-yellow-700">{userXp} XP</span>
           </div>
         </div>
 
         <div className="bg-sky-100 rounded-3xl p-5 mb-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-sky-200 rounded-full blur-2xl -mr-10 -mt-10 opacity-50"></div>
-          
-          <div className="flex justify-between items-start mb-4 relative z-10">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl">🔥</span>
-              <h2 className="text-xl font-bold text-gray-800">1 jour de série !</h2>
-            </div>
-            <button className="text-gray-500 hover:text-gray-700">
-              <Info size={20}/>
-            </button>
+
+          <div className="flex items-center space-x-2 mb-4 relative z-10">
+            <span className="text-2xl">🔥</span>
+            <h2 className="text-xl font-bold text-gray-800">1 jour de série !</h2>
           </div>
 
           <div className="flex justify-between items-center relative z-10">
             {streakData.map((item, index) => (
               <div key={index} className="flex flex-col items-center">
-                <span className="text-[10px] text-gray-500 mb-2 font-medium">{item.date}</span>
+                <span className="text-[10px] text-gray-500 mb-1.5 font-medium">{item.date}</span>
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center
                   ${item.status === 'missed' ? '' : 'bg-white shadow-sm'}
-                  ${item.status === 'current' ? 'border-2 border-sky-400' : ''}
+                  ${item.status === 'current' ? 'border-2 border-sky-400 bg-sky-50' : ''}
                   ${item.status === 'future' ? 'bg-sky-50' : ''}
                 `}>
                   {item.status === 'fire' && <span className="text-lg">🔥</span>}
                   {item.status === 'missed' && <X className="text-gray-800" size={16} strokeWidth={3}/>}
-                  {item.status === 'current' && <div className="w-6 h-6 rounded-full bg-sky-100"></div>}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="flex space-x-2 overflow-x-auto pb-4 mb-2 hide-scrollbar">
-          {filters.map(filter => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors
-                ${activeFilter === filter 
-                  ? 'bg-gray-900 text-white' 
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-                }`}
+        <h3 className="text-[15px] font-extrabold text-gray-900 mb-3.5 ml-0.5">Vos parcours</h3>
+        <div className="grid grid-cols-2 gap-3.5">
+          {modules.map((module) => (
+            <div
+              key={module.id}
+              onClick={() => handleModuleClick(module.id)}
+              className={`${module.color} rounded-[24px] p-[18px] cursor-pointer hover:scale-[1.02] transition-transform shadow-sm flex flex-col min-h-[190px]`}
             >
-              {filter}
-            </button>
+              <div className="w-11 h-11 rounded-[14px] bg-white flex items-center justify-center text-[22px] shadow-sm mb-3">
+                {module.icon}
+              </div>
+              <h4 className="text-[15px] font-extrabold text-gray-900 mb-1.5 leading-tight">{module.title}</h4>
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed flex-1">
+                {module.description}
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="flex-1 h-1.5 bg-white/60 rounded-full overflow-hidden">
+                  <div className="h-full bg-gray-800 rounded-full" style={{ width: `${Math.round((module.progress / module.total) * 100)}%` }}></div>
+                </div>
+                <span className="text-[11px] font-bold text-gray-700">{module.progress}/{module.total}</span>
+              </div>
+            </div>
           ))}
         </div>
-
-        <div className="space-y-6">
-          {modules.map((module, index) => {
-            const showHeader = index === 0 || modules[index - 1].dateGroup !== module.dateGroup;
-            return (
-              <div key={module.id}>
-                {showHeader && (
-                  <h3 className="text-sm font-semibold text-gray-500 mb-3 ml-1">{module.dateGroup}</h3>
-                )}
-                <div 
-                  onClick={() => handleModuleClick(module.id)}
-                  className={`${module.color} rounded-3xl p-5 cursor-pointer hover:scale-[1.02] transition-transform shadow-sm`}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 mt-1 bg-white rounded-full p-1 shadow-sm">
-                       <CircularProgress isGreen={module.color.includes('green')} progress={module.progress} total={module.total}/>
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-gray-900 mb-1 leading-tight">{module.title}</h4>
-                      <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
-                        {module.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {module.tags.map(tag => (
-                          <span key={tag} className={`text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider ${module.tagColor}`}>
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div> 
+      </div>
     </div>
   );
 
@@ -1191,46 +1111,46 @@ export default function ArabicLearningApp() {
     };
 
     return (
-      <div className="flex flex-col h-full bg-gray-50 relative">
+      <div className="flex flex-col h-full bg-[#f3efe4] relative">
         <div className="px-6 py-4 flex items-center space-x-4 bg-white shadow-sm z-10">
           <button onClick={() => setCurrentScreen('dashboard')} className="text-gray-400 hover:text-gray-800">
             <X size={24}/>
           </button>
-          
+
           <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-green-500 rounded-full transition-all duration-500 ease-out" 
+            <div
+              className="h-full bg-green-500 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progressPercent}%` }}
             ></div>
           </div>
-          
+
           <div className="flex items-center text-red-500 font-bold space-x-1">
-            <Heart fill="currentColor" size={20}/>
+            <span className="text-lg leading-none">♥</span>
             <span>5</span>
           </div>
         </div>
 
         <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col justify-center hide-scrollbar">
-          
+
           {stepData.type === 'intro' && (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
-              
-              <div className="bg-white w-full max-w-[280px] py-4 px-4 rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col items-center justify-center relative overflow-hidden mb-3">
+
+              <div className="bg-white w-full max-w-[280px] py-5 px-5 rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col items-center justify-center relative overflow-hidden mb-3">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-sky-50 rounded-full z-0"></div>
-                <span className="text-[64px] font-bold text-gray-900 z-10 leading-none mb-4">{stepData.letter}</span>
-                <span className="text-xs text-gray-500 font-semibold z-10 tracking-wide bg-white/90 px-3 py-1 rounded-full shadow-xs mb-4">{stepData.name}</span>
+                <span className="font-arabic text-[64px] font-bold text-gray-900 z-10 leading-none mb-4">{stepData.letter}</span>
+                <span className="text-xs text-gray-500 font-semibold z-10 tracking-wide bg-white px-3 py-1 rounded-full shadow-sm mb-4">{stepData.name}</span>
                 {stepData.mnemonic && (
-                  <div className="z-10 flex items-center space-x-2 bg-sky-50/90 px-3 py-1.5 rounded-2xl border border-sky-100">
+                  <div className="z-10 flex items-center space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100">
                     <span className="text-lg">{stepData.illustration}</span>
-                    <span className="text-xs font-bold text-sky-900">{stepData.mnemonic}</span>
+                    <span className="font-arabic text-[13px] font-bold text-sky-900">{stepData.mnemonic}</span>
                   </div>
                 )}
               </div>
 
               <div className="flex space-x-3 mb-6">
                 <button onClick={() => speakArabic(stepData.letter)} className="bg-sky-100 py-2 px-4 rounded-full text-sky-600 hover:bg-sky-200 transition-colors shadow-sm flex items-center space-x-2">
-                  <Volume2 size={18}/>
+                  <span>🔊</span>
                   <span className="font-bold text-xs">Écouter</span>
                 </button>
               </div>
@@ -1245,15 +1165,15 @@ export default function ArabicLearningApp() {
                       className="w-full flex items-center justify-between bg-indigo-50 border border-indigo-100 p-4 rounded-2xl shadow-sm hover:bg-indigo-100 transition-colors"
                    >
                       <div className="flex items-center space-x-3">
-                         <div className="w-10 h-10 bg-indigo-100 text-indigo-500 rounded-full flex items-center justify-center">
-                            <BookMarked size={20}/>
+                         <div className="w-10 h-10 bg-indigo-100 text-indigo-500 rounded-full flex items-center justify-center text-lg">
+                            📘
                          </div>
                          <div className="text-left">
                             <p className="text-sm font-bold text-indigo-900">💡 Explorer la racine</p>
                             <p className="text-xs text-indigo-600 font-medium">Découvrez l'origine de ce mot</p>
                          </div>
                       </div>
-                      <ArrowLeft className="text-indigo-400 transform rotate-180" size={18}/>
+                      <span className="text-indigo-300">→</span>
                    </button>
                 </div>
               )}
@@ -1274,11 +1194,11 @@ export default function ArabicLearningApp() {
           {stepData.type === 'qcm' && (
             <div className="flex flex-col flex-1 animation-fade-in justify-center">
               <h2 className="text-xl font-bold text-gray-800 mb-8 text-center">{stepData.instruction}</h2>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {stepData.options.map((opt, idx) => {
                   let btnClass = 'bg-white border-transparent text-gray-800 hover:bg-gray-50 hover:border-gray-200';
-                  
+
                   if (selectedAnswer === idx) {
                     if (!isAnswerChecked) {
                       btnClass = 'bg-sky-50 border-sky-400 text-sky-900 scale-[0.98]';
@@ -1288,12 +1208,12 @@ export default function ArabicLearningApp() {
                       btnClass = 'bg-red-100 border-red-500 text-red-700 scale-[0.98]';
                     }
                   } else if (isAnswerChecked && idx === stepData.correctIndex) {
-                    btnClass = 'bg-green-50 border-green-300 text-green-700'; 
+                    btnClass = 'bg-green-50 border-green-300 text-green-700';
                   }
 
                   const isLongText = opt.length > 2;
-                  const structureClass = isLongText 
-                     ? 'min-h-[120px] px-6 py-4 text-2xl sm:text-3xl break-words' 
+                  const structureClass = isLongText
+                     ? 'min-h-[120px] px-6 py-4 text-2xl sm:text-3xl break-words'
                      : 'aspect-square text-5xl';
 
                   return (
@@ -1301,7 +1221,7 @@ export default function ArabicLearningApp() {
                       key={idx}
                       onClick={() => !isAnswerChecked && setSelectedAnswer(idx)}
                       disabled={isAnswerChecked}
-                      className={`rounded-3xl flex items-center justify-center font-bold shadow-sm border-4 transition-all ${structureClass} ${btnClass}`}
+                      className={`font-arabic rounded-3xl flex items-center justify-center font-bold shadow-sm border-4 transition-all ${structureClass} ${btnClass}`}
                     >
                       <span className="text-center w-full">{opt}</span>
                     </button>
@@ -1338,8 +1258,8 @@ export default function ArabicLearningApp() {
                          <button
                             key={word.id}
                             onClick={() => handleReadWordClick(word)}
-                            className={`relative text-4xl sm:text-5xl font-bold p-2 transition-all rounded-xl 
-                               ${isActive ? 'text-sky-600 bg-sky-50 scale-110 shadow-sm' : 
+                            className={`font-arabic relative text-4xl sm:text-5xl font-bold p-2 transition-all rounded-xl
+                               ${isActive ? 'text-sky-600 bg-sky-50 scale-110 shadow-sm' :
                                  isRead ? 'text-gray-800' : 'text-gray-400 hover:text-gray-600'}`}
                             dir="rtl"
                          >
@@ -1359,7 +1279,7 @@ export default function ArabicLearningApp() {
                          
                          <div className="flex justify-between items-start mb-3 relative z-10">
                             <div>
-                               <h3 className="text-2xl font-bold text-gray-900 mb-1">{activeReadWord.text}</h3>
+                               <h3 className="font-arabic text-2xl font-bold text-gray-900 mb-1">{activeReadWord.text}</h3>
                                <p className="text-sky-600 font-medium text-sm">{activeReadWord.trans}</p>
                             </div>
                             <button onClick={() => speakArabic(activeReadWord.text)} className="bg-sky-100 text-sky-600 p-3 rounded-full hover:bg-sky-200 transition-colors">
@@ -1599,7 +1519,7 @@ export default function ArabicLearningApp() {
   const renderRevision = () => {
     if (currentCardIndex === -1) {
       return (
-        <div className="flex-1 flex flex-col items-center justify-center p-6 bg-gray-50 relative overflow-hidden pb-32">
+        <div className="flex-1 flex flex-col items-center justify-center p-6 bg-[#f3efe4] relative overflow-hidden pb-32">
            <div className="w-24 h-24 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6 shadow-inner">
                <Check size={48} strokeWidth={3}/>
            </div>
@@ -1610,7 +1530,7 @@ export default function ArabicLearningApp() {
     }
     const card = revisionCards[currentCardIndex];
     return (
-      <div className="flex-1 flex flex-col bg-gray-50 relative overflow-hidden pb-32">
+      <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-32">
         <div className="px-6 pt-4 pb-2">
            <h1 className="text-3xl font-bold text-gray-900">Révisions</h1>
            <div className="flex items-center space-x-2 mt-1">
@@ -1647,7 +1567,7 @@ export default function ArabicLearningApp() {
                  </button>
               </div>
               <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
-                 <span className="text-[72px] font-bold text-gray-900 leading-none mb-4">{card.front}</span>
+                 <span className="font-arabic text-[72px] font-bold text-gray-900 leading-none mb-4">{card.front}</span>
                  {isCardFlipped ? (
                     <div className="animation-fade-in flex flex-col items-center">
                        <div className="w-12 h-1 bg-gray-100 rounded-full mb-6"></div>
@@ -1692,7 +1612,7 @@ export default function ArabicLearningApp() {
   };
 
   const renderProfile = () => (
-    <div className="flex-1 flex flex-col bg-gray-50 relative overflow-hidden pb-32">
+    <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-32">
        <div className="px-6 pt-8 pb-6 bg-white rounded-b-[2.5rem] shadow-sm z-10 relative">
           <div className="flex justify-between items-center mb-6">
              <h1 className="text-3xl font-bold text-gray-900">Profil</h1>
@@ -1701,14 +1621,13 @@ export default function ArabicLearningApp() {
                    onClick={() => setCurrentScreen('settings')}
                    className="bg-gray-100 text-gray-700 p-2 rounded-full hover:bg-gray-200 transition-colors"
                 >
-                   <Settings size={18}/>
+                   ⚙️
                 </button>
                 <button
                    onClick={() => setShowProModal(true)}
-                   className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center shadow-md hover:scale-105 transition-transform"
+                   className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1 shadow-md hover:scale-105 transition-transform"
                 >
-                   <Crown className="mr-1" size={14}/>
-                   PRO
+                   👑 PRO
                 </button>
              </div>
           </div>
@@ -1774,7 +1693,7 @@ export default function ArabicLearningApp() {
   );
 
   const renderSettings = () => (
-    <div className="flex-1 flex flex-col bg-gray-50 relative overflow-hidden pb-32">
+    <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-32">
        <div className="px-6 py-4 bg-white shadow-sm z-10 flex items-center space-x-4 relative">
           <button onClick={() => setCurrentScreen('profile')} className="text-gray-400 hover:text-gray-800">
             <ArrowLeft size={24}/>
@@ -1846,7 +1765,7 @@ export default function ArabicLearningApp() {
     ].sort((a, b) => b.xp - a.xp);
 
     return (
-      <div className="flex-1 flex flex-col bg-gray-50 relative overflow-hidden pb-32">
+      <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-32">
          <div className="px-6 pt-8 pb-8 bg-gradient-to-b from-orange-100 to-gray-50 relative z-10">
             <div className="flex flex-col items-center justify-center">
                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-5xl shadow-lg border-4 border-orange-200 mb-4">🥉</div>
@@ -1883,7 +1802,7 @@ export default function ArabicLearningApp() {
   };
 
   const renderAiTutor = () => (
-    <div className="flex-1 flex flex-col bg-gray-50 relative overflow-hidden pb-0">
+    <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-0">
        <div className="px-6 py-4 bg-white shadow-sm z-10 flex justify-between items-center relative">
           <button onClick={() => setCurrentScreen('dashboard')} className="text-gray-400 hover:text-gray-800">
             <ArrowLeft size={24}/>
@@ -1993,7 +1912,7 @@ export default function ArabicLearningApp() {
                     <button
                        key={idx}
                        onClick={() => handleSurvivalAnswer(idx)}
-                       className="bg-gray-900 border-2 border-gray-800 text-3xl font-bold py-8 rounded-2xl hover:border-emerald-500 hover:bg-emerald-900/20 transition-colors active:scale-95"
+                       className="font-arabic bg-gray-900 border-2 border-gray-800 text-3xl font-bold py-8 rounded-2xl hover:border-emerald-500 hover:bg-emerald-900/20 transition-colors active:scale-95"
                     >
                        {opt}
                     </button>
@@ -2056,7 +1975,7 @@ export default function ArabicLearningApp() {
           </p>
           <div className="relative mb-8">
              <div className="w-24 h-24 bg-indigo-500 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(99,102,241,0.6)] z-10 relative border-4 border-indigo-400">
-                <span className="text-4xl font-bold text-white tracking-widest">{activeRoot.arabic}</span>
+                <span className="font-arabic text-4xl font-bold text-white tracking-widest">{activeRoot.arabic}</span>
              </div>
              <div className="absolute top-full left-1/2 w-0.5 h-8 bg-indigo-500/50 -translate-x-1/2"></div>
           </div>
@@ -2082,7 +2001,7 @@ export default function ArabicLearningApp() {
                       <span className="text-2xl">{item.icon}</span>
                       <div className="flex-1">
                          <div className="flex items-baseline space-x-2 mb-0.5">
-                            <span className="text-xl font-bold text-white">{item.word}</span>
+                            <span className="font-arabic text-xl font-bold text-white">{item.word}</span>
                             <span className="text-indigo-300 text-xs font-medium">({item.trans})</span>
                          </div>
                          <p className="text-sm font-semibold text-indigo-100">{item.meaning}</p>
@@ -2109,13 +2028,13 @@ export default function ArabicLearningApp() {
               </button>
               <div className="flex-1 overflow-y-auto hide-scrollbar pt-2 pb-6">
                  <div className="flex items-center space-x-2 text-indigo-600 mb-6">
-                    <BookMarked size={20}/>
+                    <span>📘</span>
                     <span className="font-bold uppercase tracking-wider text-sm">Matrice Trilitère</span>
                  </div>
                  <div className="flex justify-center mb-8">
                     <div className="flex space-x-2">
                        {currentRootWord.root.split('-').map((letter, i) => (
-                          <div key={i} className="w-16 h-20 bg-indigo-50 border-2 border-indigo-200 rounded-2xl flex items-center justify-center text-4xl font-bold text-indigo-900 shadow-sm">
+                          <div key={i} className="font-arabic w-16 h-20 bg-indigo-50 border-2 border-indigo-200 rounded-2xl flex items-center justify-center text-4xl font-bold text-indigo-900 shadow-sm">
                              {letter}
                           </div>
                        ))}
@@ -2133,7 +2052,7 @@ export default function ArabicLearningApp() {
                              <p className="font-bold text-gray-900">{deriv.translit}</p>
                              <p className="text-xs text-gray-500">{deriv.trans}</p>
                           </div>
-                          <span className="text-xl font-bold text-gray-800">{deriv.arabic}</span>
+                          <span className="font-arabic text-xl font-bold text-gray-800">{deriv.arabic}</span>
                        </div>
                     ))}
                  </div>
@@ -2199,102 +2118,110 @@ export default function ArabicLearningApp() {
   };
 
   const renderOnboarding = () => {
+    const obBg = onboardingStep === 0 ? 'bg-[#0c1a2e]' : 'bg-white';
     return (
-      <div className="flex-1 flex flex-col bg-white relative z-50 h-full overflow-hidden pb-0">
+      <div className={`flex-1 flex flex-col relative z-50 h-full overflow-hidden pb-0 ${obBg}`}>
         {onboardingStep > 0 && onboardingStep < 3 && (
-          <div className="px-6 pt-14 pb-2 z-10 animation-fade-in">
-             <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-               <div 
-                  className="h-full bg-sky-500 transition-all duration-500 ease-out" 
-                  style={{ width: `${(onboardingStep / 2) * 100}%` }}
-               ></div>
-             </div>
+          <div className="px-6 pt-5 pb-2 z-10 animation-fade-in flex gap-1.5">
+             <div className={`flex-1 h-0.5 rounded-full ${onboardingStep >= 1 ? 'bg-[#0c1a2e]' : 'bg-gray-100'}`}></div>
+             <div className={`flex-1 h-0.5 rounded-full ${onboardingStep >= 2 ? 'bg-[#0c1a2e]' : 'bg-gray-100'}`}></div>
           </div>
         )}
-        <div className="flex-1 overflow-y-auto px-6 flex flex-col hide-scrollbar relative">
+        <div className="flex-1 overflow-y-auto px-7 flex flex-col hide-scrollbar relative">
           {onboardingStep === 0 && (
-            <div className="flex flex-col items-center justify-center flex-1 animation-fade-in">
-              <div className="w-32 h-32 bg-sky-50 rounded-full flex items-center justify-center mb-8 relative">
-                 <div className="absolute inset-0 bg-sky-100 rounded-full animate-ping opacity-50"></div>
-                 <Sparkles className="text-sky-500 z-10" size={48}/>
-              </div>
-              <h1 className="text-4xl font-black text-gray-900 mb-4 text-center">Maqra</h1>
-              <p className="text-gray-500 text-center text-lg font-medium px-4 mb-8">
-                De Zéro au Coran : Maîtrisez l'Arabe Classique et la lecture coranique.
+            <div className="flex flex-col items-center justify-center flex-1 animation-fade-in text-white">
+              <span className="font-arabic text-[88px] leading-none text-[#e8c874] mb-4">اقرأ</span>
+              <div className="w-8 h-0.5 bg-[#e8c874] mb-5"></div>
+              <h1 className="text-[34px] font-bold mb-3.5 text-center tracking-tight">Maqra</h1>
+              <p className="text-[#9aa7bd] text-center text-[15px] font-normal leading-relaxed px-3 max-w-[280px]">
+                De zéro au Coran : maîtrisez l'arabe classique et la lecture coranique, un verset à la fois.
               </p>
             </div>
           )}
           {onboardingStep === 1 && (
-            <div className="flex flex-col flex-1 animation-fade-in pt-4">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Quel est votre niveau de lecture ?</h2>
-              <p className="text-gray-500 text-sm mb-8">Pour adapter votre parcours Qaïda et phonétique.</p>
-              <div className="space-y-3">
+            <div className="flex flex-col flex-1 animation-fade-in pt-8">
+              <span className="text-[11px] font-extrabold text-[#0c1a2e] uppercase tracking-[.2em] mb-4">Maqra · Étape 1 / 2</span>
+              <h2 className="text-[28px] font-extrabold text-gray-900 mb-2 tracking-tight leading-tight">Où commence votre lecture ?</h2>
+              <p className="text-gray-500 text-[15px] mb-7 leading-snug">Chaque parcours du Coran démarre quelque part. Choisissez le vôtre.</p>
+              <div className="flex flex-col gap-3">
                  {[
-                   { id: 'beginner', title: 'Grand Débutant', desc: 'Je ne connais pas l\'alphabet arabe.', icon: '🌱' },
-                   { id: 'intermediate', title: 'Je connais les lettres', desc: 'Je sais les lire mais pas avec fluidité.', icon: '📖' },
-                   { id: 'advanced', title: 'Intermédiaire', desc: 'Je veux me perfectionner sur le Coran.', icon: '🚀' }
-                 ].map(level => (
+                   { id: 'beginner', num: '01', title: 'Grand débutant', desc: 'Je ne connais pas l\'alphabet arabe.' },
+                   { id: 'intermediate', num: '02', title: 'Je connais les lettres', desc: 'Je sais les lire mais pas avec fluidité.' },
+                   { id: 'advanced', num: '03', title: 'Intermédiaire', desc: 'Je veux me perfectionner sur le Coran.' }
+                 ].map(level => {
+                   const picked = userLevel === level.id;
+                   return (
                    <button
                       key={level.id}
                       onClick={() => setUserLevel(level.id)}
-                      className={`w-full flex items-center p-5 rounded-2xl border-2 text-left transition-all ${userLevel === level.id ? 'bg-sky-50 border-sky-400 shadow-sm' : 'bg-white border-gray-100 hover:border-gray-200'}`}
+                      className={`w-full flex items-center gap-4 p-5 rounded-[18px] border-[1.5px] text-left transition-all ${picked ? 'bg-[#0c1a2e] border-[#0c1a2e] shadow-[0_10px_24px_rgba(12,26,46,.25)]' : 'bg-white border-gray-200 shadow-sm hover:border-gray-300'}`}
                    >
-                      <span className="text-3xl mr-4">{level.icon}</span>
-                      <div>
-                         <p className={`font-bold text-lg ${userLevel === level.id ? 'text-sky-900' : 'text-gray-900'}`}>{level.title}</p>
-                         <p className={`text-sm ${userLevel === level.id ? 'text-sky-700' : 'text-gray-500'}`}>{level.desc}</p>
+                      <span className={`flex-shrink-0 w-[38px] h-[38px] rounded-[11px] flex items-center justify-center font-mono text-sm font-extrabold ${picked ? 'bg-white/10 text-[#e8c874]' : 'bg-gray-100 text-gray-500'}`}>{level.num}</span>
+                      <div className="flex-1">
+                         <p className={`font-extrabold text-[17px] ${picked ? 'text-white' : 'text-gray-900'}`}>{level.title}</p>
+                         <p className={`text-[13px] mt-0.5 ${picked ? 'text-[#aab6c8]' : 'text-gray-500'}`}>{level.desc}</p>
                       </div>
+                      {picked && <span className="flex-shrink-0 w-[26px] h-[26px] rounded-full bg-[#e8c874] text-[#0c1a2e] font-extrabold flex items-center justify-center text-sm">✓</span>}
                    </button>
-                 ))}
+                   );
+                 })}
               </div>
             </div>
           )}
           {onboardingStep === 2 && (
-            <div className="flex flex-col flex-1 animation-fade-in pt-4">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Votre engagement quotidien ?</h2>
-              <p className="text-gray-500 text-sm mb-8">La régularité est la clé de la mémorisation coranique.</p>
-              <div className="space-y-3">
+            <div className="flex flex-col flex-1 animation-fade-in pt-8">
+              <span className="text-[11px] font-extrabold text-[#0c1a2e] uppercase tracking-[.2em] mb-4">Maqra · Étape 2 / 2</span>
+              <h2 className="text-[28px] font-extrabold text-gray-900 mb-2 tracking-tight leading-tight">Combien de temps par jour ?</h2>
+              <p className="text-gray-500 text-[15px] mb-7 leading-snug">La régularité — même courte — est la clé de la mémorisation.</p>
+              <div className="flex flex-col gap-3">
                  {[
-                   { id: 'casual', title: 'Détendu', time: '3 min / jour', icon: '☕' },
-                   { id: 'regular', title: 'Régulier', time: '10 min / jour', icon: '🚶' },
-                   { id: 'serious', title: 'Sérieux', time: '15 min / jour', icon: '🔥' }
-                 ].map(goal => (
+                   { id: 'casual', title: 'Détendu', time: '3 min / jour' },
+                   { id: 'regular', title: 'Régulier', time: '10 min / jour' },
+                   { id: 'serious', title: 'Sérieux', time: '15 min / jour' }
+                 ].map(goal => {
+                   const picked = dailyGoal === goal.id;
+                   return (
                    <button
                       key={goal.id}
                       onClick={() => setDailyGoal(goal.id)}
-                      className={`w-full flex items-center justify-between p-5 rounded-2xl border-2 text-left transition-all ${dailyGoal === goal.id ? 'bg-emerald-50 border-emerald-400 shadow-sm' : 'bg-white border-gray-100 hover:border-gray-200'}`}
+                      className={`w-full flex items-center justify-between p-5 rounded-[18px] border-[1.5px] text-left transition-all ${picked ? 'bg-[#0c1a2e] border-[#0c1a2e] shadow-[0_10px_24px_rgba(12,26,46,.25)]' : 'bg-white border-gray-200 shadow-sm hover:border-gray-300'}`}
                    >
-                      <div className="flex items-center">
-                         <span className="text-3xl mr-4">{goal.icon}</span>
-                         <p className={`font-bold text-lg ${dailyGoal === goal.id ? 'text-emerald-900' : 'text-gray-900'}`}>{goal.title}</p>
-                      </div>
-                      <span className={`font-bold ${dailyGoal === goal.id ? 'text-emerald-600' : 'text-gray-400'}`}>{goal.time}</span>
+                      <p className={`font-extrabold text-[17px] ${picked ? 'text-white' : 'text-gray-900'}`}>{goal.title}</p>
+                      <span className="flex items-center gap-2.5">
+                         <span className={`font-bold text-sm font-mono ${picked ? 'text-[#aab6c8]' : 'text-gray-400'}`}>{goal.time}</span>
+                         {picked && <span className="flex-shrink-0 w-[26px] h-[26px] rounded-full bg-[#e8c874] text-[#0c1a2e] font-extrabold flex items-center justify-center text-sm">✓</span>}
+                      </span>
                    </button>
-                 ))}
+                   );
+                 })}
               </div>
             </div>
           )}
           {onboardingStep === 3 && (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in">
-              <Loader2 className="text-sky-500 animate-spin mb-6" size={48}/>
-              <h2 className="text-xl font-bold text-gray-900 mb-2">Création de votre parcours...</h2>
-              <p className="text-gray-500 text-sm">Calibration des modules de phonétique.</p>
+              <div className="w-[200px] h-0.5 bg-gray-100 rounded-full overflow-hidden mb-7">
+                 <div className="w-[60px] h-full bg-[#0c1a2e]" style={{ animation: 'loaderslide 1.1s ease-in-out infinite' }}></div>
+              </div>
+              <h2 className="text-base font-bold text-gray-900 mb-1.5">Préparation de votre parcours</h2>
+              <p className="text-gray-400 text-[13px]">Calibration des modules de phonétique</p>
             </div>
           )}
         </div>
         {onboardingStep < 3 && (
-          <div className="p-6 bg-white z-10 border-t border-gray-50">
-            <button 
+          <div className={`p-6 ${obBg}`}>
+            <button
               onClick={() => {
                 if (onboardingStep === 1 && !userLevel) return;
                 if (onboardingStep === 2 && !dailyGoal) return;
                 setOnboardingStep(prev => prev + 1);
               }}
               disabled={(onboardingStep === 1 && !userLevel) || (onboardingStep === 2 && !dailyGoal)}
-              className={`w-full py-4 rounded-2xl font-bold text-lg transition-all shadow-lg ${
+              className={`w-full py-[17px] rounded-2xl font-bold text-base transition-all ${
                 ((onboardingStep === 1 && !userLevel) || (onboardingStep === 2 && !dailyGoal))
-                ? 'bg-gray-100 text-gray-400 shadow-none cursor-not-allowed'
-                : 'bg-gray-900 text-white hover:-translate-y-1'
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                : onboardingStep === 0
+                  ? 'bg-[#e8c874] text-[#0c1a2e] hover:-translate-y-0.5'
+                  : 'bg-[#0c1a2e] text-white hover:-translate-y-0.5'
               }`}
             >
               {onboardingStep === 0 ? 'Commencer' : 'Continuer'}
@@ -2305,14 +2232,25 @@ export default function ArabicLearningApp() {
     );
   };
 
+  const renderLaunch = () => (
+    <div className="flex-1 flex flex-col items-center justify-center bg-[#0c1a2e] relative overflow-hidden">
+      <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 42%, rgba(232,200,116,.22), transparent 60%)', animation: 'launchglow 2s ease-in-out infinite' }}></div>
+      <span className="font-arabic text-[76px] leading-none text-[#e8c874] relative z-10" style={{ animation: 'launchpulse 1.6s ease-in-out infinite' }}>اقرأ</span>
+      <p className="text-[#9aa7bd] text-[13px] font-semibold tracking-[.1em] uppercase mt-[22px] relative z-10">Préparation de votre lecture</p>
+      <div className="w-[160px] h-0.5 bg-white/15 rounded-full overflow-hidden mt-4 relative z-10">
+         <div className="w-full h-full bg-[#e8c874] rounded-full origin-left" style={{ animation: 'launchfill 1.3s ease-out forwards' }}></div>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 font-sans p-4 sm:p-8">
-      <div className="relative w-full max-w-[400px] h-[850px] max-h-screen bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col border-[8px] border-gray-800">
+    <div className="flex items-center justify-center min-h-screen bg-[#e3dcc9] font-sans p-4 sm:p-8">
+      <div className="relative w-full max-w-[400px] h-[850px] max-h-screen bg-[#fbf9f4] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col border-[8px] border-gray-800">
         
         <div className="absolute top-0 w-full z-50 flex justify-between items-center px-6 pt-4 pb-2 text-xs font-semibold pointer-events-none">
-          <span className={(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival') ? 'text-gray-200' : 'text-gray-900'}>9:41</span>
+          <span className={(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival' || currentScreen === 'launch' || (currentScreen === 'onboarding' && onboardingStep === 0)) ? 'text-gray-200' : 'text-gray-900'}>9:41</span>
           <div className="absolute left-1/2 transform -translate-x-1/2 top-2 w-32 h-7 bg-black rounded-full"></div>
-          <div className={`flex space-x-2 ${(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival') ? 'text-gray-200' : 'text-gray-900'}`}>
+          <div className={`flex space-x-2 ${(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival' || currentScreen === 'launch' || (currentScreen === 'onboarding' && onboardingStep === 0)) ? 'text-gray-200' : 'text-gray-900'}`}>
              <span>📶</span>
              <span>🔋</span>
           </div>
@@ -2320,6 +2258,7 @@ export default function ArabicLearningApp() {
         <div className="h-12 flex-shrink-0 bg-transparent"></div>
 
         {currentScreen === 'onboarding' && renderOnboarding()}
+        {currentScreen === 'launch' && renderLaunch()}
         {currentScreen === 'dashboard' && renderDashboard()}
         {currentScreen === 'revision' && renderRevision()}
         {currentScreen === 'lesson' && renderLesson()}
@@ -2333,30 +2272,29 @@ export default function ArabicLearningApp() {
         {renderContextualRootModal()}
         {renderProModal()}
 
-        {(currentScreen !== 'onboarding' && currentScreen !== 'lesson' && currentScreen !== 'ai-tutor' && currentScreen !== 'roots' && currentScreen !== 'survival') && (
-          <div className="absolute bottom-6 left-0 w-full px-6 z-50 flex justify-center pointer-events-none">
-             <div className="flex items-center justify-between w-full max-w-[350px] pointer-events-auto">
-                <div className="bg-gray-900 text-white rounded-[2rem] px-4 py-3 flex items-center justify-between shadow-2xl flex-1 mr-4">
-                   <button onClick={() => setCurrentScreen('dashboard')} className={`flex flex-col items-center transition-opacity px-2 ${currentScreen === 'dashboard' ? 'opacity-100 text-sky-400' : 'opacity-50 hover:opacity-100'}`}>
-                      <LayoutGrid className="mb-1" size={20}/>
-                      <span className="text-[10px] font-medium">Modules</span>
-                   </button>
-                   <button onClick={() => setCurrentScreen('revision')} className={`flex flex-col items-center transition-opacity px-2 ${currentScreen === 'revision' ? 'opacity-100 text-sky-400' : 'opacity-50 hover:opacity-100'}`}>
-                      <BookOpen className="mb-1" size={20}/>
-                      <span className="text-[10px] font-medium">Révision</span>
-                   </button>
-                   <button onClick={() => setCurrentScreen('leaderboard')} className={`flex flex-col items-center transition-opacity px-2 ${currentScreen === 'leaderboard' ? 'opacity-100 text-sky-400' : 'opacity-50 hover:opacity-100'}`}>
-                      <Trophy className="mb-1" size={20}/>
-                      <span className="text-[10px] font-medium">Ligue</span>
-                   </button>
-                   <button onClick={() => setCurrentScreen('profile')} className={`flex flex-col items-center transition-opacity px-2 relative ${currentScreen === 'profile' ? 'opacity-100 text-sky-400' : 'opacity-50 hover:opacity-100'}`}>
-                      <UserCircle className="mb-1" size={20}/>
-                      <span className="text-[10px] font-medium">Profil</span>
-                      <div onClick={(e) => { e.stopPropagation(); setShowProModal(true); }} className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full shadow-sm cursor-pointer">PRO</div>
+        {(currentScreen !== 'onboarding' && currentScreen !== 'launch' && currentScreen !== 'lesson' && currentScreen !== 'ai-tutor' && currentScreen !== 'roots' && currentScreen !== 'survival') && (
+          <div className="absolute bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 shadow-[0_-8px_24px_rgba(0,0,0,0.04)]">
+             <div className="relative flex items-center px-2 pt-2.5 pb-3.5">
+                <button onClick={() => setCurrentScreen('dashboard')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'dashboard' ? 'text-sky-600' : 'text-gray-400'}`}>
+                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'dashboard' ? 'bg-sky-100' : ''}`}>▦</span>
+                   <span className="text-[11px] font-semibold">Modules</span>
+                </button>
+                <button onClick={() => setCurrentScreen('revision')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'revision' ? 'text-sky-600' : 'text-gray-400'}`}>
+                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'revision' ? 'bg-sky-100' : ''}`}>📖</span>
+                   <span className="text-[11px] font-semibold">Révision</span>
+                </button>
+                <div className="flex-1 flex flex-col items-center justify-end">
+                   <button onClick={() => setCurrentScreen('ai-tutor')} className="w-14 h-14 -mt-8 bg-gradient-to-tr from-sky-400 to-indigo-500 text-white rounded-full flex items-center justify-center shadow-[0_12px_22px_rgba(56,189,248,0.4)] border-4 border-white text-xl hover:scale-105 transition-transform">
+                      ✨
                    </button>
                 </div>
-                <button onClick={() => setCurrentScreen('ai-tutor')} className="w-14 h-14 bg-gradient-to-tr from-sky-400 to-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-sky-300 transition-all hover:scale-105 flex-shrink-0">
-                   <Sparkles size={24} strokeWidth={2.5}/>
+                <button onClick={() => setCurrentScreen('leaderboard')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'leaderboard' ? 'text-sky-600' : 'text-gray-400'}`}>
+                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'leaderboard' ? 'bg-sky-100' : ''}`}>🏆</span>
+                   <span className="text-[11px] font-semibold">Ligue</span>
+                </button>
+                <button onClick={() => setCurrentScreen('profile')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'profile' ? 'text-sky-600' : 'text-gray-400'}`}>
+                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'profile' ? 'bg-sky-100' : ''}`}>👤</span>
+                   <span className="text-[11px] font-semibold">Profil</span>
                 </button>
              </div>
           </div>
@@ -2377,6 +2315,22 @@ export default function ArabicLearningApp() {
         }
         .animation-fade-in {
           animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes loaderslide {
+          0% { transform: translateX(-60px); }
+          100% { transform: translateX(200px); }
+        }
+        @keyframes launchpulse {
+          0%, 100% { opacity: .85; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.06); }
+        }
+        @keyframes launchfill {
+          0% { transform: scaleX(0); }
+          100% { transform: scaleX(1); }
+        }
+        @keyframes launchglow {
+          0%, 100% { opacity: .5; }
+          50% { opacity: 1; }
         }
       `}} />
     </div>
