@@ -1136,12 +1136,11 @@ export default function ArabicLearningApp() {
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
 
-              <div className="bg-white w-full max-w-[280px] py-5 px-5 rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col items-center justify-center relative overflow-hidden mb-3">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-sky-50 rounded-full z-0"></div>
-                <span className="font-arabic text-[64px] font-bold text-gray-900 z-10 leading-none mb-4">{stepData.letter}</span>
-                <span className="text-xs text-gray-500 font-semibold z-10 tracking-wide bg-white px-3 py-1 rounded-full shadow-sm mb-4">{stepData.name}</span>
+              <div className="bg-white w-full max-w-[280px] py-5 px-5 rounded-[2.5rem] shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col items-center justify-center mb-3">
+                <span className="font-arabic text-[64px] font-bold text-gray-900 leading-none mb-4">{stepData.letter}</span>
+                <span className="text-[12px] text-gray-500 font-semibold tracking-wide bg-white px-3 py-1 rounded-full shadow-[0_1px_2px_rgba(0,0,0,0.05)] mb-4">{stepData.name}</span>
                 {stepData.mnemonic && (
-                  <div className="z-10 flex items-center space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100">
+                  <div className="flex items-center space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100">
                     <span className="text-lg">{stepData.illustration}</span>
                     <span className="font-arabic text-[13px] font-bold text-sky-900">{stepData.mnemonic}</span>
                   </div>
@@ -1149,9 +1148,9 @@ export default function ArabicLearningApp() {
               </div>
 
               <div className="flex space-x-3 mb-6">
-                <button onClick={() => speakArabic(stepData.letter)} className="bg-sky-100 py-2 px-4 rounded-full text-sky-600 hover:bg-sky-200 transition-colors shadow-sm flex items-center space-x-2">
+                <button onClick={() => speakArabic(stepData.letter)} className="bg-sky-100 py-2 px-4 rounded-full text-sky-600 hover:bg-sky-200 transition-colors flex items-center space-x-2">
                   <span>🔊</span>
-                  <span className="font-bold text-xs">Écouter</span>
+                  <span className="font-bold text-[13px]">Écouter</span>
                 </button>
               </div>
 
@@ -1162,15 +1161,15 @@ export default function ArabicLearningApp() {
                          setCurrentRootWord({ root: stepData.rootKey, ...rootsDatabase[stepData.rootKey] });
                          setShowContextualRoot(true);
                       }}
-                      className="w-full flex items-center justify-between bg-indigo-50 border border-indigo-100 p-4 rounded-2xl shadow-sm hover:bg-indigo-100 transition-colors"
+                      className="w-full flex items-center justify-between bg-indigo-50 border border-indigo-100 p-4 rounded-[18px] hover:bg-indigo-100 transition-colors"
                    >
                       <div className="flex items-center space-x-3">
                          <div className="w-10 h-10 bg-indigo-100 text-indigo-500 rounded-full flex items-center justify-center text-lg">
                             📘
                          </div>
                          <div className="text-left">
-                            <p className="text-sm font-bold text-indigo-900">💡 Explorer la racine</p>
-                            <p className="text-xs text-indigo-600 font-medium">Découvrez l'origine de ce mot</p>
+                            <p className="text-[13px] font-bold text-indigo-900">💡 Explorer la racine</p>
+                            <p className="text-[11px] text-indigo-600 font-medium">Découvrez l'origine de ce mot</p>
                          </div>
                       </div>
                       <span className="text-indigo-300">→</span>
