@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { supabase, isSupabaseConfigured } from './src/supabaseClient';
+import { useSupabaseAuth } from './src/useSupabaseAuth';
 import {
   Flame,
   Info,
@@ -137,6 +139,9 @@ const loadSavedProgress = () => {
 };
 
 export default function ArabicLearningApp() {
+
+  const { user, signInWithGoogle, signOut } = useSupabaseAuth();
+  const serverSyncedRef = useRef(false);
 
   const [currentScreen, setCurrentScreen] = useState(() => {
     try {
@@ -841,6 +846,47 @@ export default function ArabicLearningApp() {
   }, [currentScreen]);
 
   useEffect(() => {
+    serverSyncedRef.current = false;
+    if (!user || !supabase) return;
+    let cancelled = false;
+    (async () => {
+      const { data: profile } = await supabase.from('profiles').select('*').eq('id', user.id).maybeSingle();
+      const { data: moduleRows } = await supabase.from('module_progress').select('*').eq('user_id', user.id);
+      if (cancelled) return;
+
+      const localHasProgress = userXp !== 140 || modules.some(m => m.progress > 0);
+      const serverIsDefault = !profile || (profile.xp === 140 && (!moduleRows || moduleRows.length === 0));
+
+      if (serverIsDefault && localHasProgress) {
+        await supabase.from('profiles').upsert({
+          id: user.id, xp: userXp, notifications_enabled: notificationsEnabled,
+          sound_enabled: soundEnabled, dark_mode: darkMode, learning_focus: learningFocus,
+          updated_at: new Date().toISOString()
+        });
+        await supabase.from('module_progress').upsert(
+          modules.map(m => ({ user_id: user.id, module_id: m.id, progress: m.progress, updated_at: new Date().toISOString() }))
+        );
+      } else {
+        if (profile) {
+          setUserXp(profile.xp);
+          setNotificationsEnabled(profile.notifications_enabled);
+          setSoundEnabled(profile.sound_enabled);
+          setDarkMode(profile.dark_mode);
+          setLearningFocus(profile.learning_focus);
+        }
+        if (moduleRows && moduleRows.length > 0) {
+          setModules(prev => prev.map(m => {
+            const row = moduleRows.find(r => r.module_id === m.id);
+            return row ? { ...m, progress: row.progress } : m;
+          }));
+        }
+      }
+      if (!cancelled) serverSyncedRef.current = true;
+    })();
+    return () => { cancelled = true; };
+  }, [user?.id]);
+
+  useEffect(() => {
     try {
       const modulesProgress = {};
       modules.forEach(m => { modulesProgress[m.id] = m.progress; });
@@ -848,7 +894,18 @@ export default function ArabicLearningApp() {
         userXp, modulesProgress, notificationsEnabled, soundEnabled, darkMode, learningFocus
       }));
     } catch (e) {}
-  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus]);
+
+    if (user && supabase && serverSyncedRef.current) {
+      supabase.from('profiles').upsert({
+        id: user.id, xp: userXp, notifications_enabled: notificationsEnabled,
+        sound_enabled: soundEnabled, dark_mode: darkMode, learning_focus: learningFocus,
+        updated_at: new Date().toISOString()
+      }).then(() => {});
+      supabase.from('module_progress').upsert(
+        modules.map(m => ({ user_id: user.id, module_id: m.id, progress: m.progress, updated_at: new Date().toISOString() }))
+      ).then(() => {});
+    }
+  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus, user]);
 
   const resetLessonStates = () => {
     setLessonStep(0);
@@ -1643,6 +1700,37 @@ export default function ArabicLearningApp() {
                 <span className="text-[10px] text-orange-600 font-medium uppercase tracking-wide">Ligue</span>
              </div>
           </div>
+
+          {isSupabaseConfigured && (
+            <div className="mt-4">
+              {user ? (
+                <div className="flex items-center justify-between bg-gray-50 border border-gray-100 rounded-2xl p-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-sm overflow-hidden flex-shrink-0">
+                      {user.user_metadata?.avatar_url ? (
+                        <img src={user.user_metadata.avatar_url} alt="" className="w-full h-full object-cover" />
+                      ) : (
+                        (user.email || 'U').charAt(0).toUpperCase()
+                      )}
+                    </div>
+                    <div className="text-left">
+                      <p className="text-sm font-bold text-gray-900">{user.user_metadata?.full_name || user.email}</p>
+                      <p className="text-[11px] text-gray-500">Connecté · progression synchronisée</p>
+                    </div>
+                  </div>
+                  <button onClick={signOut} className="text-xs font-bold text-red-500 hover:text-red-600 flex-shrink-0">Déconnexion</button>
+                </div>
+              ) : (
+                <button
+                  onClick={signInWithGoogle}
+                  className="w-full flex items-center justify-center space-x-2 bg-gray-50 border border-gray-100 rounded-2xl p-3 font-bold text-sm text-gray-800 hover:bg-gray-100 transition-colors"
+                >
+                  <span>🔐</span>
+                  <span>Se connecter avec Google</span>
+                </button>
+              )}
+            </div>
+          )}
        </div>
 
        <div className="flex-1 overflow-y-auto px-6 py-6 hide-scrollbar">
