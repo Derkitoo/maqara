@@ -2324,7 +2324,7 @@ export default function ArabicLearningApp() {
   );
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen overflow-hidden bg-[#e3dcc9] font-sans">
+    <div className="flex items-center justify-center h-[100dvh] w-screen overflow-hidden bg-[#e3dcc9] font-sans">
       <div className="relative w-full max-w-[560px] h-full bg-[#fbf9f4] flex flex-col shadow-[0_0_60px_rgba(0,0,0,0.12)]">
 
         {currentScreen === 'onboarding' && renderOnboarding()}
