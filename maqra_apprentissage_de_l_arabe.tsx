@@ -2247,16 +2247,6 @@ export default function ArabicLearningApp() {
     <div className="flex items-center justify-center min-h-screen bg-[#e3dcc9] font-sans p-4 sm:p-8">
       <div className="relative w-full max-w-[400px] h-[850px] max-h-screen bg-[#fbf9f4] rounded-[3rem] overflow-hidden shadow-2xl flex flex-col border-[8px] border-gray-800">
         
-        <div className="absolute top-0 w-full z-50 flex justify-between items-center px-6 pt-4 pb-2 text-xs font-semibold pointer-events-none">
-          <span className={(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival' || currentScreen === 'launch' || (currentScreen === 'onboarding' && onboardingStep === 0)) ? 'text-gray-200' : 'text-gray-900'}>9:41</span>
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-2 w-32 h-7 bg-black rounded-full"></div>
-          <div className={`flex space-x-2 ${(currentScreen === 'lesson' || currentScreen === 'roots' || currentScreen === 'survival' || currentScreen === 'launch' || (currentScreen === 'onboarding' && onboardingStep === 0)) ? 'text-gray-200' : 'text-gray-900'}`}>
-             <span>📶</span>
-             <span>🔋</span>
-          </div>
-        </div>
-        <div className="h-12 flex-shrink-0 bg-transparent"></div>
-
         {currentScreen === 'onboarding' && renderOnboarding()}
         {currentScreen === 'launch' && renderLaunch()}
         {currentScreen === 'dashboard' && renderDashboard()}
