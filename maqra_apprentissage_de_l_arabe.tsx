@@ -325,7 +325,7 @@ export default function ArabicLearningApp() {
       icon: '🔤',
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
-      progress: savedProgress[1] ?? 2,
+      progress: savedProgress[1] ?? 0,
       total: 3,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
