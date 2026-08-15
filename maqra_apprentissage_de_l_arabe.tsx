@@ -104,8 +104,8 @@ const DrawingCanvas = ({ backgroundLetter }) => {
   };
 
   return (
-    <div className="relative w-full aspect-square bg-white rounded-3xl border-4 border-dashed border-gray-200 overflow-hidden shadow-inner flex flex-col">
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 select-none">
+    <div className="relative w-full aspect-square bg-white rounded-[28px] border-4 border-dashed border-gray-200 overflow-hidden shadow-inner flex flex-col">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.08] select-none">
         <span className="font-arabic text-[200px] font-bold text-gray-900 leading-none">{backgroundLetter}</span>
       </div>
       <canvas
@@ -1211,19 +1211,16 @@ export default function ArabicLearningApp() {
                     btnClass = 'bg-green-50 border-green-300 text-green-700';
                   }
 
-                  const isLongText = opt.length > 2;
-                  const structureClass = isLongText
-                     ? 'min-h-[120px] px-6 py-4 text-2xl sm:text-3xl break-words'
-                     : 'aspect-square text-5xl';
+                  const fontSizeClass = opt.length > 2 ? 'text-[20px]' : 'text-[40px]';
 
                   return (
                     <button
                       key={idx}
                       onClick={() => !isAnswerChecked && setSelectedAnswer(idx)}
                       disabled={isAnswerChecked}
-                      className={`font-arabic rounded-3xl flex items-center justify-center font-bold shadow-sm border-4 transition-all ${structureClass} ${btnClass}`}
+                      className={`font-arabic aspect-square rounded-[22px] flex items-center justify-center font-bold shadow-sm border-4 transition-all ${fontSizeClass} ${btnClass}`}
                     >
-                      <span className="text-center w-full">{opt}</span>
+                      <span className="text-center w-full px-1 break-words">{opt}</span>
                     </button>
                   );
                 })}
@@ -1250,7 +1247,7 @@ export default function ArabicLearningApp() {
                    </div>
                 )}
 
-                <div className="flex flex-row-reverse flex-wrap justify-center gap-x-4 gap-y-6 mb-10 bg-white p-6 rounded-3xl shadow-inner border border-gray-100">
+                <div dir="rtl" className="flex flex-wrap justify-center gap-x-[14px] gap-y-[18px] mb-10 bg-white p-[22px] rounded-3xl shadow-inner border border-gray-100">
                    {stepData.words.map((word) => {
                       const isRead = readWordsStatus[word.id];
                       const isActive = activeReadWord?.id === word.id;
@@ -1258,15 +1255,11 @@ export default function ArabicLearningApp() {
                          <button
                             key={word.id}
                             onClick={() => handleReadWordClick(word)}
-                            className={`font-arabic relative text-4xl sm:text-5xl font-bold p-2 transition-all rounded-xl
-                               ${isActive ? 'text-sky-600 bg-sky-50 scale-110 shadow-sm' :
+                            className={`font-arabic relative text-[34px] font-bold p-1.5 transition-all rounded-xl
+                               ${isActive ? 'text-sky-600 bg-sky-50' :
                                  isRead ? 'text-gray-800' : 'text-gray-400 hover:text-gray-600'}`}
-                            dir="rtl"
                          >
                             {word.text}
-                            {isRead && !isActive && (
-                               <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-green-400 rounded-full"></div>
-                            )}
                          </button>
                       )
                    })}
@@ -1366,7 +1359,7 @@ export default function ArabicLearningApp() {
                             key={`l-${item.id}`}
                             onClick={() => handleMatchSelection('left', item)}
                             disabled={isMatched || matchWrong}
-                            className={`py-4 rounded-2xl border-4 font-bold text-lg transition-all
+                            className={`py-4 px-4 rounded-2xl border-4 font-bold text-base transition-all
                                ${isMatched ? 'bg-gray-100 border-gray-100 text-gray-300 opacity-50 shadow-inner' :
                                  isWrong ? 'bg-red-50 border-red-400 text-red-700' :
                                  isSelected ? 'bg-sky-50 border-sky-400 text-sky-700' : 'bg-white border-gray-100 hover:border-gray-300 shadow-sm'}`}
@@ -1386,7 +1379,7 @@ export default function ArabicLearningApp() {
                             key={`r-${item.id}`}
                             onClick={() => handleMatchSelection('right', item)}
                             disabled={isMatched || matchWrong}
-                            className={`py-4 rounded-2xl border-4 font-bold text-lg transition-all
+                            className={`py-4 px-4 rounded-2xl border-4 font-bold text-base transition-all
                                ${isMatched ? 'bg-gray-100 border-gray-100 text-gray-300 opacity-50 shadow-inner' :
                                  isWrong ? 'bg-red-50 border-red-400 text-red-700' :
                                  isSelected ? 'bg-sky-50 border-sky-400 text-sky-700' : 'bg-white border-gray-100 hover:border-gray-300 shadow-sm'}`}
