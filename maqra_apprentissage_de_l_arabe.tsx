@@ -342,6 +342,78 @@ export default function ArabicLearningApp() {
         { translit: 'Ṣabara', trans: 'Il a été patient', arabic: 'صَبَرَ' },
         { translit: 'Ṣabūr', trans: 'Le Très Patient (nom divin)', arabic: 'صَبُور' }
       ]
+    },
+    'K-L-Q': {
+      arabic: 'خلق',
+      trans: 'Créer',
+      words: [
+        { word: 'خَالِق', trans: 'Khāliq', meaning: 'Créateur', icon: '✨', desc: 'Celui qui crée à partir de rien, un des noms divins.' },
+        { word: 'خَلْق', trans: 'Khalq', meaning: 'Création', icon: '🌌', desc: 'L\'acte de créer, ou l\'ensemble de la création.' }
+      ],
+      derivatives: [
+        { translit: 'Khalaqa', trans: 'Il a créé', arabic: 'خَلَقَ' },
+        { translit: 'Makhlūq', trans: 'Créature', arabic: 'مَخْلُوق' }
+      ]
+    },
+    'GH-F-R': {
+      arabic: 'غفر',
+      trans: 'Pardonner',
+      words: [
+        { word: 'غَفُور', trans: 'Ghafūr', meaning: 'Très Pardonneur', icon: '🤍', desc: 'Un des noms divins, exprimant le pardon abondant.' },
+        { word: 'مَغْفِرَة', trans: 'Maghfira', meaning: 'Pardon', icon: '🕊️', desc: 'L\'acte de pardonner, souvent demandé dans les invocations.' }
+      ],
+      derivatives: [
+        { translit: 'Ghafara', trans: 'Il a pardonné', arabic: 'غَفَرَ' },
+        { translit: 'Astaghfiru Llāh', trans: 'Je demande pardon à Dieu', arabic: 'أَسْتَغْفِرُ ٱللَّٰه' }
+      ]
+    },
+    'A-DH-B': {
+      arabic: 'عذب',
+      trans: 'Châtier',
+      words: [
+        { word: 'عَذَاب', trans: 'ʻAdhāb', meaning: 'Châtiment', icon: '⚡', desc: 'La punition, souvent évoquée en contraste avec la miséricorde divine.' },
+        { word: 'مُعَذَّب', trans: 'Muʻadhdhab', meaning: 'Châtié', icon: '😣', desc: 'Celui qui subit le châtiment.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAdhdhaba', trans: 'Il a châtié', arabic: 'عَذَّبَ' },
+        { translit: 'ʻAdhāb Alīm', trans: 'Châtiment douloureux', arabic: 'عَذَاب أَلِيم' }
+      ]
+    },
+    'SH-K-R': {
+      arabic: 'شكر',
+      trans: 'Remercier',
+      words: [
+        { word: 'شُكْر', trans: 'Shukr', meaning: 'Gratitude', icon: '🙏', desc: 'La reconnaissance envers Dieu pour Ses bienfaits.' },
+        { word: 'شَاكِر', trans: 'Shākir', meaning: 'Reconnaissant', icon: '💚', desc: 'Celui qui exprime sa gratitude.' }
+      ],
+      derivatives: [
+        { translit: 'Shakara', trans: 'Il a remercié', arabic: 'شَكَرَ' },
+        { translit: 'Shakūr', trans: 'Le Très Reconnaissant (nom divin)', arabic: 'شَكُور' }
+      ]
+    },
+    'F-D-L': {
+      arabic: 'فضل',
+      trans: 'Grâce, faveur',
+      words: [
+        { word: 'فَضْل', trans: 'Faḍl', meaning: 'Grâce', icon: '🌟', desc: 'La faveur généreuse accordée sans contrepartie.' },
+        { word: 'أَفْضَل', trans: 'Afḍal', meaning: 'Meilleur', icon: '🏆', desc: 'Ce qui est le plus excellent, dérivé de la même racine.' }
+      ],
+      derivatives: [
+        { translit: 'Faḍlan', trans: 'Par grâce', arabic: 'فَضْلًا' },
+        { translit: 'Dhū l-Faḍl', trans: 'Détenteur de la grâce', arabic: 'ذُو ٱلْفَضْل' }
+      ]
+    },
+    'J-Z-Y': {
+      arabic: 'جزي',
+      trans: 'Rétribuer',
+      words: [
+        { word: 'جَزَاء', trans: 'Jazāʼ', meaning: 'Rétribution', icon: '⚖️', desc: 'La récompense ou la sanction correspondant aux actes.' },
+        { word: 'مُجَازَاة', trans: 'Mujāzāh', meaning: 'Rétribution mutuelle', icon: '🔄', desc: 'L\'acte de rendre à chacun selon ses œuvres.' }
+      ],
+      derivatives: [
+        { translit: 'Jazā', trans: 'Il a rétribué', arabic: 'جَزَى' },
+        { translit: 'Jazāka Llāhu Khayran', trans: 'Que Dieu te rétribue en bien', arabic: 'جَزَاكَ ٱللَّٰهُ خَيْرًا' }
+      ]
     }
   };
 
@@ -387,7 +459,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 15,
+       total: 20,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -1273,7 +1345,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "نَبِيّ" (Nabiyy) ?', options: ['Prophète', 'Ange', 'Savant', 'Guerrier'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'صِرَاط', name: 'Chemin', instruction: 'La voie droite mentionnée dès l\'ouverture d\'Al-Fatiha.', sound: 'Ṣirāṭ', illustration: '🛤️', mnemonic: 'Le "droit chemin" d\'Al-Fatiha' },
       { type: 'qcm', instruction: 'Que signifie "صِرَاط" (Ṣirāṭ) ?', options: ['Maison', 'Chemin', 'Livre', 'Étoile'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 15 : parcours Fréquence Lexicale terminé, 45 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 15 : 45 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'خَالِق', name: 'Créateur', instruction: 'Un des noms divins : Celui qui crée à partir de rien.', sound: 'Khāliq', illustration: '✨', mnemonic: 'Même racine que "Khalaqa" (créer)', rootKey: 'K-L-Q' },
+      { type: 'qcm', instruction: 'Que signifie "خَالِق" (Khāliq) ?', options: ['Créateur', 'Destructeur', 'Voyageur', 'Gardien'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'غَفُور', name: 'Très Pardonneur', instruction: 'Un des noms divins, exprimant le pardon abondant.', sound: 'Ghafūr', illustration: '🤍', mnemonic: 'Même racine que "Maghfira" (pardon)', rootKey: 'GH-F-R' },
+      { type: 'qcm', instruction: 'Que signifie "غَفُور" (Ghafūr) ?', options: ['Sévère', 'Très Pardonneur', 'Silencieux', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'رِزْق', name: 'Subsistance', instruction: 'Tout ce que Dieu accorde à Ses créatures pour vivre : nourriture, biens, savoir...', sound: 'Rizq', illustration: '🍞', mnemonic: 'Ce qui nous est accordé pour vivre' },
+      { type: 'qcm', instruction: 'Que signifie "رِزْق" (Rizq) ?', options: ['Punition', 'Subsistance', 'Voyage', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 16 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'عَذَاب', name: 'Châtiment', instruction: 'La punition, souvent évoquée en contraste avec la miséricorde divine.', sound: 'ʻAdhāb', illustration: '⚡', mnemonic: 'Opposé de la miséricorde (Raḥma)', rootKey: 'A-DH-B' },
+      { type: 'qcm', instruction: 'Que signifie "عَذَاب" (ʻAdhāb) ?', options: ['Récompense', 'Châtiment', 'Cadeau', 'Repos'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'شُكْر', name: 'Gratitude', instruction: 'La reconnaissance envers Dieu pour Ses bienfaits.', sound: 'Shukr', illustration: '🙏', mnemonic: 'Répondre au bienfait par la gratitude', rootKey: 'SH-K-R' },
+      { type: 'qcm', instruction: 'Que signifie "شُكْر" (Shukr) ?', options: ['Plainte', 'Gratitude', 'Oubli', 'Doute'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صِدْق', name: 'Véracité', instruction: 'La sincérité et la vérité dans les paroles et les actes.', sound: 'Ṣidq', illustration: '✅', mnemonic: 'Opposé du mensonge (kadhib)' },
+      { type: 'qcm', instruction: 'Que signifie "صِدْق" (Ṣidq) ?', options: ['Mensonge', 'Véracité', 'Silence', 'Colère'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 17 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'فَضْل', name: 'Grâce', instruction: 'La faveur généreuse que Dieu accorde sans contrepartie.', sound: 'Faḍl', illustration: '🌟', mnemonic: 'Un don au-delà du mérite', rootKey: 'F-D-L' },
+      { type: 'qcm', instruction: 'Que signifie "فَضْل" (Faḍl) ?', options: ['Grâce', 'Dette', 'Épreuve', 'Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'جَزَاء', name: 'Rétribution', instruction: 'La récompense ou la sanction correspondant à ce qu\'on a accompli.', sound: 'Jazāʼ', illustration: '⚖️', mnemonic: 'Chacun selon ses œuvres', rootKey: 'J-Z-Y' },
+      { type: 'qcm', instruction: 'Que signifie "جَزَاء" (Jazāʼ) ?', options: ['Rétribution', 'Voyage', 'Silence', 'Sommeil'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'خَوْف', name: 'Peur', instruction: 'La crainte, souvent mise en balance avec l\'espoir (rajāʼ) dans le Coran.', sound: 'Khawf', illustration: '😨', mnemonic: 'Équilibrée par l\'espoir en Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "خَوْف" (Khawf) ?', options: ['Joie', 'Peur', 'Force', 'Paix'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 18 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'دُعَاء', name: 'Invocation', instruction: 'L\'appel adressé à Dieu, la demande faite dans la prière ou en dehors.', sound: 'Duʻāʼ', illustration: '🤲', mnemonic: 'Le dialogue du cœur avec Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "دُعَاء" (Duʻāʼ) ?', options: ['Invocation', 'Silence', 'Colère', 'Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حِكْمَة', name: 'Sagesse', instruction: 'La connaissance juste mise en pratique avec discernement.', sound: 'Ḥikma', illustration: '🦉', mnemonic: 'Le savoir appliqué avec justesse' },
+      { type: 'qcm', instruction: 'Que signifie "حِكْمَة" (Ḥikma) ?', options: ['Ignorance', 'Sagesse', 'Rapidité', 'Force'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قُدْرَة', name: 'Pouvoir', instruction: 'La capacité et la puissance, en particulier celle, infinie, de Dieu.', sound: 'Qudra', illustration: '💪', mnemonic: 'La base du nom divin Al-Qadīr' },
+      { type: 'qcm', instruction: 'Que signifie "قُدْرَة" (Qudra) ?', options: ['Faiblesse', 'Pouvoir', 'Oubli', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 19 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بَرَكَة', name: 'Bénédiction', instruction: 'L\'accroissement du bien, invisible mais tangible dans ses effets.', sound: 'Baraka', illustration: '🌿', mnemonic: 'Le bien qui se multiplie' },
+      { type: 'qcm', instruction: 'Que signifie "بَرَكَة" (Baraka) ?', options: ['Malédiction', 'Bénédiction', 'Fatigue', 'Distance'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَجْر', name: 'Récompense', instruction: 'La rétribution positive promise pour les bonnes œuvres.', sound: 'Ajr', illustration: '🏅', mnemonic: 'Le salaire des bonnes actions' },
+      { type: 'qcm', instruction: 'Que signifie "أَجْر" (Ajr) ?', options: ['Punition', 'Récompense', 'Question', 'Doute'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'نِعْمَة', name: 'Bienfait', instruction: 'Toute grâce ou faveur accordée par Dieu à Ses créatures.', sound: 'Niʻma', illustration: '🎁', mnemonic: 'Un don à reconnaître avec gratitude' },
+      { type: 'qcm', instruction: 'Que signifie "نِعْمَة" (Niʻma) ?', options: ['Épreuve', 'Bienfait', 'Perte', 'Attente'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 20 : parcours Fréquence Lexicale terminé, 60 mots mémorisés ! +20 XP' }
     ]
   ];
 
