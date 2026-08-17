@@ -627,7 +627,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 14,
+      total: 19,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -1460,7 +1460,114 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ', id: 1}, {text: 'فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ', id: 2}, {text: 'فَوَيْلٌ لِّلْمُصَلِّينَ', id: 3}, {text: 'وَيَمْنَعُونَ ٱلْمَاعُونَ', id: 4}],
         rightCol: [{text: 'As-tu vu celui qui traite de mensonge la Rétribution', id: 1}, {text: 'C\'est celui qui repousse l\'orphelin', id: 2}, {text: 'Malheur à ceux qui prient (avec négligence)', id: 3}, {text: 'et refusent l\'entraide', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Al-Māʻūn validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Al-Māʻūn validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Kāfirūn : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 109, ayah: 1 }, { surah: 109, ayah: 2 }, { surah: 109, ayah: 3 }, { surah: 109, ayah: 4 }, { surah: 109, ayah: 5 }, { surah: 109, ayah: 6 }],
+         words: [
+            { id: 'w1', text: 'قُلْ يَٰٓأَيُّهَا ٱلْكَٰفِرُونَ', root: 'Q-W-L', trans: 'Dis : Ô vous les dénégateurs !' },
+            { id: 'w2', text: 'لَآ أَعْبُدُ مَا تَعْبُدُونَ', root: 'A-B-D', trans: 'Je n\'adore pas ce que vous adorez' },
+            { id: 'w3', text: 'وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ', root: 'A-B-D', trans: 'et vous n\'adorez pas ce que j\'adore' },
+            { id: 'w4', text: 'وَلَآ أَنَا۠ عَابِدٌ مَّا عَبَدتُّمْ', root: 'A-B-D', trans: 'Je ne suis pas adorateur de ce que vous avez adoré' },
+            { id: 'w5', text: 'وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ', root: 'A-B-D', trans: 'et vous n\'êtes pas adorateurs de ce que j\'adore' },
+            { id: 'w6', text: 'لَكُمْ دِينُكُمْ وَلِىَ دِينِ', root: null, trans: 'À vous votre religion, et à moi ma religion' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'قُلْ يَٰٓأَيُّهَا ٱلْكَٰفِرُونَ', id: 1}, {text: 'لَآ أَعْبُدُ مَا تَعْبُدُونَ', id: 2}, {text: 'وَلَآ أَنَا۠ عَابِدٌ مَّا عَبَدتُّمْ', id: 3}, {text: 'لَكُمْ دِينُكُمْ وَلِىَ دِينِ', id: 4}],
+        rightCol: [{text: 'Dis : Ô vous les dénégateurs !', id: 1}, {text: 'Je n\'adore pas ce que vous adorez', id: 2}, {text: 'Je ne suis pas adorateur de ce que vous avez adoré', id: 3}, {text: 'À vous votre religion, et à moi ma religion', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Kāfirūn validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate An-Naṣr : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 110, ayah: 1 }, { surah: 110, ayah: 2 }, { surah: 110, ayah: 3 }],
+         words: [
+            { id: 'w1', text: 'إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ', root: 'A-L-H', trans: 'Lorsque vient le secours d\'Allah, ainsi que la victoire' },
+            { id: 'w2', text: 'وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا', root: 'A-L-H', trans: 'et que tu vois les gens entrer en foule dans la religion d\'Allah' },
+            { id: 'w3', text: 'فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًۢا', root: 'R-B-B', trans: 'glorifie ton Seigneur par Sa louange et implore Son pardon : Il est le Grand Accueillant au repentir' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        leftCol: [{text: 'إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ', id: 1}, {text: 'وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا', id: 2}, {text: 'فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ', id: 3}],
+        rightCol: [{text: 'Lorsque vient le secours d\'Allah et la victoire', id: 1}, {text: 'et que tu vois les gens entrer en foule dans la religion d\'Allah', id: 2}, {text: 'glorifie ton Seigneur et implore Son pardon', id: 3}]
+      },
+      { type: 'success', instruction: 'Sourate An-Naṣr validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Masad : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 111, ayah: 1 }, { surah: 111, ayah: 2 }, { surah: 111, ayah: 3 }, { surah: 111, ayah: 4 }, { surah: 111, ayah: 5 }],
+         words: [
+            { id: 'w1', text: 'تَبَّتْ يَدَآ أَبِى لَهَبٍ وَتَبَّ', root: null, trans: 'Que périssent les deux mains d\'Abū Lahab, et qu\'il périsse lui-même' },
+            { id: 'w2', text: 'مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ', root: null, trans: 'Sa fortune ne lui sert à rien, ni ce qu\'il a acquis' },
+            { id: 'w3', text: 'سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ', root: null, trans: 'Il sera brûlé dans un Feu plein de flammes' },
+            { id: 'w4', text: 'وَٱمْرَأَتُهُۥ حَمَّالَةَ ٱلْحَطَبِ', root: null, trans: 'de même sa femme, la porteuse de bois' },
+            { id: 'w5', text: 'فِى جِيدِهَا حَبْلٌ مِّن مَّسَدٍ', root: null, trans: 'à son cou, une corde de fibres' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'تَبَّتْ يَدَآ أَبِى لَهَبٍ وَتَبَّ', id: 1}, {text: 'مَآ أَغْنَىٰ عَنْهُ مَالُهُۥ وَمَا كَسَبَ', id: 2}, {text: 'سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ', id: 3}, {text: 'فِى جِيدِهَا حَبْلٌ مِّن مَّسَدٍ', id: 4}],
+        rightCol: [{text: 'Que périssent les deux mains d\'Abū Lahab', id: 1}, {text: 'Sa fortune ne lui sert à rien', id: 2}, {text: 'Il sera brûlé dans un Feu plein de flammes', id: 3}, {text: 'à son cou, une corde de fibres', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Masad validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Az-Zalzalah : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 99, ayah: 1 }, { surah: 99, ayah: 2 }, { surah: 99, ayah: 3 }, { surah: 99, ayah: 4 }, { surah: 99, ayah: 5 }, { surah: 99, ayah: 6 }, { surah: 99, ayah: 7 }, { surah: 99, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'إِذَا زُلْزِلَتِ ٱلْأَرْضُ زِلْزَالَهَا وَأَخْرَجَتِ ٱلْأَرْضُ أَثْقَالَهَا', root: null, trans: 'Quand la terre sera secouée de son séisme et fera sortir ses fardeaux' },
+            { id: 'w2', text: 'وَقَالَ ٱلْإِنسَٰنُ مَا لَهَا', root: 'Q-W-L', trans: 'et que l\'homme dira : "Qu\'a-t-elle ?"' },
+            { id: 'w3', text: 'يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا', root: 'R-B-B', trans: 'ce jour-là, elle contera son histoire, car ton Seigneur le lui aura inspiré' },
+            { id: 'w4', text: 'فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُۥ', root: 'A-M-L', trans: 'Quiconque fait un bien du poids d\'un atome le verra, et quiconque fait un mal du poids d\'un atome le verra' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'إِذَا زُلْزِلَتِ ٱلْأَرْضُ زِلْزَالَهَا', id: 1}, {text: 'وَقَالَ ٱلْإِنسَٰنُ مَا لَهَا', id: 2}, {text: 'تُحَدِّثُ أَخْبَارَهَا', id: 3}, {text: 'فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُۥ', id: 4}],
+        rightCol: [{text: 'Quand la terre sera secouée de son séisme', id: 1}, {text: 'l\'homme dira : "Qu\'a-t-elle ?"', id: 2}, {text: 'elle contera son histoire', id: 3}, {text: 'Quiconque fait un bien du poids d\'un atome le verra', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Az-Zalzalah validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-ʻĀdiyāt : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 100, ayah: 1 }, { surah: 100, ayah: 2 }, { surah: 100, ayah: 3 }, { surah: 100, ayah: 4 }, { surah: 100, ayah: 5 }, { surah: 100, ayah: 6 }, { surah: 100, ayah: 7 }, { surah: 100, ayah: 8 }, { surah: 100, ayah: 9 }, { surah: 100, ayah: 10 }, { surah: 100, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'وَٱلْعَٰدِيَٰتِ ضَبْحًا فَٱلْمُورِيَٰتِ قَدْحًا فَٱلْمُغِيرَٰتِ صُبْحًا', root: null, trans: 'Par les coursiers qui halètent, qui font jaillir des étincelles, qui attaquent au matin' },
+            { id: 'w2', text: 'فَأَثَرْنَ بِهِۦ نَقْعًا فَوَسَطْنَ بِهِۦ جَمْعًا', root: null, trans: 'en soulevant un nuage de poussière, et pénètrent au centre de la troupe' },
+            { id: 'w3', text: 'إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌ وَإِنَّهُۥ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ وَإِنَّهُۥ لِحُبِّ ٱلْخَيْرِ لَشَدِيدٌ', root: 'R-B-B', trans: 'l\'homme est ingrat envers son Seigneur, il en est lui-même témoin, et il est ardent dans l\'amour des biens' },
+            { id: 'w4', text: 'أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِى ٱلْقُبُورِ وَحُصِّلَ مَا فِى ٱلصُّدُورِ إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌۢ', root: 'A-L-M', trans: 'Ne sait-il pas que ce qui est dans les tombes et les poitrines sera dévoilé ? Ce jour-là leur Seigneur sera parfaitement informé' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلْعَٰدِيَٰتِ ضَبْحًا', id: 1}, {text: 'فَأَثَرْنَ بِهِۦ نَقْعًا', id: 2}, {text: 'إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌ', id: 3}, {text: 'أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِى ٱلْقُبُورِ', id: 4}],
+        rightCol: [{text: 'Par les coursiers qui halètent', id: 1}, {text: 'en soulevant un nuage de poussière', id: 2}, {text: 'l\'homme est ingrat envers son Seigneur', id: 3}, {text: 'Ne sait-il pas que ce qui est dans les tombes sera dévoilé', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-ʻĀdiyāt validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
