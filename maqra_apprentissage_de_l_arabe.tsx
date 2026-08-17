@@ -398,7 +398,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 1,
+       total: 4,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -1209,6 +1209,45 @@ export default function ArabicLearningApp() {
     ]
   ];
 
+  const rootsLessons = [
+    [
+      { type: 'intro', letter: 'كتب', name: 'Racine K-T-B', instruction: 'La racine K-T-B (كتب) tourne autour de l\'écrit. Elle donne كِتَاب (Kitāb - Livre).', sound: 'K-T-B', illustration: '📖', mnemonic: 'كِتَاب (Kitāb - Livre)', rootKey: 'K-T-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "كتب" (K-T-B) ?', options: ['Écrire', 'Prier', 'Voyager', 'Compter'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'رحم', name: 'Racine R-H-M', instruction: 'La racine R-H-M (رحم) exprime la miséricorde. Elle donne رَحْمَة (Raḥma - Miséricorde).', sound: 'R-H-M', illustration: '🤲', mnemonic: 'رَحْمَة (Raḥma - Miséricorde)', rootKey: 'R-H-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "رحم" (R-H-M) ?', options: ['Colère', 'Miséricorde', 'Guerre', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'اله', name: 'Racine A-L-H', instruction: 'La racine A-L-H (اله) désigne le divin. Elle donne إِلَٰه (Ilāh - Divinité) et le nom "Allah".', sound: 'A-L-H', illustration: '🕋', mnemonic: 'إِلَٰه (Ilāh - Divinité)', rootKey: 'A-L-H' },
+      { type: 'qcm', instruction: 'Que signifie la racine "اله" (A-L-H) ?', options: ['Montagne', 'Rivière', 'Dieu / Divinité', 'Étoile'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 1 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'قول', name: 'Racine Q-W-L', instruction: 'La racine Q-W-L (قول) tourne autour de la parole. Elle donne قُلْ (Qul - Dis !).', sound: 'Q-W-L', illustration: '🗣️', mnemonic: 'قُلْ (Qul - Dis !)', rootKey: 'Q-W-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قول" (Q-W-L) ?', options: ['Marcher', 'Manger', 'Dire / Parler', 'Dormir'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'يوم', name: 'Racine Y-W-M', instruction: 'La racine Y-W-M (يوم) désigne le jour. Elle donne يَوْم (Yawm - Jour).', sound: 'Y-W-M', illustration: '☀️', mnemonic: 'يَوْم (Yawm - Jour)', rootKey: 'Y-W-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "يوم" (Y-W-M) ?', options: ['Nuit', 'Jour', 'Année', 'Heure'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حمد', name: 'Racine H-M-D', instruction: 'La racine H-M-D (حمد) exprime la louange. Elle donne حَمْد (Ḥamd - Louange) et le nom Muḥammad.', sound: 'H-M-D', illustration: '🙌', mnemonic: 'حَمْد (Ḥamd - Louange)', rootKey: 'H-M-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حمد" (H-M-D) ?', options: ['Louer / Remercier', 'Punir', 'Oublier', 'Douter'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 2 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سلم', name: 'Racine S-L-M', instruction: 'La racine S-L-M (سلم) exprime la paix. Elle donne سَلَام (Salām - Paix) et le mot "Islam".', sound: 'S-L-M', illustration: '☮️', mnemonic: 'سَلَام (Salām - Paix)', rootKey: 'S-L-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سلم" (S-L-M) ?', options: ['Guerre', 'Richesse', 'Paix / Soumission', 'Rapidité'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عبد', name: 'Racine A-B-D', instruction: 'La racine A-B-D (عبد) exprime l\'adoration. Elle donne عَبْد (ʻAbd - Serviteur).', sound: 'A-B-D', illustration: '🙏', mnemonic: 'عَبْد (ʻAbd - Serviteur)', rootKey: 'A-B-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عبد" (A-B-D) ?', options: ['Adorer / Servir', 'Combattre', 'Voyager', 'Construire'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ربب', name: 'Racine R-B-B', instruction: 'La racine R-B-B (ربب) exprime l\'autorité bienveillante. Elle donne رَبّ (Rabb - Seigneur).', sound: 'R-B-B', illustration: '🌍', mnemonic: 'رَبّ (Rabb - Seigneur)', rootKey: 'R-B-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ربب" (R-B-B) ?', options: ['Ennemi', 'Seigneur / Éduquer', 'Esclave', 'Voisin'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 3 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أمن', name: 'Racine A-M-N', instruction: 'La racine A-M-N (أمن) exprime la croyance et la sécurité. Elle donne إِيمَان (Īmān - Foi).', sound: 'A-M-N', illustration: '💫', mnemonic: 'إِيمَان (Īmān - Foi)', rootKey: 'A-M-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "أمن" (A-M-N) ?', options: ['Douter', 'Croire / Sécurité', 'Refuser', 'Oublier'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عمل', name: 'Racine A-M-L', instruction: 'La racine A-M-L (عمل) exprime l\'action. Elle donne عَمَل (ʻAmal - Œuvre).', sound: 'A-M-L', illustration: '🛠️', mnemonic: 'عَمَل (ʻAmal - Œuvre)', rootKey: 'A-M-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عمل" (A-M-L) ?', options: ['Parole', 'Silence', 'Faire, œuvre', 'Pensée'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'صبر', name: 'Racine S-B-R', instruction: 'La racine S-B-R (صبر) exprime la patience. Elle donne صَبْر (Ṣabr - Patience).', sound: 'S-B-R', illustration: '⏳', mnemonic: 'صَبْر (Ṣabr - Patience)', rootKey: 'S-B-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "صبر" (S-B-R) ?', options: ['Hâte', 'Colère', 'Joie', 'Patience, endurance'], correctIndex: 3, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 4 : parcours Le Secret des Racines terminé, 12 racines explorées ! +20 XP' }
+    ]
+  ];
+
   const streakData = [
     { date: 'Août 10', status: 'fire' },
     { date: 'Août 11', status: 'fire' },
@@ -1341,7 +1380,13 @@ export default function ArabicLearningApp() {
        resetLessonStates();
        setCurrentScreen('lesson');
     } else if (moduleId === 4) {
-      setCurrentScreen('roots');
+      if (mod && mod.progress >= mod.total) {
+        setCurrentScreen('roots');
+      } else {
+        setActiveLesson(pickLesson(rootsLessons));
+        resetLessonStates();
+        setCurrentScreen('lesson');
+      }
     }
   };
 
