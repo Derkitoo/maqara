@@ -1584,7 +1584,7 @@ export default function ArabicLearningApp() {
     const lessons = moduleLessonsMap[activeModuleId] || [];
     if (!mod) return null;
     return (
-      <div className="flex-1 flex flex-col bg-[#f3efe4]">
+      <div className="flex-1 flex flex-col bg-[#f3efe4] overflow-hidden">
         <div className="px-6 py-4 flex items-center justify-between">
           <button onClick={() => setCurrentScreen('dashboard')} className="text-gray-400 hover:text-gray-700 transition-colors">
             <X size={24}/>
@@ -1592,7 +1592,7 @@ export default function ArabicLearningApp() {
           <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{mod.title}</span>
           <div className="w-6"></div>
         </div>
-        <div className="flex-1 overflow-y-auto px-6 pb-10 hide-scrollbar">
+        <div className="flex-1 min-h-0 overflow-y-auto px-6 pb-10 hide-scrollbar">
           <p className="text-sm text-gray-500 mb-5 leading-relaxed">{mod.description}</p>
           <div className="space-y-3">
             {lessons.map((lessonSteps, idx) => {
@@ -1639,7 +1639,7 @@ export default function ArabicLearningApp() {
     const items = getLessonPreviewItems(steps);
     const isLocked = mod ? previewLesson.lessonIndex > mod.progress : false;
     return (
-      <div className="flex-1 flex flex-col bg-[#f3efe4]">
+      <div className="flex-1 flex flex-col bg-[#f3efe4] overflow-hidden">
         <div className="px-6 py-4 flex items-center justify-between">
           <button onClick={() => setCurrentScreen('moduleLessons')} className="text-gray-400 hover:text-gray-700 transition-colors">
             <X size={24}/>
@@ -1647,7 +1647,7 @@ export default function ArabicLearningApp() {
           <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Leçon {previewLesson.lessonIndex + 1} · Aperçu</span>
           <div className="w-6"></div>
         </div>
-        <div className="flex-1 overflow-y-auto px-6 pb-10 hide-scrollbar">
+        <div className="flex-1 min-h-0 overflow-y-auto px-6 pb-10 hide-scrollbar">
           {isLocked && (
             <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 mb-5 text-sm text-indigo-700 font-medium leading-relaxed">
               🔒 Terminez les leçons précédentes pour pouvoir jouer celle-ci. Vous pouvez déjà en voir le contenu ci-dessous.
