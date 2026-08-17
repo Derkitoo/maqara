@@ -326,7 +326,7 @@ export default function ArabicLearningApp() {
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 0,
-      total: 3,
+      total: 6,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
       tagColor: 'bg-green-200 text-green-800'
@@ -533,6 +533,169 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'ز', instruction: 'Tracez la lettre Zāy (comme Rāʼ, avec un point au-dessus).' },
       { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Zāy" ?', options: ['ر', 'ز', 'و', 'ذ'], correctIndex: 1, textStyle: 'text-5xl' },
       { type: 'success', instruction: 'Leçon 3 terminée ! Alphabet Qaïda : 14 lettres maîtrisées. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'خ',
+        name: 'Khāʼ (Gutturale rauque)',
+        instruction: 'La lettre Khāʼ vient du fond de la gorge, un raclement sec, comme le "j" espagnol.',
+        sound: 'Kha',
+        illustration: '🍞',
+        mnemonic: 'خُبْز (Khubz - Pain)'
+      },
+      { type: 'trace', letter: 'خ', instruction: 'Tracez la lettre Khāʼ (comme Ḥāʼ, avec un point au-dessus).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Khāʼ" ?', options: ['ح', 'خ', 'ج', 'ه'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'غ',
+        name: 'Ghayn (Gutturale roulée)',
+        instruction: 'La lettre Ghayn est la version voisée (sonore) du Khāʼ, comme le "r" grasseyé français.',
+        sound: 'Gha',
+        illustration: '🦅',
+        mnemonic: 'غُرَاب (Ghurāb - Corbeau)'
+      },
+      { type: 'trace', letter: 'غ', instruction: 'Tracez la lettre Ghayn (comme ʿAyn, avec un point au-dessus).' },
+      { type: 'qcm', instruction: 'Trouvez la lettre "Ghayn" parmi ces propositions.', options: ['ع', 'غ', 'ف', 'ق'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ع',
+        name: 'ʿAyn (Gutturale profonde)',
+        instruction: 'La lettre ʿAyn se prononce en resserrant le fond de la gorge. C\'est la plus profonde des lettres.',
+        sound: 'ʿAyn',
+        illustration: '👁️',
+        mnemonic: 'عَيْن (ʿAyn - Œil)'
+      },
+      { type: 'trace', letter: 'ع', instruction: 'Tracez la lettre ʿAyn (la boucle ouverte vers le bas).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "ʿAyn" ?', options: ['غ', 'ع', 'ح', 'خ'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ش',
+        name: 'Shīn (Sifflante légère)',
+        instruction: 'La lettre Shīn est le "ch" français, une sifflante légère avec trois points.',
+        sound: 'Sha',
+        illustration: '🌞',
+        mnemonic: 'شَمْس (Shams - Soleil)'
+      },
+      { type: 'trace', letter: 'ش', instruction: 'Tracez la lettre Shīn (comme Sīn, avec trois points au-dessus).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Shīn" ?', options: ['س', 'ش', 'ص', 'ث'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ج',
+        name: 'Jīm (Affriquée)',
+        instruction: 'La lettre Jīm se prononce comme le "j" anglais de "job", un son bref et plein.',
+        sound: 'Ja',
+        illustration: '🐫',
+        mnemonic: 'جَمَل (Jamal - Chameau)'
+      },
+      { type: 'trace', letter: 'ج', instruction: 'Tracez la lettre Jīm (la boucle profonde avec un point en dessous).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Jīm" ?', options: ['ح', 'خ', 'ج', 'ح'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 4 terminée ! Les gutturales profondes n\'ont plus de secret pour vous. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ب',
+        name: 'Bāʼ (Labiale légère)',
+        instruction: 'La lettre Bāʼ se prononce en fermant les lèvres, comme le "b" français.',
+        sound: 'Ba',
+        illustration: '🦆',
+        mnemonic: 'بَطَّة (Baṭṭa - Canard)'
+      },
+      { type: 'trace', letter: 'ب', instruction: 'Tracez la lettre Bāʼ (la coupe avec un point en dessous).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Bāʼ" ?', options: ['ت', 'ث', 'ب', 'ن'], correctIndex: 2, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ف',
+        name: 'Fāʼ (Labio-dentale)',
+        instruction: 'La lettre Fāʼ se prononce en posant les dents du haut sur la lèvre inférieure, comme le "f" français.',
+        sound: 'Fa',
+        illustration: '🐘',
+        mnemonic: 'فِيل (Fīl - Éléphant)'
+      },
+      { type: 'trace', letter: 'ف', instruction: 'Tracez la lettre Fāʼ (le cercle avec un point au-dessus).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Fāʼ" ?', options: ['ق', 'ف', 'و', 'غ'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ر',
+        name: 'Rāʼ (Roulée)',
+        instruction: 'La lettre Rāʼ est roulée avec le bout de la langue, comme le "r" espagnol ou italien.',
+        sound: 'Ra',
+        illustration: '🐒',
+        mnemonic: 'رَجُل (Rajul - Homme)'
+      },
+      { type: 'trace', letter: 'ر', instruction: 'Tracez la lettre Rāʼ (un crochet courbé, sans point).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Rāʼ" ?', options: ['ز', 'ر', 'و', 'د'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ل',
+        name: 'Lām (Latérale légère)',
+        instruction: 'La lettre Lām se prononce en posant le bout de la langue contre le palais, comme le "l" français.',
+        sound: 'La',
+        illustration: '🦁',
+        mnemonic: 'لَيْث (Layth - Lion)'
+      },
+      { type: 'trace', letter: 'ل', instruction: 'Tracez la lettre Lām (une hampe verticale avec une petite courbe).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Lām" ?', options: ['ك', 'ل', 'ا', 'إ'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 5 terminée ! Les labiales et la roulée maîtrisées. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'م',
+        name: 'Mīm (Nasale labiale)',
+        instruction: 'La lettre Mīm se prononce lèvres fermées avec résonance nasale, comme le "m" français.',
+        sound: 'Ma',
+        illustration: '💧',
+        mnemonic: 'مَاء (Māʼ - Eau)'
+      },
+      { type: 'trace', letter: 'م', instruction: 'Tracez la lettre Mīm (le petit cercle plein).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Mīm" ?', options: ['ن', 'م', 'ه', 'و'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ن',
+        name: 'Nūn (Nasale dentale)',
+        instruction: 'La lettre Nūn se prononce bout de langue contre le palais avec résonance nasale, comme le "n" français.',
+        sound: 'Na',
+        illustration: '🐝',
+        mnemonic: 'نَحْلَة (Naḥla - Abeille)'
+      },
+      { type: 'trace', letter: 'ن', instruction: 'Tracez la lettre Nūn (la coupe avec un point au-dessus).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Nūn" ?', options: ['ب', 'ت', 'ن', 'ي'], correctIndex: 2, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'و',
+        name: 'Wāw (Semi-voyelle)',
+        instruction: 'La lettre Wāw se prononce lèvres arrondies, comme le "w" anglais ou un "ou" bref.',
+        sound: 'Wa',
+        illustration: '🌹',
+        mnemonic: 'وَرْدَة (Warda - Rose)'
+      },
+      { type: 'trace', letter: 'و', instruction: 'Tracez la lettre Wāw (le cercle avec la queue courbée).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Wāw" ?', options: ['ف', 'و', 'ر', 'ق'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ي',
+        name: 'Yāʼ (Semi-voyelle)',
+        instruction: 'La lettre Yāʼ se prononce comme le "y" de "yaourt", proche d\'un "i" glissé.',
+        sound: 'Ya',
+        illustration: '🖐️',
+        mnemonic: 'يَد (Yad - Main)'
+      },
+      { type: 'trace', letter: 'ي', instruction: 'Tracez la lettre Yāʼ (comme Bāʼ, avec deux points en dessous).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Yāʼ" ?', options: ['ب', 'ت', 'ث', 'ي'], correctIndex: 3, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'ا',
+        name: 'Alif (Voyelle longue)',
+        instruction: 'La lettre Alif est une simple hampe verticale : porteuse de la voyelle longue "ā".',
+        sound: 'Alif',
+        illustration: '🌴',
+        mnemonic: 'أَسَد (Asad - Lion, avec Alif Hamza)'
+      },
+      { type: 'trace', letter: 'ا', instruction: 'Tracez la lettre Alif (une simple hampe droite, sans point).' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Alif" ?', options: ['ل', 'ا', 'ي', 'و'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 6 terminée ! Bravo, l\'alphabet arabe complet (28 lettres) est maîtrisé ! +15 XP' }
     ]
   ];
 
