@@ -305,6 +305,42 @@ export default function ArabicLearningApp() {
         { translit: 'Rabbunā', trans: 'Notre Seigneur', arabic: 'رَبُّنَا' },
         { translit: 'Rabb al-\'Ālamīn', trans: 'Seigneur des mondes', arabic: 'رَبِّ ٱلْعَالَمِينَ' }
       ]
+    },
+    'A-M-N': {
+      arabic: 'أمن',
+      trans: 'Croire / Sécurité',
+      words: [
+        { word: 'إِيمَان', trans: 'Īmān', meaning: 'Foi', icon: '💫', desc: 'La croyance intérieure, pilier central de la pratique.' },
+        { word: 'آمَنَ', trans: 'Āmana', meaning: 'Il a cru', icon: '🤍', desc: 'L\'acte de croire, verbe qui revient très souvent dans le Coran.' }
+      ],
+      derivatives: [
+        { translit: 'Muʼmin', trans: 'Croyant', arabic: 'مُؤْمِن' },
+        { translit: 'Amān', trans: 'Sécurité', arabic: 'أَمَان' }
+      ]
+    },
+    'A-M-L': {
+      arabic: 'عمل',
+      trans: 'Faire, œuvre',
+      words: [
+        { word: 'عَمَل', trans: 'ʻAmal', meaning: 'Œuvre', icon: '🛠️', desc: 'L\'action accomplie, souvent associée à la foi dans le Coran.' },
+        { word: 'عَامِل', trans: 'ʻĀmil', meaning: 'Faisant, ouvrier', icon: '👷', desc: 'Celui qui accomplit une action.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAmila', trans: 'Il a fait, il a œuvré', arabic: 'عَمِلَ' },
+        { translit: 'Aʻmāl', trans: 'Actes, œuvres', arabic: 'أَعْمَال' }
+      ]
+    },
+    'S-B-R': {
+      arabic: 'صبر',
+      trans: 'Patience, endurance',
+      words: [
+        { word: 'صَبْر', trans: 'Ṣabr', meaning: 'Patience', icon: '⏳', desc: 'L\'endurance face à l\'épreuve, vertu très valorisée dans le Coran.' },
+        { word: 'صَابِر', trans: 'Ṣābir', meaning: 'Patient', icon: '🧘', desc: 'Celui qui fait preuve de patience.' }
+      ],
+      derivatives: [
+        { translit: 'Ṣabara', trans: 'Il a été patient', arabic: 'صَبَرَ' },
+        { translit: 'Ṣabūr', trans: 'Le Très Patient (nom divin)', arabic: 'صَبُور' }
+      ]
     }
   };
 
@@ -350,7 +386,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 10,
+       total: 15,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -1124,7 +1160,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "عَظِيم" (ʻAẓīm) ?', options: ['Petit', 'Immense', 'Rapide', 'Faible'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'عِلْم', name: 'Savoir', instruction: 'La connaissance, très valorisée dans la tradition islamique.', sound: 'ʻIlm', illustration: '🧠', mnemonic: 'La base du mot "ʻĀlim" (savant)' },
       { type: 'qcm', instruction: 'Que signifie "عِلْم" (ʻIlm) ?', options: ['Savoir', 'Ignorance', 'Silence', 'Doute'], correctIndex: 0, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 10 : parcours Fréquence Lexicale terminé, 30 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 10 : 30 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نَزَلَ', name: 'Il est descendu', instruction: 'Décrit la révélation qui "descend" du ciel vers le Prophète.', sound: 'Nazala', illustration: '⬇️', mnemonic: 'La révélation qui descend' },
+      { type: 'qcm', instruction: 'Que signifie "نَزَلَ" (Nazala) ?', options: ['Il est monté', 'Il est descendu', 'Il a couru', 'Il a dormi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'آمَنَ', name: 'Il a cru', instruction: 'Verbe de la foi, revient très souvent associé aux bonnes œuvres.', sound: 'Āmana', illustration: '🤍', mnemonic: 'La racine du mot "Īmān" (foi)', rootKey: 'A-M-N' },
+      { type: 'qcm', instruction: 'Que signifie "آمَنَ" (Āmana) ?', options: ['Il a douté', 'Il a cru', 'Il a oublié', 'Il a refusé'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'هُدًى', name: 'Guidance', instruction: 'La direction juste envoyée par Dieu, opposée à l\'égarement.', sound: 'Hudā', illustration: '🧭', mnemonic: 'Le chemin montré par Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "هُدًى" (Hudā) ?', options: ['Égarement', 'Guidance', 'Punition', 'Oubli'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 11 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'عَمَل', name: 'Œuvre', instruction: 'L\'action accomplie, presque toujours associée à la foi dans le Coran ("croire et bien agir").', sound: 'ʻAmal', illustration: '🛠️', mnemonic: 'Ce que l\'on accomplit', rootKey: 'A-M-L' },
+      { type: 'qcm', instruction: 'Que signifie "عَمَل" (ʻAmal) ?', options: ['Parole', 'Œuvre', 'Pensée', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صَبْر', name: 'Patience', instruction: 'L\'endurance face à l\'épreuve, une vertu très valorisée dans le Coran.', sound: 'Ṣabr', illustration: '⏳', mnemonic: 'Tenir bon dans l\'épreuve', rootKey: 'S-B-R' },
+      { type: 'qcm', instruction: 'Que signifie "صَبْر" (Ṣabr) ?', options: ['Colère', 'Patience', 'Hâte', 'Joie'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'تَقْوَى', name: 'Piété', instruction: 'La crainte révérencielle de Dieu qui pousse à bien agir.', sound: 'Taqwā', illustration: '🛡️', mnemonic: 'Se protéger par la conscience de Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "تَقْوَى" (Taqwā) ?', options: ['Piété', 'Richesse', 'Force', 'Beauté'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 12 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جَنَّة', name: 'Paradis / Jardin', instruction: 'Le jardin promis aux croyants, littéralement "ce qui est caché" (par la végétation).', sound: 'Jannah', illustration: '🌳', mnemonic: 'Le jardin de la récompense' },
+      { type: 'qcm', instruction: 'Que signifie "جَنَّة" (Jannah) ?', options: ['Désert', 'Paradis / Jardin', 'Montagne', 'Tempête'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'نَار', name: 'Feu', instruction: 'Désigne le feu, souvent utilisé pour évoquer la punition.', sound: 'Nār', illustration: '🔥', mnemonic: 'Opposé du jardin (Jannah)' },
+      { type: 'qcm', instruction: 'Que signifie "نَار" (Nār) ?', options: ['Eau', 'Feu', 'Air', 'Terre'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حَيَاة', name: 'Vie', instruction: 'La vie de ce monde, souvent comparée à la vie de l\'au-delà.', sound: 'Ḥayāh', illustration: '🌱', mnemonic: 'Opposé de la mort (Mawt)' },
+      { type: 'qcm', instruction: 'Que signifie "حَيَاة" (Ḥayāh) ?', options: ['Mort', 'Vie', 'Sommeil', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 13 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مَوْت', name: 'Mort', instruction: 'La fin de la vie terrestre, un thème très présent dans le Coran.', sound: 'Mawt', illustration: '🕊️', mnemonic: 'Opposé de la vie (Ḥayāh)' },
+      { type: 'qcm', instruction: 'Que signifie "مَوْت" (Mawt) ?', options: ['Naissance', 'Mort', 'Voyage', 'Sommeil'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صَلَاة', name: 'Prière', instruction: 'Le deuxième pilier de l\'Islam, la prière rituelle.', sound: 'Ṣalāh', illustration: '🕌', mnemonic: 'Le lien direct avec Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "صَلَاة" (Ṣalāh) ?', options: ['Aumône', 'Prière', 'Jeûne', 'Pèlerinage'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'زَكَاة', name: 'Aumône purificatrice', instruction: 'Le troisième pilier, l\'aumône obligatoire qui "purifie" les biens.', sound: 'Zakāh', illustration: '🤲', mnemonic: 'Ce qui purifie la richesse' },
+      { type: 'qcm', instruction: 'Que signifie "زَكَاة" (Zakāh) ?', options: ['Aumône purificatrice', 'Impôt', 'Cadeau', 'Dette'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 14 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'رَسُول', name: 'Messager', instruction: 'Celui qui transmet un message divin à son peuple.', sound: 'Rasūl', illustration: '📜', mnemonic: 'Celui qui porte le message' },
+      { type: 'qcm', instruction: 'Que signifie "رَسُول" (Rasūl) ?', options: ['Roi', 'Messager', 'Juge', 'Voyageur'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'نَبِيّ', name: 'Prophète', instruction: 'Celui qui reçoit une révélation divine.', sound: 'Nabiyy', illustration: '⭐', mnemonic: 'Proche du mot "nabaʼ" (annonce)' },
+      { type: 'qcm', instruction: 'Que signifie "نَبِيّ" (Nabiyy) ?', options: ['Prophète', 'Ange', 'Savant', 'Guerrier'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صِرَاط', name: 'Chemin', instruction: 'La voie droite mentionnée dès l\'ouverture d\'Al-Fatiha.', sound: 'Ṣirāṭ', illustration: '🛤️', mnemonic: 'Le "droit chemin" d\'Al-Fatiha' },
+      { type: 'qcm', instruction: 'Que signifie "صِرَاط" (Ṣirāṭ) ?', options: ['Maison', 'Chemin', 'Livre', 'Étoile'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 15 : parcours Fréquence Lexicale terminé, 45 mots mémorisés ! +20 XP' }
     ]
   ];
 
