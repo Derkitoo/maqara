@@ -629,7 +629,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 19,
+      total: 25,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -1569,7 +1569,134 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'وَٱلْعَٰدِيَٰتِ ضَبْحًا', id: 1}, {text: 'فَأَثَرْنَ بِهِۦ نَقْعًا', id: 2}, {text: 'إِنَّ ٱلْإِنسَٰنَ لِرَبِّهِۦ لَكَنُودٌ', id: 3}, {text: 'أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِى ٱلْقُبُورِ', id: 4}],
         rightCol: [{text: 'Par les coursiers qui halètent', id: 1}, {text: 'en soulevant un nuage de poussière', id: 2}, {text: 'l\'homme est ingrat envers son Seigneur', id: 3}, {text: 'Ne sait-il pas que ce qui est dans les tombes sera dévoilé', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Al-ʻĀdiyāt validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Al-ʻĀdiyāt validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Qāriʻah : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 101, ayah: 1 }, { surah: 101, ayah: 2 }, { surah: 101, ayah: 3 }, { surah: 101, ayah: 4 }, { surah: 101, ayah: 5 }, { surah: 101, ayah: 6 }, { surah: 101, ayah: 7 }, { surah: 101, ayah: 8 }, { surah: 101, ayah: 9 }, { surah: 101, ayah: 10 }, { surah: 101, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'ٱلْقَارِعَةُ مَا ٱلْقَارِعَةُ وَمَآ أَدْرَىٰكَ مَا ٱلْقَارِعَةُ', root: null, trans: 'Le grand fracas ! Qu\'est-ce que le grand fracas ? Et qui te fera savoir ce qu\'il est ?' },
+            { id: 'w2', text: 'يَوْمَ يَكُونُ ٱلنَّاسُ كَٱلْفَرَاشِ ٱلْمَبْثُوثِ وَتَكُونُ ٱلْجِبَالُ كَٱلْعِهْنِ ٱلْمَنفُوشِ', root: null, trans: 'Le jour où les gens seront comme des papillons éparpillés, et les montagnes comme de la laine cardée' },
+            { id: 'w3', text: 'فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ فَهُوَ فِى عِيشَةٍ رَّاضِيَةٍ وَأَمَّا مَنْ خَفَّتْ مَوَٰزِينُهُۥ فَأُمُّهُۥ هَاوِيَةٌ', root: null, trans: 'Celui dont la balance sera lourde vivra une vie agréable ; celui dont elle sera légère aura pour demeure l\'Abîme' },
+            { id: 'w4', text: 'وَمَآ أَدْرَىٰكَ مَا هِيَهْ نَارٌ حَامِيَةٌۢ', root: null, trans: 'Et qui te fera savoir ce que c\'est ? Un Feu ardent' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'ٱلْقَارِعَةُ مَا ٱلْقَارِعَةُ', id: 1}, {text: 'يَوْمَ يَكُونُ ٱلنَّاسُ كَٱلْفَرَاشِ ٱلْمَبْثُوثِ', id: 2}, {text: 'فَأَمَّا مَن ثَقُلَتْ مَوَٰزِينُهُۥ', id: 3}, {text: 'نَارٌ حَامِيَةٌۢ', id: 4}],
+        rightCol: [{text: 'Le grand fracas !', id: 1}, {text: 'Les gens seront comme des papillons éparpillés', id: 2}, {text: 'Celui dont la balance sera lourde', id: 3}, {text: 'Un Feu ardent', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Qāriʻah validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate At-Takāthur : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 102, ayah: 1 }, { surah: 102, ayah: 2 }, { surah: 102, ayah: 3 }, { surah: 102, ayah: 4 }, { surah: 102, ayah: 5 }, { surah: 102, ayah: 6 }, { surah: 102, ayah: 7 }, { surah: 102, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'أَلْهَىٰكُمُ ٱلتَّكَاثُرُ حَتَّىٰ زُرْتُمُ ٱلْمَقَابِرَ', root: null, trans: 'La course aux richesses vous distrait, jusqu\'à ce que vous visitiez les tombes' },
+            { id: 'w2', text: 'كَلَّا سَوْفَ تَعْلَمُونَ ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ كَلَّا لَوْ تَعْلَمُونَ عِلْمَ ٱلْيَقِينِ', root: null, trans: 'Non ! Bientôt vous saurez. Encore une fois, bientôt vous saurez. Si vous saviez avec une certitude parfaite' },
+            { id: 'w3', text: 'لَتَرَوُنَّ ٱلْجَحِيمَ ثُمَّ لَتَرَوُنَّهَا عَيْنَ ٱلْيَقِينِ ثُمَّ لَتُسْـَٔلُنَّ يَوْمَئِذٍ عَنِ ٱلنَّعِيمِ', root: null, trans: 'Vous verriez certainement la Fournaise, puis vous la verrez avec l\'œil de la certitude, puis vous serez interrogés sur les délices' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        leftCol: [{text: 'أَلْهَىٰكُمُ ٱلتَّكَاثُرُ', id: 1}, {text: 'كَلَّا سَوْفَ تَعْلَمُونَ', id: 2}, {text: 'لَتَرَوُنَّ ٱلْجَحِيمَ', id: 3}],
+        rightCol: [{text: 'La course aux richesses vous distrait', id: 1}, {text: 'Non ! Bientôt vous saurez', id: 2}, {text: 'Vous verriez certainement la Fournaise', id: 3}]
+      },
+      { type: 'success', instruction: 'Sourate At-Takāthur validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-ʻAlaq (versets 1-5) : la première révélation',
+         verses: [{ surah: 96, ayah: 1 }, { surah: 96, ayah: 2 }, { surah: 96, ayah: 3 }, { surah: 96, ayah: 4 }, { surah: 96, ayah: 5 }],
+         words: [
+            { id: 'w1', text: 'ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ', root: 'K-L-Q', trans: 'Lis, au nom de ton Seigneur qui a créé' },
+            { id: 'w2', text: 'خَلَقَ ٱلْإِنسَٰنَ مِنْ عَلَقٍ', root: 'K-L-Q', trans: 'qui a créé l\'homme d\'une adhérence' },
+            { id: 'w3', text: 'ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ', root: 'R-B-B', trans: 'Lis ! Ton Seigneur est le Très Généreux' },
+            { id: 'w4', text: 'ٱلَّذِى عَلَّمَ بِٱلْقَلَمِ', root: 'A-L-M', trans: 'qui a enseigné par la plume' },
+            { id: 'w5', text: 'عَلَّمَ ٱلْإِنسَٰنَ مَا لَمْ يَعْلَمْ', root: 'A-L-M', trans: 'a enseigné à l\'homme ce qu\'il ne savait pas' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ', id: 1}, {text: 'خَلَقَ ٱلْإِنسَٰنَ مِنْ عَلَقٍ', id: 2}, {text: 'ٱقْرَأْ وَرَبُّكَ ٱلْأَكْرَمُ', id: 3}, {text: 'عَلَّمَ ٱلْإِنسَٰنَ مَا لَمْ يَعْلَمْ', id: 4}],
+        rightCol: [{text: 'Lis, au nom de ton Seigneur qui a créé', id: 1}, {text: 'qui a créé l\'homme d\'une adhérence', id: 2}, {text: 'Ton Seigneur est le Très Généreux', id: 3}, {text: 'a enseigné à l\'homme ce qu\'il ne savait pas', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-ʻAlaq (1-5) validée ! Premiers versets révélés au Prophète ﷺ. +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Qadr : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 97, ayah: 1 }, { surah: 97, ayah: 2 }, { surah: 97, ayah: 3 }, { surah: 97, ayah: 4 }, { surah: 97, ayah: 5 }],
+         words: [
+            { id: 'w1', text: 'إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ', root: 'N-Z-L', trans: 'Nous l\'avons fait descendre pendant la Nuit du Destin (Laylat al-Qadr)' },
+            { id: 'w2', text: 'وَمَآ أَدْرَىٰكَ مَا لَيْلَةُ ٱلْقَدْرِ', root: null, trans: 'Et qui te fera savoir ce qu\'est la Nuit du Destin ?' },
+            { id: 'w3', text: 'لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ', root: null, trans: 'La Nuit du Destin est meilleure que mille mois' },
+            { id: 'w4', text: 'تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ', root: 'N-Z-L', trans: 'Les anges et l\'Esprit y descendent, par la permission de leur Seigneur, pour tout ordre' },
+            { id: 'w5', text: 'سَلَٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ', root: 'S-L-M', trans: 'Elle est paix et salut jusqu\'à l\'apparition de l\'aube' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ', id: 1}, {text: 'لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ', id: 2}, {text: 'تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا', id: 3}, {text: 'سَلَٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ', id: 4}],
+        rightCol: [{text: 'Nous l\'avons fait descendre pendant la Nuit du Destin', id: 1}, {text: 'La Nuit du Destin est meilleure que mille mois', id: 2}, {text: 'Les anges et l\'Esprit y descendent', id: 3}, {text: 'Elle est paix jusqu\'à l\'aube', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Qadr validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Ash-Sharḥ : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 94, ayah: 1 }, { surah: 94, ayah: 2 }, { surah: 94, ayah: 3 }, { surah: 94, ayah: 4 }, { surah: 94, ayah: 5 }, { surah: 94, ayah: 6 }, { surah: 94, ayah: 7 }, { surah: 94, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ وَوَضَعْنَا عَنكَ وِزْرَكَ', root: null, trans: 'N\'avons-Nous pas ouvert pour toi ta poitrine et ne t\'avons-Nous pas déchargé de ton fardeau ?' },
+            { id: 'w2', text: 'ٱلَّذِىٓ أَنقَضَ ظَهْرَكَ وَرَفَعْنَا لَكَ ذِكْرَكَ', root: null, trans: 'qui pesait sur ton dos, et n\'avons-Nous pas élevé ta renommée ?' },
+            { id: 'w3', text: 'فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا', root: null, trans: 'Certes, avec la difficulté vient la facilité, certes avec la difficulté vient la facilité' },
+            { id: 'w4', text: 'فَإِذَا فَرَغْتَ فَٱنصَبْ وَإِلَىٰ رَبِّكَ فَٱرْغَب', root: 'R-B-B', trans: 'Quand donc tu en as fini, œuvre encore, et à ton Seigneur aspire' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ', id: 1}, {text: 'ٱلَّذِىٓ أَنقَضَ ظَهْرَكَ', id: 2}, {text: 'فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا', id: 3}, {text: 'وَإِلَىٰ رَبِّكَ فَٱرْغَب', id: 4}],
+        rightCol: [{text: 'N\'avons-Nous pas ouvert pour toi ta poitrine ?', id: 1}, {text: 'qui pesait sur ton dos', id: 2}, {text: 'avec la difficulté vient la facilité', id: 3}, {text: 'et à ton Seigneur aspire', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Ash-Sharḥ validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Aḍ-Ḍuḥā : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 93, ayah: 1 }, { surah: 93, ayah: 2 }, { surah: 93, ayah: 3 }, { surah: 93, ayah: 4 }, { surah: 93, ayah: 5 }, { surah: 93, ayah: 6 }, { surah: 93, ayah: 7 }, { surah: 93, ayah: 8 }, { surah: 93, ayah: 9 }, { surah: 93, ayah: 10 }, { surah: 93, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'وَٱلضُّحَىٰ وَٱلَّيْلِ إِذَا سَجَىٰ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ', root: 'R-B-B', trans: 'Par le Jour montant et la nuit quand elle s\'assombrit ! Ton Seigneur ne t\'a ni abandonné ni détesté' },
+            { id: 'w2', text: 'وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰٓ', root: 'R-B-B', trans: 'La vie future est meilleure pour toi que la vie présente ; ton Seigneur t\'accordera ce qui te satisfera' },
+            { id: 'w3', text: 'أَلَمْ يَجِدْكَ يَتِيمًا فَـَٔاوَىٰ وَوَجَدَكَ ضَآلًّا فَهَدَىٰ وَوَجَدَكَ عَآئِلًا فَأَغْنَىٰ', root: 'H-D-Y', trans: 'Ne t\'a-t-Il pas trouvé orphelin, et Il t\'a accueilli ? Il t\'a trouvé égaré et t\'a guidé, pauvre et t\'a enrichi' },
+            { id: 'w4', text: 'فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ وَأَمَّا ٱلسَّآئِلَ فَلَا تَنْهَرْ وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ', root: 'N-A-M', trans: 'Quant à l\'orphelin, ne le brime pas ; quant au demandeur, ne le repousse pas ; et du bienfait de ton Seigneur, parle' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلضُّحَىٰ', id: 1}, {text: 'وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ', id: 2}, {text: 'أَلَمْ يَجِدْكَ يَتِيمًا فَـَٔاوَىٰ', id: 3}, {text: 'فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ', id: 4}],
+        rightCol: [{text: 'Par le Jour montant !', id: 1}, {text: 'La vie future est meilleure pour toi', id: 2}, {text: 'Ne t\'a-t-Il pas trouvé orphelin et accueilli ?', id: 3}, {text: 'Quant à l\'orphelin, ne le brime pas', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Aḍ-Ḍuḥā validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
