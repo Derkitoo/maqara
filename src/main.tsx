@@ -17,6 +17,20 @@ const updateSW = registerSW({
   onNeedRefresh() {
     updateSW(true);
   },
+  onRegisteredSW(_swUrl, registration) {
+    if (!registration) return;
+    // Le navigateur ne revérifie sw.js que sur certaines navigations (pas en
+    // continu tant que l'app/PWA reste ouverte). Sans ça, un utilisateur qui
+    // garde l'app en arrière-plan pouvait rester sur une version périmée
+    // pendant longtemps avant qu'onNeedRefresh ne se déclenche. On force une
+    // vérification toutes les heures, et à chaque retour au premier plan
+    // (icône PWA rouverte, changement d'onglet) pour détecter les mises à
+    // jour plus vite.
+    setInterval(() => registration.update(), 60 * 60 * 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') registration.update();
+    });
+  },
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
