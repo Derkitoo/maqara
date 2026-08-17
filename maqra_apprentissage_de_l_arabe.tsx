@@ -471,7 +471,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 4,
+       total: 6,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -1429,7 +1429,25 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "عمل" (A-M-L) ?', options: ['Parole', 'Silence', 'Faire, œuvre', 'Pensée'], correctIndex: 2, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'صبر', name: 'Racine S-B-R', instruction: 'La racine S-B-R (صبر) exprime la patience. Elle donne صَبْر (Ṣabr - Patience).', sound: 'S-B-R', illustration: '⏳', mnemonic: 'صَبْر (Ṣabr - Patience)', rootKey: 'S-B-R' },
       { type: 'qcm', instruction: 'Que signifie la racine "صبر" (S-B-R) ?', options: ['Hâte', 'Colère', 'Joie', 'Patience, endurance'], correctIndex: 3, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 4 : parcours Le Secret des Racines terminé, 12 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 4 : 12 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'خلق', name: 'Racine K-L-Q', instruction: 'La racine K-L-Q (خلق) exprime la création. Elle donne خَالِق (Khāliq - Créateur).', sound: 'K-L-Q', illustration: '✨', mnemonic: 'خَالِق (Khāliq - Créateur)', rootKey: 'K-L-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "خلق" (K-L-Q) ?', options: ['Détruire', 'Créer', 'Voyager', 'Compter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'غفر', name: 'Racine GH-F-R', instruction: 'La racine GH-F-R (غفر) exprime le pardon. Elle donne غَفُور (Ghafūr - Très Pardonneur).', sound: 'GH-F-R', illustration: '🤍', mnemonic: 'غَفُور (Ghafūr - Très Pardonneur)', rootKey: 'GH-F-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غفر" (GH-F-R) ?', options: ['Punir', 'Pardonner', 'Oublier', 'Refuser'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عذب', name: 'Racine A-DH-B', instruction: 'La racine A-DH-B (عذب) exprime le châtiment. Elle donne عَذَاب (ʻAdhāb - Châtiment).', sound: 'A-DH-B', illustration: '⚡', mnemonic: 'عَذَاب (ʻAdhāb - Châtiment)', rootKey: 'A-DH-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عذب" (A-DH-B) ?', options: ['Récompenser', 'Châtier', 'Nourrir', 'Guider'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 5 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'شكر', name: 'Racine SH-K-R', instruction: 'La racine SH-K-R (شكر) exprime la gratitude. Elle donne شُكْر (Shukr - Gratitude).', sound: 'SH-K-R', illustration: '🙏', mnemonic: 'شُكْر (Shukr - Gratitude)', rootKey: 'SH-K-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "شكر" (SH-K-R) ?', options: ['Se plaindre', 'Remercier', 'Douter', 'Attendre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'فضل', name: 'Racine F-D-L', instruction: 'La racine F-D-L (فضل) exprime la grâce. Elle donne فَضْل (Faḍl - Grâce).', sound: 'F-D-L', illustration: '🌟', mnemonic: 'فَضْل (Faḍl - Grâce)', rootKey: 'F-D-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "فضل" (F-D-L) ?', options: ['Dette', 'Grâce, faveur', 'Épreuve', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'جزي', name: 'Racine J-Z-Y', instruction: 'La racine J-Z-Y (جزي) exprime la rétribution. Elle donne جَزَاء (Jazāʼ - Rétribution).', sound: 'J-Z-Y', illustration: '⚖️', mnemonic: 'جَزَاء (Jazāʼ - Rétribution)', rootKey: 'J-Z-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جزي" (J-Z-Y) ?', options: ['Voyager', 'Rétribuer', 'Dormir', 'Construire'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 6 : parcours Le Secret des Racines terminé, 18 racines explorées ! +20 XP' }
     ]
   ];
 
