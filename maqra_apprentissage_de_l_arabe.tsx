@@ -435,7 +435,7 @@ export default function ArabicLearningApp() {
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 0,
-      total: 9,
+      total: 11,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
       tagColor: 'bg-green-200 text-green-800'
@@ -903,6 +903,67 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'بٌ', instruction: 'Tracez "Bun" avec le Tanwīn Ḍamm.' },
       { type: 'qcm', instruction: 'Comment se prononce "بٌ" ?', options: ['Ban', 'Bin', 'Bun', 'Bu'], correctIndex: 2, textStyle: 'text-5xl' },
       { type: 'success', instruction: 'Leçon 9 terminée ! Le système complet des harakat est maîtrisé : vous pouvez lire n\'importe quel mot du Qaïda avec ses voyelles. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'الشَّمْس',
+        name: 'Lettre solaire (Ash-Shams)',
+        instruction: 'Devant une lettre solaire, le "ل" de "al-" ne se prononce pas : il s\'assimile et la lettre suivante double. "الشمس" se lit "Ash-Shams", pas "Al-Shams".',
+        sound: 'Ash-Shams',
+        illustration: '☀️',
+        mnemonic: 'Le "ل" disparaît à l\'oral'
+      },
+      { type: 'trace', letter: 'الشَّمْس', instruction: 'Tracez "Ash-Shams" (remarquez la Shadda qui remplace le Lām).' },
+      { type: 'qcm', instruction: 'Comment se lit "الرَّحْمَٰن" ?', options: ['Al-Raḥmān', 'Ar-Raḥmān', 'Ala-Raḥmān', 'Ral-Aḥmān'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'الْقَمَر',
+        name: 'Lettre lunaire (Al-Qamar)',
+        instruction: 'Devant une lettre lunaire, le "ل" de "al-" se prononce normalement, avec un Sukūn. "القمر" se lit "Al-Qamar".',
+        sound: 'Al-Qamar',
+        illustration: '🌙',
+        mnemonic: 'Le "ل" se prononce clairement'
+      },
+      { type: 'trace', letter: 'الْقَمَر', instruction: 'Tracez "Al-Qamar" (le Lām garde son Sukūn, bien visible).' },
+      { type: 'qcm', instruction: 'Comment se lit "الْكِتَاب" (Le Livre) ?', options: ['Ak-Kitāb', 'Al-Kitāb', 'Akitāb', 'Alik-Tāb'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 10 terminée ! Vous distinguez les lettres solaires et lunaires (الشمسية والقمرية). +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'قَالَ',
+        name: 'Madd par Alif',
+        instruction: 'Un Alif (ا) placé après une Fatḥa allonge le son "a" : قَالَ se lit "Qāla", avec un "a" nettement plus long que dans قَلَ.',
+        sound: 'Qāla',
+        illustration: '➖',
+        mnemonic: 'Fatḥa + Alif = "ā" long'
+      },
+      { type: 'trace', letter: 'قَالَ', instruction: 'Tracez "Qāla" (remarquez l\'Alif après le Qāf).' },
+      { type: 'qcm', instruction: 'Comment se prononce "قَالَ" avec le Madd ?', options: ['Qala (bref)', 'Qāla (long)', 'Qila', 'Qula'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'يَقُولُ',
+        name: 'Madd par Wāw',
+        instruction: 'Un Wāw (و) placé après une Ḍamma allonge le son "u" : يَقُولُ se lit "Yaqūlu", avec un "u" nettement plus long.',
+        sound: 'Yaqūlu',
+        illustration: '➖',
+        mnemonic: 'Ḍamma + Wāw = "ū" long'
+      },
+      { type: 'trace', letter: 'يَقُولُ', instruction: 'Tracez "Yaqūlu" (remarquez le Wāw après le Qāf).' },
+      { type: 'qcm', instruction: 'Comment se prononce "يَقُولُ" avec le Madd ?', options: ['Yaqulu (bref)', 'Yaqūlu (long)', 'Yaqila', 'Yaqola'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'فِيهِ',
+        name: 'Madd par Yāʼ',
+        instruction: 'Un Yāʼ (ي) placé après une Kasra allonge le son "i" : فِيهِ se lit "Fīhi", avec un "i" nettement plus long.',
+        sound: 'Fīhi',
+        illustration: '➖',
+        mnemonic: 'Kasra + Yāʼ = "ī" long'
+      },
+      { type: 'trace', letter: 'فِيهِ', instruction: 'Tracez "Fīhi" (remarquez le Yāʼ après le Fāʼ).' },
+      { type: 'qcm', instruction: 'Comment se prononce "فِيهِ" avec le Madd ?', options: ['Fihi (bref)', 'Fīhi (long)', 'Faihi', 'Fahi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 11 terminée ! Les trois lettres de Madd (ا و ي) n\'ont plus de secret : vous savez allonger les voyelles longues. +20 XP' }
     ]
   ];
 
