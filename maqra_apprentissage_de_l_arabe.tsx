@@ -161,6 +161,7 @@ export default function ArabicLearningApp() {
   const [isAnswerChecked, setIsAnswerChecked] = useState(false);
   const [activeLesson, setActiveLesson] = useState([]);
   const [activeModuleId, setActiveModuleId] = useState(null);
+  const [previewLesson, setPreviewLesson] = useState(null);
   const [matchLeft, setMatchLeft] = useState(null);
   const [matchRight, setMatchRight] = useState(null);
   const [matchWrong, setMatchWrong] = useState(false);
@@ -1248,6 +1249,37 @@ export default function ArabicLearningApp() {
     ]
   ];
 
+  // Associe chaque module à son tableau de leçons, pour l'écran de liste
+  // des leçons et l'aperçu en lecture seule (sans lancer l'exercice).
+  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons };
+
+  // Extrait les éléments à afficher dans l'aperçu d'une leçon (lettres,
+  // mots ou versets), sans dépendre de la logique interactive du quiz.
+  const getLessonPreviewItems = (lessonSteps) => {
+    const items = [];
+    (lessonSteps || []).forEach((step, i) => {
+      if (step.type === 'intro') {
+        items.push({ key: `${i}`, main: step.letter, sub: step.name });
+      } else if (step.type === 'reading' && step.words) {
+        step.words.forEach((w) => items.push({ key: w.id, main: w.text, sub: w.trans }));
+      }
+    });
+    return items;
+  };
+
+  const startLesson = (moduleId, lessonIndex) => {
+    const lessons = moduleLessonsMap[moduleId] || [];
+    setActiveModuleId(moduleId);
+    setActiveLesson(lessons[lessonIndex]);
+    resetLessonStates();
+    setCurrentScreen('lesson');
+  };
+
+  const openLessonPreview = (moduleId, lessonIndex) => {
+    setPreviewLesson({ moduleId, lessonIndex });
+    setCurrentScreen('lessonPreview');
+  };
+
   const streakData = [
     { date: 'Août 10', status: 'fire' },
     { date: 'Août 11', status: 'fire' },
@@ -1360,29 +1392,19 @@ export default function ArabicLearningApp() {
   const handleModuleClick = (moduleId) => {
     setActiveModuleId(moduleId);
     const mod = modules.find(m => m.id === moduleId);
-    const pickLesson = (lessons) => lessons[Math.min(mod ? mod.progress : 0, lessons.length - 1)];
 
-    if (moduleId === 1) {
-      setActiveLesson(pickLesson(qaidaLessons));
-      resetLessonStates();
-      setCurrentScreen('lesson');
-    } else if (moduleId === 2) {
-      setActiveLesson(pickLesson(quranLessons));
-      resetLessonStates();
-      setCurrentScreen('lesson');
-    } else if (moduleId === 3) {
-       setActiveLesson(pickLesson(freqVocabLessons));
-       resetLessonStates();
-       setCurrentScreen('lesson');
-    } else if (moduleId === 4) {
-      if (mod && mod.progress >= mod.total) {
-        setCurrentScreen('roots');
-      } else {
-        setActiveLesson(pickLesson(rootsLessons));
-        resetLessonStates();
-        setCurrentScreen('lesson');
-      }
+    // Le module 4, une fois toutes ses leçons terminées, ouvre l'encyclopédie
+    // des racines en libre consultation plutôt que la liste de leçons.
+    if (moduleId === 4 && mod && mod.progress >= mod.total) {
+      setCurrentScreen('roots');
+      return;
     }
+
+    // Sinon, on affiche toujours la liste des leçons du module : chaque
+    // leçon montre son contenu (aperçu) au clic, et ne se lance vraiment
+    // que si elle est débloquée par la progression (voir startLesson /
+    // openLessonPreview dans renderModuleLessonsList).
+    setCurrentScreen('moduleLessons');
   };
 
   const handleActionClick = () => {
@@ -1556,6 +1578,93 @@ export default function ArabicLearningApp() {
       </div>
     </div>
   );
+
+  const renderModuleLessonsList = () => {
+    const mod = modules.find(m => m.id === activeModuleId);
+    const lessons = moduleLessonsMap[activeModuleId] || [];
+    if (!mod) return null;
+    return (
+      <div className="flex-1 flex flex-col bg-[#f3efe4]">
+        <div className="px-6 py-4 flex items-center justify-between">
+          <button onClick={() => setCurrentScreen('dashboard')} className="text-gray-400 hover:text-gray-700 transition-colors">
+            <X size={24}/>
+          </button>
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{mod.title}</span>
+          <div className="w-6"></div>
+        </div>
+        <div className="flex-1 overflow-y-auto px-6 pb-10 hide-scrollbar">
+          <p className="text-sm text-gray-500 mb-5 leading-relaxed">{mod.description}</p>
+          <div className="space-y-3">
+            {lessons.map((lessonSteps, idx) => {
+              const isDone = idx < mod.progress;
+              const isCurrent = idx === mod.progress;
+              const isLocked = idx > mod.progress;
+              const itemCount = getLessonPreviewItems(lessonSteps).length;
+              return (
+                <div
+                  key={idx}
+                  onClick={() => isLocked ? openLessonPreview(activeModuleId, idx) : startLesson(activeModuleId, idx)}
+                  className={`rounded-2xl p-4 flex items-center gap-3 cursor-pointer border transition-colors ${
+                    isDone ? 'bg-green-50 border-green-200' :
+                    isCurrent ? `${mod.color} border-transparent shadow-sm` :
+                    'bg-white border-gray-200 opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <div className={`w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center text-lg ${
+                    isDone ? 'bg-green-500 text-white' : isLocked ? 'bg-gray-200 text-gray-400' : 'bg-white'
+                  }`}>
+                    {isDone ? '✓' : isLocked ? '🔒' : mod.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-gray-900">Leçon {idx + 1}</p>
+                    <p className="text-xs text-gray-500">
+                      {isLocked ? 'Verrouillée — terminez la leçon précédente' : `${itemCount} élément${itemCount > 1 ? 's' : ''}`}
+                    </p>
+                  </div>
+                  {isLocked && <span className="text-[11px] font-bold text-indigo-500 flex-shrink-0">Aperçu →</span>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderLessonPreview = () => {
+    if (!previewLesson) return null;
+    const mod = modules.find(m => m.id === previewLesson.moduleId);
+    const lessons = moduleLessonsMap[previewLesson.moduleId] || [];
+    const steps = lessons[previewLesson.lessonIndex] || [];
+    const items = getLessonPreviewItems(steps);
+    const isLocked = mod ? previewLesson.lessonIndex > mod.progress : false;
+    return (
+      <div className="flex-1 flex flex-col bg-[#f3efe4]">
+        <div className="px-6 py-4 flex items-center justify-between">
+          <button onClick={() => setCurrentScreen('moduleLessons')} className="text-gray-400 hover:text-gray-700 transition-colors">
+            <X size={24}/>
+          </button>
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Leçon {previewLesson.lessonIndex + 1} · Aperçu</span>
+          <div className="w-6"></div>
+        </div>
+        <div className="flex-1 overflow-y-auto px-6 pb-10 hide-scrollbar">
+          {isLocked && (
+            <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 mb-5 text-sm text-indigo-700 font-medium leading-relaxed">
+              🔒 Terminez les leçons précédentes pour pouvoir jouer celle-ci. Vous pouvez déjà en voir le contenu ci-dessous.
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-3">
+            {items.map((item, i) => (
+              <div key={item.key ?? i} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm text-center">
+                <p className="font-arabic text-2xl font-bold text-gray-900 mb-1 leading-snug">{item.main}</p>
+                <p className="text-xs text-gray-500">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const renderLesson = () => {
     if (!activeLesson || activeLesson.length === 0) return null;
@@ -2773,6 +2882,8 @@ export default function ArabicLearningApp() {
         {currentScreen === 'onboarding' && renderOnboarding()}
         {currentScreen === 'launch' && renderLaunch()}
         {currentScreen === 'dashboard' && renderDashboard()}
+        {currentScreen === 'moduleLessons' && renderModuleLessonsList()}
+        {currentScreen === 'lessonPreview' && renderLessonPreview()}
         {currentScreen === 'revision' && renderRevision()}
         {currentScreen === 'lesson' && renderLesson()}
         {currentScreen === 'profile' && renderProfile()}
@@ -2785,7 +2896,7 @@ export default function ArabicLearningApp() {
         {renderContextualRootModal()}
         {renderProModal()}
 
-        {(currentScreen !== 'onboarding' && currentScreen !== 'launch' && currentScreen !== 'lesson' && currentScreen !== 'ai-tutor' && currentScreen !== 'roots' && currentScreen !== 'survival') && (
+        {(currentScreen !== 'onboarding' && currentScreen !== 'launch' && currentScreen !== 'lesson' && currentScreen !== 'ai-tutor' && currentScreen !== 'roots' && currentScreen !== 'survival' && currentScreen !== 'moduleLessons' && currentScreen !== 'lessonPreview') && (
           <div className="absolute bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 shadow-[0_-8px_24px_rgba(0,0,0,0.04)]">
              <div className="relative flex items-center px-2 pt-2.5 pb-3.5">
                 <button onClick={() => setCurrentScreen('dashboard')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'dashboard' ? 'text-sky-600' : 'text-gray-400'}`}>
