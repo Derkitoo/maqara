@@ -375,7 +375,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 11,
+      total: 14,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -1068,7 +1068,74 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'لِإِيلَافِ قُرَيْشٍ', id: 1}, {text: 'إِيلَافِهِمْ رِحْلَةَ ٱلشِّتَاءِ وَٱلصَّيْفِ', id: 2}, {text: 'فَلْيَعْبُدُوا رَبَّ هَٰذَا ٱلْبَيْتِ', id: 3}, {text: 'ٱلَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ', id: 4}],
         rightCol: [{text: 'Pour l\'accoutumance des Quraysh', id: 1}, {text: 'leur voyage d\'hiver et d\'été', id: 2}, {text: 'Qu\'ils adorent le Seigneur de cette Maison', id: 3}, {text: 'qui les a nourris et rassurés de la peur', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Quraysh validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Quraysh validée ! +25 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Fīl : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 105, ayah: 1 }, { surah: 105, ayah: 2 }, { surah: 105, ayah: 3 }, { surah: 105, ayah: 4 }, { surah: 105, ayah: 5 }],
+         words: [
+            { id: 'w1', text: 'أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ ٱلْفِيلِ', root: 'R-B-B', trans: 'N\'as-tu pas vu comment ton Seigneur a agi envers les gens de l\'Éléphant ?' },
+            { id: 'w2', text: 'أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ', root: null, trans: 'N\'a-t-Il pas réduit leur stratagème à néant ?' },
+            { id: 'w3', text: 'وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ', root: null, trans: 'Et envoyé sur eux des oiseaux par volées' },
+            { id: 'w4', text: 'تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ', root: null, trans: 'qui leur lançaient des pierres d\'argile durcie' },
+            { id: 'w5', text: 'فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ', root: null, trans: 'et Il les a rendus semblables à une paille mâchée' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ ٱلْفِيلِ', id: 1}, {text: 'وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ', id: 2}, {text: 'تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ', id: 3}, {text: 'فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ', id: 4}],
+        rightCol: [{text: 'Comment ton Seigneur a agi envers les gens de l\'Éléphant', id: 1}, {text: 'Il envoya sur eux des oiseaux par volées', id: 2}, {text: 'qui leur lançaient des pierres d\'argile durcie', id: 3}, {text: 'semblables à une paille mâchée', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Fīl validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Humaza : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 104, ayah: 1 }, { surah: 104, ayah: 2 }, { surah: 104, ayah: 3 }, { surah: 104, ayah: 4 }, { surah: 104, ayah: 5 }, { surah: 104, ayah: 6 }, { surah: 104, ayah: 7 }, { surah: 104, ayah: 8 }, { surah: 104, ayah: 9 }],
+         words: [
+            { id: 'w1', text: 'وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ', root: null, trans: 'Malheur à tout calomniateur diffamateur' },
+            { id: 'w2', text: 'ٱلَّذِي جَمَعَ مَالًا وَعَدَّدَهُ', root: null, trans: 'qui amasse une fortune et la compte' },
+            { id: 'w3', text: 'يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ', root: null, trans: 'pensant que sa fortune l\'immortalisera' },
+            { id: 'w4', text: 'كَلَّا لَيُنۢبَذَنَّ فِى ٱلْحُطَمَةِ', root: null, trans: 'Non ! Il sera certes jeté dans le Brasier' },
+            { id: 'w5', text: 'وَمَآ أَدْرَىٰكَ مَا ٱلْحُطَمَةُ', root: null, trans: 'Et qui te fera savoir ce qu\'est le Brasier ?' },
+            { id: 'w6', text: 'نَارُ ٱللَّهِ ٱلْمُوقَدَةُ ٱلَّتِى تَطَّلِعُ عَلَى ٱلْأَفْـِٔدَةِ', root: 'A-L-H', trans: 'Le Feu attisé d\'Allah, qui monte jusqu\'aux cœurs' },
+            { id: 'w7', text: 'إِنَّهَا عَلَيْهِم مُّؤْصَدَةٌ فِى عَمَدٍ مُّمَدَّدَةٍۭ', root: null, trans: 'Il se refermera sur eux en colonnes étendues' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَيْلٌ لِّكُلِّ هُمَزَةٍ لُّمَزَةٍ', id: 1}, {text: 'يَحْسَبُ أَنَّ مَالَهُ أَخْلَدَهُ', id: 2}, {text: 'كَلَّا لَيُنۢبَذَنَّ فِى ٱلْحُطَمَةِ', id: 3}, {text: 'نَارُ ٱللَّهِ ٱلْمُوقَدَةُ', id: 4}],
+        rightCol: [{text: 'Malheur à tout calomniateur diffamateur', id: 1}, {text: 'pensant que sa fortune l\'immortalisera', id: 2}, {text: 'Il sera jeté dans le Brasier', id: 3}, {text: 'Le Feu attisé d\'Allah', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Humaza validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Māʻūn : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 107, ayah: 1 }, { surah: 107, ayah: 2 }, { surah: 107, ayah: 3 }, { surah: 107, ayah: 4 }, { surah: 107, ayah: 5 }, { surah: 107, ayah: 6 }, { surah: 107, ayah: 7 }],
+         words: [
+            { id: 'w1', text: 'أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ', root: null, trans: 'As-tu vu celui qui traite de mensonge la Rétribution ?' },
+            { id: 'w2', text: 'فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ', root: null, trans: 'C\'est celui qui repousse l\'orphelin et n\'incite pas à nourrir le pauvre' },
+            { id: 'w3', text: 'فَوَيْلٌ لِّلْمُصَلِّينَ ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ', root: null, trans: 'Malheur à ceux qui prient tout en étant distraits de leur prière' },
+            { id: 'w4', text: 'ٱلَّذِينَ هُمْ يُرَآءُونَ وَيَمْنَعُونَ ٱلْمَاعُونَ', root: null, trans: 'qui sont pleins d\'ostentation et refusent l\'entraide' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ', id: 1}, {text: 'فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ', id: 2}, {text: 'فَوَيْلٌ لِّلْمُصَلِّينَ', id: 3}, {text: 'وَيَمْنَعُونَ ٱلْمَاعُونَ', id: 4}],
+        rightCol: [{text: 'As-tu vu celui qui traite de mensonge la Rétribution', id: 1}, {text: 'C\'est celui qui repousse l\'orphelin', id: 2}, {text: 'Malheur à ceux qui prient (avec négligence)', id: 3}, {text: 'et refusent l\'entraide', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Māʻūn validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
