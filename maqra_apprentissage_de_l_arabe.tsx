@@ -414,6 +414,186 @@ export default function ArabicLearningApp() {
         { translit: 'Jazā', trans: 'Il a rétribué', arabic: 'جَزَى' },
         { translit: 'Jazāka Llāhu Khayran', trans: 'Que Dieu te rétribue en bien', arabic: 'جَزَاكَ ٱللَّٰهُ خَيْرًا' }
       ]
+    },
+    'N-Z-L': {
+      arabic: 'نزل',
+      trans: 'Descendre, révéler',
+      words: [
+        { word: 'نُزُول', trans: 'Nuzūl', meaning: 'Descente', icon: '⬇️', desc: 'L\'action de descendre, employée pour la révélation du Coran.' },
+        { word: 'مُنَزَّل', trans: 'Munazzal', meaning: 'Révélé', icon: '📜', desc: 'Ce qui a été fait descendre, envoyé par Dieu.' }
+      ],
+      derivatives: [
+        { translit: 'Nazzala', trans: 'Il a fait descendre (révélé)', arabic: 'نَزَّلَ' },
+        { translit: 'Tanzīl', trans: 'La Révélation', arabic: 'تَنْزِيل' }
+      ]
+    },
+    'H-D-Y': {
+      arabic: 'هدي',
+      trans: 'Guider',
+      words: [
+        { word: 'هُدًى', trans: 'Hudā', meaning: 'Guidance', icon: '🧭', desc: 'La direction juste envoyée par Dieu.' },
+        { word: 'هَادِي', trans: 'Hādī', meaning: 'Guide', icon: '🌟', desc: 'Celui qui montre le chemin, un des noms divins.' }
+      ],
+      derivatives: [
+        { translit: 'Hadā', trans: 'Il a guidé', arabic: 'هَدَى' },
+        { translit: 'Ihtadā', trans: 'Il s\'est laissé guider', arabic: 'ٱهْتَدَى' }
+      ]
+    },
+    'W-Q-Y': {
+      arabic: 'وقي',
+      trans: 'Protéger, craindre',
+      words: [
+        { word: 'تَقْوَى', trans: 'Taqwā', meaning: 'Piété', icon: '🛡️', desc: 'La conscience de Dieu qui protège du péché.' },
+        { word: 'وَاقِي', trans: 'Wāqī', meaning: 'Protecteur', icon: '🤲', desc: 'Celui qui préserve du mal.' }
+      ],
+      derivatives: [
+        { translit: 'Ittaqā', trans: 'Il a craint Dieu (avec piété)', arabic: 'ٱتَّقَى' },
+        { translit: 'Muttaqīn', trans: 'Les pieux', arabic: 'مُتَّقِين' }
+      ]
+    },
+    'J-N-N': {
+      arabic: 'جنن',
+      trans: 'Cacher, jardin',
+      words: [
+        { word: 'جَنَّة', trans: 'Jannah', meaning: 'Paradis, jardin', icon: '🌳', desc: 'Le jardin promis aux croyants, "caché" par sa végétation.' },
+        { word: 'جِنّ', trans: 'Jinn', meaning: 'Djinn', icon: '👻', desc: 'Créature invisible, cachée aux yeux des hommes.' }
+      ],
+      derivatives: [
+        { translit: 'Junna', trans: 'Il a été rendu fou (esprit "caché")', arabic: 'جُنَّ' },
+        { translit: 'Jannāt ʻAdn', trans: 'Les jardins d\'Éden', arabic: 'جَنَّات عَدْن' }
+      ]
+    },
+    'H-Y-Y': {
+      arabic: 'حيي',
+      trans: 'Vivre',
+      words: [
+        { word: 'حَيَاة', trans: 'Ḥayāh', meaning: 'Vie', icon: '🌱', desc: 'La vie de ce monde, souvent comparée à celle de l\'au-delà.' },
+        { word: 'حَيّ', trans: 'Ḥayy', meaning: 'Vivant', icon: '💚', desc: 'Un des noms divins : Le Vivant, qui ne meurt jamais.' }
+      ],
+      derivatives: [
+        { translit: 'Aḥyā', trans: 'Il a donné la vie', arabic: 'أَحْيَا' },
+        { translit: 'Al-Ḥayy Al-Qayyūm', trans: 'Le Vivant, Celui qui subsiste par Lui-même', arabic: 'ٱلْحَيُّ ٱلْقَيُّوم' }
+      ]
+    },
+    'M-W-T': {
+      arabic: 'موت',
+      trans: 'Mourir',
+      words: [
+        { word: 'مَوْت', trans: 'Mawt', meaning: 'Mort', icon: '🕊️', desc: 'La fin de la vie terrestre, thème central du Coran.' },
+        { word: 'مَيِّت', trans: 'Mayyit', meaning: 'Mort, défunt', icon: '⚰️', desc: 'Celui qui a quitté la vie.' }
+      ],
+      derivatives: [
+        { translit: 'Māta', trans: 'Il est mort', arabic: 'مَاتَ' },
+        { translit: 'Yumītu', trans: 'Il fait mourir', arabic: 'يُمِيتُ' }
+      ]
+    },
+    'S-L-W': {
+      arabic: 'صلو',
+      trans: 'Prier',
+      words: [
+        { word: 'صَلَاة', trans: 'Ṣalāh', meaning: 'Prière', icon: '🕌', desc: 'Le deuxième pilier de l\'Islam, la prière rituelle.' },
+        { word: 'مُصَلِّي', trans: 'Muṣallī', meaning: 'Priant', icon: '🙇', desc: 'Celui qui accomplit la prière.' }
+      ],
+      derivatives: [
+        { translit: 'Ṣallā', trans: 'Il a prié', arabic: 'صَلَّى' },
+        { translit: 'Muṣallā', trans: 'Lieu de prière', arabic: 'مُصَلَّى' }
+      ]
+    },
+    'Z-K-W': {
+      arabic: 'زكو',
+      trans: 'Purifier',
+      words: [
+        { word: 'زَكَاة', trans: 'Zakāh', meaning: 'Aumône purificatrice', icon: '🤲', desc: 'Le troisième pilier, l\'aumône obligatoire qui purifie les biens.' },
+        { word: 'زَكِيّ', trans: 'Zakiyy', meaning: 'Pur', icon: '💎', desc: 'Ce qui est purifié, exempt de défaut.' }
+      ],
+      derivatives: [
+        { translit: 'Zakkā', trans: 'Il a purifié', arabic: 'زَكَّى' },
+        { translit: 'Tazkiya', trans: 'Purification de l\'âme', arabic: 'تَزْكِيَة' }
+      ]
+    },
+    'R-S-L': {
+      arabic: 'رسل',
+      trans: 'Envoyer',
+      words: [
+        { word: 'رَسُول', trans: 'Rasūl', meaning: 'Messager', icon: '📜', desc: 'Celui qui transmet un message divin à son peuple.' },
+        { word: 'رِسَالَة', trans: 'Risāla', meaning: 'Message', icon: '✉️', desc: 'Ce qui est transmis par le messager.' }
+      ],
+      derivatives: [
+        { translit: 'Arsala', trans: 'Il a envoyé', arabic: 'أَرْسَلَ' },
+        { translit: 'Ar-Rusul', trans: 'Les Messagers', arabic: 'ٱلرُّسُل' }
+      ]
+    },
+    'A-L-M': {
+      arabic: 'علم',
+      trans: 'Savoir',
+      words: [
+        { word: 'عِلْم', trans: 'ʻIlm', meaning: 'Savoir', icon: '🧠', desc: 'La connaissance, très valorisée dans la tradition islamique.' },
+        { word: 'عَالِم', trans: 'ʻĀlim', meaning: 'Savant', icon: '📚', desc: 'Celui qui détient le savoir.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAlima', trans: 'Il a su', arabic: 'عَلِمَ' },
+        { translit: 'Al-ʻAlīm', trans: 'L\'Omniscient (nom divin)', arabic: 'ٱلْعَلِيم' }
+      ]
+    },
+    'H-K-M': {
+      arabic: 'حكم',
+      trans: 'Juger, sagesse',
+      words: [
+        { word: 'حِكْمَة', trans: 'Ḥikma', meaning: 'Sagesse', icon: '🦉', desc: 'Le savoir juste mis en pratique avec discernement.' },
+        { word: 'حَاكِم', trans: 'Ḥākim', meaning: 'Juge, dirigeant', icon: '⚖️', desc: 'Celui qui rend le jugement.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥakama', trans: 'Il a jugé', arabic: 'حَكَمَ' },
+        { translit: 'Al-Ḥakīm', trans: 'Le Sage (nom divin)', arabic: 'ٱلْحَكِيم' }
+      ]
+    },
+    'Q-D-R': {
+      arabic: 'قدر',
+      trans: 'Pouvoir, destin',
+      words: [
+        { word: 'قُدْرَة', trans: 'Qudra', meaning: 'Pouvoir', icon: '💪', desc: 'La capacité et la puissance, en particulier celle de Dieu.' },
+        { word: 'قَدَر', trans: 'Qadar', meaning: 'Destin', icon: '🌌', desc: 'Le décret divin, ce qui a été prédestiné.' }
+      ],
+      derivatives: [
+        { translit: 'Qadara', trans: 'Il a déterminé', arabic: 'قَدَرَ' },
+        { translit: 'Al-Qadīr', trans: 'Le Tout-Puissant (nom divin)', arabic: 'ٱلْقَدِير' }
+      ]
+    },
+    'N-A-M': {
+      arabic: 'نعم',
+      trans: 'Bienfait',
+      words: [
+        { word: 'نِعْمَة', trans: 'Niʻma', meaning: 'Bienfait', icon: '🎁', desc: 'Toute grâce accordée par Dieu à Ses créatures.' },
+        { word: 'مُنْعِم', trans: 'Munʻim', meaning: 'Bienfaiteur', icon: '💫', desc: 'Celui qui accorde des bienfaits.' }
+      ],
+      derivatives: [
+        { translit: 'Anʻama', trans: 'Il a comblé de bienfaits', arabic: 'أَنْعَمَ' },
+        { translit: 'Niʻam Allāh', trans: 'Les bienfaits de Dieu', arabic: 'نِعَم ٱللَّٰه' }
+      ]
+    },
+    'H-B-B': {
+      arabic: 'حبب',
+      trans: 'Aimer',
+      words: [
+        { word: 'حُبّ', trans: 'Ḥubb', meaning: 'Amour', icon: '❤️', desc: 'L\'attachement profond, envers Dieu ou entre les hommes.' },
+        { word: 'مَحَبَّة', trans: 'Maḥabba', meaning: 'Affection', icon: '💞', desc: 'Le sentiment d\'amour et de tendresse.' }
+      ],
+      derivatives: [
+        { translit: 'Aḥabba', trans: 'Il a aimé', arabic: 'أَحَبَّ' },
+        { translit: 'Ḥabīb', trans: 'Bien-aimé', arabic: 'حَبِيب' }
+      ]
+    },
+    'B-R-K': {
+      arabic: 'برك',
+      trans: 'Bénir',
+      words: [
+        { word: 'بَرَكَة', trans: 'Baraka', meaning: 'Bénédiction', icon: '🌿', desc: 'L\'accroissement du bien, invisible mais tangible.' },
+        { word: 'مُبَارَك', trans: 'Mubārak', meaning: 'Béni', icon: '✨', desc: 'Ce qui a reçu la bénédiction divine.' }
+      ],
+      derivatives: [
+        { translit: 'Bāraka', trans: 'Il a béni', arabic: 'بَارَكَ' },
+        { translit: 'Tabāraka Llāh', trans: 'Béni soit Dieu', arabic: 'تَبَارَكَ ٱللَّٰه' }
+      ]
     }
   };
 
@@ -471,7 +651,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 6,
+       total: 11,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -1447,7 +1627,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "فضل" (F-D-L) ?', options: ['Dette', 'Grâce, faveur', 'Épreuve', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'جزي', name: 'Racine J-Z-Y', instruction: 'La racine J-Z-Y (جزي) exprime la rétribution. Elle donne جَزَاء (Jazāʼ - Rétribution).', sound: 'J-Z-Y', illustration: '⚖️', mnemonic: 'جَزَاء (Jazāʼ - Rétribution)', rootKey: 'J-Z-Y' },
       { type: 'qcm', instruction: 'Que signifie la racine "جزي" (J-Z-Y) ?', options: ['Voyager', 'Rétribuer', 'Dormir', 'Construire'], correctIndex: 1, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 6 : parcours Le Secret des Racines terminé, 18 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 6 : 18 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نزل', name: 'Racine N-Z-L', instruction: 'La racine N-Z-L (نزل) exprime la descente. Elle donne نُزُول (Nuzūl - Descente), employée pour la révélation.', sound: 'N-Z-L', illustration: '⬇️', mnemonic: 'نُزُول (Nuzūl - Descente)', rootKey: 'N-Z-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نزل" (N-Z-L) ?', options: ['Monter', 'Descendre, révéler', 'Voyager', 'Courir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'هدي', name: 'Racine H-D-Y', instruction: 'La racine H-D-Y (هدي) exprime le guidage. Elle donne هُدًى (Hudā - Guidance).', sound: 'H-D-Y', illustration: '🧭', mnemonic: 'هُدًى (Hudā - Guidance)', rootKey: 'H-D-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "هدي" (H-D-Y) ?', options: ['Égarer', 'Guider', 'Punir', 'Attendre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وقي', name: 'Racine W-Q-Y', instruction: 'La racine W-Q-Y (وقي) exprime la protection. Elle donne تَقْوَى (Taqwā - Piété).', sound: 'W-Q-Y', illustration: '🛡️', mnemonic: 'تَقْوَى (Taqwā - Piété)', rootKey: 'W-Q-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وقي" (W-Q-Y) ?', options: ['Exposer', 'Protéger, craindre', 'Vendre', 'Oublier'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 7 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جنن', name: 'Racine J-N-N', instruction: 'La racine J-N-N (جنن) exprime ce qui est caché. Elle donne جَنَّة (Jannah - Paradis, jardin caché par sa végétation).', sound: 'J-N-N', illustration: '🌳', mnemonic: 'جَنَّة (Jannah - Paradis)', rootKey: 'J-N-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جنن" (J-N-N) ?', options: ['Cacher, jardin', 'Ouvrir', 'Brûler', 'Compter'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حيي', name: 'Racine H-Y-Y', instruction: 'La racine H-Y-Y (حيي) exprime la vie. Elle donne حَيَاة (Ḥayāh - Vie).', sound: 'H-Y-Y', illustration: '🌱', mnemonic: 'حَيَاة (Ḥayāh - Vie)', rootKey: 'H-Y-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حيي" (H-Y-Y) ?', options: ['Mourir', 'Vivre', 'Dormir', 'Partir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'موت', name: 'Racine M-W-T', instruction: 'La racine M-W-T (موت) exprime la mort. Elle donne مَوْت (Mawt - Mort), opposée à Ḥayāh.', sound: 'M-W-T', illustration: '🕊️', mnemonic: 'مَوْت (Mawt - Mort)', rootKey: 'M-W-T' },
+      { type: 'qcm', instruction: 'Que signifie la racine "موت" (M-W-T) ?', options: ['Naître', 'Mourir', 'Grandir', 'Voyager'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 8 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'صلو', name: 'Racine S-L-W', instruction: 'La racine S-L-W (صلو) exprime la prière. Elle donne صَلَاة (Ṣalāh - Prière).', sound: 'S-L-W', illustration: '🕌', mnemonic: 'صَلَاة (Ṣalāh - Prière)', rootKey: 'S-L-W' },
+      { type: 'qcm', instruction: 'Que signifie la racine "صلو" (S-L-W) ?', options: ['Prier', 'Jeûner', 'Voyager', 'Donner'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'زكو', name: 'Racine Z-K-W', instruction: 'La racine Z-K-W (زكو) exprime la purification. Elle donne زَكَاة (Zakāh - Aumône purificatrice).', sound: 'Z-K-W', illustration: '🤲', mnemonic: 'زَكَاة (Zakāh - Aumône)', rootKey: 'Z-K-W' },
+      { type: 'qcm', instruction: 'Que signifie la racine "زكو" (Z-K-W) ?', options: ['Salir', 'Purifier', 'Cacher', 'Vendre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'رسل', name: 'Racine R-S-L', instruction: 'La racine R-S-L (رسل) exprime l\'envoi. Elle donne رَسُول (Rasūl - Messager).', sound: 'R-S-L', illustration: '📜', mnemonic: 'رَسُول (Rasūl - Messager)', rootKey: 'R-S-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "رسل" (R-S-L) ?', options: ['Recevoir', 'Envoyer', 'Garder', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 9 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'علم', name: 'Racine A-L-M', instruction: 'La racine A-L-M (علم) exprime le savoir. Elle donne عِلْم (ʻIlm - Savoir).', sound: 'A-L-M', illustration: '🧠', mnemonic: 'عِلْم (ʻIlm - Savoir)', rootKey: 'A-L-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "علم" (A-L-M) ?', options: ['Ignorer', 'Savoir', 'Douter', 'Oublier'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حكم', name: 'Racine H-K-M', instruction: 'La racine H-K-M (حكم) exprime le jugement et la sagesse. Elle donne حِكْمَة (Ḥikma - Sagesse).', sound: 'H-K-M', illustration: '🦉', mnemonic: 'حِكْمَة (Ḥikma - Sagesse)', rootKey: 'H-K-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حكم" (H-K-M) ?', options: ['Juger, sagesse', 'Voyager', 'Construire', 'Dormir'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قدر', name: 'Racine Q-D-R', instruction: 'La racine Q-D-R (قدر) exprime le pouvoir et le destin. Elle donne قُدْرَة (Qudra - Pouvoir).', sound: 'Q-D-R', illustration: '💪', mnemonic: 'قُدْرَة (Qudra - Pouvoir)', rootKey: 'Q-D-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قدر" (Q-D-R) ?', options: ['Faiblesse', 'Pouvoir, destin', 'Silence', 'Doute'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 10 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نعم', name: 'Racine N-A-M', instruction: 'La racine N-A-M (نعم) exprime le bienfait. Elle donne نِعْمَة (Niʻma - Bienfait).', sound: 'N-A-M', illustration: '🎁', mnemonic: 'نِعْمَة (Niʻma - Bienfait)', rootKey: 'N-A-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نعم" (N-A-M) ?', options: ['Épreuve', 'Bienfait', 'Perte', 'Attente'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حبب', name: 'Racine H-B-B', instruction: 'La racine H-B-B (حبب) exprime l\'amour. Elle donne حُبّ (Ḥubb - Amour).', sound: 'H-B-B', illustration: '❤️', mnemonic: 'حُبّ (Ḥubb - Amour)', rootKey: 'H-B-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حبب" (H-B-B) ?', options: ['Haïr', 'Aimer', 'Fuir', 'Ignorer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'برك', name: 'Racine B-R-K', instruction: 'La racine B-R-K (برك) exprime la bénédiction. Elle donne بَرَكَة (Baraka - Bénédiction).', sound: 'B-R-K', illustration: '🌿', mnemonic: 'بَرَكَة (Baraka - Bénédiction)', rootKey: 'B-R-K' },
+      { type: 'qcm', instruction: 'Que signifie la racine "برك" (B-R-K) ?', options: ['Maudire', 'Bénir', 'Détruire', 'Oublier'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 11 : parcours Le Secret des Racines terminé, 33 racines explorées ! +20 XP' }
     ]
   ];
 
