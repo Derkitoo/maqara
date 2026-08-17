@@ -338,7 +338,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 8,
+      total: 11,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -970,7 +970,68 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ', id: 1}, {text: 'مَلِكِ ٱلنَّاسِ', id: 2}, {text: 'إِلَٰهِ ٱلنَّاسِ', id: 3}, {text: 'مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ', id: 4}],
         rightCol: [{text: 'Je cherche protection auprès du Seigneur des hommes', id: 1}, {text: 'Le Souverain des hommes', id: 2}, {text: 'Le Dieu des hommes', id: 3}, {text: 'qu\'il soit des djinns ou des hommes', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate An-Nas validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate An-Nas validée ! +25 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Kawthar : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 108, ayah: 1 }, { surah: 108, ayah: 2 }, { surah: 108, ayah: 3 }],
+         words: [
+            { id: 'w1', text: 'إِنَّا أَعْطَيْنَاكَ ٱلْكَوْثَرَ', root: null, trans: 'Certes, Nous t\'avons accordé l\'Abondance (Al-Kawthar)' },
+            { id: 'w2', text: 'فَصَلِّ لِرَبِّكَ وَٱنْحَرْ', root: 'R-B-B', trans: 'Accomplis donc la prière pour ton Seigneur, et sacrifie' },
+            { id: 'w3', text: 'إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ', root: null, trans: 'Celui qui te hait sera certes sans postérité' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        leftCol: [{text: 'إِنَّا أَعْطَيْنَاكَ ٱلْكَوْثَرَ', id: 1}, {text: 'فَصَلِّ لِرَبِّكَ وَٱنْحَرْ', id: 2}, {text: 'إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ', id: 3}],
+        rightCol: [{text: 'Certes, Nous t\'avons accordé l\'Abondance', id: 1}, {text: 'Accomplis la prière pour ton Seigneur, et sacrifie', id: 2}, {text: 'Celui qui te hait sera sans postérité', id: 3}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Kawthar validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-ʻAsr : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 103, ayah: 1 }, { surah: 103, ayah: 2 }, { surah: 103, ayah: 3 }],
+         words: [
+            { id: 'w1', text: 'وَٱلْعَصْرِ', root: null, trans: 'Par le Temps !' },
+            { id: 'w2', text: 'إِنَّ ٱلْإِنسَانَ لَفِي خُسْرٍ', root: null, trans: 'L\'homme est certes en perdition' },
+            { id: 'w3', text: 'إِلَّا ٱلَّذِينَ آمَنُوا وَعَمِلُوا ٱلصَّالِحَاتِ وَتَوَاصَوْا بِٱلْحَقِّ وَتَوَاصَوْا بِٱلصَّبْرِ', root: null, trans: 'sauf ceux qui croient, accomplissent les bonnes œuvres, se recommandent mutuellement la vérité et se recommandent mutuellement l\'endurance' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }],
+        leftCol: [{text: 'وَٱلْعَصْرِ', id: 1}, {text: 'إِنَّ ٱلْإِنسَانَ لَفِي خُسْرٍ', id: 2}, {text: 'إِلَّا ٱلَّذِينَ آمَنُوا وَعَمِلُوا ٱلصَّالِحَاتِ', id: 3}],
+        rightCol: [{text: 'Par le Temps !', id: 1}, {text: 'L\'homme est certes en perdition', id: 2}, {text: 'sauf ceux qui croient et font le bien', id: 3}]
+      },
+      { type: 'success', instruction: 'Sourate Al-ʻAsr validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Quraysh : appuyez sur chaque verset pour le traduire',
+         verses: [{ surah: 106, ayah: 1 }, { surah: 106, ayah: 2 }, { surah: 106, ayah: 3 }, { surah: 106, ayah: 4 }],
+         words: [
+            { id: 'w1', text: 'لِإِيلَافِ قُرَيْشٍ', root: null, trans: 'Pour l\'accoutumance des Quraysh' },
+            { id: 'w2', text: 'إِيلَافِهِمْ رِحْلَةَ ٱلشِّتَاءِ وَٱلصَّيْفِ', root: null, trans: 'leur accoutumance au voyage d\'hiver et d\'été' },
+            { id: 'w3', text: 'فَلْيَعْبُدُوا رَبَّ هَٰذَا ٱلْبَيْتِ', root: 'A-B-D', trans: 'Qu\'ils adorent donc le Seigneur de cette Maison' },
+            { id: 'w4', text: 'ٱلَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ', root: null, trans: 'qui les a nourris contre la faim et rassurés de la peur' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque verset à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'لِإِيلَافِ قُرَيْشٍ', id: 1}, {text: 'إِيلَافِهِمْ رِحْلَةَ ٱلشِّتَاءِ وَٱلصَّيْفِ', id: 2}, {text: 'فَلْيَعْبُدُوا رَبَّ هَٰذَا ٱلْبَيْتِ', id: 3}, {text: 'ٱلَّذِي أَطْعَمَهُم مِّن جُوعٍ وَآمَنَهُم مِّنْ خَوْفٍ', id: 4}],
+        rightCol: [{text: 'Pour l\'accoutumance des Quraysh', id: 1}, {text: 'leur voyage d\'hiver et d\'été', id: 2}, {text: 'Qu\'ils adorent le Seigneur de cette Maison', id: 3}, {text: 'qui les a nourris et rassurés de la peur', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Quraysh validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
