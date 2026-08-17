@@ -1257,33 +1257,28 @@ export default function ArabicLearningApp() {
       const { data: moduleRows } = await supabase.from('module_progress').select('*').eq('user_id', user.id);
       if (cancelled) return;
 
-      const localHasProgress = userXp !== 140 || modules.some(m => m.progress > 0);
-      const serverIsDefault = !profile || (profile.xp === 140 && (!moduleRows || moduleRows.length === 0));
+      // Fusionne local et serveur en gardant toujours la valeur la plus avancée.
+      // XP et progression des modules ne font qu'augmenter dans cette app, donc
+      // max(local, serveur) ne peut jamais faire perdre de progression, contrairement
+      // à l'ancien choix binaire "serveur vide -> local gagne, sinon -> serveur gagne"
+      // qui écrasait la progression locale récente dès que le serveur avait la
+      // moindre ancienne valeur non nulle.
+      const serverXp = profile ? profile.xp : 0;
+      setUserXp(prev => Math.max(prev, serverXp));
 
-      if (serverIsDefault && localHasProgress) {
-        await supabase.from('profiles').upsert({
-          id: user.id, xp: userXp, notifications_enabled: notificationsEnabled,
-          sound_enabled: soundEnabled, dark_mode: darkMode, learning_focus: learningFocus,
-          updated_at: new Date().toISOString()
-        });
-        await supabase.from('module_progress').upsert(
-          modules.map(m => ({ user_id: user.id, module_id: m.id, progress: m.progress, updated_at: new Date().toISOString() }))
-        );
-      } else {
-        if (profile) {
-          setUserXp(profile.xp);
-          setNotificationsEnabled(profile.notifications_enabled);
-          setSoundEnabled(profile.sound_enabled);
-          setDarkMode(profile.dark_mode);
-          setLearningFocus(profile.learning_focus);
-        }
-        if (moduleRows && moduleRows.length > 0) {
-          setModules(prev => prev.map(m => {
-            const row = moduleRows.find(r => r.module_id === m.id);
-            return row ? { ...m, progress: row.progress } : m;
-          }));
-        }
+      setModules(prev => prev.map(m => {
+        const row = moduleRows && moduleRows.find(r => r.module_id === m.id);
+        const serverProgress = row ? row.progress : 0;
+        return { ...m, progress: Math.max(m.progress, serverProgress) };
+      }));
+
+      if (profile) {
+        setNotificationsEnabled(profile.notifications_enabled);
+        setSoundEnabled(profile.sound_enabled);
+        setDarkMode(profile.dark_mode);
+        setLearningFocus(profile.learning_focus);
       }
+
       if (!cancelled) serverSyncedRef.current = true;
     })();
     return () => { cancelled = true; };
