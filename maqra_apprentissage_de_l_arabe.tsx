@@ -641,7 +641,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 20,
+       total: 25,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -1879,7 +1879,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "أَجْر" (Ajr) ?', options: ['Punition', 'Récompense', 'Question', 'Doute'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'نِعْمَة', name: 'Bienfait', instruction: 'Toute grâce ou faveur accordée par Dieu à Ses créatures.', sound: 'Niʻma', illustration: '🎁', mnemonic: 'Un don à reconnaître avec gratitude' },
       { type: 'qcm', instruction: 'Que signifie "نِعْمَة" (Niʻma) ?', options: ['Épreuve', 'Bienfait', 'Perte', 'Attente'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 20 : parcours Fréquence Lexicale terminé, 60 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 20 : 60 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كَافِر', name: 'Mécréant', instruction: 'Celui qui rejette ou cache la vérité de la foi.', sound: 'Kāfir', illustration: '🚫', mnemonic: 'Opposé du croyant (muʼmin)' },
+      { type: 'qcm', instruction: 'Que signifie "كَافِر" (Kāfir) ?', options: ['Croyant', 'Mécréant', 'Prophète', 'Ange'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صَالِح', name: 'Vertueux', instruction: 'Celui qui accomplit de bonnes œuvres, souvent associé à la foi dans le Coran.', sound: 'Ṣāliḥ', illustration: '🌟', mnemonic: 'Une action ou une personne droite' },
+      { type: 'qcm', instruction: 'Que signifie "صَالِح" (Ṣāliḥ) ?', options: ['Vertueux', 'Corrompu', 'Faible', 'Rapide'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ظُلْم', name: 'Injustice', instruction: 'Le fait de placer une chose ailleurs qu\'à sa juste place ; l\'oppression.', sound: 'Ẓulm', illustration: '⚖️', mnemonic: 'Opposé de la justice (ʻadl)' },
+      { type: 'qcm', instruction: 'Que signifie "ظُلْم" (Ẓulm) ?', options: ['Justice', 'Injustice', 'Paix', 'Patience'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 21 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'عَدْل', name: 'Justice', instruction: 'Le fait de donner à chacun son dû, valeur centrale du Coran.', sound: 'ʻAdl', illustration: '⚖️', mnemonic: 'Opposé de l\'injustice (ẓulm)' },
+      { type: 'qcm', instruction: 'Que signifie "عَدْل" (ʻAdl) ?', options: ['Injustice', 'Justice', 'Doute', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حَلَال', name: 'Permis', instruction: 'Ce qui est autorisé par la loi religieuse.', sound: 'Ḥalāl', illustration: '✅', mnemonic: 'Opposé de l\'interdit (ḥarām)' },
+      { type: 'qcm', instruction: 'Que signifie "حَلَال" (Ḥalāl) ?', options: ['Interdit', 'Permis', 'Douteux', 'Rare'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حَرَام', name: 'Interdit', instruction: 'Ce qui est prohibé par la loi religieuse.', sound: 'Ḥarām', illustration: '⛔', mnemonic: 'Opposé du permis (ḥalāl)' },
+      { type: 'qcm', instruction: 'Que signifie "حَرَام" (Ḥarām) ?', options: ['Permis', 'Interdit', 'Facultatif', 'Recommandé'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 22 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'تَوْبَة', name: 'Repentir', instruction: 'Le retour vers Dieu après avoir reconnu une faute.', sound: 'Tawba', illustration: '🔄', mnemonic: 'Un retour sincère vers Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "تَوْبَة" (Tawba) ?', options: ['Repentir', 'Orgueil', 'Oubli', 'Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'شَيْطَان', name: 'Satan', instruction: 'La force du mal qui incite les hommes à désobéir.', sound: 'Shayṭān', illustration: '👿', mnemonic: 'Celui qui s\'éloigne de la miséricorde' },
+      { type: 'qcm', instruction: 'Que signifie "شَيْطَان" (Shayṭān) ?', options: ['Ange', 'Satan', 'Prophète', 'Roi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَلَك', name: 'Ange', instruction: 'Créature de lumière qui obéit à Dieu sans jamais désobéir.', sound: 'Malak', illustration: '👼', mnemonic: 'Messager invisible de Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "مَلَك" (Malak) ?', options: ['Ange', 'Démon', 'Roi', 'Serviteur'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 23 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سَبِيل', name: 'Voie', instruction: 'Le chemin à suivre, souvent "le sentier de Dieu" (sabīl Allāh).', sound: 'Sabīl', illustration: '🛤️', mnemonic: 'Proche du sens de Ṣirāṭ (chemin)' },
+      { type: 'qcm', instruction: 'Que signifie "سَبِيل" (Sabīl) ?', options: ['Voie', 'Maison', 'Livre', 'Étoile'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'بَيِّنَة', name: 'Preuve claire', instruction: 'Un signe ou argument évident qui dissipe le doute.', sound: 'Bayyina', illustration: '🔎', mnemonic: 'Ce qui rend la vérité évidente' },
+      { type: 'qcm', instruction: 'Que signifie "بَيِّنَة" (Bayyina) ?', options: ['Doute', 'Preuve claire', 'Mensonge', 'Secret'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'إِحْسَان', name: 'Excellence', instruction: 'Faire le bien avec perfection, comme si l\'on voyait Dieu.', sound: 'Iḥsān', illustration: '💎', mnemonic: 'Le plus haut degré de la pratique' },
+      { type: 'qcm', instruction: 'Que signifie "إِحْسَان" (Iḥsān) ?', options: ['Excellence, bienfaisance', 'Négligence', 'Doute', 'Colère'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 24 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بَصِير', name: 'Voyant', instruction: 'Un des noms divins : Celui qui voit tout, jusqu\'au plus infime détail.', sound: 'Baṣīr', illustration: '👁️', mnemonic: 'Souvent associé à Samīʻ (Audient)' },
+      { type: 'qcm', instruction: 'Que signifie "بَصِير" (Baṣīr) ?', options: ['Aveugle', 'Voyant', 'Sourd', 'Muet'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'سَمِيع', name: 'Audient', instruction: 'Un des noms divins : Celui qui entend tout, même le murmure le plus discret.', sound: 'Samīʻ', illustration: '👂', mnemonic: 'Souvent associé à Baṣīr (Voyant)' },
+      { type: 'qcm', instruction: 'Que signifie "سَمِيع" (Samīʻ) ?', options: ['Sourd', 'Audient', 'Muet', 'Aveugle'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'عَزِيز', name: 'Puissant', instruction: 'Un des noms divins : Celui dont la puissance est inégalable et jamais vaincue.', sound: 'ʻAzīz', illustration: '👑', mnemonic: 'La puissance et l\'honneur réunis' },
+      { type: 'qcm', instruction: 'Que signifie "عَزِيز" (ʻAzīz) ?', options: ['Faible', 'Puissant', 'Petit', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 25 : parcours Fréquence Lexicale terminé, 75 mots mémorisés ! +20 XP' }
     ]
   ];
 
