@@ -182,19 +182,21 @@ export default function ArabicLearningApp() {
   const [darkMode, setDarkMode] = useState(() => loadSavedProgress().darkMode ?? false);
   const [showContextualRoot, setShowContextualRoot] = useState(false);
   const [currentRootWord, setCurrentRootWord] = useState(null);
-  const [readWordsStatus, setReadWordsStatus] = useState({}); 
+  const [readWordsStatus, setReadWordsStatus] = useState({});
   const [activeReadWord, setActiveReadWord] = useState(null);
+  const [sessionQueue, setSessionQueue] = useState([]);
+  const [srsData, setSrsData] = useState(() => {
+    try {
+      const raw = localStorage.getItem('maqra_srs');
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  });
+  const [deckSize, setDeckSize] = useState(0);
 
   const [chatMessages, setChatMessages] = useState([
     { id: 1, sender: 'ai', text: 'مرحباً ! (Marhaban) Prêt à pratiquer la lecture coranique et le Tajweed aujourd\'hui ? 📖' },
     { id: 2, sender: 'user', text: 'Oui, comment bien prononcer les lettres emphatiques ?' },
     { id: 3, sender: 'ai', text: 'Excellente question. Pour le "Sad" (ص), la langue s\'élève vers le palais comparativement au "Sin" (س). Écoute et répète : ص - س' }
-  ]);
-
-  const [revisionCards] = useState([
-    { id: 1, front: 'مَرْحَبًا', back: 'Marhaban (Bonjour)', hint: 'Vocabulaire' },
-    { id: 2, front: 'ص', back: 'Sad (Lettre emphatique)', hint: 'Qaïda Phonétique' },
-    { id: 3, front: 'س', back: 'Sin (Lettre légère)', hint: 'Qaïda Phonétique' }
   ]);
 
   const rootsDatabase = {
@@ -1954,6 +1956,74 @@ export default function ArabicLearningApp() {
   // des leçons et l'aperçu en lecture seule (sans lancer l'exercice).
   const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons };
 
+  // Construit le paquet de cartes de révision à partir de ce que l'élève a
+  // réellement étudié (leçons dont l'index < progression du module), plutôt
+  // que d'un jeu de 3 cartes fixes. Le paquet grandit donc au fil des leçons
+  // terminées, comme dans un vrai système de répétition espacée.
+  const buildRevisionDeck = () => {
+    const progressOf = (id) => modules.find(m => m.id === id)?.progress ?? 0;
+    const cards = [];
+
+    qaidaLessons.slice(0, progressOf(1)).forEach((lesson, li) => {
+      lesson.forEach((step, si) => {
+        if (step.type === 'intro') {
+          cards.push({ id: `qaida-${li}-${si}`, front: step.letter, back: step.name, hint: 'Qaïda' });
+        }
+      });
+    });
+
+    freqVocabLessons.slice(0, progressOf(3)).forEach((lesson, li) => {
+      lesson.forEach((step, si) => {
+        if (step.type === 'intro') {
+          cards.push({ id: `freq-${li}-${si}`, front: step.letter, back: `${step.name} (${step.sound})`, hint: 'Fréquence Lexicale' });
+        }
+      });
+    });
+
+    rootsLessons.slice(0, progressOf(4)).forEach((lesson) => {
+      lesson.forEach((step) => {
+        if (step.type === 'intro' && step.rootKey && rootsDatabase[step.rootKey]) {
+          cards.push({ id: `root-${step.rootKey}`, front: step.letter, back: rootsDatabase[step.rootKey].trans, hint: 'Racines' });
+        }
+      });
+    });
+
+    tajwidLessons.slice(0, progressOf(5)).forEach((lesson, li) => {
+      lesson.forEach((step, si) => {
+        if (step.type === 'intro') {
+          cards.push({ id: `tajwid-${li}-${si}`, front: step.letter, back: step.name, hint: 'Tajwid' });
+        }
+      });
+    });
+
+    const seen = new Set();
+    return cards.filter(c => {
+      if (seen.has(c.id)) return false;
+      seen.add(c.id);
+      return true;
+    });
+  };
+
+  // Algorithme de répétition espacée simplifié (inspiré de SM-2) : "À revoir"
+  // remet la carte à demain et réduit la facilité, "Correct"/"Facile"
+  // espacent progressivement le prochain rappel.
+  const scheduleSrsCard = (prevState, quality) => {
+    let { interval = 0, ease = 2.5, reps = 0 } = prevState || {};
+    if (quality === 'hard') {
+      reps = 0;
+      interval = 1;
+      ease = Math.max(1.3, ease - 0.2);
+    } else {
+      reps += 1;
+      if (quality === 'easy') ease = Math.min(3, ease + 0.15);
+      if (reps === 1) interval = 1;
+      else if (reps === 2) interval = quality === 'easy' ? 4 : 3;
+      else interval = Math.round(interval * ease);
+    }
+    const dueDate = new Date(Date.now() + interval * 24 * 60 * 60 * 1000).toISOString();
+    return { interval, ease, reps, dueDate, lastQuality: quality, lastReview: new Date().toISOString() };
+  };
+
   // Extrait les éléments à afficher dans l'aperçu d'une leçon (lettres,
   // mots ou versets), sans dépendre de la logique interactive du quiz.
   const getLessonPreviewItems = (lessonSteps) => {
@@ -2018,6 +2088,25 @@ export default function ArabicLearningApp() {
       const timer = setTimeout(() => setCurrentScreen('dashboard'), 1300);
       return () => clearTimeout(timer);
     }
+  }, [currentScreen]);
+
+  // Construit la file de révision du jour à l'entrée sur l'écran Révisions :
+  // seules les cartes jamais vues ou dont la date de rappel SRS est passée
+  // sont incluses, comme un vrai deck de répétition espacée.
+  useEffect(() => {
+    if (currentScreen === 'revision') {
+      const now = Date.now();
+      const deck = buildRevisionDeck();
+      const due = deck.filter(c => {
+        const s = srsData[c.id];
+        return !s || new Date(s.dueDate).getTime() <= now;
+      });
+      setDeckSize(deck.length);
+      setSessionQueue(due);
+      setCurrentCardIndex(due.length > 0 ? 0 : -1);
+      setIsCardFlipped(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentScreen]);
 
   useEffect(() => {
@@ -2162,11 +2251,19 @@ export default function ArabicLearningApp() {
   };
 
   const handleSrsAction = (quality) => {
+    const card = sessionQueue[currentCardIndex];
+    if (card) {
+      setSrsData(prev => {
+        const next = { ...prev, [card.id]: scheduleSrsCard(prev[card.id], quality) };
+        try { localStorage.setItem('maqra_srs', JSON.stringify(next)); } catch (e) {}
+        return next;
+      });
+    }
     setIsCardFlipped(false);
-    if (currentCardIndex < revisionCards.length - 1) {
+    if (currentCardIndex < sessionQueue.length - 1) {
       setCurrentCardIndex(prev => prev + 1);
     } else {
-      setCurrentCardIndex(-1); 
+      setCurrentCardIndex(-1);
       setUserXp(prev => prev + 15);
     }
   };
@@ -2820,24 +2917,29 @@ export default function ArabicLearningApp() {
 
   const renderRevision = () => {
     if (currentCardIndex === -1) {
+      const nothingLearnedYet = deckSize === 0;
       return (
         <div className="flex-1 flex flex-col items-center justify-center p-6 bg-[#f3efe4] relative overflow-hidden pb-32">
            <div className="w-24 h-24 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6 shadow-inner">
                <Check size={48} strokeWidth={3}/>
            </div>
-           <h2 className="text-2xl font-bold text-gray-900 mb-2">Tout est à jour !</h2>
-           <p className="text-gray-500 text-center text-sm px-4">Vous avez révisé toutes vos cartes pour aujourd'hui.</p>
+           <h2 className="text-2xl font-bold text-gray-900 mb-2">{nothingLearnedYet ? 'Rien à réviser pour l\'instant' : 'Tout est à jour !'}</h2>
+           <p className="text-gray-500 text-center text-sm px-4">
+             {nothingLearnedYet
+               ? 'Terminez quelques leçons pour commencer à constituer vos cartes de révision.'
+               : 'Vous avez révisé toutes vos cartes pour aujourd\'hui.'}
+           </p>
         </div>
       );
     }
-    const card = revisionCards[currentCardIndex];
+    const card = sessionQueue[currentCardIndex];
     return (
       <div className="flex-1 flex flex-col bg-[#f3efe4] relative overflow-hidden pb-32">
         <div className="px-6 pt-4 pb-2">
            <h1 className="text-3xl font-bold text-gray-900">Révisions</h1>
            <div className="flex items-center space-x-2 mt-1">
              <Flame className="text-orange-500" size={16}/>
-             <p className="text-gray-600 font-medium text-sm">{revisionCards.length - currentCardIndex} cartes pour aujourd'hui</p>
+             <p className="text-gray-600 font-medium text-sm">{sessionQueue.length - currentCardIndex} cartes pour aujourd'hui</p>
            </div>
         </div>
         <div className="px-6 mt-2 z-20">
