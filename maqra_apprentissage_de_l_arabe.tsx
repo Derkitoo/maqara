@@ -655,6 +655,18 @@ export default function ArabicLearningApp() {
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
+    },
+    {
+       id: 5,
+       dateGroup: 'Concepts Avancés',
+       icon: '🎙️',
+       title: 'Tajwid',
+       description: 'Les règles de récitation (أحكام التجويد)',
+       progress: savedProgress[5] ?? 0,
+       total: 6,
+       tags: ['Tajwid', 'Récitation'],
+       color: 'bg-rose-100',
+       tagColor: 'bg-rose-200 text-rose-800'
     }
     ];
   });
@@ -1737,9 +1749,210 @@ export default function ArabicLearningApp() {
     ]
   ];
 
+  const tajwidLessons = [
+    [
+      {
+        type: 'intro',
+        letter: 'مِنْ خَيْرٍ',
+        name: 'Iẓhār (إظهار) — Clarté',
+        instruction: 'Quand un Nūn Sākin (نْ) ou un Tanwīn est suivi d\'une des 6 lettres gutturales (ء ه ع ح غ خ), on le prononce clairement, sans le modifier ni le nasaliser.',
+        sound: 'Min Khayr',
+        illustration: '🔊',
+        mnemonic: '6 lettres gutturales : ء ه ع ح غ خ'
+      },
+      { type: 'qcm', instruction: 'Quelle règle s\'applique quand نْ est suivi d\'une lettre gutturale (ء ه ع ح غ خ) ?', options: ['Idghām', 'Iẓhār (clarté)', 'Ikhfāʼ', 'Iqlāb'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'مَنْ آمَنَ',
+        name: 'Exemple : مَنْ آمَنَ',
+        instruction: 'Le نْ de "مَنْ" est suivi du Hamza (ء) de "آمَنَ" : on prononce le نْ clairement, sans nasaliser.',
+        sound: 'Man Āmana',
+        illustration: '🔊',
+        mnemonic: 'نْ + ء = Iẓhār'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le نْ dans "مَنْ آمَنَ" ?', options: ['Il disparaît', 'Il devient م', 'Clairement (Iẓhār)', 'Il se nasalise longuement'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'عَلِيمٌ حَكِيمٌ',
+        name: 'Exemple : عَلِيمٌ حَكِيمٌ',
+        instruction: 'Le Tanwīn de "عَلِيمٌ" est suivi du Ḥāʼ (ح) de "حَكِيمٌ" : Iẓhār, prononciation claire.',
+        sound: 'ʻAlīmun Ḥakīm',
+        illustration: '🔊',
+        mnemonic: 'Tanwīn + ح = Iẓhār'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre déclenche l\'Iẓhār dans "عَلِيمٌ حَكِيمٌ" ?', options: ['ح', 'ب', 'ي', 'ت'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 1 (Tajwid) terminée ! Vous maîtrisez l\'Iẓhār. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'مَن يَقُولُ',
+        name: 'Idghām (إدغام) — Assimilation',
+        instruction: 'Quand un Nūn Sākin ou un Tanwīn est suivi d\'une des 6 lettres "يرملون" (ي ر م ل و ن), il s\'assimile dans la lettre suivante : on ne l\'entend plus séparément.',
+        sound: 'Yaqūlu',
+        illustration: '🔀',
+        mnemonic: 'Retenez : ي ر م ل و ن'
+      },
+      { type: 'qcm', instruction: 'Quelle règle s\'applique quand نْ est suivi d\'une des lettres "يرملون" ?', options: ['Iẓhār', 'Idghām (assimilation)', 'Qalqala', 'Ghunna seule'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'مِن رَّبِّهِمْ',
+        name: 'Exemple : مِن رَّبِّهِمْ',
+        instruction: 'Le نْ de "مِن" est suivi du Rāʼ (ر) : il s\'assimile complètement, la lettre suivante double (Shadda).',
+        sound: 'Mir-Rabbihim',
+        illustration: '🔀',
+        mnemonic: 'نْ + ر = Idghām'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le نْ dans "مِن رَّبِّهِمْ" ?', options: ['Clairement', 'Il s\'assimile dans le ر', 'Il devient م', 'Il rebondit'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'مَن يَشَاءُ',
+        name: 'Exemple : مَن يَشَاءُ',
+        instruction: 'Le نْ de "مَن" est suivi du Yāʼ (ي) : Idghām avec Ghunna (nasalisation légère), car ي fait partie des lettres nasalisées.',
+        sound: 'Mayyashāʼ',
+        illustration: '🔀',
+        mnemonic: 'نْ + ي = Idghām (avec Ghunna)'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre déclenche l\'Idghām dans "مَن يَشَاءُ" ?', options: ['ي', 'ب', 'ح', 'ق'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 2 (Tajwid) terminée ! Vous maîtrisez l\'Idghām. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'مِنۢ بَعْدِ',
+        name: 'Iqlāb (إقلاب) — Conversion',
+        instruction: 'Quand un Nūn Sākin ou un Tanwīn est suivi de ب, il se convertit en un son "م" léger et nasalisé. Un petit م est même écrit au-dessus dans le muṣḥaf.',
+        sound: 'Mim Baʻdi',
+        illustration: '🔄',
+        mnemonic: 'نْ + ب = "م" nasalisé'
+      },
+      { type: 'qcm', instruction: 'Quelle règle s\'applique quand نْ est suivi de ب ?', options: ['Iẓhār', 'Idghām', 'Iqlāb (conversion en م)', 'Ikhfāʼ'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'سَمِيعٌۢ بَصِيرٌ',
+        name: 'Exemple : سَمِيعٌۢ بَصِيرٌ',
+        instruction: 'Le Tanwīn de "سَمِيعٌ" est suivi du Bāʼ (ب) de "بَصِيرٌ" : on entend un "م" léger entre les deux mots.',
+        sound: 'Samīʻam-Baṣīr',
+        illustration: '🔄',
+        mnemonic: 'Tanwīn + ب = Iqlāb'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le Tanwīn dans "سَمِيعٌۢ بَصِيرٌ" ?', options: ['Clairement', 'Il s\'assimile', 'Comme un "م" léger', 'Il rebondit'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'أَنۢبَتَ',
+        name: 'Exemple : أَنۢبَتَ',
+        instruction: 'Le نْ de "أَنۢبَتَ" est suivi du Bāʼ (ب) : Iqlāb, même à l\'intérieur d\'un seul mot.',
+        sound: 'Ambata',
+        illustration: '🔄',
+        mnemonic: 'نْ + ب = Iqlāb, même dans un mot'
+      },
+      { type: 'qcm', instruction: 'Quelle est la seule lettre qui déclenche l\'Iqlāb ?', options: ['م', 'ب', 'ت', 'ن'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 3 (Tajwid) terminée ! Vous maîtrisez l\'Iqlāb. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'مِن تَحْتِهَا',
+        name: 'Ikhfāʼ (إخفاء) — Dissimulation',
+        instruction: 'Devant les 15 lettres restantes (ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك), le Nūn Sākin ou le Tanwīn se prononce de façon "cachée" : ni clairement (Iẓhār), ni totalement assimilé (Idghām), avec une légère nasalisation.',
+        sound: 'Min Taḥtihā',
+        illustration: '🌫️',
+        mnemonic: 'Entre Iẓhār et Idghām'
+      },
+      { type: 'qcm', instruction: 'Quelle règle s\'applique pour les 15 lettres restantes après ء ه ع ح غ خ, ي ر م ل و ن et ب ?', options: ['Iẓhār', 'Idghām', 'Iqlāb', 'Ikhfāʼ (dissimulation)'], correctIndex: 3, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'أَنتُمْ',
+        name: 'Exemple : أَنتُمْ',
+        instruction: 'Le نْ de "أَنتُمْ" est suivi du Tāʼ (ت) : Ikhfāʼ, prononciation nasalisée et cachée.',
+        sound: 'Antum',
+        illustration: '🌫️',
+        mnemonic: 'نْ + ت = Ikhfāʼ'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le نْ dans "أَنتُمْ" ?', options: ['Clairement', 'Comme un م', 'De façon cachée et nasalisée', 'Il disparaît totalement'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'مِن قَبْلُ',
+        name: 'Exemple : مِن قَبْلُ',
+        instruction: 'Le نْ de "مِن" est suivi du Qāf (ق) : Ikhfāʼ également.',
+        sound: 'Min Qablu',
+        illustration: '🌫️',
+        mnemonic: 'نْ + ق = Ikhfāʼ'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre déclenche l\'Ikhfāʼ dans "مِن قَبْلُ" ?', options: ['ق', 'ي', 'ب', 'ح'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 4 (Tajwid) terminée ! Les 4 règles du Nūn Sākin/Tanwīn (Iẓhār, Idghām, Iqlāb, Ikhfāʼ) sont maîtrisées. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'يَقْطَعُ',
+        name: 'Qalqala (قلقلة) — Rebond',
+        instruction: 'Les 5 lettres ق ط ب ج د, quand elles portent un Sukūn, produisent un léger rebond sonore au lieu d\'être prononcées sèchement.',
+        sound: 'Yaqṭaʻu',
+        illustration: '🎾',
+        mnemonic: 'Retenez : ق ط ب ج د'
+      },
+      { type: 'qcm', instruction: 'Quelles lettres produisent un rebond (Qalqala) quand elles ont un Sukūn ?', options: ['ء ه ع ح غ خ', 'ي ر م ل و ن', 'ق ط ب ج د', 'ت ث ج د ذ'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'يَقْطَعُونَ',
+        name: 'Exemple : يَقْطَعُونَ',
+        instruction: 'Le Ṭāʼ (ط) de "يَقْطَعُونَ" porte un Sukūn : on produit un léger rebond en le prononçant.',
+        sound: 'Yaqṭaʻūna',
+        illustration: '🎾',
+        mnemonic: 'ط + Sukūn = Qalqala'
+      },
+      { type: 'qcm', instruction: 'Pourquoi "يَقْطَعُونَ" contient-il une Qalqala ?', options: ['Le ط a un Sukūn', 'Le ط a une Fatḥa', 'C\'est un Tanwīn', 'C\'est un Madd'], correctIndex: 0, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'أَبْتَر',
+        name: 'Exemple : أَبْتَر',
+        instruction: 'Le Bāʼ (ب) de "أَبْتَر" porte un Sukūn : Qalqala également.',
+        sound: 'Abtar',
+        illustration: '🎾',
+        mnemonic: 'ب + Sukūn = Qalqala'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre produit la Qalqala dans "أَبْتَر" ?', options: ['ت', 'ب', 'ر', 'أ'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 5 (Tajwid) terminée ! Vous maîtrisez la Qalqala. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'إِنَّ',
+        name: 'Ghunna (غنة) — Nasalisation',
+        instruction: 'Quand un Mīm (م) ou un Nūn (ن) porte une Shadda, on tient le son nasal pendant environ 2 temps : c\'est la Ghunna.',
+        sound: 'Inna',
+        illustration: '🎵',
+        mnemonic: 'مّ ou نّ = son nasal tenu 2 temps'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on la Ghunna la plus marquée ?', options: ['Sur toute lettre avec Sukūn', 'Sur م ou ن avec Shadda', 'Sur les lettres de Madd', 'Sur les lettres solaires'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ثُمَّ',
+        name: 'Exemple : ثُمَّ',
+        instruction: 'Le Mīm (م) de "ثُمَّ" porte une Shadda : on tient le son nasal.',
+        sound: 'Thumma',
+        illustration: '🎵',
+        mnemonic: 'مّ = Ghunna tenue'
+      },
+      { type: 'qcm', instruction: 'Pourquoi "ثُمَّ" contient-il une Ghunna ?', options: ['Le م a une Shadda', 'Le م a un Sukūn', 'C\'est un Madd', 'C\'est une Qalqala'], correctIndex: 0, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'إِنَّا',
+        name: 'Exemple : إِنَّا',
+        instruction: 'Le Nūn (ن) de "إِنَّا" porte une Shadda : Ghunna également, avant l\'Alif final.',
+        sound: 'Innā',
+        illustration: '🎵',
+        mnemonic: 'نّ = Ghunna tenue'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre porte la Ghunna dans "إِنَّا" ?', options: ['ن', 'ا', 'إ', 'Aucune'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 6 (Tajwid) terminée ! Parcours Tajwid complet : Iẓhār, Idghām, Iqlāb, Ikhfāʼ, Qalqala et Ghunna. +20 XP' }
+    ]
+  ];
+
   // Associe chaque module à son tableau de leçons, pour l'écran de liste
   // des leçons et l'aperçu en lecture seule (sans lancer l'exercice).
-  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons };
+  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons };
 
   // Extrait les éléments à afficher dans l'aperçu d'une leçon (lettres,
   // mots ou versets), sans dépendre de la logique interactive du quiz.
