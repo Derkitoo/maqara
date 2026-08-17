@@ -326,7 +326,7 @@ export default function ArabicLearningApp() {
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 0,
-      total: 6,
+      total: 9,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
       tagColor: 'bg-green-200 text-green-800'
@@ -696,6 +696,104 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'ا', instruction: 'Tracez la lettre Alif (une simple hampe droite, sans point).' },
       { type: 'qcm', instruction: 'Laquelle de ces lettres est le "Alif" ?', options: ['ل', 'ا', 'ي', 'و'], correctIndex: 1, textStyle: 'text-5xl' },
       { type: 'success', instruction: 'Leçon 6 terminée ! Bravo, l\'alphabet arabe complet (28 lettres) est maîtrisé ! +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'بَ',
+        name: 'Fatḥa (Voyelle A)',
+        instruction: 'Le petit trait oblique au-dessus de la lettre se prononce "a" bref. بَ se lit "Ba".',
+        sound: 'Ba',
+        illustration: '🅰️',
+        mnemonic: 'Une petite ligne penchée au-dessus = "a"'
+      },
+      { type: 'trace', letter: 'بَ', instruction: 'Tracez "Bā" avec la Fatḥa au-dessus.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بَ" ?', options: ['Bi', 'Ba', 'Bu', 'B'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'بِ',
+        name: 'Kasra (Voyelle I)',
+        instruction: 'Le petit trait oblique en dessous de la lettre se prononce "i" bref. بِ se lit "Bi".',
+        sound: 'Bi',
+        illustration: '🔻',
+        mnemonic: 'Une ligne en dessous = "i"'
+      },
+      { type: 'trace', letter: 'بِ', instruction: 'Tracez "Bi" avec la Kasra en dessous.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بِ" ?', options: ['Ba', 'Bu', 'Bi', 'B'], correctIndex: 2, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'بُ',
+        name: 'Ḍamma (Voyelle U)',
+        instruction: 'La petite boucle au-dessus de la lettre se prononce "u" bref. بُ se lit "Bu".',
+        sound: 'Bu',
+        illustration: '🔵',
+        mnemonic: 'Une petite virgule au-dessus = "u"'
+      },
+      { type: 'trace', letter: 'بُ', instruction: 'Tracez "Bu" avec la Ḍamma au-dessus.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بُ" ?', options: ['Bu', 'Bi', 'Ba', 'B'], correctIndex: 0, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 7 terminée ! Vous lisez maintenant les trois voyelles courtes (Fatḥa, Kasra, Ḍamma). +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'بْ',
+        name: 'Sukūn (Absence de voyelle)',
+        instruction: 'Le petit rond au-dessus indique qu\'il n\'y a pas de voyelle : on prononce juste la consonne, sèche. بْ se lit "B".',
+        sound: 'B (sec)',
+        illustration: '⭕',
+        mnemonic: 'Un cercle vide = pas de voyelle'
+      },
+      { type: 'trace', letter: 'بْ', instruction: 'Tracez "B" avec le Sukūn au-dessus.' },
+      { type: 'qcm', instruction: 'Que signifie le signe Sukūn (ْ) ?', options: ['Voyelle A', 'Absence de voyelle', 'Doublement', 'Voyelle U'], correctIndex: 1, textStyle: 'text-3xl' },
+      {
+        type: 'intro',
+        letter: 'بّ',
+        name: 'Shadda (Doublement)',
+        instruction: 'Le petit signe en forme de "w" au-dessus double la consonne : بّ se prononce comme un "b" tenu deux fois plus longtemps.',
+        sound: 'Bb',
+        illustration: '👯',
+        mnemonic: 'Comme une consonne redoublée'
+      },
+      { type: 'trace', letter: 'بّ', instruction: 'Tracez "B" avec la Shadda au-dessus.' },
+      { type: 'qcm', instruction: 'Que signifie la Shadda (ّ) ?', options: ['Absence de voyelle', 'Voyelle longue', 'Doublement de la consonne', 'Fin de mot'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'qcm', instruction: 'Comment se lit "دَّ" (Dāl + Shadda + Fatḥa) ?', options: ['Da', 'Dda', 'Dad', 'Ad'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 8 terminée ! Sukūn et Shadda n\'ont plus de secret pour vous. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'بً',
+        name: 'Tanwīn Fatḥ',
+        instruction: 'Deux traits obliques au-dessus = un "an" bref en fin de mot (souvent avec un Alif de soutien). بًا se lit "Ban".',
+        sound: 'Ban',
+        illustration: '🔤',
+        mnemonic: 'Fatḥa doublée = "an"'
+      },
+      { type: 'trace', letter: 'بً', instruction: 'Tracez "Ban" avec le Tanwīn Fatḥ.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بً" ?', options: ['Bin', 'Bun', 'Ban', 'Ba'], correctIndex: 2, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'بٍ',
+        name: 'Tanwīn Kasr',
+        instruction: 'Deux traits obliques sous la lettre = un "in" bref en fin de mot. بٍ se lit "Bin".',
+        sound: 'Bin',
+        illustration: '🔤',
+        mnemonic: 'Kasra doublée = "in"'
+      },
+      { type: 'trace', letter: 'بٍ', instruction: 'Tracez "Bin" avec le Tanwīn Kasr.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بٍ" ?', options: ['Ban', 'Bin', 'Bun', 'Bi'], correctIndex: 1, textStyle: 'text-5xl' },
+      {
+        type: 'intro',
+        letter: 'بٌ',
+        name: 'Tanwīn Ḍamm',
+        instruction: 'Deux petites boucles au-dessus = un "un" bref en fin de mot. بٌ se lit "Bun".',
+        sound: 'Bun',
+        illustration: '🔤',
+        mnemonic: 'Ḍamma doublée = "un"'
+      },
+      { type: 'trace', letter: 'بٌ', instruction: 'Tracez "Bun" avec le Tanwīn Ḍamm.' },
+      { type: 'qcm', instruction: 'Comment se prononce "بٌ" ?', options: ['Ban', 'Bin', 'Bun', 'Bu'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 9 terminée ! Le système complet des harakat est maîtrisé : vous pouvez lire n\'importe quel mot du Qaïda avec ses voyelles. +20 XP' }
     ]
   ];
 
