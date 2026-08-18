@@ -1398,7 +1398,7 @@ export default function ArabicLearningApp() {
        title: 'Tajwid',
        description: 'Les règles de récitation (أحكام التجويد)',
        progress: savedProgress[5] ?? 0,
-       total: 13,
+       total: 17,
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
@@ -3632,6 +3632,98 @@ export default function ArabicLearningApp() {
       },
       { type: 'qcm', instruction: 'Combien de temps dure le Madd Lāzim ?', options: ['2 temps', '4 temps', '6 temps', 'Il varie librement'], correctIndex: 2, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 13 (Tajwid) terminée ! Parcours Tajwid complet : les 4 règles du Nūn Sākin, Qalqala, Ghunna, les 3 règles du Mīm Sākinah, le Tafkhīm/Tarqīq du Rāʼ et les 3 types de Madd Farʻī. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'نَسْتَعِينُ',
+        name: 'Madd ʻĀriḍ lis-Sukūn (مد عارض للسكون)',
+        instruction: 'Quand une lettre de Madd est suivie d\'une consonne qui ne porte un Sukūn QU\'à cause de la pause (Waqf) en fin de verset, l\'allongement devient variable : 2, 4 ou 6 temps, au choix du récitateur.',
+        sound: 'Nastaʻīn',
+        illustration: '⏸️',
+        mnemonic: 'Madd + Sukūn seulement à la pause = variable'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on le Madd ʻĀriḍ lis-Sukūn ?', options: ['Quand le Sukūn est permanent', 'Quand le Sukūn apparaît seulement en marquant la pause', 'Quand il y a un Hamza', 'Jamais en fin de verset'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ٱلرَّحِيمِ',
+        name: 'Exemple : ٱلرَّحِيمِ (en pause)',
+        instruction: 'En pause, "ٱلرَّحِيمِ" se lit "Ar-Raḥīm" : le Yāʼ de Madd est suivi d\'un Mīm qui prend un Sukūn seulement parce qu\'on s\'arrête ici. Madd ʻĀriḍ lis-Sukūn.',
+        sound: 'Ar-Raḥīm',
+        illustration: '⏸️',
+        mnemonic: 'Très fréquent en fin de verset coranique'
+      },
+      { type: 'qcm', instruction: 'Combien de temps peut durer le Madd ʻĀriḍ lis-Sukūn ?', options: ['Toujours 1 temps', '2, 4 ou 6 temps (au choix)', 'Toujours 6 temps fixes', 'Il n\'y a pas d\'allongement'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 14 (Tajwid) terminée ! Vous maîtrisez le Madd ʻĀriḍ lis-Sukūn. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ءَامَنُوا',
+        name: 'Madd Badal (مد بدل)',
+        instruction: 'Quand un Hamza est suivi directement d\'une lettre de Madd (sans Sukūn ni second Hamza après), c\'est un Madd Badal : la lettre de Madd "remplace" historiquement un second Hamza. Durée normale : 2 temps.',
+        sound: 'Āmanū',
+        illustration: '➖',
+        mnemonic: 'ء + Madd, sans rien après = Badal (remplacement)'
+      },
+      { type: 'qcm', instruction: 'Qu\'est-ce que le Madd Badal ?', options: ['Madd + Hamza dans le même mot', 'Hamza suivi directement d\'une lettre de Madd', 'Madd en fin de verset', 'Madd + Sukūn permanent'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'إِيمَان',
+        name: 'Exemple : إِيمَان',
+        instruction: 'Le Hamza de "إِيمَان" est suivi directement du Yāʼ de Madd : Madd Badal, prononcé sur 2 temps, comme un Madd normal.',
+        sound: 'Īmān',
+        illustration: '➖',
+        mnemonic: 'ء + ي = Madd Badal (2 temps)'
+      },
+      { type: 'qcm', instruction: 'Combien de temps dure le Madd Badal ?', options: ['2 temps (normal)', '4 à 5 temps', '6 temps', 'Il varie librement'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 15 (Tajwid) terminée ! Vous maîtrisez le Madd Badal. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'عَلِيمًا حَكِيمًا',
+        name: 'Madd ʻIwaḍ (مد عوض)',
+        instruction: 'Quand on s\'arrête (Waqf) sur un mot terminé par un Tanwīn Fatḥ (ً), celui-ci se prononce comme un simple Alif de Madd allongé sur 2 temps, "en compensation" du Tanwīn qu\'on ne prononce plus.',
+        sound: 'ʻAlīman Ḥakīman',
+        illustration: '🔄',
+        mnemonic: 'Tanwīn Fatḥ + pause = Alif de compensation'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on le Madd ʻIwaḍ ?', options: ['En pause sur un Tanwīn Kasr', 'En pause sur un Tanwīn Fatḥ', 'En pause sur un Tanwīn Ḍamm', 'Jamais en pause'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'حَكِيمًا',
+        name: 'Exemple : حَكِيمًا (en pause)',
+        instruction: 'En continu, "حَكِيمًا" se lit "Ḥakīman". En pause, le Tanwīn Fatḥ final ne se prononce plus : on lit "Ḥakīmā", avec un Alif de compensation tenu 2 temps.',
+        sound: 'Ḥakīmā',
+        illustration: '🔄',
+        mnemonic: 'On s\'arrête, le "n" du Tanwīn disparaît'
+      },
+      { type: 'qcm', instruction: 'Comment se lit "حَكِيمًا" quand on s\'arrête dessus (Waqf) ?', options: ['Ḥakīman (inchangé)', 'Ḥakīm (sans voyelle)', 'Ḥakīmā (avec Alif de compensation)', 'Ḥakīmi'], correctIndex: 2, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 16 (Tajwid) terminée ! Vous maîtrisez le Madd ʻIwaḍ. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ٱللَّٰه',
+        name: 'Tafkhīm/Tarqīq du Lafẓ al-Jalālah (لفظ الجلالة)',
+        instruction: 'Le Lām du nom "ٱللَّٰه" (Allāh) se prononce de façon emphatique (Tafkhīm) quand il est précédé d\'une Fatḥa ou d\'une Ḍamma, mais léger (Tarqīq) quand il est précédé d\'une Kasra.',
+        sound: 'Allāh',
+        illustration: '🕋',
+        mnemonic: 'Kasra avant = léger ; sinon = emphatique'
+      },
+      { type: 'qcm', instruction: 'Quand le Lām de "ٱللَّٰه" est-il prononcé léger (Tarqīq) ?', options: ['Toujours', 'Quand il est précédé d\'une Fatḥa', 'Quand il est précédé d\'une Kasra', 'Quand il est précédé d\'une Ḍamma'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'قَالَ ٱللَّٰهُ / بِٱللَّٰه',
+        name: 'Comparaison : قَالَ ٱللَّٰهُ vs بِٱللَّٰه',
+        instruction: 'Dans "قَالَ ٱللَّٰهُ" (précédé d\'une Fatḥa sur لَ), le Lām est emphatique. Dans "بِٱللَّٰه" (précédé d\'une Kasra sur بِ), le Lām devient léger.',
+        sound: 'Qāla Llāhu / Billāh',
+        illustration: '⚖️',
+        mnemonic: 'Comparez : Fatḥa avant = lourd, Kasra avant = léger'
+      },
+      { type: 'qcm', instruction: 'Dans "بِٱللَّٰه", pourquoi le Lām est-il prononcé léger (Tarqīq) ?', options: ['Parce qu\'il est précédé d\'une Kasra (بِ)', 'Parce que c\'est un nom divin', 'Parce qu\'il est en fin de mot', 'Il n\'est jamais léger'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 17 (Tajwid) terminée ! Parcours Tajwid enrichi : Madd ʻĀriḍ lis-Sukūn, Madd Badal, Madd ʻIwaḍ et le Tafkhīm/Tarqīq du Lafẓ al-Jalālah. +20 XP' }
     ]
   ];
 
