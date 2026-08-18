@@ -1434,7 +1434,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 12,
+       total: 16,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -4220,6 +4220,30 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'ي', name: 'Yāʼ : les 4 formes', instruction: 'Le Yāʼ isolé (ي) devient يـ en début de mot, ـيـ au milieu, et ـي à la fin. Les deux points en dessous disparaissent souvent en position initiale ou médiane.', sound: 'Yāʼ', illustration: '🔤', mnemonic: 'يَد (Yad - Main) : le Yāʼ y est en position initiale (يـ)' },
       { type: 'qcm', instruction: 'Quelle est la forme du "Yāʼ" en FIN de mot ?', options: ['ي', 'يـ', 'ـيـ', 'ـي'], correctIndex: 3, textStyle: 'text-5xl' },
       { type: 'success', instruction: 'Leçon 12 (Calligraphie) terminée ! Hāʼ et Yāʼ : leurs 4 formes maîtrisées. Les 28 lettres de l\'alphabet arabe sont désormais toutes explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بَيْت', name: 'Liaison : Bayt (Maison)', instruction: 'Assemblons trois lettres liées en un mot complet : بـ (Bāʼ initiale) + ـيـ (Yāʼ médiane) + ـت (Tāʼ finale) donne بَيْت, "maison". Le stylo ne se lève jamais entre les trois lettres.', sound: 'Bayt', illustration: '🏠', mnemonic: 'Trois formes liées, un seul geste continu' },
+      { type: 'trace', letter: 'بَيْت', instruction: 'Tracez "بَيْت" (Bayt) en liant bien les trois lettres, sans lever le stylo.' },
+      { type: 'qcm', instruction: 'Dans "بَيْت", sous quelle forme apparaît le Yāʼ ?', options: ['Isolée', 'Initiale', 'Médiane', 'Finale'], correctIndex: 2, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 13 (Calligraphie) terminée ! Vous savez lier Bāʼ, Yāʼ et Tāʼ dans بَيْت (Bayt). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كِتَاب', name: 'Liaison : Kitāb (Livre)', instruction: 'Dans كِتَاب : ك (initiale) + ـتـ (médiane) + ا (finale, car l\'Alif reçoit la liaison) + ب. Le Bāʼ final apparaît ISOLÉ (ب), pas lié (ـب), car l\'Alif qui précède ne se lie JAMAIS vers l\'avant.', sound: 'Kitāb', illustration: '📖', mnemonic: 'Une lettre non-connectrice "casse" toujours la chaîne suivante' },
+      { type: 'trace', letter: 'كِتَاب', instruction: 'Tracez "كِتَاب" (Kitāb), en observant bien le Bāʼ final isolé après l\'Alif.' },
+      { type: 'qcm', instruction: 'Dans "كِتَاب", pourquoi le Bāʼ final apparaît-il ISOLÉ (ب) et non lié (ـب) ?', options: ['Parce que l\'Alif qui précède ne se lie jamais vers l\'avant', 'C\'est une erreur d\'écriture', 'Parce que Bāʼ est toujours isolé', 'Parce que Kitāb est un mot court'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 14 (Calligraphie) terminée ! Vous comprenez l\'effet d\'une lettre non-connectrice dans كِتَاب (Kitāb). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مُحَمَّد', name: 'Liaison : Muḥammad', instruction: 'Dans مُحَمَّد : م (initiale) + ح (médiane) + مّ (médiane, doublée par la Shadda) + د (finale). Le Dāl final ne change pas de forme : c\'est une lettre non-connectrice, sa forme finale est identique à sa forme isolée.', sound: 'Muḥammad', illustration: '🕌', mnemonic: 'Le Mīm apparaît deux fois, lié aux lettres voisines' },
+      { type: 'trace', letter: 'مُحَمَّد', instruction: 'Tracez "مُحَمَّد" (Muḥammad), en liant les quatre lettres.' },
+      { type: 'qcm', instruction: 'Combien de fois la lettre Mīm (م) apparaît-elle dans "مُحَمَّد" ?', options: ['Une fois', 'Deux fois', 'Trois fois', 'Quatre fois'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 15 (Calligraphie) terminée ! Vous savez lier les quatre lettres de مُحَمَّد (Muḥammad). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سَلَام', name: 'Liaison : Salām (Paix)', instruction: 'Dans سَلَام : س (initiale) + ل (médiane) + ا (finale, l\'Alif reçoit la liaison du Lām) + م. Comme dans كِتَاب, le Mīm final apparaît ISOLÉ car l\'Alif ne transmet aucune liaison vers l\'avant.', sound: 'Salām', illustration: '☮️', mnemonic: 'Même logique que Kitāb : Alif casse la chaîne' },
+      { type: 'trace', letter: 'سَلَام', instruction: 'Tracez "سَلَام" (Salām), en observant le Mīm final isolé.' },
+      { type: 'qcm', instruction: 'Pourquoi le Mīm final de "سَلَام" est-il isolé, comme le Bāʼ dans "كِتَاب" ?', options: ['Parce qu\'il suit un Alif, lettre non-connectrice', 'Parce que Mīm ne se lie jamais', 'Parce que c\'est un nom divin', 'Parce que le mot est court'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 16 (Calligraphie) terminée ! Vous maîtrisez la liaison des lettres dans des mots complets : بَيْت, كِتَاب, مُحَمَّد, سَلَام. +20 XP' }
     ]
   ];
 
