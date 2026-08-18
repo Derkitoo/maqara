@@ -1410,7 +1410,7 @@ export default function ArabicLearningApp() {
        title: 'Les 99 Noms d\'Allah',
        description: 'Al-Asmāʼ al-Ḥusnā, les plus beaux noms',
        progress: savedProgress[6] ?? 0,
-       total: 32,
+       total: 33,
        tags: ['Noms Divins', 'Spiritualité'],
        color: 'bg-amber-100',
        tagColor: 'bg-amber-200 text-amber-800'
@@ -3923,6 +3923,15 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'ٱلرَّشِيد', name: 'Ar-Rashīd', instruction: 'Celui qui guide avec sagesse : Il conduit Sa création vers ce qui est juste et bon, sans jamais Se tromper ni égarer qui que ce soit.', sound: 'Ar-Rashīd', illustration: '🌟', mnemonic: 'Même racine que "Rushd" (droiture, maturité)' },
       { type: 'qcm', instruction: 'Que signifie "ٱلرَّشِيد" (Ar-Rashīd) ?', options: ['Celui qui guide avec sagesse', 'Celui qui égare', 'L\'Insensé', 'L\'Imprudent'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 32 (Noms d\'Allah) terminée ! Al-Bāqī, Al-Wārith, Ar-Rashīd. Parcours Les 99 Noms d\'Allah (5e partie) : 96 noms explorés. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُعْطِي', name: 'Al-Muʻṭī', instruction: 'Le Généreux Donateur : Il est la source de tout don, matériel ou spirituel ; personne ne peut donner ce qu\'Il retient, ni retenir ce qu\'Il donne.', sound: 'Al-Muʻṭī', illustration: '🎁', mnemonic: 'Même racine que "ʻAṭāʼ" (don)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُعْطِي" (Al-Muʻṭī) ?', options: ['Le Généreux Donateur', 'Celui qui retient tout', 'L\'Avare', 'Celui qui prend'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْفَرْد', name: 'Al-Fard', instruction: 'L\'Unique, le Singulier : Il est seul en Son essence, sans partie ni composition, radicalement différent de tout ce qui existe.', sound: 'Al-Fard', illustration: '☝️', mnemonic: 'Proche d\'Al-Wāḥid, mais insiste sur l\'absence de composition' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْفَرْد" (Al-Fard) ?', options: ['L\'Unique, sans composition', 'Le Multiple', 'Le Divisible', 'Le Semblable'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوِتْر', name: 'Al-Witr', instruction: 'L\'Impair : d\'après le hadith "Allah est Witr (impair) et Il aime l\'impair", ce nom souligne l\'unicité absolue de Dieu, à l\'image du nombre impair qui ne se divise pas en deux parts égales.', sound: 'Al-Witr', illustration: '1️⃣', mnemonic: 'Rappelle le nombre impair, symbole d\'unicité indivisible' },
+      { type: 'qcm', instruction: 'Que rappelle le nom "ٱلْوِتْر" (Al-Witr, l\'Impair) ?', options: ['L\'unicité indivisible de Dieu', 'La multiplicité des dieux', 'Le hasard', 'La symétrie parfaite'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 33 (Noms d\'Allah) terminée ! Al-Muʻṭī, Al-Fard, Al-Witr. Parcours Les 99 Noms d\'Allah complet : les 99 noms sont désormais explorés ! +25 XP' }
     ]
   ];
 
