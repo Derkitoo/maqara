@@ -1575,7 +1575,7 @@ export default function ArabicLearningApp() {
        title: 'Tajwid',
        description: 'Les règles de récitation (أحكام التجويد)',
        progress: savedProgress[5] ?? 0,
-       total: 17,
+       total: 22,
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
@@ -4051,6 +4051,141 @@ export default function ArabicLearningApp() {
       },
       { type: 'qcm', instruction: 'Dans "بِٱللَّٰه", pourquoi le Lām est-il prononcé léger (Tarqīq) ?', options: ['Parce qu\'il est précédé d\'une Kasra (بِ)', 'Parce que c\'est un nom divin', 'Parce qu\'il est en fin de mot', 'Il n\'est jamais léger'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 17 (Tajwid) terminée ! Parcours Tajwid enrichi : Madd ʻĀriḍ lis-Sukūn, Madd Badal, Madd ʻIwaḍ et le Tafkhīm/Tarqīq du Lafẓ al-Jalālah. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ٱضْرِب بِّعَصَاكَ',
+        name: 'Idghām Mutamāthilayn (إدغام متماثلين)',
+        instruction: 'Quand une lettre avec Sukūn est suivie de la MÊME lettre (identique), les deux fusionnent complètement en une seule lettre tenue (Shadda).',
+        sound: 'Iḍrib biʻaṣāk',
+        illustration: '🔀',
+        mnemonic: 'Deux lettres identiques qui se suivent = fusion'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on l\'Idghām Mutamāthilayn ?', options: ['Deux lettres de même point d\'articulation', 'Deux lettres identiques qui se suivent', 'Deux lettres de point d\'articulation proche', 'Jamais entre deux mots'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ٱضْرِب بِّعَصَاكَ',
+        name: 'Exemple : ٱضْرِب بِّعَصَاكَ',
+        instruction: 'Le Bāʼ Sākin de "ٱضْرِب" est suivi du Bāʼ de "بِّعَصَاكَ" : les deux Bāʼ identiques fusionnent en un seul, tenu avec Shadda.',
+        sound: 'Iḍrib biʻaṣāk',
+        illustration: '🔀',
+        mnemonic: 'ب + ب = fusion en un seul ب tenu'
+      },
+      { type: 'qcm', instruction: 'Que se passe-t-il avec les deux ب dans "ٱضْرِب بِّعَصَاكَ" ?', options: ['Ils se prononcent séparément', 'Ils fusionnent en un seul son tenu', 'Le premier disparaît', 'Le second devient un م'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 18 (Tajwid) terminée ! Vous maîtrisez l\'Idghām Mutamāthilayn. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'قَالَت طَّائِفَةٌ',
+        name: 'Idghām Mutajānisayn (إدغام متجانسين)',
+        instruction: 'Quand une lettre avec Sukūn est suivie d\'une lettre DIFFÉRENTE mais de MÊME point d\'articulation (comme ت et ط, ou د et ت), les deux fusionnent également.',
+        sound: 'Qālat-ṭāʼifah',
+        illustration: '🔀',
+        mnemonic: 'Même point d\'articulation, lettres différentes'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on l\'Idghām Mutajānisayn ?', options: ['Deux lettres identiques', 'Deux lettres de même point d\'articulation, mais différentes', 'Deux lettres de point d\'articulation éloigné', 'Uniquement avec le Nūn Sākin'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'قَالَت طَّائِفَةٌ',
+        name: 'Exemple : قَالَت طَّائِفَةٌ',
+        instruction: 'Le Tāʼ Sākin de "قَالَت" est suivi du Ṭāʼ de "طَّائِفَةٌ" : Tāʼ et Ṭāʼ partagent le même point d\'articulation, ils fusionnent dans le Ṭāʼ.',
+        sound: 'Qālat-ṭāʼifah',
+        illustration: '🔀',
+        mnemonic: 'ت + ط = fusion dans le ط (même point d\'articulation)'
+      },
+      { type: 'qcm', instruction: 'Pourquoi le ت et le ط fusionnent-ils dans "قَالَت طَّائِفَةٌ" ?', options: ['Ils sont identiques', 'Ils partagent le même point d\'articulation', 'Le ت a une Fatḥa', 'C\'est un Madd'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 19 (Tajwid) terminée ! Vous maîtrisez l\'Idghām Mutajānisayn. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'قُل رَّبِّ',
+        name: 'Idghām Mutaqāribayn (إدغام متقاربين)',
+        instruction: 'Quand une lettre avec Sukūn est suivie d\'une lettre de point d\'articulation PROCHE (comme ل et ر, ou ق et ك), les deux peuvent fusionner également, selon la lecture.',
+        sound: 'Qur-Rabbi',
+        illustration: '🔀',
+        mnemonic: 'Points d\'articulation voisins, pas identiques'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on l\'Idghām Mutaqāribayn ?', options: ['Lettres de point d\'articulation identique', 'Lettres de point d\'articulation proche', 'Lettres de point d\'articulation opposé', 'Uniquement en fin de verset'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'قُل رَّبِّ',
+        name: 'Exemple : قُل رَّبِّ',
+        instruction: 'Le Lām Sākin de "قُل" est suivi du Rāʼ de "رَّبِّ" : Lām et Rāʼ ont des points d\'articulation proches, ils fusionnent dans le Rāʼ.',
+        sound: 'Qur-Rabbi',
+        illustration: '🔀',
+        mnemonic: 'ل + ر = fusion dans le ر (points d\'articulation proches)'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce "قُل رَّبِّ" avec l\'Idghām Mutaqāribayn ?', options: ['Qul-Rabbi (séparé)', 'Qur-Rabbi (fusionné)', 'Qum-Rabbi', 'Qul seul, sans Rabbi'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 20 (Tajwid) terminée ! Les 3 types d\'Idghām (Mutamāthilayn, Mutajānisayn, Mutaqāribayn) sont maîtrisés. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'م',
+        name: 'Signes de Waqf (1/2) — م، لا، ج',
+        instruction: 'Le muṣḥaf indique où l\'on peut ou doit s\'arrêter en récitant. Le signe م (Waqf Lāzim) impose un arrêt obligatoire ; لا interdit de s\'arrêter ; ج (Waqf Jāʼiz) autorise librement l\'arrêt ou la continuation.',
+        sound: 'Waqf Lāzim',
+        illustration: '⏹️',
+        mnemonic: 'م = stop obligatoire, لا = interdit, ج = au choix'
+      },
+      { type: 'qcm', instruction: 'Que signifie le signe م (Waqf Lāzim) dans le muṣḥaf ?', options: ['Arrêt interdit', 'Arrêt obligatoire', 'Arrêt au choix', 'Continuer de préférence'], correctIndex: 1, textStyle: 'text-3xl' },
+      {
+        type: 'intro',
+        letter: 'لا',
+        name: 'Le signe لا (interdiction de s\'arrêter)',
+        instruction: 'Le signe لا indique qu\'il ne faut PAS s\'arrêter à cet endroit, car cela couperait le sens de la phrase de façon trompeuse.',
+        sound: 'Lā taqif',
+        illustration: '🚫',
+        mnemonic: 'لا = "non", ne t\'arrête pas ici'
+      },
+      { type: 'qcm', instruction: 'Que signifie le signe لا dans le muṣḥaf ?', options: ['Arrêt obligatoire', 'Il ne faut pas s\'arrêter ici', 'Arrêt au choix', 'Fin de sourate'], correctIndex: 1, textStyle: 'text-3xl' },
+      {
+        type: 'intro',
+        letter: 'ج',
+        name: 'Le signe ج (Waqf Jāʼiz)',
+        instruction: 'Le signe ج (Waqf Jāʼiz) signifie que l\'arrêt est permis, sans préférence marquée : on peut s\'arrêter ou continuer, les deux sont corrects.',
+        sound: 'Waqf Jāʼiz',
+        illustration: '↔️',
+        mnemonic: 'ج = au choix, les deux options sont valables'
+      },
+      { type: 'qcm', instruction: 'Que signifie le signe ج (Waqf Jāʼiz) ?', options: ['Arrêt obligatoire', 'Arrêt interdit', 'Arrêt permis, au choix', 'Fin de verset'], correctIndex: 2, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 21 (Tajwid) terminée ! Vous connaissez les signes م, لا et ج. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'صلى',
+        name: 'Signes de Waqf (2/2) — صلى، قلى، ∴ ∴',
+        instruction: 'Le signe صلى (Al-Waṣl Awlā) indique qu\'il est préférable de CONTINUER la lecture, même si s\'arrêter reste permis.',
+        sound: 'Al-Waṣl Awlā',
+        illustration: '➡️',
+        mnemonic: 'صلى = continuer est préférable'
+      },
+      { type: 'qcm', instruction: 'Que signifie le signe صلى (Al-Waṣl Awlā) ?', options: ['S\'arrêter est préférable', 'Continuer est préférable', 'Arrêt obligatoire', 'Arrêt interdit'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'قلى',
+        name: 'Le signe قلى (Al-Waqf Awlā)',
+        instruction: 'Le signe قلى (Al-Waqf Awlā), inverse du précédent, indique qu\'il est préférable de S\'ARRÊTER, même si continuer reste permis.',
+        sound: 'Al-Waqf Awlā',
+        illustration: '⏸️',
+        mnemonic: 'قلى = s\'arrêter est préférable'
+      },
+      { type: 'qcm', instruction: 'Que signifie le signe قلى (Al-Waqf Awlā) ?', options: ['Continuer est préférable', 'S\'arrêter est préférable', 'Arrêt obligatoire', 'Arrêt interdit'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: '∴ … ∴',
+        name: 'Waqf Muraqaba (les points jumelés)',
+        instruction: 'Quand deux groupes de trois points (∴) apparaissent proches l\'un de l\'autre, on doit s\'arrêter sur l\'UN des deux seulement, jamais sur les deux ni sur aucun.',
+        sound: 'Waqf al-Muraqaba',
+        illustration: '👀',
+        mnemonic: 'Un seul des deux, jamais les deux à la fois'
+      },
+      { type: 'qcm', instruction: 'Quand deux signes ∴ apparaissent proches, où doit-on s\'arrêter ?', options: ['Sur les deux', 'Sur aucun des deux', 'Sur l\'un des deux seulement', 'Toujours sur le premier'], correctIndex: 2, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 22 (Tajwid) terminée ! Parcours Tajwid encore enrichi : les 3 Idghām (Mutamāthilayn, Mutajānisayn, Mutaqāribayn) et les principaux signes de Waqf. +25 XP' }
     ]
   ];
 
