@@ -168,7 +168,7 @@ export default function ArabicLearningApp() {
   const [matchedPairs, setMatchedPairs] = useState([]);
   const [buildSentence, setBuildSentence] = useState([]);
   const [isCardFlipped, setIsCardFlipped] = useState(false);
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [currentCardIndex, setCurrentCardIndex] = useState(-1);
   const [learningFocus, setLearningFocus] = useState(() => loadSavedProgress().learningFocus ?? 'lecture');
   const [isRecording, setIsRecording] = useState(false);
   const [userXp, setUserXp] = useState(() => loadSavedProgress().userXp ?? 140);
@@ -3554,7 +3554,7 @@ export default function ArabicLearningApp() {
   };
 
   const renderRevision = () => {
-    if (currentCardIndex === -1) {
+    if (currentCardIndex === -1 || !sessionQueue[currentCardIndex]) {
       const nothingLearnedYet = deckSize === 0;
       return (
         <div className="flex-1 flex flex-col items-center justify-center p-6 bg-[#f3efe4] relative overflow-hidden pb-32">
