@@ -166,6 +166,7 @@ export default function ArabicLearningApp() {
   const [matchRight, setMatchRight] = useState(null);
   const [matchWrong, setMatchWrong] = useState(false);
   const [matchedPairs, setMatchedPairs] = useState([]);
+  const [shuffledMatchRight, setShuffledMatchRight] = useState([]);
   const [buildSentence, setBuildSentence] = useState([]);
   const [isCardFlipped, setIsCardFlipped] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(-1);
@@ -3536,6 +3537,18 @@ export default function ArabicLearningApp() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentScreen]);
 
+  // Les leçons 'match' stockent rightCol dans le même ordre que leftCol
+  // (les deux triés par id) : sans mélange, la bonne réponse est toujours
+  // à la même hauteur que son vis-à-vis, ce qui rend l'exercice trivial.
+  // On mélange rightCol une seule fois par étape (pas à chaque re-render,
+  // sinon les boutons changeraient de position à chaque clic).
+  useEffect(() => {
+    const step = activeLesson && activeLesson[lessonStep];
+    if (step && step.type === 'match' && step.rightCol) {
+      setShuffledMatchRight([...step.rightCol].sort(() => Math.random() - 0.5));
+    }
+  }, [activeLesson, lessonStep]);
+
   useEffect(() => {
     serverSyncedRef.current = false;
     if (!user || !supabase) return;
@@ -3601,6 +3614,7 @@ export default function ArabicLearningApp() {
     setMatchRight(null);
     setMatchWrong(false);
     setMatchedPairs([]);
+    setShuffledMatchRight([]);
     setBuildSentence([]);
     setReadWordsStatus({});
     setActiveReadWord(null);
@@ -4036,11 +4050,18 @@ export default function ArabicLearningApp() {
             </div>
           )}
 
-          {stepData.type === 'qcm' && (
+          {stepData.type === 'qcm' && (() => {
+            // Le bouton carré (aspect-square) convient à une lettre ou un
+            // mot court, mais les options plus longues (phrases des
+            // modules Expressions/Noms d'Allah) y débordaient. Au-delà
+            // d'un certain seuil, on bascule sur une liste empilée en
+            // pleine largeur, sans contrainte carrée.
+            const isLongOptions = stepData.options.some(o => o.length > 12);
+            return (
             <div className="flex flex-col flex-1 animation-fade-in justify-center">
               <h2 className="text-xl font-bold text-gray-800 mb-8 text-center">{stepData.instruction}</h2>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className={isLongOptions ? 'flex flex-col gap-3' : 'grid grid-cols-2 gap-4'}>
                 {stepData.options.map((opt, idx) => {
                   let btnClass = 'bg-white border-transparent text-gray-800 hover:bg-gray-50 hover:border-gray-200';
 
@@ -4056,22 +4077,27 @@ export default function ArabicLearningApp() {
                     btnClass = 'bg-green-50 border-green-300 text-green-700';
                   }
 
-                  const fontSizeClass = opt.length > 2 ? 'text-[20px]' : 'text-[40px]';
+                  const fontSizeClass = isLongOptions ? 'text-[16px]' : (opt.length > 2 ? 'text-[20px]' : 'text-[40px]');
 
                   return (
                     <button
                       key={idx}
                       onClick={() => !isAnswerChecked && setSelectedAnswer(idx)}
                       disabled={isAnswerChecked}
-                      className={`font-arabic aspect-square rounded-[22px] flex items-center justify-center font-bold shadow-sm border-4 transition-all ${fontSizeClass} ${btnClass}`}
+                      className={`font-arabic font-bold shadow-sm border-4 transition-all ${fontSizeClass} ${btnClass} ${
+                        isLongOptions
+                          ? 'w-full py-4 px-5 rounded-2xl text-left'
+                          : 'aspect-square rounded-[22px] flex items-center justify-center'
+                      }`}
                     >
-                      <span className="text-center w-full px-1 break-words">{opt}</span>
+                      <span className={`w-full px-1 break-words ${isLongOptions ? 'text-left' : 'text-center'}`}>{opt}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
-          )}
+            );
+          })()}
 
           {stepData.type === 'reading' && (
              <div className="flex flex-col flex-1 animation-fade-in py-2">
@@ -4215,7 +4241,7 @@ export default function ArabicLearningApp() {
                     })}
                  </div>
                  <div className="flex-1 flex flex-col space-y-3">
-                    {stepData.rightCol.map((item) => {
+                    {(shuffledMatchRight.length ? shuffledMatchRight : stepData.rightCol).map((item) => {
                        const isMatched = matchedPairs.includes(item.id);
                        const isSelected = matchRight?.id === item.id;
                        const isWrong = isSelected && matchWrong;
