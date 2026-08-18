@@ -956,6 +956,186 @@ export default function ArabicLearningApp() {
         { translit: 'Kabbara', trans: 'Il a proclamé la grandeur de Dieu', arabic: 'كَبَّرَ' },
         { translit: 'Allāhu Akbar', trans: 'Dieu est le Plus Grand', arabic: 'ٱللَّٰهُ أَكْبَر' }
       ]
+    },
+    'J-H-D': {
+      arabic: 'جهد',
+      trans: 'Effort, lutte',
+      words: [
+        { word: 'جِهَاد', trans: 'Jihād', meaning: 'Effort, lutte', icon: '💪', desc: 'L\'effort soutenu, intérieur ou extérieur, sur le chemin de Dieu.' },
+        { word: 'مُجَاهِد', trans: 'Mujāhid', meaning: 'Celui qui lutte', icon: '🛡️', desc: 'Celui qui fournit un effort méritoire.' }
+      ],
+      derivatives: [
+        { translit: 'Jāhada', trans: 'Il a lutté, fourni un effort', arabic: 'جَاهَدَ' },
+        { translit: 'Ijtihād', trans: 'Effort d\'interprétation', arabic: 'ٱجْتِهَاد' }
+      ]
+    },
+    'S-B-Q': {
+      arabic: 'سبق',
+      trans: 'Précéder',
+      words: [
+        { word: 'سَابِق', trans: 'Sābiq', meaning: 'Précédent', icon: '🏃', desc: 'Celui qui devance les autres, notamment dans le bien.' },
+        { word: 'سَبْق', trans: 'Sabq', meaning: 'Précédence', icon: '⏱️', desc: 'Le fait de venir avant.' }
+      ],
+      derivatives: [
+        { translit: 'Sabaqa', trans: 'Il a précédé', arabic: 'سَبَقَ' },
+        { translit: 'As-Sābiqūn', trans: 'Les Devanciers', arabic: 'ٱلسَّابِقُون' }
+      ]
+    },
+    'KH-L-F': {
+      arabic: 'خلف',
+      trans: 'Succéder, différer',
+      words: [
+        { word: 'خَلِيفَة', trans: 'Khalīfa', meaning: 'Successeur', icon: '👑', desc: 'Celui qui succède, notamment Adam sur terre.' },
+        { word: 'خِلَاف', trans: 'Khilāf', meaning: 'Désaccord', icon: '⚡', desc: 'Une divergence entre deux positions.' }
+      ],
+      derivatives: [
+        { translit: 'Khalafa', trans: 'Il a succédé', arabic: 'خَلَفَ' },
+        { translit: 'Khilāfa', trans: 'Le Califat', arabic: 'خِلَافَة' }
+      ]
+    },
+    'GH-F-L': {
+      arabic: 'غفل',
+      trans: 'Négliger',
+      words: [
+        { word: 'غَافِل', trans: 'Ghāfil', meaning: 'Négligent', icon: '😴', desc: 'Celui qui oublie ou néglige le rappel de Dieu.' },
+        { word: 'غَفْلَة', trans: 'Ghaflah', meaning: 'Insouciance', icon: '💤', desc: 'L\'état d\'inattention envers l\'essentiel.' }
+      ],
+      derivatives: [
+        { translit: 'Ghafala', trans: 'Il a négligé', arabic: 'غَفَلَ' },
+        { translit: 'Lā Taghful', trans: 'Ne sois pas négligent', arabic: 'لَا تَغْفُلْ' }
+      ]
+    },
+    'J-H-L': {
+      arabic: 'جهل',
+      trans: 'Ignorance',
+      words: [
+        { word: 'جَاهِل', trans: 'Jāhil', meaning: 'Ignorant', icon: '❓', desc: 'Celui qui manque de savoir ou agit sans discernement.' },
+        { word: 'جَهْل', trans: 'Jahl', meaning: 'Ignorance', icon: '🌫️', desc: 'L\'absence de savoir, opposée à ʻIlm.' }
+      ],
+      derivatives: [
+        { translit: 'Jahila', trans: 'Il a ignoré', arabic: 'جَهِلَ' },
+        { translit: 'Al-Jāhiliyya', trans: 'L\'ère de l\'ignorance pré-islamique', arabic: 'ٱلْجَاهِلِيَّة' }
+      ]
+    },
+    'A-Q-L': {
+      arabic: 'عقل',
+      trans: 'Intellect',
+      words: [
+        { word: 'عَقْل', trans: 'ʻAql', meaning: 'Raison', icon: '🧠', desc: 'La faculté de comprendre et de discerner.' },
+        { word: 'عَاقِل', trans: 'ʻĀqil', meaning: 'Raisonnable', icon: '💭', desc: 'Celui qui use de sa raison.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAqala', trans: 'Il a compris, raisonné', arabic: 'عَقَلَ' },
+        { translit: 'Yaʻqilūn', trans: 'Ils raisonnent', arabic: 'يَعْقِلُون' }
+      ]
+    },
+    'H-S-B': {
+      arabic: 'حسب',
+      trans: 'Compter, suffire',
+      words: [
+        { word: 'حِسَاب', trans: 'Ḥisāb', meaning: 'Compte', icon: '🧮', desc: 'Le compte des actes, notamment au Jour du Jugement.' },
+        { word: 'حَسِيب', trans: 'Ḥasīb', meaning: 'Comptable', icon: '📊', desc: 'Un des noms divins : Celui qui tient le compte de tout.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥasiba', trans: 'Il a compté, pensé', arabic: 'حَسِبَ' },
+        { translit: 'Ḥasbunā Llāh', trans: 'Dieu nous suffit', arabic: 'حَسْبُنَا ٱللَّٰه' }
+      ]
+    },
+    'W-S-A': {
+      arabic: 'وسع',
+      trans: 'Étendre, vaste',
+      words: [
+        { word: 'وَاسِع', trans: 'Wāsiʻ', meaning: 'Vaste', icon: '🌌', desc: 'Un des noms divins : Celui dont la miséricorde et la science sont infinies.' },
+        { word: 'سَعَة', trans: 'Saʻa', meaning: 'Étendue, aisance', icon: '↔️', desc: 'L\'ampleur, l\'espace disponible.' }
+      ],
+      derivatives: [
+        { translit: 'Wasiʻa', trans: 'Il a englobé, contenu', arabic: 'وَسِعَ' },
+        { translit: 'Al-Wāsiʻ', trans: 'Le Vaste (nom divin)', arabic: 'ٱلْوَاسِع' }
+      ]
+    },
+    'J-M-A': {
+      arabic: 'جمع',
+      trans: 'Rassembler',
+      words: [
+        { word: 'جَمْع', trans: 'Jamʻ', meaning: 'Rassemblement', icon: '👨‍👩‍👧‍👦', desc: 'Le fait de réunir, notamment au Jour de la Résurrection.' },
+        { word: 'جَمَاعَة', trans: 'Jamāʻa', meaning: 'Communauté', icon: '🕌', desc: 'Un groupe réuni, notamment pour la prière.' }
+      ],
+      derivatives: [
+        { translit: 'Jamaʻa', trans: 'Il a rassemblé', arabic: 'جَمَعَ' },
+        { translit: 'Yawm al-Jamʻ', trans: 'Le Jour du Rassemblement', arabic: 'يَوْمُ ٱلْجَمْع' }
+      ]
+    },
+    'F-R-D': {
+      arabic: 'فرد',
+      trans: 'Unique, individuel',
+      words: [
+        { word: 'فَرْد', trans: 'Fard', meaning: 'Individu', icon: '🧍', desc: 'Une personne seule, distincte du groupe.' },
+        { word: 'فَرِيد', trans: 'Farīd', meaning: 'Unique', icon: '⭐', desc: 'Ce qui est sans pareil.' }
+      ],
+      derivatives: [
+        { translit: 'Infarada', trans: 'Il est resté seul', arabic: 'ٱنْفَرَدَ' },
+        { translit: 'Furādā', trans: 'Séparément, un par un', arabic: 'فُرَادَىٰ' }
+      ]
+    },
+    'W-H-D': {
+      arabic: 'وحد',
+      trans: 'Unicité',
+      words: [
+        { word: 'وَاحِد', trans: 'Wāḥid', meaning: 'Un, Unique', icon: '☝️', desc: 'Un des noms divins : Dieu, l\'Unique sans associé.' },
+        { word: 'تَوْحِيد', trans: 'Tawḥīd', meaning: 'Monothéisme', icon: '🕋', desc: 'La proclamation et la croyance en l\'Unicité de Dieu.' }
+      ],
+      derivatives: [
+        { translit: 'Waḥḥada', trans: 'Il a proclamé l\'unicité', arabic: 'وَحَّدَ' },
+        { translit: 'Al-Aḥad', trans: 'L\'Unique (nom divin)', arabic: 'ٱلْأَحَد' }
+      ]
+    },
+    'R-H-L': {
+      arabic: 'رحل',
+      trans: 'Voyager',
+      words: [
+        { word: 'رِحْلَة', trans: 'Riḥla', meaning: 'Voyage', icon: '🧳', desc: 'Un déplacement, notamment pour le commerce ou la quête du savoir.' },
+        { word: 'رَاحِل', trans: 'Rāḥil', meaning: 'Voyageur', icon: '🐫', desc: 'Celui qui part en voyage.' }
+      ],
+      derivatives: [
+        { translit: 'Raḥala', trans: 'Il a voyagé', arabic: 'رَحَلَ' },
+        { translit: 'Riḥlat ash-Shitāʼ wa ṣ-Ṣayf', trans: 'Le voyage d\'hiver et d\'été (Quraysh)', arabic: 'رِحْلَةَ ٱلشِّتَاءِ وَٱلصَّيْف' }
+      ]
+    },
+    'B-A-TH': {
+      arabic: 'بعث',
+      trans: 'Ressusciter, envoyer',
+      words: [
+        { word: 'بَعْث', trans: 'Baʻth', meaning: 'Résurrection', icon: '🌅', desc: 'Le fait d\'être ressuscité après la mort.' },
+        { word: 'مَبْعُوث', trans: 'Mabʻūth', meaning: 'Envoyé', icon: '📨', desc: 'Celui qui est envoyé avec une mission.' }
+      ],
+      derivatives: [
+        { translit: 'Baʻatha', trans: 'Il a envoyé, ressuscité', arabic: 'بَعَثَ' },
+        { translit: 'Yawm al-Baʻth', trans: 'Le Jour de la Résurrection', arabic: 'يَوْمُ ٱلْبَعْث' }
+      ]
+    },
+    'KH-L-S': {
+      arabic: 'خلص',
+      trans: 'Sincérité, pureté',
+      words: [
+        { word: 'إِخْلَاص', trans: 'Ikhlāṣ', meaning: 'Sincérité', icon: '💎', desc: 'La pureté d\'intention, réservée exclusivement à Dieu.' },
+        { word: 'خَالِص', trans: 'Khāliṣ', meaning: 'Pur', icon: '✨', desc: 'Ce qui est sans mélange, authentique.' }
+      ],
+      derivatives: [
+        { translit: 'Akhlaṣa', trans: 'Il a été sincère', arabic: 'أَخْلَصَ' },
+        { translit: 'Sūrat al-Ikhlāṣ', trans: 'La sourate de la Sincérité (112)', arabic: 'سُورَةُ ٱلْإِخْلَاص' }
+      ]
+    },
+    'A-D-L': {
+      arabic: 'عدل',
+      trans: 'Justice',
+      words: [
+        { word: 'عَدْل', trans: 'ʻAdl', meaning: 'Justice', icon: '⚖️', desc: 'Le fait de donner à chacun son dû, valeur centrale du Coran.' },
+        { word: 'عَادِل', trans: 'ʻĀdil', meaning: 'Juste', icon: '🧑‍⚖️', desc: 'Celui qui agit avec équité.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAdala', trans: 'Il a été juste', arabic: 'عَدَلَ' },
+        { translit: 'Al-ʻAdl', trans: 'Le Juste (nom divin)', arabic: 'ٱلْعَدْل' }
+      ]
     }
   };
 
@@ -1013,7 +1193,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 21,
+       total: 26,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -2605,7 +2785,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "قرأ" (Q-R-A) ?', options: ['Écrire', 'Lire, réciter', 'Écouter', 'Dessiner'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'كبر', name: 'Racine K-B-R', instruction: 'La racine K-B-R (كبر) exprime la grandeur. Elle donne كَبِير (Kabīr - Grand), comme dans "Allāhu Akbar".', sound: 'K-B-R', illustration: '🏔️', mnemonic: 'كَبِير (Kabīr - Grand)', rootKey: 'K-B-R' },
       { type: 'qcm', instruction: 'Que signifie la racine "كبر" (K-B-R) ?', options: ['Petitesse', 'Grandeur', 'Faiblesse', 'Vitesse'], correctIndex: 1, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 21 : parcours Le Secret des Racines terminé, 63 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 21 : 63 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جهد', name: 'Racine J-H-D', instruction: 'La racine J-H-D (جهد) exprime l\'effort. Elle donne جِهَاد (Jihād - Effort, lutte).', sound: 'J-H-D', illustration: '💪', mnemonic: 'جِهَاد (Jihād - Effort)', rootKey: 'J-H-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جهد" (J-H-D) ?', options: ['Repos', 'Effort, lutte', 'Sommeil', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'سبق', name: 'Racine S-B-Q', instruction: 'La racine S-B-Q (سبق) exprime la précédence. Elle donne سَابِق (Sābiq - Précédent).', sound: 'S-B-Q', illustration: '🏃', mnemonic: 'سَابِق (Sābiq - Précédent)', rootKey: 'S-B-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سبق" (S-B-Q) ?', options: ['Suivre', 'Précéder', 'Attendre', 'Retarder'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'خلف', name: 'Racine KH-L-F', instruction: 'La racine KH-L-F (خلف) exprime la succession. Elle donne خَلِيفَة (Khalīfa - Successeur).', sound: 'KH-L-F', illustration: '👑', mnemonic: 'خَلِيفَة (Khalīfa - Successeur)', rootKey: 'KH-L-F' },
+      { type: 'qcm', instruction: 'Que signifie la racine "خلف" (KH-L-F) ?', options: ['Précéder', 'Succéder, différer', 'Unir', 'Détruire'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 22 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'غفل', name: 'Racine GH-F-L', instruction: 'La racine GH-F-L (غفل) exprime la négligence. Elle donne غَفْلَة (Ghaflah - Insouciance).', sound: 'GH-F-L', illustration: '💤', mnemonic: 'غَفْلَة (Ghaflah - Insouciance)', rootKey: 'GH-F-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غفل" (GH-F-L) ?', options: ['Se souvenir', 'Négliger', 'Comprendre', 'Écouter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'جهل', name: 'Racine J-H-L', instruction: 'La racine J-H-L (جهل) exprime l\'ignorance. Elle donne جَهْل (Jahl - Ignorance).', sound: 'J-H-L', illustration: '🌫️', mnemonic: 'جَهْل (Jahl - Ignorance)', rootKey: 'J-H-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جهل" (J-H-L) ?', options: ['Savoir', 'Ignorance', 'Sagesse', 'Patience'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عقل', name: 'Racine A-Q-L', instruction: 'La racine A-Q-L (عقل) exprime l\'intellect. Elle donne عَقْل (ʻAql - Raison).', sound: 'A-Q-L', illustration: '🧠', mnemonic: 'عَقْل (ʻAql - Raison)', rootKey: 'A-Q-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عقل" (A-Q-L) ?', options: ['Le corps', 'L\'intellect', 'Le cœur', 'La main'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 23 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'حسب', name: 'Racine H-S-B', instruction: 'La racine H-S-B (حسب) exprime le compte. Elle donne حِسَاب (Ḥisāb - Compte).', sound: 'H-S-B', illustration: '🧮', mnemonic: 'حِسَاب (Ḥisāb - Compte)', rootKey: 'H-S-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حسب" (H-S-B) ?', options: ['Oublier', 'Compter, suffire', 'Perdre', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وسع', name: 'Racine W-S-A', instruction: 'La racine W-S-A (وسع) exprime l\'étendue. Elle donne وَاسِع (Wāsiʻ - Vaste, nom divin).', sound: 'W-S-A', illustration: '🌌', mnemonic: 'وَاسِع (Wāsiʻ - Vaste)', rootKey: 'W-S-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وسع" (W-S-A) ?', options: ['Étroit', 'Étendre, vaste', 'Petit', 'Rapide'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'جمع', name: 'Racine J-M-A', instruction: 'La racine J-M-A (جمع) exprime le rassemblement. Elle donne جَمَاعَة (Jamāʻa - Communauté).', sound: 'J-M-A', illustration: '🕌', mnemonic: 'جَمَاعَة (Jamāʻa - Communauté)', rootKey: 'J-M-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جمع" (J-M-A) ?', options: ['Disperser', 'Rassembler', 'Séparer', 'Détruire'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 24 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'فرد', name: 'Racine F-R-D', instruction: 'La racine F-R-D (فرد) exprime l\'unicité individuelle. Elle donne فَرْد (Fard - Individu).', sound: 'F-R-D', illustration: '🧍', mnemonic: 'فَرْد (Fard - Individu)', rootKey: 'F-R-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "فرد" (F-R-D) ?', options: ['Groupe', 'Unique, individuel', 'Foule', 'Couple'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وحد', name: 'Racine W-H-D', instruction: 'La racine W-H-D (وحد) exprime l\'unicité divine. Elle donne تَوْحِيد (Tawḥīd - Monothéisme).', sound: 'W-H-D', illustration: '☝️', mnemonic: 'تَوْحِيد (Tawḥīd - Monothéisme)', rootKey: 'W-H-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وحد" (W-H-D) ?', options: ['Multiplicité', 'Unicité', 'Division', 'Association'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'رحل', name: 'Racine R-H-L', instruction: 'La racine R-H-L (رحل) exprime le voyage. Elle donne رِحْلَة (Riḥla - Voyage).', sound: 'R-H-L', illustration: '🧳', mnemonic: 'رِحْلَة (Riḥla - Voyage)', rootKey: 'R-H-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "رحل" (R-H-L) ?', options: ['Rester', 'Voyager', 'Dormir', 'Construire'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 25 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بعث', name: 'Racine B-A-TH', instruction: 'La racine B-A-TH (بعث) exprime la résurrection. Elle donne بَعْث (Baʻth - Résurrection).', sound: 'B-A-TH', illustration: '🌅', mnemonic: 'بَعْث (Baʻth - Résurrection)', rootKey: 'B-A-TH' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بعث" (B-A-TH) ?', options: ['Enterrer', 'Ressusciter, envoyer', 'Oublier', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'خلص', name: 'Racine KH-L-S', instruction: 'La racine KH-L-S (خلص) exprime la sincérité. Elle donne إِخْلَاص (Ikhlāṣ - Sincérité).', sound: 'KH-L-S', illustration: '💎', mnemonic: 'إِخْلَاص (Ikhlāṣ - Sincérité)', rootKey: 'KH-L-S' },
+      { type: 'qcm', instruction: 'Que signifie la racine "خلص" (KH-L-S) ?', options: ['Hypocrisie', 'Sincérité, pureté', 'Doute', 'Mélange'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عدل', name: 'Racine A-D-L', instruction: 'La racine A-D-L (عدل) exprime la justice. Elle donne عَدْل (ʻAdl - Justice).', sound: 'A-D-L', illustration: '⚖️', mnemonic: 'عَدْل (ʻAdl - Justice)', rootKey: 'A-D-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عدل" (A-D-L) ?', options: ['Injustice', 'Justice', 'Doute', 'Rapidité'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 26 : parcours Le Secret des Racines terminé, 78 racines explorées ! +20 XP' }
     ]
   ];
 
