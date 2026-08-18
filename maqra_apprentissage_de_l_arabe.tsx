@@ -1410,7 +1410,7 @@ export default function ArabicLearningApp() {
        title: 'Les 99 Noms d\'Allah',
        description: 'Al-Asmāʼ al-Ḥusnā, les plus beaux noms',
        progress: savedProgress[6] ?? 0,
-       total: 24,
+       total: 32,
        tags: ['Noms Divins', 'Spiritualité'],
        color: 'bg-amber-100',
        tagColor: 'bg-amber-200 text-amber-800'
@@ -3851,6 +3851,78 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'ٱلظَّاهِر', name: 'Aẓ-Ẓāhir', instruction: 'L\'Apparent : Son existence est manifeste à travers les innombrables signes de Sa création, visible par Ses effets bien qu\'invisible en Son essence.', sound: 'Aẓ-Ẓāhir', illustration: '🌅', mnemonic: 'Toujours cité avec Al-Bāṭin' },
       { type: 'qcm', instruction: 'Que signifie "ٱلظَّاهِر" (Aẓ-Ẓāhir) ?', options: ['L\'Apparent (par Ses signes)', 'Le Caché totalement', 'L\'Inexistant', 'L\'Oublié'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 24 (Noms d\'Allah) terminée ! Al-Awwal, Al-Ākhir, Aẓ-Ẓāhir. Parcours Les 99 Noms d\'Allah (4e partie) : 72 noms explorés. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُقَدِّم', name: 'Al-Muqaddim', instruction: 'Celui qui avance : Il place en avant qui Il veut, en rang, en mérite ou dans le temps, selon Sa sagesse insondable.', sound: 'Al-Muqaddim', illustration: '⏩', mnemonic: 'Toujours cité avec Al-Muʼakhkhir' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُقَدِّم" (Al-Muqaddim) ?', options: ['Celui qui avance, place en premier', 'Celui qui retarde', 'Celui qui oublie', 'Celui qui efface'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُؤَخِّر', name: 'Al-Muʼakhkhir', instruction: 'Celui qui retarde : Il retient en arrière qui Il veut, reportant ce qu\'Il veut au moment qu\'Il choisit Lui-même.', sound: 'Al-Muʼakhkhir', illustration: '⏪', mnemonic: 'Toujours cité avec Al-Muqaddim' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُؤَخِّر" (Al-Muʼakhkhir) ?', options: ['Celui qui retarde, retient en arrière', 'Celui qui avance', 'Celui qui presse', 'Celui qui accélère'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَاطِن', name: 'Al-Bāṭin', instruction: 'Le Caché : Son essence est inaccessible aux sens et à l\'imagination, bien qu\'Il soit plus proche de Ses serviteurs que leur propre veine jugulaire.', sound: 'Al-Bāṭin', illustration: '🌫️', mnemonic: 'Toujours cité avec Aẓ-Ẓāhir' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَاطِن" (Al-Bāṭin) ?', options: ['Le Caché (en essence)', 'L\'Apparent', 'Le Visible', 'L\'Exposé'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 25 (Noms d\'Allah) terminée ! Al-Muqaddim, Al-Muʼakhkhir, Al-Bāṭin. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُتَعَالِي', name: 'Al-Mutaʻālī', instruction: 'Le Transcendant : Il est élevé au-dessus de toute imperfection et de toute ressemblance avec Sa création, dans une majesté absolue.', sound: 'Al-Mutaʻālī', illustration: '🕌', mnemonic: 'Même racine qu\'Al-ʻAliyy' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُتَعَالِي" (Al-Mutaʻālī) ?', options: ['Le Transcendant', 'Le Bas', 'L\'Ordinaire', 'Le Semblable'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَرّ', name: 'Al-Barr', instruction: 'Le Bienfaisant : Sa bonté et Sa bienveillance envers Ses serviteurs sont immenses, constantes et dépassent tout mérite humain.', sound: 'Al-Barr', illustration: '🌾', mnemonic: 'Même racine que "Birr" (piété, bonté)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَرّ" (Al-Barr) ?', options: ['Le Bienfaisant', 'Le Malveillant', 'L\'Indifférent', 'Le Sévère'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلتَّوَّاب', name: 'At-Tawwāb', instruction: 'Celui qui accepte le repentir : Il revient sans cesse vers Son serviteur repentant, aussi souvent qu\'il se repent avec sincérité.', sound: 'At-Tawwāb', illustration: '🔄', mnemonic: 'Même racine que "Tawba" (repentir)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلتَّوَّاب" (At-Tawwāb) ?', options: ['Celui qui accepte le repentir', 'Celui qui refuse le pardon', 'Le Rancunier', 'L\'Intransigeant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 26 (Noms d\'Allah) terminée ! Al-Mutaʻālī, Al-Barr, At-Tawwāb. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُنْتَقِم', name: 'Al-Muntaqim', instruction: 'Le Vengeur : Il punit avec justice les oppresseurs et les injustes obstinés qui refusent de se repentir, sans jamais commettre la moindre injustice.', sound: 'Al-Muntaqim', illustration: '⚔️', mnemonic: 'Même racine que "Intiqām" (vengeance)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُنْتَقِم" (Al-Muntaqim) ?', options: ['Le Vengeur (juste)', 'Le Pardonneur', 'L\'Indulgent', 'Le Négligent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْعَفُوّ', name: 'Al-ʻAfuww', instruction: 'Celui qui efface les fautes : Il pardonne au point d\'effacer complètement la trace du péché, comme s\'il n\'avait jamais existé.', sound: 'Al-ʻAfuww', illustration: '🕊️', mnemonic: 'Même racine que "ʻAfw" (effacement, pardon)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَفُوّ" (Al-ʻAfuww) ?', options: ['Celui qui efface les fautes', 'Celui qui punit', 'Celui qui accuse', 'Celui qui se venge'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّؤُوف', name: 'Ar-Raʼūf', instruction: 'Le Bienveillant, le Compatissant : Sa douceur envers Ses serviteurs dépasse celle de toute mère envers son enfant.', sound: 'Ar-Raʼūf', illustration: '💗', mnemonic: 'Souvent associé à Ar-Raḥīm' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّؤُوف" (Ar-Raʼūf) ?', options: ['Le Bienveillant, Compatissant', 'Le Dur', 'L\'Insensible', 'Le Distant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 27 (Noms d\'Allah) terminée ! Al-Muntaqim, Al-ʻAfuww, Ar-Raʼūf. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مَالِكُ ٱلْمُلْك', name: 'Mālik-ul-Mulk', instruction: 'Le Maître du Royaume : Il donne et retire la royauté et le pouvoir à qui Il veut, sans que quiconque ne puisse s\'y opposer.', sound: 'Mālik-ul-Mulk', illustration: '👑', mnemonic: 'Composé d\'Al-Malik et de "Mulk" (royaume)' },
+      { type: 'qcm', instruction: 'Que signifie "مَالِكُ ٱلْمُلْك" (Mālik-ul-Mulk) ?', options: ['Le Maître du Royaume', 'Le Sujet du royaume', 'L\'Étranger au royaume', 'Le Serviteur du roi'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ذُو ٱلْجَلَالِ وَٱلْإِكْرَام', name: 'Dhul-Jalāli wal-Ikrām', instruction: 'Le Possesseur de la Majesté et de la Munificence : Il réunit à la fois une grandeur redoutable et une générosité infinie envers Ses serviteurs.', sound: 'Dhul-Jalāli wal-Ikrām', illustration: '✨', mnemonic: 'Combine Al-Jalīl (majesté) et Al-Karīm (générosité)' },
+      { type: 'qcm', instruction: 'Que réunit le nom "ذُو ٱلْجَلَالِ وَٱلْإِكْرَام" (Dhul-Jalāli wal-Ikrām) ?', options: ['Majesté et générosité', 'Faiblesse et pardon', 'Colère et vengeance', 'Silence et absence'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ٱلْمُقْسِط', name: 'Al-Muqsiṭ', instruction: 'L\'Équitable : Il rétablit la justice parfaite entre les opprimés et leurs oppresseurs, notamment au Jour du Jugement.', sound: 'Al-Muqsiṭ', illustration: '⚖️', mnemonic: 'Même racine que "Qisṭ" (équité)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُقْسِط" (Al-Muqsiṭ) ?', options: ['L\'Équitable', 'Le Partial', 'L\'Injuste', 'L\'Indifférent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 28 (Noms d\'Allah) terminée ! Mālik-ul-Mulk, Dhul-Jalāli wal-Ikrām, Al-Muqsiṭ. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْجَامِع', name: 'Al-Jāmiʻ', instruction: 'Celui qui rassemble : Il réunira toute la création le Jour de la Résurrection, et rassemble ce qu\'Il veut selon Sa sagesse.', sound: 'Al-Jāmiʻ', illustration: '🧲', mnemonic: 'Même racine que "Jamʻ" (rassemblement)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْجَامِع" (Al-Jāmiʻ) ?', options: ['Celui qui rassemble', 'Celui qui disperse', 'Celui qui isole', 'Celui qui divise'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْغَنِيّ', name: 'Al-Ghaniyy', instruction: 'Le Riche par excellence : Il n\'a besoin d\'aucune de Ses créatures, alors que toutes ont besoin de Lui pour exister et subsister.', sound: 'Al-Ghaniyy', illustration: '💰', mnemonic: 'Même racine que "Ghinā" (richesse)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْغَنِيّ" (Al-Ghaniyy) ?', options: ['Le Riche, sans besoin', 'Le Pauvre', 'Le Dépendant', 'Le Nécessiteux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُغْنِي', name: 'Al-Mughnī', instruction: 'Celui qui enrichit : Il accorde la richesse et l\'aisance, matérielle ou spirituelle, à qui Il veut parmi Ses serviteurs.', sound: 'Al-Mughnī', illustration: '💎', mnemonic: 'Toujours cité avec Al-Ghaniyy' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُغْنِي" (Al-Mughnī) ?', options: ['Celui qui enrichit', 'Celui qui appauvrit', 'Celui qui ignore', 'Celui qui prive'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 29 (Noms d\'Allah) terminée ! Al-Jāmiʻ, Al-Ghaniyy, Al-Mughnī. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمَانِع', name: 'Al-Māniʻ', instruction: 'Celui qui empêche : Il retient ce qu\'Il veut, protégeant Ses serviteurs de ce qui leur serait nuisible, selon Sa sagesse.', sound: 'Al-Māniʻ', illustration: '🛑', mnemonic: 'Même racine que "Manʻ" (empêchement)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمَانِع" (Al-Māniʻ) ?', options: ['Celui qui empêche, retient', 'Celui qui donne toujours', 'Celui qui autorise tout', 'Celui qui ignore'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلضَّار', name: 'Aḍ-Ḍārr', instruction: 'Celui qui peut nuire : Il permet l\'épreuve et la difficulté selon Sa sagesse insondable, toujours en contrepoint d\'An-Nāfiʻ.', sound: 'Aḍ-Ḍārr', illustration: '⚠️', mnemonic: 'Toujours cité avec An-Nāfiʻ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلضَّار" (Aḍ-Ḍārr) ?', options: ['Celui qui peut nuire (par sagesse)', 'Celui qui protège toujours', 'Le Bienfaiteur exclusif', 'Le Sauveur unique'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ٱلنَّافِع', name: 'An-Nāfiʻ', instruction: 'Celui qui est utile, bénéfique : Il accorde le bien et l\'utilité à qui Il veut, source de tout bienfait véritable.', sound: 'An-Nāfiʻ', illustration: '🌟', mnemonic: 'Toujours cité avec Aḍ-Ḍārr' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلنَّافِع" (An-Nāfiʻ) ?', options: ['Celui qui est bénéfique', 'Celui qui nuit', 'Celui qui ignore', 'Celui qui prive'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 30 (Noms d\'Allah) terminée ! Al-Māniʻ, Aḍ-Ḍārr, An-Nāfiʻ. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلنُّور', name: 'An-Nūr', instruction: 'La Lumière : Il illumine les cieux et la terre, et guide les cœurs des croyants vers la vérité, dissipant les ténèbres de l\'ignorance.', sound: 'An-Nūr', illustration: '💡', mnemonic: 'Même racine que "Nūr" (lumière)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلنُّور" (An-Nūr) ?', options: ['La Lumière', 'L\'Obscurité', 'L\'Ombre', 'Le Voile'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْهَادِي', name: 'Al-Hādī', instruction: 'Le Guide : Il oriente Ses serviteurs vers le droit chemin et la vérité, éclairant leur cœur et facilitant leur cheminement.', sound: 'Al-Hādī', illustration: '🧭', mnemonic: 'Même racine que "Hidāya" (guidance)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْهَادِي" (Al-Hādī) ?', options: ['Le Guide', 'Celui qui égare', 'L\'Abandonneur', 'L\'Indifférent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَدِيع', name: 'Al-Badīʻ', instruction: 'L\'Inventeur incomparable : Il crée sans modèle préalable ni précédent, d\'une manière absolument originale et sans égal.', sound: 'Al-Badīʻ', illustration: '🎨', mnemonic: 'Même racine que "Ibdāʻ" (innovation)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَدِيع" (Al-Badīʻ) ?', options: ['L\'Inventeur incomparable', 'L\'Imitateur', 'Le Copieur', 'Le Répétiteur'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 31 (Noms d\'Allah) terminée ! An-Nūr, Al-Hādī, Al-Badīʻ. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْبَاقِي', name: 'Al-Bāqī', instruction: 'Celui qui demeure éternellement : Après la disparition de toute la création, Lui seul subsiste, sans fin et sans altération.', sound: 'Al-Bāqī', illustration: '♾️', mnemonic: 'Même racine que "Baqāʼ" (permanence)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَاقِي" (Al-Bāqī) ?', options: ['Celui qui demeure éternellement', 'Celui qui disparaît', 'Le Passager', 'L\'Éphémère'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَارِث', name: 'Al-Wārith', instruction: 'L\'Héritier ultime : Après la disparition de toutes Ses créatures, tout Lui revient, seul héritier de toute chose.', sound: 'Al-Wārith', illustration: '📜', mnemonic: 'Même racine que "Mīrāth" (héritage)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَارِث" (Al-Wārith) ?', options: ['L\'Héritier ultime de toute chose', 'Celui qui donne tout', 'Le Prêteur', 'Le Débiteur'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّشِيد', name: 'Ar-Rashīd', instruction: 'Celui qui guide avec sagesse : Il conduit Sa création vers ce qui est juste et bon, sans jamais Se tromper ni égarer qui que ce soit.', sound: 'Ar-Rashīd', illustration: '🌟', mnemonic: 'Même racine que "Rushd" (droiture, maturité)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّشِيد" (Ar-Rashīd) ?', options: ['Celui qui guide avec sagesse', 'Celui qui égare', 'L\'Insensé', 'L\'Imprudent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 32 (Noms d\'Allah) terminée ! Al-Bāqī, Al-Wārith, Ar-Rashīd. Parcours Les 99 Noms d\'Allah (5e partie) : 96 noms explorés. +20 XP' }
     ]
   ];
 
