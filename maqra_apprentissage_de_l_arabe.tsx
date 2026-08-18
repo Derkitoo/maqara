@@ -1329,6 +1329,183 @@ export default function ArabicLearningApp() {
         { translit: 'Tafakkara', trans: 'Il a réfléchi', arabic: 'تَفَكَّرَ' },
         { translit: 'Yatafakkarūn', trans: 'Ils réfléchissent', arabic: 'يَتَفَكَّرُون' }
       ]
+    },
+    'N-Z-R': {
+      arabic: 'نظر',
+      trans: 'Regard, Vue',
+      words: [
+        { word: 'نَظَر', trans: 'Naẓar', meaning: 'Regard', icon: '👀', desc: 'L\'action de regarder ou considérer.' },
+        { word: 'مَنْظَر', trans: 'Manẓar', meaning: 'Vue, paysage', icon: '🏞️', desc: 'Ce qui est observé, le panorama.' }
+      ],
+      derivatives: [
+        { translit: 'Naẓara', trans: 'Il a regardé', arabic: 'نَظَرَ' },
+        { translit: 'Munāẓara', trans: 'Débat, confrontation', arabic: 'مُنَاظَرَة' }
+      ]
+    },
+    'S-M-A': {
+      arabic: 'سمع',
+      trans: 'Entendre',
+      words: [
+        { word: 'سَمْع', trans: 'Samʻ', meaning: 'Ouïe', icon: '👂', desc: 'Le sens de l\'audition.' },
+        { word: 'مُسْتَمِع', trans: 'Mustamiʻ', meaning: 'Auditeur', icon: '🎧', desc: 'Celui qui écoute attentivement.' }
+      ],
+      derivatives: [
+        { translit: 'Samiʻa', trans: 'Il a entendu', arabic: 'سَمِعَ' },
+        { translit: 'Samīʻ', trans: 'L\'Audient (nom divin)', arabic: 'سَمِيع' }
+      ]
+    },
+    'N-T-Q': {
+      arabic: 'نطق',
+      trans: 'Parler, Articuler',
+      words: [
+        { word: 'نُطْق', trans: 'Nuṭq', meaning: 'Parole, élocution', icon: '🗣️', desc: 'La capacité d\'articuler des sons.' },
+        { word: 'مَنْطِق', trans: 'Manṭiq', meaning: 'Logique', icon: '🧩', desc: 'La science du raisonnement, littéralement "façon de parler".' }
+      ],
+      derivatives: [
+        { translit: 'Naṭaqa', trans: 'Il a parlé', arabic: 'نَطَقَ' },
+        { translit: 'Nāṭiq', trans: 'Parlant, doué de parole', arabic: 'نَاطِق' }
+      ]
+    },
+    'H-B-T': {
+      arabic: 'هبط',
+      trans: 'Descendre',
+      words: [
+        { word: 'هُبُوط', trans: 'Hubūṭ', meaning: 'Descente', icon: '⬇️', desc: 'Le fait de descendre d\'un lieu élevé.' },
+        { word: 'مَهْبِط', trans: 'Mahbiṭ', meaning: 'Lieu d\'atterrissage', icon: '🛬', desc: 'L\'endroit où l\'on descend.' }
+      ],
+      derivatives: [
+        { translit: 'Habaṭa', trans: 'Il est descendu', arabic: 'هَبَطَ' },
+        { translit: 'Ihbiṭ', trans: 'Descends ! (impératif)', arabic: 'ٱهْبِطْ' }
+      ]
+    },
+    'S-F-R': {
+      arabic: 'سفر',
+      trans: 'Voyager',
+      words: [
+        { word: 'سَفَر', trans: 'Safar', meaning: 'Voyage', icon: '🧳', desc: 'Le déplacement loin de son lieu de résidence.' },
+        { word: 'مُسَافِر', trans: 'Musāfir', meaning: 'Voyageur', icon: '🚶', desc: 'Celui qui est en voyage.' }
+      ],
+      derivatives: [
+        { translit: 'Sāfara', trans: 'Il a voyagé', arabic: 'سَافَرَ' },
+        { translit: 'Ibn as-Sabīl', trans: 'Le voyageur (bénéficiaire de l\'aumône)', arabic: 'ٱبْنُ ٱلسَّبِيل' }
+      ]
+    },
+    'Q-R-B': {
+      arabic: 'قرب',
+      trans: 'Proximité',
+      words: [
+        { word: 'قُرْب', trans: 'Qurb', meaning: 'Proximité', icon: '🤏', desc: 'L\'état d\'être proche.' },
+        { word: 'قَرِيب', trans: 'Qarīb', meaning: 'Proche', icon: '📍', desc: 'Ce qui est à proximité, ou un proche parent.' }
+      ],
+      derivatives: [
+        { translit: 'Qarraba', trans: 'Il a rapproché, offert', arabic: 'قَرَّبَ' },
+        { translit: 'Qurbān', trans: 'Offrande, sacrifice', arabic: 'قُرْبَان' }
+      ]
+    },
+    'B-A-D': {
+      arabic: 'بعد',
+      trans: 'Éloignement',
+      words: [
+        { word: 'بُعْد', trans: 'Buʻd', meaning: 'Distance, éloignement', icon: '📏', desc: 'L\'état d\'être loin.' },
+        { word: 'بَعِيد', trans: 'Baʻīd', meaning: 'Loin', icon: '🛰️', desc: 'Ce qui est distant.' }
+      ],
+      derivatives: [
+        { translit: 'Baʻuda', trans: 'Il s\'est éloigné', arabic: 'بَعُدَ' },
+        { translit: 'Baʻda', trans: 'Après (préposition)', arabic: 'بَعْدَ' }
+      ]
+    },
+    'KH-R-J': {
+      arabic: 'خرج',
+      trans: 'Sortir',
+      words: [
+        { word: 'خُرُوج', trans: 'Khurūj', meaning: 'Sortie', icon: '🚪', desc: 'L\'action de sortir.' },
+        { word: 'مَخْرَج', trans: 'Makhraj', meaning: 'Issue, point d\'articulation', icon: '🔑', desc: 'Le lieu de sortie, ou le point d\'articulation d\'une lettre en Tajwid.' }
+      ],
+      derivatives: [
+        { translit: 'Kharaja', trans: 'Il est sorti', arabic: 'خَرَجَ' },
+        { translit: 'Ikhrāj', trans: 'Expulsion, extraction', arabic: 'إِخْرَاج' }
+      ]
+    },
+    'D-KH-L': {
+      arabic: 'دخل',
+      trans: 'Entrer',
+      words: [
+        { word: 'دُخُول', trans: 'Dukhūl', meaning: 'Entrée', icon: '🚪', desc: 'L\'action d\'entrer.' },
+        { word: 'مَدْخَل', trans: 'Madkhal', meaning: 'Entrée, accès', icon: '🔓', desc: 'Le lieu ou point d\'accès.' }
+      ],
+      derivatives: [
+        { translit: 'Dakhala', trans: 'Il est entré', arabic: 'دَخَلَ' },
+        { translit: 'Idkhāl', trans: 'Insertion, admission', arabic: 'إِدْخَال' }
+      ]
+    },
+    'T-L-B': {
+      arabic: 'طلب',
+      trans: 'Demander, Rechercher',
+      words: [
+        { word: 'طَلَب', trans: 'Ṭalab', meaning: 'Demande, requête', icon: '🙋', desc: 'L\'action de demander ou rechercher.' },
+        { word: 'طَالِب', trans: 'Ṭālib', meaning: 'Étudiant, demandeur', icon: '🎓', desc: 'Celui qui recherche le savoir.' }
+      ],
+      derivatives: [
+        { translit: 'Ṭalaba', trans: 'Il a demandé', arabic: 'طَلَبَ' },
+        { translit: 'Maṭlūb', trans: 'Demandé, requis', arabic: 'مَطْلُوب' }
+      ]
+    },
+    'W-J-H': {
+      arabic: 'وجه',
+      trans: 'Visage, Direction',
+      words: [
+        { word: 'وَجْه', trans: 'Wajh', meaning: 'Visage', icon: '😊', desc: 'Le visage, aussi utilisé pour évoquer la Face d\'Allah.' },
+        { word: 'وِجْهَة', trans: 'Wijha', meaning: 'Direction, destination', icon: '🧭', desc: 'La direction vers laquelle on s\'oriente.' }
+      ],
+      derivatives: [
+        { translit: 'Tawajjaha', trans: 'Il s\'est orienté', arabic: 'تَوَجَّهَ' },
+        { translit: 'Wajīh', trans: 'Honorable, éminent', arabic: 'وَجِيه' }
+      ]
+    },
+    'A-M-R': {
+      arabic: 'أمر',
+      trans: 'Ordre, Affaire',
+      words: [
+        { word: 'أَمْر', trans: 'Amr', meaning: 'Ordre, affaire', icon: '📜', desc: 'Un commandement ou une affaire à traiter.' },
+        { word: 'أَمِير', trans: 'Amīr', meaning: 'Prince, commandant', icon: '👑', desc: 'Celui qui détient l\'autorité.' }
+      ],
+      derivatives: [
+        { translit: 'Amara', trans: 'Il a ordonné', arabic: 'أَمَرَ' },
+        { translit: 'Umūr', trans: 'Affaires (pluriel)', arabic: 'أُمُور' }
+      ]
+    },
+    'N-H-R': {
+      arabic: 'نهر',
+      trans: 'Fleuve',
+      words: [
+        { word: 'نَهْر', trans: 'Nahr', meaning: 'Fleuve, rivière', icon: '🏞️', desc: 'Un cours d\'eau, souvent cité au Paradis dans le Coran.' },
+        { word: 'أَنْهَار', trans: 'Anhār', meaning: 'Fleuves (pluriel)', icon: '💧', desc: 'Terme fréquent en description du Paradis ("Jannāt tajrī min taḥtihā al-anhār").' }
+      ],
+      derivatives: [
+        { translit: 'Nahār', trans: 'Le jour (par extension lumineuse)', arabic: 'نَهَار' }
+      ]
+    },
+    'J-B-L': {
+      arabic: 'جبل',
+      trans: 'Montagne',
+      words: [
+        { word: 'جَبَل', trans: 'Jabal', meaning: 'Montagne', icon: '⛰️', desc: 'Une élévation naturelle du sol, souvent citée dans le Coran.' },
+        { word: 'جِبَال', trans: 'Jibāl', meaning: 'Montagnes (pluriel)', icon: '🏔️', desc: 'Les montagnes, décrites comme des "piquets" de la terre.' }
+      ],
+      derivatives: [
+        { translit: 'Al-Jabal', trans: 'La Montagne (avec article)', arabic: 'ٱلْجَبَل' }
+      ]
+    },
+    'SH-J-R': {
+      arabic: 'شجر',
+      trans: 'Arbre',
+      words: [
+        { word: 'شَجَرَة', trans: 'Shajara', meaning: 'Arbre', icon: '🌳', desc: 'Symbole récurrent dans le Coran (l\'arbre béni, l\'arbre maudit).' },
+        { word: 'شَجَر', trans: 'Shajar', meaning: 'Arbres (collectif)', icon: '🌲', desc: 'Le terme générique pour les arbres.' }
+      ],
+      derivatives: [
+        { translit: 'Shajarat al-Khuld', trans: 'L\'Arbre de l\'éternité (récit d\'Adam)', arabic: 'شَجَرَةُ ٱلْخُلْد' }
+      ]
     }
   };
 
@@ -1386,7 +1563,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 31,
+       total: 36,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -3270,6 +3447,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'قصد', name: 'Racine Q-S-D', instruction: 'La racine Q-S-D (قصد) exprime l\'intention. Elle donne قَصْد (Qaṣd - Intention).', sound: 'Q-S-D', illustration: '🎯', mnemonic: 'قَصْد (Qaṣd - Intention)', rootKey: 'Q-S-D' },
       { type: 'qcm', instruction: 'Que signifie la racine "قصد" (Q-S-D) ?', options: ['Hasard', 'Intention, diriger', 'Oubli', 'Refus'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'success', instruction: 'Leçon 31 : parcours Le Secret des Racines terminé, 94 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نظر', name: 'Racine N-Z-R', instruction: 'La racine N-Z-R (نظر) exprime le regard. Elle donne نَظَر (Naẓar - Regard).', sound: 'N-Z-R', illustration: '👀', mnemonic: 'نَظَر (Naẓar - Regard)', rootKey: 'N-Z-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نظر" (N-Z-R) ?', options: ['Entendre', 'Regarder', 'Parler', 'Toucher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'سمع', name: 'Racine S-M-A', instruction: 'La racine S-M-A (سمع) exprime l\'écoute. Elle donne سَمْع (Samʻ - Ouïe).', sound: 'S-M-A', illustration: '👂', mnemonic: 'سَمْع (Samʻ - Ouïe)', rootKey: 'S-M-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سمع" (S-M-A) ?', options: ['Voir', 'Entendre', 'Sentir', 'Goûter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'نطق', name: 'Racine N-T-Q', instruction: 'La racine N-T-Q (نطق) exprime la parole articulée. Elle donne مَنْطِق (Manṭiq - Logique, littéralement "façon de parler").', sound: 'N-T-Q', illustration: '🗣️', mnemonic: 'مَنْطِق (Manṭiq - Logique)', rootKey: 'N-T-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نطق" (N-T-Q) ?', options: ['Se taire', 'Parler, articuler', 'Écrire', 'Chanter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 32 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'هبط', name: 'Racine H-B-T', instruction: 'La racine H-B-T (هبط) exprime la descente. Elle donne هُبُوط (Hubūṭ - Descente).', sound: 'H-B-T', illustration: '⬇️', mnemonic: 'هُبُوط (Hubūṭ - Descente)', rootKey: 'H-B-T' },
+      { type: 'qcm', instruction: 'Que signifie la racine "هبط" (H-B-T) ?', options: ['Monter', 'Descendre', 'Rester', 'Voler'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'سفر', name: 'Racine S-F-R', instruction: 'La racine S-F-R (سفر) exprime le voyage. Elle donne سَفَر (Safar - Voyage).', sound: 'S-F-R', illustration: '🧳', mnemonic: 'سَفَر (Safar - Voyage)', rootKey: 'S-F-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سفر" (S-F-R) ?', options: ['Rester', 'Voyager', 'Dormir', 'Manger'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قرب', name: 'Racine Q-R-B', instruction: 'La racine Q-R-B (قرب) exprime la proximité. Elle donne قَرِيب (Qarīb - Proche).', sound: 'Q-R-B', illustration: '📍', mnemonic: 'قَرِيب (Qarīb - Proche)', rootKey: 'Q-R-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قرب" (Q-R-B) ?', options: ['Loin', 'Proche', 'Perdu', 'Caché'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 33 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بعد', name: 'Racine B-A-D', instruction: 'La racine B-A-D (بعد) exprime l\'éloignement. Elle donne بَعِيد (Baʻīd - Loin).', sound: 'B-A-D', illustration: '🛰️', mnemonic: 'بَعِيد (Baʻīd - Loin)', rootKey: 'B-A-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بعد" (B-A-D) ?', options: ['Proche', 'Loin, éloignement', 'Rapide', 'Doux'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'خرج', name: 'Racine KH-R-J', instruction: 'La racine KH-R-J (خرج) exprime la sortie. Elle donne خُرُوج (Khurūj - Sortie).', sound: 'KH-R-J', illustration: '🚪', mnemonic: 'خُرُوج (Khurūj - Sortie)', rootKey: 'KH-R-J' },
+      { type: 'qcm', instruction: 'Que signifie la racine "خرج" (KH-R-J) ?', options: ['Entrer', 'Sortir', 'Rester', 'Fermer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'دخل', name: 'Racine D-KH-L', instruction: 'La racine D-KH-L (دخل) exprime l\'entrée, opposée à KH-R-J. Elle donne دُخُول (Dukhūl - Entrée).', sound: 'D-KH-L', illustration: '🚪', mnemonic: 'دُخُول (Dukhūl - Entrée)', rootKey: 'D-KH-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "دخل" (D-KH-L) ?', options: ['Sortir', 'Entrer', 'Attendre', 'Partir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 34 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'طلب', name: 'Racine T-L-B', instruction: 'La racine T-L-B (طلب) exprime la demande. Elle donne طَالِب (Ṭālib - Étudiant, celui qui recherche le savoir).', sound: 'T-L-B', illustration: '🎓', mnemonic: 'طَالِب (Ṭālib - Étudiant)', rootKey: 'T-L-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "طلب" (T-L-B) ?', options: ['Refuser', 'Demander, rechercher', 'Donner', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وجه', name: 'Racine W-J-H', instruction: 'La racine W-J-H (وجه) exprime le visage et la direction. Elle donne وَجْه (Wajh - Visage).', sound: 'W-J-H', illustration: '😊', mnemonic: 'وَجْه (Wajh - Visage)', rootKey: 'W-J-H' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وجه" (W-J-H) ?', options: ['Dos', 'Visage, direction', 'Pied', 'Main'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'امر', name: 'Racine A-M-R', instruction: 'La racine A-M-R (أمر) exprime l\'ordre et l\'affaire. Elle donne أَمْر (Amr - Ordre, affaire).', sound: 'A-M-R', illustration: '📜', mnemonic: 'أَمْر (Amr - Ordre)', rootKey: 'A-M-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "أمر" (A-M-R) ?', options: ['Silence', 'Ordre, affaire', 'Question', 'Doute'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 35 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نهر', name: 'Racine N-H-R', instruction: 'La racine N-H-R (نهر) exprime le fleuve. Elle donne نَهْر (Nahr - Fleuve), terme fréquent dans les descriptions du Paradis.', sound: 'N-H-R', illustration: '🏞️', mnemonic: 'نَهْر (Nahr - Fleuve)', rootKey: 'N-H-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نهر" (N-H-R) ?', options: ['Montagne', 'Fleuve', 'Désert', 'Nuage'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'جبل', name: 'Racine J-B-L', instruction: 'La racine J-B-L (جبل) exprime la montagne. Elle donne جَبَل (Jabal - Montagne).', sound: 'J-B-L', illustration: '⛰️', mnemonic: 'جَبَل (Jabal - Montagne)', rootKey: 'J-B-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "جبل" (J-B-L) ?', options: ['Vallée', 'Montagne', 'Rivière', 'Plaine'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'شجر', name: 'Racine SH-J-R', instruction: 'La racine SH-J-R (شجر) exprime l\'arbre. Elle donne شَجَرَة (Shajara - Arbre), symbole récurrent dans le Coran.', sound: 'SH-J-R', illustration: '🌳', mnemonic: 'شَجَرَة (Shajara - Arbre)', rootKey: 'SH-J-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "شجر" (SH-J-R) ?', options: ['Fleur', 'Arbre', 'Herbe', 'Fruit'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 36 : 15 nouvelles racines explorées, 109 racines au total ! +20 XP' }
     ]
   ];
 
