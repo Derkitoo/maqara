@@ -1434,7 +1434,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 10,
+       total: 12,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -4026,6 +4026,20 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'ق', name: 'Qāf : les 4 formes', instruction: 'Le Qāf isolé (ق) devient قـ en début de mot, ـقـ au milieu, et ـق à la fin. Les deux points restent toujours au-dessus.', sound: 'Qāf', illustration: '🔤', mnemonic: 'قَمَر (Qamar - Lune) : le Qāf y est en position initiale (قـ)' },
       { type: 'qcm', instruction: 'Quelle est la forme du "Qāf" en DÉBUT de mot ?', options: ['ـق', 'قـ', 'ـقـ', 'ق'], correctIndex: 1, textStyle: 'text-5xl' },
       { type: 'success', instruction: 'Leçon 10 (Calligraphie) terminée ! Ghayn et Qāf : leurs 4 formes maîtrisées. 20 lettres explorées sur 28. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ل', name: 'Lām : les 4 formes', instruction: 'Le Lām isolé (ل) devient لـ en début de mot, ـلـ au milieu, et ـل à la fin. Sa hampe verticale reste bien visible à toutes les formes.', sound: 'Lām', illustration: '🔤', mnemonic: 'لَيْث (Layth - Lion) : le Lām y est en position initiale (لـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Lām" en FIN de mot ?', options: ['ل', 'لـ', 'ـلـ', 'ـل'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ن', name: 'Nūn : les 4 formes', instruction: 'Le Nūn isolé (ن) devient نـ en début de mot, ـنـ au milieu, et ـن à la fin. Le point reste toujours au-dessus, comme pour le Bāʼ.', sound: 'Nūn', illustration: '🔤', mnemonic: 'نَحْلَة (Naḥla - Abeille) : le Nūn y est en position initiale (نـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Nūn" au MILIEU d\'un mot ?', options: ['ن', 'نـ', 'ـنـ', 'ـن'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 11 (Calligraphie) terminée ! Lām et Nūn : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ه', name: 'Hāʼ : les 4 formes', instruction: 'Le Hāʼ isolé (ه) devient هـ en début de mot, ـهـ au milieu, et ـه à la fin. C\'est l\'une des lettres qui change le plus visuellement selon sa position.', sound: 'Hāʼ', illustration: '🔤', mnemonic: 'هِلَال (Hilāl - Croissant de lune) : le Hāʼ y est en position initiale (هـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme isolée du "Hāʼ" ?', options: ['هـ', 'ـهـ', 'ه', 'ـه'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ي', name: 'Yāʼ : les 4 formes', instruction: 'Le Yāʼ isolé (ي) devient يـ en début de mot, ـيـ au milieu, et ـي à la fin. Les deux points en dessous disparaissent souvent en position initiale ou médiane.', sound: 'Yāʼ', illustration: '🔤', mnemonic: 'يَد (Yad - Main) : le Yāʼ y est en position initiale (يـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Yāʼ" en FIN de mot ?', options: ['ي', 'يـ', 'ـيـ', 'ـي'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 12 (Calligraphie) terminée ! Hāʼ et Yāʼ : leurs 4 formes maîtrisées. Les 28 lettres de l\'alphabet arabe sont désormais toutes explorées ! +20 XP' }
     ]
   ];
 
