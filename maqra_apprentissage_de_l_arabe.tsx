@@ -1230,7 +1230,7 @@ export default function ArabicLearningApp() {
        title: 'Expressions du Quotidien',
        description: 'Phrases usuelles pour parler et saluer',
        progress: savedProgress[7] ?? 0,
-       total: 6,
+       total: 12,
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
@@ -3430,7 +3430,61 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "ٱلْحَمْدُ لِلَّٰه" (Al-Ḥamdu Lillāh) ?', options: ['Louange à Dieu', 'Que Dieu pardonne', 'Dieu est grand', 'Que la paix soit sur vous'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'intro', letter: 'بَارَكَ ٱللَّٰهُ فِيك', name: 'Que Dieu te bénisse', instruction: 'Formule de remerciement chaleureuse et bénédiction pour l\'autre.', sound: 'Bāraka Llāhu Fīk', illustration: '🌿', mnemonic: 'Une façon de dire merci en bénissant', rootKey: 'B-R-K' },
       { type: 'qcm', instruction: 'Que signifie "بَارَكَ ٱللَّٰهُ فِيك" ?', options: ['Que Dieu te punisse', 'Que Dieu te bénisse', 'Que Dieu t\'oublie', 'Que Dieu t\'éloigne'], correctIndex: 1, textStyle: 'text-lg' },
-      { type: 'success', instruction: 'Leçon 6 (Expressions) terminée ! Parcours Expressions du Quotidien complet. +20 XP' }
+      { type: 'success', instruction: 'Leçon 6 (Expressions) terminée ! Expressions religieuses courantes. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'وَاحِد', name: 'Un', instruction: 'Le premier nombre, base de tout le comptage.', sound: 'Wāḥid', illustration: '1️⃣', mnemonic: 'Même mot que "Wāḥid" (Unique, nom divin)', rootKey: 'W-H-D' },
+      { type: 'qcm', instruction: 'Que signifie "وَاحِد" (Wāḥid) ?', options: ['Un', 'Deux', 'Trois', 'Zéro'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'اثْنَان', name: 'Deux', instruction: 'Le deuxième nombre.', sound: 'Ithnān', illustration: '2️⃣', mnemonic: 'Facile à retenir après Wāḥid' },
+      { type: 'qcm', instruction: 'Que signifie "اثْنَان" (Ithnān) ?', options: ['Un', 'Deux', 'Trois', 'Quatre'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ثَلَاثَة', name: 'Trois', instruction: 'Le troisième nombre.', sound: 'Thalātha', illustration: '3️⃣', mnemonic: 'Complète les trois premiers nombres' },
+      { type: 'qcm', instruction: 'Que signifie "ثَلَاثَة" (Thalātha) ?', options: ['Deux', 'Trois', 'Quatre', 'Cinq'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 7 (Expressions) terminée ! Les nombres 1 à 3. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أَب', name: 'Père', instruction: 'Le mot pour désigner son père.', sound: 'Ab', illustration: '👨', mnemonic: 'Court et simple à retenir' },
+      { type: 'qcm', instruction: 'Que signifie "أَب" (Ab) ?', options: ['Père', 'Mère', 'Frère', 'Sœur'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أُمّ', name: 'Mère', instruction: 'Le mot pour désigner sa mère.', sound: 'Umm', illustration: '👩', mnemonic: 'À l\'origine du mot "Umma" (communauté)' },
+      { type: 'qcm', instruction: 'Que signifie "أُمّ" (Umm) ?', options: ['Père', 'Mère', 'Fils', 'Fille'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَخ', name: 'Frère', instruction: 'Le mot pour désigner son frère, aussi utilisé entre amis proches.', sound: 'Akh', illustration: '👦', mnemonic: 'Terme d\'affection fraternelle' },
+      { type: 'qcm', instruction: 'Que signifie "أَخ" (Akh) ?', options: ['Père', 'Sœur', 'Frère', 'Ami'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 8 (Expressions) terminée ! Vocabulaire de la famille. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'طَعَام', name: 'Nourriture', instruction: 'Le mot général pour désigner la nourriture ou un repas.', sound: 'Ṭaʻām', illustration: '🍽️', mnemonic: 'Utile pour tout repas' },
+      { type: 'qcm', instruction: 'Que signifie "طَعَام" (Ṭaʻām) ?', options: ['Nourriture', 'Boisson', 'Vêtement', 'Maison'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَاء', name: 'Eau', instruction: 'Le mot le plus simple et le plus utile pour demander de l\'eau.', sound: 'Māʼ', illustration: '💧', mnemonic: 'Un mot essentiel du quotidien' },
+      { type: 'qcm', instruction: 'Que signifie "مَاء" (Māʼ) ?', options: ['Eau', 'Lait', 'Thé', 'Pain'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'خُبْز', name: 'Pain', instruction: 'L\'aliment de base dans de nombreux pays arabes.', sound: 'Khubz', illustration: '🍞', mnemonic: 'Présent à presque tous les repas' },
+      { type: 'qcm', instruction: 'Que signifie "خُبْز" (Khubz) ?', options: ['Pain', 'Riz', 'Viande', 'Fruit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 9 (Expressions) terminée ! Nourriture et boisson. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَمِين', name: 'Droite', instruction: 'Pour indiquer une direction à droite.', sound: 'Yamīn', illustration: '➡️', mnemonic: 'Opposé de Yasār (gauche)' },
+      { type: 'qcm', instruction: 'Que signifie "يَمِين" (Yamīn) ?', options: ['Gauche', 'Droite', 'Devant', 'Derrière'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَسَار', name: 'Gauche', instruction: 'Pour indiquer une direction à gauche.', sound: 'Yasār', illustration: '⬅️', mnemonic: 'Opposé de Yamīn (droite)' },
+      { type: 'qcm', instruction: 'Que signifie "يَسَار" (Yasār) ?', options: ['Droite', 'Gauche', 'Devant', 'Derrière'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَمَام', name: 'Devant', instruction: 'Pour indiquer ce qui se trouve devant soi.', sound: 'Amām', illustration: '⬆️', mnemonic: 'Utile pour se repérer' },
+      { type: 'qcm', instruction: 'Que signifie "أَمَام" (Amām) ?', options: ['Derrière', 'Devant', 'À côté', 'Au-dessus'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 10 (Expressions) terminée ! Se repérer et donner une direction. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْيَوْم', name: 'Aujourd\'hui', instruction: 'Pour parler du jour présent.', sound: 'Al-Yawm', illustration: '📅', mnemonic: 'Même mot que "Yawm" (jour)', rootKey: 'Y-W-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْيَوْم" (Al-Yawm) ?', options: ['Hier', 'Aujourd\'hui', 'Demain', 'La semaine'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'غَدًا', name: 'Demain', instruction: 'Pour parler du jour suivant.', sound: 'Ghadan', illustration: '🌅', mnemonic: 'Le jour qui vient' },
+      { type: 'qcm', instruction: 'Que signifie "غَدًا" (Ghadan) ?', options: ['Hier', 'Aujourd\'hui', 'Demain', 'Maintenant'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَمْس', name: 'Hier', instruction: 'Pour parler du jour précédent.', sound: 'Ams', illustration: '🌆', mnemonic: 'Le jour qui vient de passer' },
+      { type: 'qcm', instruction: 'Que signifie "أَمْس" (Ams) ?', options: ['Demain', 'Aujourd\'hui', 'Hier', 'La semaine dernière'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 11 (Expressions) terminée ! Aujourd\'hui, demain, hier. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'لَا بَأْس', name: 'Pas de problème', instruction: 'Expression rassurante utilisée pour minimiser un souci.', sound: 'Lā Baʼs', illustration: '👌', mnemonic: 'Littéralement "pas de mal"' },
+      { type: 'qcm', instruction: 'Que signifie "لَا بَأْس" (Lā Baʼs) ?', options: ['C\'est grave', 'Pas de problème', 'Je ne sais pas', 'Attends'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'تَفَضَّلْ', name: 'Je t\'en prie / Voici', instruction: 'Formule polie pour inviter quelqu\'un à prendre ou entrer, ou pour lui présenter quelque chose.', sound: 'Tafaḍḍal', illustration: '🤲', mnemonic: 'Un geste d\'accueil verbal' },
+      { type: 'qcm', instruction: 'Quand utilise-t-on "تَفَضَّلْ" (Tafaḍḍal) ?', options: ['Pour dire au revoir', 'Pour inviter/offrir quelque chose', 'Pour s\'excuser', 'Pour refuser'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'مُمْتَاز', name: 'Excellent', instruction: 'Pour exprimer une forte approbation ou satisfaction.', sound: 'Mumtāz', illustration: '⭐', mnemonic: 'Le compliment par excellence' },
+      { type: 'qcm', instruction: 'Que signifie "مُمْتَاز" (Mumtāz) ?', options: ['Médiocre', 'Excellent', 'Ordinaire', 'Mauvais'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 12 (Expressions) terminée ! Parcours Expressions du Quotidien (2e partie) complet. +20 XP' }
     ]
   ];
 
