@@ -1374,7 +1374,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 35,
+       total: 40,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -2855,7 +2855,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "فَقِير" (Faqīr) ?', options: ['Riche', 'Pauvre', 'Fort', 'Rapide'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'غَنِيّ', name: 'Riche', instruction: 'Un des noms divins : Celui qui n\'a besoin de rien.', sound: 'Ghaniyy', illustration: '👑', mnemonic: 'Al-Ghaniyy, Le Riche par excellence', rootKey: 'GH-N-Y' },
       { type: 'qcm', instruction: 'Que signifie "غَنِيّ" (Ghaniyy) ?', options: ['Pauvre', 'Riche', 'Faible', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 35 : parcours Fréquence Lexicale terminé, 105 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 35 : 105 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'فِكْر', name: 'Pensée', instruction: 'L\'activité de l\'esprit, la réflexion profonde.', sound: 'Fikr', illustration: '💭', mnemonic: 'Mufakkir, le penseur', rootKey: 'F-K-R' },
+      { type: 'qcm', instruction: 'Que signifie "فِكْر" (Fikr) ?', options: ['Silence', 'Pensée', 'Sommeil', 'Oubli'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَغْرِب', name: 'Couchant', instruction: 'La direction de l\'ouest, où le soleil se couche.', sound: 'Maghrib', illustration: '🌇', mnemonic: 'Même racine que "Gharb" (ouest)', rootKey: 'GH-R-B' },
+      { type: 'qcm', instruction: 'Que signifie "مَغْرِب" (Maghrib) ?', options: ['Levant', 'Couchant', 'Nord', 'Sud'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَشْرِق', name: 'Levant', instruction: 'La direction de l\'est, où le soleil se lève.', sound: 'Mashriq', illustration: '🌅', mnemonic: 'Même racine que "Sharq" (est)', rootKey: 'SH-R-Q' },
+      { type: 'qcm', instruction: 'Que signifie "مَشْرِق" (Mashriq) ?', options: ['Couchant', 'Levant', 'Nord', 'Sud'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 36 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بِدَايَة', name: 'Début', instruction: 'Le commencement d\'une chose.', sound: 'Bidāya', illustration: '🏁', mnemonic: 'Opposé de Nihāya (fin)', rootKey: 'B-D-A' },
+      { type: 'qcm', instruction: 'Que signifie "بِدَايَة" (Bidāya) ?', options: ['Fin', 'Début', 'Milieu', 'Pause'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'نِهَايَة', name: 'Fin', instruction: 'Le terme, la conclusion d\'une chose.', sound: 'Nihāya', illustration: '🏁', mnemonic: 'Opposé de Bidāya (début)', rootKey: 'N-H-Y' },
+      { type: 'qcm', instruction: 'Que signifie "نِهَايَة" (Nihāya) ?', options: ['Début', 'Fin', 'Milieu', 'Suite'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قَدِيم', name: 'Ancien', instruction: 'Ce qui existe depuis longtemps, sans commencement pour Dieu.', sound: 'Qadīm', illustration: '📜', mnemonic: 'Opposé de "Jadīd" (nouveau)', rootKey: 'Q-D-M' },
+      { type: 'qcm', instruction: 'Que signifie "قَدِيم" (Qadīm) ?', options: ['Nouveau', 'Ancien', 'Rapide', 'Faible'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 37 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ظَاهِر', name: 'Apparent', instruction: 'Ce qui est visible, manifeste ; un des noms divins.', sound: 'Ẓāhir', illustration: '👁️', mnemonic: 'Opposé de Bāṭin (caché)', rootKey: 'Z-H-R' },
+      { type: 'qcm', instruction: 'Que signifie "ظَاهِر" (Ẓāhir) ?', options: ['Caché', 'Apparent', 'Lointain', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'بَاطِن', name: 'Caché', instruction: 'Ce qui est intérieur, imperceptible ; un des noms divins.', sound: 'Bāṭin', illustration: '🌑', mnemonic: 'Opposé de Ẓāhir (apparent)', rootKey: 'B-T-N' },
+      { type: 'qcm', instruction: 'Que signifie "بَاطِن" (Bāṭin) ?', options: ['Visible', 'Caché', 'Bruyant', 'Proche'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حَرْب', name: 'Guerre', instruction: 'Le conflit armé, opposé à la paix.', sound: 'Ḥarb', illustration: '⚔️', mnemonic: 'Opposé de Salām (paix)', rootKey: 'H-R-B' },
+      { type: 'qcm', instruction: 'Que signifie "حَرْب" (Ḥarb) ?', options: ['Paix', 'Guerre', 'Amitié', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 38 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بِنَاء', name: 'Construction', instruction: 'L\'acte de bâtir, ou l\'édifice lui-même.', sound: 'Bināʼ', illustration: '🏗️', mnemonic: 'Bānī, le bâtisseur', rootKey: 'B-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie "بِنَاء" (Bināʼ) ?', options: ['Destruction', 'Construction', 'Vente', 'Achat'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'وُصُول', name: 'Arrivée', instruction: 'Le fait de parvenir à destination.', sound: 'Wuṣūl', illustration: '🏁', mnemonic: 'Même racine que "Ṣila" (lien)', rootKey: 'W-S-L' },
+      { type: 'qcm', instruction: 'Que signifie "وُصُول" (Wuṣūl) ?', options: ['Départ', 'Arrivée', 'Perte', 'Recherche'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قَصْد', name: 'Intention', instruction: 'Le but visé dans une action.', sound: 'Qaṣd', illustration: '🎯', mnemonic: 'Maqṣid, le but recherché', rootKey: 'Q-S-D' },
+      { type: 'qcm', instruction: 'Que signifie "قَصْد" (Qaṣd) ?', options: ['Hasard', 'Intention', 'Erreur', 'Doute'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 39 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'تَمَام', name: 'Achèvement', instruction: 'L\'état de ce qui est complet et parfait.', sound: 'Tamām', illustration: '✅', mnemonic: 'Tāmm, ce qui est complet', rootKey: 'T-M-M' },
+      { type: 'qcm', instruction: 'Que signifie "تَمَام" (Tamām) ?', options: ['Commencement', 'Achèvement', 'Pause', 'Erreur'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'كَشْف', name: 'Dévoilement', instruction: 'Le fait de révéler ce qui était caché.', sound: 'Kashf', illustration: '🔍', mnemonic: 'Kāshif, celui qui dévoile', rootKey: 'K-SH-F' },
+      { type: 'qcm', instruction: 'Que signifie "كَشْف" (Kashf) ?', options: ['Dissimulation', 'Dévoilement', 'Oubli', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَسْلَك', name: 'Voie', instruction: 'Le chemin que l\'on emprunte, au sens propre ou figuré.', sound: 'Maslak', illustration: '🛤️', mnemonic: 'Sālik, celui qui chemine', rootKey: 'S-L-K' },
+      { type: 'qcm', instruction: 'Que signifie "مَسْلَك" (Maslak) ?', options: ['Impasse', 'Voie, chemin', 'Mur', 'Frontière'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 40 : parcours Fréquence Lexicale terminé, 120 mots mémorisés ! +20 XP' }
     ]
   ];
 
