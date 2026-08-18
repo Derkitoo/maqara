@@ -3717,6 +3717,18 @@ export default function ArabicLearningApp() {
      setReadWordsStatus(prev => ({ ...prev, [word.id]: true }));
   };
 
+  // La carte d'intro affichait tout, d'une simple lettre isolée à une
+  // phrase entière (Noms d'Allah, Expressions), avec la même taille de
+  // police fixe (64px) : les phrases longues débordaient du cadre. On
+  // adapte la taille au nombre de caractères réels (espaces exclus).
+  const arabicIntroSizeClass = (text) => {
+    const len = (text || '').replace(/\s/g, '').length;
+    if (len <= 3) return 'text-[64px]';
+    if (len <= 8) return 'text-[42px]';
+    if (len <= 16) return 'text-[30px]';
+    return 'text-[22px]';
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -3970,13 +3982,13 @@ export default function ArabicLearningApp() {
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
 
-              <div className="bg-white w-full max-w-[280px] py-5 px-5 rounded-[2.5rem] shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col items-center justify-center mb-3">
-                <span className="font-arabic text-[64px] font-bold text-gray-900 leading-none mb-4">{stepData.letter}</span>
-                <span className="text-[12px] text-gray-500 font-semibold tracking-wide bg-white px-3 py-1 rounded-full shadow-[0_1px_2px_rgba(0,0,0,0.05)] mb-4">{stepData.name}</span>
+              <div className="bg-white w-full max-w-[320px] py-5 px-5 rounded-[2.5rem] shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col items-center justify-center mb-3">
+                <span className={`font-arabic ${arabicIntroSizeClass(stepData.letter)} font-bold text-gray-900 leading-tight mb-4 text-center break-words max-w-full`}>{stepData.letter}</span>
+                <span className="text-[12px] text-gray-500 font-semibold tracking-wide bg-white px-3 py-1.5 rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.05)] mb-4 text-center break-words max-w-full">{stepData.name}</span>
                 {stepData.mnemonic && (
-                  <div className="flex items-center space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100">
-                    <span className="text-lg">{stepData.illustration}</span>
-                    <span className="font-arabic text-[13px] font-bold text-sky-900">{stepData.mnemonic}</span>
+                  <div className="flex items-start space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100 max-w-full">
+                    <span className="text-lg flex-shrink-0">{stepData.illustration}</span>
+                    <span className="font-arabic text-[13px] font-bold text-sky-900 text-left break-words">{stepData.mnemonic}</span>
                   </div>
                 )}
               </div>
@@ -4398,7 +4410,7 @@ export default function ArabicLearningApp() {
                  </button>
               </div>
               <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
-                 <span className="font-arabic text-[72px] font-bold text-gray-900 leading-none mb-4">{card.front}</span>
+                 <span className={`font-arabic ${arabicIntroSizeClass(card.front)} font-bold text-gray-900 leading-tight mb-4 break-words max-w-full`}>{card.front}</span>
                  {isCardFlipped ? (
                     <div className="animation-fade-in flex flex-col items-center">
                        <div className="w-12 h-1 bg-gray-100 rounded-full mb-6"></div>
