@@ -1181,7 +1181,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 30,
+       total: 35,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -2593,7 +2593,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "إِيمَان" (Īmān) ?', options: ['Doute', 'Foi', 'Oubli', 'Refus'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'أَمَانَة', name: 'Confiance, dépôt', instruction: 'Ce qui est confié et doit être préservé avec intégrité.', sound: 'Amāna', illustration: '🔐', mnemonic: 'Même racine que Amn (sécurité)' },
       { type: 'qcm', instruction: 'Que signifie "أَمَانَة" (Amāna) ?', options: ['Trahison', 'Confiance, dépôt', 'Perte', 'Vol'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 30 : parcours Fréquence Lexicale terminé, 90 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 30 : 90 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جِهَاد', name: 'Effort, lutte', instruction: 'L\'effort soutenu, intérieur ou extérieur, sur le chemin de Dieu.', sound: 'Jihād', illustration: '💪', mnemonic: 'Mujāhid, celui qui lutte', rootKey: 'J-H-D' },
+      { type: 'qcm', instruction: 'Que signifie "جِهَاد" (Jihād) ?', options: ['Repos', 'Effort, lutte', 'Silence', 'Fuite'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'خَلِيفَة', name: 'Successeur', instruction: 'Celui qui succède, notamment Adam établi sur terre.', sound: 'Khalīfa', illustration: '👑', mnemonic: 'À l\'origine du mot "Calife"', rootKey: 'KH-L-F' },
+      { type: 'qcm', instruction: 'Que signifie "خَلِيفَة" (Khalīfa) ?', options: ['Successeur', 'Ancêtre', 'Étranger', 'Voisin'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'عَقْل', name: 'Raison', instruction: 'La faculté de comprendre et de discerner.', sound: 'ʻAql', illustration: '🧠', mnemonic: 'ʻĀqil, celui qui use de sa raison', rootKey: 'A-Q-L' },
+      { type: 'qcm', instruction: 'Que signifie "عَقْل" (ʻAql) ?', options: ['Le cœur', 'La raison', 'La main', 'L\'œil'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 31 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'حِسَاب', name: 'Compte', instruction: 'Le compte des actes, notamment au Jour du Jugement.', sound: 'Ḥisāb', illustration: '🧮', mnemonic: 'Ḥasīb, Celui qui tient le compte de tout', rootKey: 'H-S-B' },
+      { type: 'qcm', instruction: 'Que signifie "حِسَاب" (Ḥisāb) ?', options: ['Oubli', 'Compte', 'Cadeau', 'Secret'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'تَوْحِيد', name: 'Monothéisme', instruction: 'La proclamation et la croyance en l\'Unicité de Dieu.', sound: 'Tawḥīd', illustration: '🕋', mnemonic: 'Wāḥid, l\'Unique', rootKey: 'W-H-D' },
+      { type: 'qcm', instruction: 'Que signifie "تَوْحِيد" (Tawḥīd) ?', options: ['Polythéisme', 'Monothéisme', 'Doute', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'إِخْلَاص', name: 'Sincérité', instruction: 'La pureté d\'intention, réservée exclusivement à Dieu.', sound: 'Ikhlāṣ', illustration: '💎', mnemonic: 'Sūrat al-Ikhlāṣ (112)', rootKey: 'KH-L-S' },
+      { type: 'qcm', instruction: 'Que signifie "إِخْلَاص" (Ikhlāṣ) ?', options: ['Hypocrisie', 'Sincérité', 'Doute', 'Mélange'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 32 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نَصْر', name: 'Victoire, secours', instruction: 'L\'aide et le triomphe accordés par Dieu.', sound: 'Naṣr', illustration: '🏆', mnemonic: 'Sūrat An-Naṣr (110)', rootKey: 'N-S-R' },
+      { type: 'qcm', instruction: 'Que signifie "نَصْر" (Naṣr) ?', options: ['Défaite', 'Victoire, secours', 'Doute', 'Repos'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قِرَاءَة', name: 'Lecture', instruction: 'L\'acte de lire ou réciter le Coran.', sound: 'Qirāʼa', illustration: '📖', mnemonic: 'Al-Qurʼān, "la Récitation"', rootKey: 'Q-R-A' },
+      { type: 'qcm', instruction: 'Que signifie "قِرَاءَة" (Qirāʼa) ?', options: ['Écriture', 'Lecture', 'Silence', 'Écoute seule'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'كَبِير', name: 'Grand', instruction: 'Ce qui est immense, un des noms divins.', sound: 'Kabīr', illustration: '🏔️', mnemonic: 'Allāhu Akbar, "Dieu est le Plus Grand"', rootKey: 'K-B-R' },
+      { type: 'qcm', instruction: 'Que signifie "كَبِير" (Kabīr) ?', options: ['Petit', 'Grand', 'Rapide', 'Faible'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 33 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'دُنْيَا', name: 'Ce bas monde', instruction: 'La vie terrestre, souvent opposée à l\'au-delà.', sound: 'Dunyā', illustration: '🌍', mnemonic: 'Al-Ḥayāt Ad-Dunyā, la vie de ce bas monde', rootKey: 'D-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie "دُنْيَا" (Dunyā) ?', options: ['L\'au-delà', 'Ce bas monde', 'Le ciel', 'L\'océan'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'آخِرَة', name: 'L\'au-delà', instruction: 'La vie future, après la mort.', sound: 'Ākhira', illustration: '🌅', mnemonic: 'Yawm al-Ākhir, le Jour Dernier', rootKey: 'A-KH-R' },
+      { type: 'qcm', instruction: 'Que signifie "آخِرَة" (Ākhira) ?', options: ['Ce bas monde', 'L\'au-delà', 'Le présent', 'Le passé'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'بَعْث', name: 'Résurrection', instruction: 'Le fait d\'être ressuscité après la mort.', sound: 'Baʻth', illustration: '🌅', mnemonic: 'Yawm al-Baʻth, le Jour de la Résurrection', rootKey: 'B-A-TH' },
+      { type: 'qcm', instruction: 'Que signifie "بَعْث" (Baʻth) ?', options: ['Enterrement', 'Résurrection', 'Oubli', 'Sommeil'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 34 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جَمَاعَة', name: 'Communauté', instruction: 'Un groupe réuni, notamment pour la prière.', sound: 'Jamāʻa', illustration: '🕌', mnemonic: 'Jamʻ, le rassemblement', rootKey: 'J-M-A' },
+      { type: 'qcm', instruction: 'Que signifie "جَمَاعَة" (Jamāʻa) ?', options: ['Solitude', 'Communauté', 'Ennemi', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'فَقِير', name: 'Pauvre', instruction: 'Celui qui est dans le besoin.', sound: 'Faqīr', illustration: '🪫', mnemonic: 'Opposé de Ghaniyy (riche)', rootKey: 'F-Q-R' },
+      { type: 'qcm', instruction: 'Que signifie "فَقِير" (Faqīr) ?', options: ['Riche', 'Pauvre', 'Fort', 'Rapide'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'غَنِيّ', name: 'Riche', instruction: 'Un des noms divins : Celui qui n\'a besoin de rien.', sound: 'Ghaniyy', illustration: '👑', mnemonic: 'Al-Ghaniyy, Le Riche par excellence', rootKey: 'GH-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie "غَنِيّ" (Ghaniyy) ?', options: ['Pauvre', 'Riche', 'Faible', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 35 : parcours Fréquence Lexicale terminé, 105 mots mémorisés ! +20 XP' }
     ]
   ];
 
