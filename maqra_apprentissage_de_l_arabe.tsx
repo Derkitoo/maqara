@@ -845,7 +845,7 @@ export default function ArabicLearningApp() {
        title: 'Tajwid',
        description: 'Les règles de récitation (أحكام التجويد)',
        progress: savedProgress[5] ?? 0,
-       total: 6,
+       total: 10,
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
@@ -2452,7 +2452,99 @@ export default function ArabicLearningApp() {
         mnemonic: 'نّ = Ghunna tenue'
       },
       { type: 'qcm', instruction: 'Quelle lettre porte la Ghunna dans "إِنَّا" ?', options: ['ن', 'ا', 'إ', 'Aucune'], correctIndex: 0, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 6 (Tajwid) terminée ! Parcours Tajwid complet : Iẓhār, Idghām, Iqlāb, Ikhfāʼ, Qalqala et Ghunna. +20 XP' }
+      { type: 'success', instruction: 'Leçon 6 (Tajwid) terminée ! Iẓhār, Idghām, Iqlāb, Ikhfāʼ, Qalqala et Ghunna maîtrisés. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'لَهُمْ طَعَامٌ',
+        name: 'Iẓhār Shafawī (إظهار شفوي)',
+        instruction: 'Quand un Mīm Sākin (مْ) est suivi de n\'importe quelle lettre sauf ب et م, on le prononce clairement, lèvres fermées un bref instant.',
+        sound: 'Lahum Ṭaʻām',
+        illustration: '👄',
+        mnemonic: 'مْ + toute lettre sauf ب/م = clarté'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on l\'Iẓhār Shafawī ?', options: ['Mīm Sākin + ب', 'Mīm Sākin + م', 'Mīm Sākin + toute autre lettre', 'Nūn Sākin + gutturale'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'هُمْ يُوقِنُونَ',
+        name: 'Exemple : هُمْ يُوقِنُونَ',
+        instruction: 'Le مْ de "هُمْ" est suivi du Yāʼ (ي) : Iẓhār Shafawī, prononciation claire.',
+        sound: 'Hum Yūqinūn',
+        illustration: '👄',
+        mnemonic: 'مْ + ي = Iẓhār Shafawī'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le مْ dans "هُمْ يُوقِنُونَ" ?', options: ['Il s\'assimile', 'Clairement', 'Comme un ن', 'Il disparaît'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 7 (Tajwid) terminée ! Vous maîtrisez l\'Iẓhār Shafawī. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'هُم بِٱلْءَاخِرَةِ',
+        name: 'Ikhfāʼ Shafawī (إخفاء شفوي)',
+        instruction: 'Quand un Mīm Sākin (مْ) est suivi de ب, on le prononce avec une légère nasalisation, lèvres à peine fermées, sans les presser.',
+        sound: 'Hum bil-Ākhirah',
+        illustration: '🌫️',
+        mnemonic: 'مْ + ب = Ikhfāʼ Shafawī'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on l\'Ikhfāʼ Shafawī ?', options: ['Mīm Sākin + ب', 'Mīm Sākin + toute lettre', 'Nūn Sākin + ب', 'Mīm Sākin + م'], correctIndex: 0, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'تَرْمِيهِم بِحِجَارَةٍ',
+        name: 'Exemple : تَرْمِيهِم بِحِجَارَةٍ',
+        instruction: 'Le مْ de "بِحِجَارَةٍ" est précédé de "تَرْمِيهِم" suivi de ب : Ikhfāʼ Shafawī, légère nasalisation.',
+        sound: 'Tarmīhim biḥijāra',
+        illustration: '🌫️',
+        mnemonic: 'مْ + ب = nasalisation légère'
+      },
+      { type: 'qcm', instruction: 'Quelle lettre déclenche systématiquement l\'Ikhfāʼ Shafawī ?', options: ['م', 'ب', 'ن', 'ي'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 8 (Tajwid) terminée ! Vous maîtrisez l\'Ikhfāʼ Shafawī. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'لَهُم مَّا',
+        name: 'Idghām Shafawī (إدغام شفوي)',
+        instruction: 'Quand un Mīm Sākin (مْ) est suivi d\'un autre م, les deux fusionnent complètement avec une Ghunna tenue.',
+        sound: 'Lahum-mmā',
+        illustration: '🔀',
+        mnemonic: 'مْ + م = fusion totale avec Ghunna'
+      },
+      { type: 'qcm', instruction: 'Que se passe-t-il quand un Mīm Sākin est suivi d\'un autre Mīm ?', options: ['Iẓhār Shafawī', 'Ikhfāʼ Shafawī', 'Idghām Shafawī (fusion)', 'Qalqala'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'كَمْ مِّن',
+        name: 'Exemple : كَمْ مِّن',
+        instruction: 'Le مْ de "كَمْ" est suivi du م de "مِّن" : les deux fusionnent en un seul م tenu (Shadda).',
+        sound: 'Kam-min',
+        illustration: '🔀',
+        mnemonic: 'مْ + م = un seul son tenu'
+      },
+      { type: 'qcm', instruction: 'Comment s\'écrit le résultat de l\'Idghām Shafawī dans "كَمْ مِّن" ?', options: ['Avec un Sukūn', 'Avec une Shadda', 'Sans aucun signe', 'Avec un Tanwīn'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 9 (Tajwid) terminée ! Les 3 règles du Mīm Sākinah (Iẓhār, Ikhfāʼ, Idghām Shafawī) sont maîtrisées. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'رَبَّنَا',
+        name: 'Tafkhīm (تفخيم) — Rāʼ emphatique',
+        instruction: 'Le Rāʼ (ر) est prononcé de façon emphatique (Tafkhīm) quand il porte une Fatḥa ou une Ḍamma, ou quand il est précédé d\'une consonne avec Fatḥa/Ḍamma.',
+        sound: 'Rabbanā',
+        illustration: '🔊',
+        mnemonic: 'ر + Fatḥa/Ḍamma = emphatique'
+      },
+      { type: 'qcm', instruction: 'Quand le Rāʼ est-il prononcé de façon emphatique (Tafkhīm) ?', options: ['Avec une Kasra', 'Avec une Fatḥa ou une Ḍamma', 'En fin de mot toujours', 'Jamais'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'رِجَال',
+        name: 'Tarqīq (ترقيق) — Rāʼ léger',
+        instruction: 'Le Rāʼ (ر) est prononcé légèrement (Tarqīq) quand il porte une Kasra, comme dans "رِجَال" (Rijāl).',
+        sound: 'Rijāl',
+        illustration: '🪶',
+        mnemonic: 'ر + Kasra = léger'
+      },
+      { type: 'qcm', instruction: 'Comment se prononce le ر dans "رِجَال" ?', options: ['Emphatique (Tafkhīm)', 'Léger (Tarqīq)', 'Il disparaît', 'Comme un ل'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 10 (Tajwid) terminée ! Parcours Tajwid complet : les 4 règles du Nūn Sākin, Qalqala, Ghunna, les 3 règles du Mīm Sākinah et le Tafkhīm/Tarqīq du Rāʼ. +20 XP' }
     ]
   ];
 
