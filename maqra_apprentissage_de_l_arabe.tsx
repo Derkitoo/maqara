@@ -809,7 +809,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 25,
+      total: 27,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -1876,7 +1876,49 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'وَٱلضُّحَىٰ', id: 1}, {text: 'وَلَلْـَٔاخِرَةُ خَيْرٌ لَّكَ مِنَ ٱلْأُولَىٰ', id: 2}, {text: 'أَلَمْ يَجِدْكَ يَتِيمًا فَـَٔاوَىٰ', id: 3}, {text: 'فَأَمَّا ٱلْيَتِيمَ فَلَا تَقْهَرْ', id: 4}],
         rightCol: [{text: 'Par le Jour montant !', id: 1}, {text: 'La vie future est meilleure pour toi', id: 2}, {text: 'Ne t\'a-t-Il pas trouvé orphelin et accueilli ?', id: 3}, {text: 'Quant à l\'orphelin, ne le brime pas', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Aḍ-Ḍuḥā validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Aḍ-Ḍuḥā validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate At-Tīn : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 95, ayah: 1 }, { surah: 95, ayah: 2 }, { surah: 95, ayah: 3 }, { surah: 95, ayah: 4 }, { surah: 95, ayah: 5 }, { surah: 95, ayah: 6 }, { surah: 95, ayah: 7 }, { surah: 95, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'وَٱلتِّينِ وَٱلزَّيْتُونِ وَطُورِ سِينِينَ وَهَٰذَا ٱلْبَلَدِ ٱلْأَمِينِ', root: null, trans: 'Par le figuier et l\'olivier ! Par le Mont Sinaï ! Et par cette Cité sûre !' },
+            { id: 'w2', text: 'لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍ ثُمَّ رَدَدْنَٰهُ أَسْفَلَ سَٰفِلِينَ', root: 'K-L-Q', trans: 'Nous avons créé l\'homme dans la meilleure forme, puis Nous l\'avons ramené au plus bas des degrés' },
+            { id: 'w3', text: 'إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ', root: 'A-M-N', trans: 'sauf ceux qui croient et accomplissent de bonnes œuvres : ils auront une récompense jamais interrompue' },
+            { id: 'w4', text: 'فَمَا يُكَذِّبُكَ بَعْدُ بِٱلدِّينِ أَلَيْسَ ٱللَّهُ بِأَحْكَمِ ٱلْحَٰكِمِينَ', root: 'H-K-M', trans: 'Qu\'est-ce qui te fait traiter de mensonge la Rétribution ? Allah n\'est-Il pas le plus juste des juges ?' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلتِّينِ وَٱلزَّيْتُونِ', id: 1}, {text: 'لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِىٓ أَحْسَنِ تَقْوِيمٍ', id: 2}, {text: 'إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ', id: 3}, {text: 'أَلَيْسَ ٱللَّهُ بِأَحْكَمِ ٱلْحَٰكِمِينَ', id: 4}],
+        rightCol: [{text: 'Par le figuier et l\'olivier !', id: 1}, {text: 'Nous avons créé l\'homme dans la meilleure forme', id: 2}, {text: 'sauf ceux qui croient et font le bien', id: 3}, {text: 'Allah n\'est-Il pas le plus juste des juges ?', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate At-Tīn validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Ash-Shams (versets 1-10) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 91, ayah: 1 }, { surah: 91, ayah: 2 }, { surah: 91, ayah: 3 }, { surah: 91, ayah: 4 }, { surah: 91, ayah: 5 }, { surah: 91, ayah: 6 }, { surah: 91, ayah: 7 }, { surah: 91, ayah: 8 }, { surah: 91, ayah: 9 }, { surah: 91, ayah: 10 }],
+         words: [
+            { id: 'w1', text: 'وَٱلشَّمْسِ وَضُحَىٰهَا وَٱلْقَمَرِ إِذَا تَلَىٰهَا وَٱلنَّهَارِ إِذَا جَلَّىٰهَا وَٱلَّيْلِ إِذَا يَغْشَىٰهَا', root: null, trans: 'Par le soleil et sa clarté ! Par la lune qui le suit ! Par le jour qui l\'éclaire ! Par la nuit qui l\'enveloppe !' },
+            { id: 'w2', text: 'وَٱلسَّمَآءِ وَمَا بَنَىٰهَا وَٱلْأَرْضِ وَمَا طَحَىٰهَا', root: null, trans: 'Par le ciel et Celui qui l\'a construit ! Par la terre et Celui qui l\'a étalée !' },
+            { id: 'w3', text: 'وَنَفْسٍ وَمَا سَوَّىٰهَا فَأَلْهَمَهَا فُجُورَهَا وَتَقْوَىٰهَا', root: 'W-Q-Y', trans: 'Par l\'âme et Celui qui l\'a harmonieusement formée, et lui a inspiré son vice et sa piété !' },
+            { id: 'w4', text: 'قَدْ أَفْلَحَ مَن زَكَّىٰهَا وَقَدْ خَابَ مَن دَسَّىٰهَا', root: 'Z-K-W', trans: 'Réussit celui qui la purifie ! Et échoue celui qui la corrompt !' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلشَّمْسِ وَضُحَىٰهَا', id: 1}, {text: 'وَٱلسَّمَآءِ وَمَا بَنَىٰهَا', id: 2}, {text: 'وَنَفْسٍ وَمَا سَوَّىٰهَا', id: 3}, {text: 'قَدْ أَفْلَحَ مَن زَكَّىٰهَا', id: 4}],
+        rightCol: [{text: 'Par le soleil et sa clarté !', id: 1}, {text: 'Par le ciel et Celui qui l\'a construit', id: 2}, {text: 'Par l\'âme et Celui qui l\'a formée', id: 3}, {text: 'Réussit celui qui la purifie', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Ash-Shams (1-10) validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
