@@ -1915,6 +1915,81 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'فِيهِ', instruction: 'Tracez "Fīhi" (remarquez le Yāʼ après le Fāʼ).' },
       { type: 'qcm', instruction: 'Comment se prononce "فِيهِ" avec le Madd ?', options: ['Fihi (bref)', 'Fīhi (long)', 'Faihi', 'Fahi'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 11 terminée ! Les trois lettres de Madd (ا و ي) n\'ont plus de secret : vous savez allonger les voyelles longues. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'أَحْمَد',
+        name: 'Hamzat al-Qaṭʻ (Fixe)',
+        instruction: 'La Hamzat al-Qaṭʻ (أ) est toujours prononcée, en début comme en milieu de phrase. Elle porte sa propre voyelle, comme dans أَحْمَد (Aḥmad).',
+        sound: 'Aḥmad',
+        illustration: '✋',
+        mnemonic: 'Elle "coupe" toujours le son, jamais silencieuse'
+      },
+      { type: 'trace', letter: 'أَ', instruction: 'Tracez la Hamzat al-Qaṭʻ (le petit crochet posé sur l\'Alif).' },
+      { type: 'qcm', instruction: 'La Hamzat al-Qaṭʻ (أ) est-elle toujours prononcée ?', options: ['Oui, toujours', 'Jamais', 'Seulement en fin de mot', 'Seulement au milieu'], correctIndex: 0, textStyle: 'text-lg' },
+      {
+        type: 'intro',
+        letter: 'ٱلْكِتَاب',
+        name: 'Hamzat al-Waṣl (De liaison)',
+        instruction: 'La Hamzat al-Waṣl (ٱ) ne se prononce qu\'au tout début de la lecture. Au milieu d\'une phrase, elle disparaît et on enchaîne directement : بِسْمِ ٱللَّٰه se lit "Bismillāh", pas "Bismi Allāh".',
+        sound: 'Al-Kitāb',
+        illustration: '🔗',
+        mnemonic: 'Elle "lie" les mots, silencieuse en cours de phrase'
+      },
+      { type: 'trace', letter: 'ٱ', instruction: 'Tracez la Hamzat al-Waṣl (le petit ṣād au-dessus de l\'Alif).' },
+      { type: 'qcm', instruction: 'Quand la Hamzat al-Waṣl (ٱ) se prononce-t-elle ?', options: ['Toujours', 'Jamais', 'Seulement en début de lecture', 'Seulement en fin de mot'], correctIndex: 2, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 12 terminée ! Vous distinguez Hamzat al-Qaṭʻ et Hamzat al-Waṣl. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'مَدْرَسَة',
+        name: 'Tāʼ Marbūṭa (ة)',
+        instruction: 'La Tāʼ Marbūṭa (ة) termine presque tous les mots féminins. En pause elle se lit "a", mais suivie d\'un mot elle redevient un "t" : مَدْرَسَة (Madrasa - école).',
+        sound: 'Madrasa',
+        illustration: '🏫',
+        mnemonic: 'Deux points au-dessus d\'un Hāʼ = marque du féminin'
+      },
+      { type: 'trace', letter: 'ة', instruction: 'Tracez la Tāʼ Marbūṭa (comme un Hāʼ avec deux points).' },
+      { type: 'qcm', instruction: 'Comment se lit la Tāʼ Marbūṭa (ة) en pause, à la fin d\'une phrase ?', options: ['T', 'A', 'H', 'AT'], correctIndex: 1, textStyle: 'text-3xl' },
+      {
+        type: 'intro',
+        letter: 'عَلَى',
+        name: 'Alif Maqṣūra (ى)',
+        instruction: 'L\'Alif Maqṣūra (ى) est un alif écrit sous la forme d\'un yāʼ sans points, en fin de mot. Il se prononce comme un simple "ā" long : عَلَى (ʻAlā - sur).',
+        sound: 'ʻAlā',
+        illustration: '📏',
+        mnemonic: 'Un Yāʼ sans points = un Alif caché'
+      },
+      { type: 'trace', letter: 'ى', instruction: 'Tracez l\'Alif Maqṣūra (comme un Yāʼ, mais sans les deux points).' },
+      { type: 'qcm', instruction: 'Comment se prononce l\'Alif Maqṣūra (ى) en fin de mot ?', options: ['Comme un "y"', 'Comme un "ā" long', 'Il est muet', 'Comme un "n"'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 13 terminée ! Tāʼ Marbūṭa et Alif Maqṣūra n\'ont plus de secret. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'كَتَبَ',
+        name: 'Lecture syllabique : Kataba',
+        instruction: 'Assemblons trois lettres voyellées pour lire un mot complet : كَ-تَ-بَ (Ka-ta-ba) donne كَتَبَ, "il a écrit". Chaque syllabe s\'enchaîne sans pause.',
+        sound: 'Kataba',
+        illustration: '✍️',
+        mnemonic: 'Kāf + Tāʼ + Bāʼ, chacune avec Fatḥa'
+      },
+      { type: 'trace', letter: 'كَتَبَ', instruction: 'Tracez "Kataba" lettre par lettre, en gardant chaque Fatḥa.' },
+      { type: 'qcm', instruction: 'Comment se lit "كَتَبَ" (Kāf-Fatḥa, Tāʼ-Fatḥa, Bāʼ-Fatḥa) ?', options: ['Kutiba', 'Kataba', 'Kitab', 'Katiba'], correctIndex: 1, textStyle: 'text-3xl' },
+      {
+        type: 'intro',
+        letter: 'مَكْتَب',
+        name: 'Lecture syllabique : Maktab',
+        instruction: 'Avec un Sukūn au milieu, la syllabe se ferme sans voyelle : مَكْ-تَب (Mak-tab) donne مَكْتَب, "bureau". Le Sukūn sur le Kāf coupe le son, sans allonger.',
+        sound: 'Maktab',
+        illustration: '🗄️',
+        mnemonic: 'Mīm-Fatḥa, Kāf-Sukūn, Tāʼ-Fatḥa, Bāʼ'
+      },
+      { type: 'trace', letter: 'مَكْتَب', instruction: 'Tracez "Maktab", en marquant bien le Sukūn sur le Kāf.' },
+      { type: 'qcm', instruction: 'Comment se lit "مَكْتَب" (Mīm-Fatḥa, Kāf-Sukūn, Tāʼ-Fatḥa, Bāʼ) ?', options: ['Makataba', 'Maktab', 'Miktab', 'Maktub'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 14 terminée ! Vous savez maintenant assembler des lettres voyellées en mots complets : le Qaïda est maîtrisé. +20 XP' }
     ]
   ];
 
