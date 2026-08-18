@@ -1575,7 +1575,7 @@ export default function ArabicLearningApp() {
        title: 'Tajwid',
        description: 'Les règles de récitation (أحكام التجويد)',
        progress: savedProgress[5] ?? 0,
-       total: 22,
+       total: 27,
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
@@ -4186,6 +4186,121 @@ export default function ArabicLearningApp() {
       },
       { type: 'qcm', instruction: 'Quand deux signes ∴ apparaissent proches, où doit-on s\'arrêter ?', options: ['Sur les deux', 'Sur aucun des deux', 'Sur l\'un des deux seulement', 'Toujours sur le premier'], correctIndex: 2, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 22 (Tajwid) terminée ! Parcours Tajwid encore enrichi : les 3 Idghām (Mutamāthilayn, Mutajānisayn, Mutaqāribayn) et les principaux signes de Waqf. +25 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ا و ي',
+        name: 'Makhārij al-Ḥurūf (1/2) — Al-Jawf',
+        instruction: 'Al-Jawf (الجوف) est la cavité buccale : elle n\'a pas de point fixe, l\'air y circule librement. C\'est le lieu d\'articulation des 3 lettres de Madd (ا و ي) quand elles prolongent une voyelle.',
+        sound: 'Al-Jawf',
+        illustration: '🫁',
+        mnemonic: 'La cavité, sans point précis : source du Madd'
+      },
+      { type: 'qcm', instruction: 'Que produit Al-Jawf (la cavité buccale) ?', options: ['Les lettres gutturales', 'Les 3 lettres de Madd (ا و ي)', 'La Ghunna', 'Les lettres emphatiques'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ء ه ع ح غ خ',
+        name: 'Al-Ḥalq (la gorge)',
+        instruction: 'Al-Ḥalq (الحلق) est la gorge, divisée en 3 zones : le fond (ء ه), le milieu (ع ح), et le haut, proche de la bouche (غ خ). Ce sont les 6 lettres "gutturales" déjà vues avec l\'Iẓhār.',
+        sound: 'Al-Ḥalq',
+        illustration: '🗣️',
+        mnemonic: 'Les 6 lettres de l\'Iẓhār viennent toutes de la gorge'
+      },
+      { type: 'qcm', instruction: 'Quelles lettres sont articulées au fond de la gorge (Al-Ḥalq) ?', options: ['ب م و', 'ء ه ع ح غ خ', 'ت د ط', 'س ص ز'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 23 (Tajwid) terminée ! Vous connaissez Al-Jawf et Al-Ḥalq, les 2 premiers points d\'articulation. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ت د ط ل ن ر س ص ز',
+        name: 'Makhārij al-Ḥurūf (2/2) — Al-Lisān',
+        instruction: 'Al-Lisān (اللسان), la langue, est le point d\'articulation le plus riche : elle produit à elle seule 18 des 28 lettres arabes, selon la zone de la langue qui touche le palais ou les dents.',
+        sound: 'Al-Lisān',
+        illustration: '👅',
+        mnemonic: 'La langue produit la majorité des lettres arabes'
+      },
+      { type: 'qcm', instruction: 'Combien de lettres arabes sont articulées avec la langue (Al-Lisān) ?', options: ['5', '10', '18', '28'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ب م و ف',
+        name: 'Ash-Shafatān (les deux lèvres)',
+        instruction: 'Ash-Shafatān (الشفتان), les deux lèvres, produisent ب م و (lèvres jointes) et ف (dents du haut sur la lèvre inférieure).',
+        sound: 'Ash-Shafatān',
+        illustration: '👄',
+        mnemonic: 'ب م و ف : les lettres labiales'
+      },
+      { type: 'qcm', instruction: 'Quelles lettres sont articulées avec les lèvres (Ash-Shafatān) ?', options: ['ء ه ع ح', 'ب م و ف', 'س ص ز', 'ت د ط'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'نّ / مّ',
+        name: 'Al-Khayshūm (la cavité nasale)',
+        instruction: 'Al-Khayshūm (الخيشوم), la cavité nasale, n\'articule aucune lettre à elle seule, mais produit la Ghunna (résonance nasale) sur le Nūn et le Mīm, notamment avec Shadda.',
+        sound: 'Al-Khayshūm',
+        illustration: '👃',
+        mnemonic: 'Source de toute la Ghunna du Tajwid'
+      },
+      { type: 'qcm', instruction: 'Que produit Al-Khayshūm (la cavité nasale) ?', options: ['Les lettres emphatiques', 'La Ghunna (résonance nasale)', 'Les lettres de Madd', 'Les lettres gutturales'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 24 (Tajwid) terminée ! Les 5 Makhārij al-Ḥurūf (Jawf, Ḥalq, Lisān, Shafatān, Khayshūm) sont désormais connus. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'خ ص ض غ ط ق ظ',
+        name: 'Ḥurūf al-Istiʻlāʼ (les 7 lettres toujours emphatiques)',
+        instruction: 'Contrairement au Rāʼ ou au Lām de "ٱللَّٰه" (emphatiques seulement selon le contexte), ces 7 lettres sont TOUJOURS prononcées de façon emphatique (Tafkhīm), quelle que soit leur voyelle.',
+        sound: 'Ḥurūf al-Istiʻlāʼ',
+        illustration: '🔊',
+        mnemonic: 'Phrase mnémonique : خُصَّ ضَغْطٍ قِظْ (Khuṣṣa Ḍaghṭin Qiẓ)'
+      },
+      { type: 'qcm', instruction: 'Combien de lettres sont TOUJOURS emphatiques (Ḥurūf al-Istiʻlāʼ), quelle que soit leur voyelle ?', options: ['3', '5', '7', '10'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'خُصَّ ضَغْطٍ قِظْ',
+        name: 'Différence avec le Rāʼ et le Lafẓ al-Jalālah',
+        instruction: 'Le Rāʼ et le Lām de "ٱللَّٰه" changent selon le contexte (Fatḥa/Ḍamma = emphatique, Kasra = léger). Les 7 lettres d\'Istiʻlāʼ (خ ص ض غ ط ق ظ), elles, restent TOUJOURS emphatiques, même avec une Kasra.',
+        sound: 'Khuṣṣa Ḍaghṭin Qiẓ',
+        illustration: '⚖️',
+        mnemonic: 'Toujours lourdes, sans exception'
+      },
+      { type: 'qcm', instruction: 'Le ص de "صِرَاط" (avec une Kasra) est-il prononcé léger ou emphatique ?', options: ['Léger, car il a une Kasra', 'Emphatique, car il fait partie des Ḥurūf al-Istiʻlāʼ', 'Il disparaît', 'Cela dépend du récitateur'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 25 (Tajwid) terminée ! Vous connaissez les 7 lettres toujours emphatiques (Ḥurūf al-Istiʻlāʼ). +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ف ح ث ه ش خ ص س ك ت',
+        name: 'Ṣifāt al-Ḥurūf — Al-Hams (le souffle)',
+        instruction: 'Al-Hams (الهمس) regroupe 10 lettres prononcées avec un souffle audible qui s\'échappe, car les cordes vocales ne vibrent pas. Mnémonique : "فَحَثَّهُ شَخْصٌ سَكَتَ" (les 10 lettres soulignées).',
+        sound: 'Al-Hams',
+        illustration: '💨',
+        mnemonic: 'Phrase mnémonique : فَحَثَّهُ شَخْصٌ سَكَتَ'
+      },
+      { type: 'qcm', instruction: 'Que caractérise Al-Hams (le souffle) parmi les lettres arabes ?', options: ['Les cordes vocales vibrent fortement', 'Un souffle audible s\'échappe, sans vibration des cordes vocales', 'La lettre rebondit (Qalqala)', 'La lettre est toujours emphatique'], correctIndex: 1, textStyle: 'text-lg' },
+      {
+        type: 'intro',
+        letter: 'Al-Jahr',
+        name: 'Al-Jahr (la voix pleine)',
+        instruction: 'Al-Jahr (الجهر), l\'opposé du Hams, regroupe les 19 autres lettres : les cordes vocales vibrent et le souffle est retenu, produisant un son plein et sonore.',
+        sound: 'Al-Jahr',
+        illustration: '🔊',
+        mnemonic: 'Toutes les lettres qui ne sont pas dans Al-Hams'
+      },
+      { type: 'qcm', instruction: 'Que caractérise Al-Jahr, l\'opposé d\'Al-Hams ?', options: ['Un souffle qui s\'échappe librement', 'Les cordes vocales vibrent, le souffle est retenu', 'La lettre est toujours légère', 'La lettre se nasalise'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 26 (Tajwid) terminée ! Vous distinguez Al-Hams et Al-Jahr, les deux grandes familles de Ṣifāt al-Ḥurūf. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'تجويد',
+        name: 'Synthèse : le parcours Tajwid complet',
+        instruction: 'Vous avez parcouru l\'essentiel du Tajwid : les 4 règles du Nūn Sākin (Iẓhār, Idghām, Iqlāb, Ikhfāʼ), la Qalqala, la Ghunna, les 3 règles du Mīm Sākinah, le Tafkhīm/Tarqīq du Rāʼ et du Lafẓ al-Jalālah, les 6 types de Madd, les 3 Idghām, les signes de Waqf, les Makhārij al-Ḥurūf et les Ṣifāt al-Ḥurūf.',
+        sound: 'Tajwīd',
+        illustration: '🏆',
+        mnemonic: 'La base théorique complète de la belle récitation'
+      },
+      { type: 'qcm', instruction: 'Quel est l\'objectif final de l\'apprentissage du Tajwid ?', options: ['Réciter le Coran vite', 'Réciter le Coran avec exactitude et beauté, comme il a été révélé', 'Traduire le Coran', 'Mémoriser sans comprendre'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 27 (Tajwid) terminée ! Parcours Tajwid complet : de l\'Iẓhār aux Ṣifāt al-Ḥurūf, toutes les bases essentielles sont acquises. +25 XP' }
     ]
   ];
 
