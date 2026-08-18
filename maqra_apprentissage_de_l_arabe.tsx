@@ -989,7 +989,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 27,
+      total: 29,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -2098,7 +2098,49 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'وَٱلشَّمْسِ وَضُحَىٰهَا', id: 1}, {text: 'وَٱلسَّمَآءِ وَمَا بَنَىٰهَا', id: 2}, {text: 'وَنَفْسٍ وَمَا سَوَّىٰهَا', id: 3}, {text: 'قَدْ أَفْلَحَ مَن زَكَّىٰهَا', id: 4}],
         rightCol: [{text: 'Par le soleil et sa clarté !', id: 1}, {text: 'Par le ciel et Celui qui l\'a construit', id: 2}, {text: 'Par l\'âme et Celui qui l\'a formée', id: 3}, {text: 'Réussit celui qui la purifie', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Ash-Shams (1-10) validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Ash-Shams (1-10) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Layl (versets 1-11) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 92, ayah: 1 }, { surah: 92, ayah: 2 }, { surah: 92, ayah: 3 }, { surah: 92, ayah: 4 }, { surah: 92, ayah: 5 }, { surah: 92, ayah: 6 }, { surah: 92, ayah: 7 }, { surah: 92, ayah: 8 }, { surah: 92, ayah: 9 }, { surah: 92, ayah: 10 }, { surah: 92, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'وَٱلَّيْلِ إِذَا يَغْشَىٰ وَٱلنَّهَارِ إِذَا تَجَلَّىٰ وَمَا خَلَقَ ٱلذَّكَرَ وَٱلْأُنثَىٰٓ إِنَّ سَعْيَكُمْ لَشَتَّىٰ', root: 'K-L-Q', trans: 'Par la nuit qui enveloppe ! Par le jour qui éclaire ! Par ce qu\'Il a créé, le mâle et la femelle ! Vos efforts sont divers' },
+            { id: 'w2', text: 'فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ وَصَدَّقَ بِٱلْحُسْنَىٰ فَسَنُيَسِّرُهُۥ لِلْيُسْرَىٰ', root: 'W-Q-Y', trans: 'Quant à celui qui donne et craint Dieu, et croit en la plus belle récompense, Nous lui faciliterons la voie vers l\'aisance' },
+            { id: 'w3', text: 'وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ وَكَذَّبَ بِٱلْحُسْنَىٰ فَسَنُيَسِّرُهُۥ لِلْعُسْرَىٰ', root: 'GH-N-Y', trans: 'Et quant à celui qui est avare et se dispense de Dieu, et traite de mensonge la plus belle récompense, Nous lui faciliterons la voie vers la difficulté' },
+            { id: 'w4', text: 'وَمَا يُغْنِى عَنْهُ مَالُهُۥٓ إِذَا تَرَدَّىٰٓ', root: null, trans: 'Sa fortune ne lui servira à rien quand il sombrera' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلَّيْلِ إِذَا يَغْشَىٰ', id: 1}, {text: 'فَأَمَّا مَنْ أَعْطَىٰ وَٱتَّقَىٰ', id: 2}, {text: 'وَأَمَّا مَنۢ بَخِلَ وَٱسْتَغْنَىٰ', id: 3}, {text: 'وَمَا يُغْنِى عَنْهُ مَالُهُۥٓ', id: 4}],
+        rightCol: [{text: 'Par la nuit qui enveloppe !', id: 1}, {text: 'Celui qui donne et craint Dieu', id: 2}, {text: 'Celui qui est avare et se dispense de Dieu', id: 3}, {text: 'Sa fortune ne lui servira à rien', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Layl (1-11) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Bayyinah : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 98, ayah: 1 }, { surah: 98, ayah: 2 }, { surah: 98, ayah: 3 }, { surah: 98, ayah: 4 }, { surah: 98, ayah: 5 }, { surah: 98, ayah: 6 }, { surah: 98, ayah: 7 }, { surah: 98, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'لَمْ يَكُنِ ٱلَّذِينَ كَفَرُوا۟ مِنْ أَهْلِ ٱلْكِتَٰبِ وَٱلْمُشْرِكِينَ مُنفَكِّينَ حَتَّىٰ تَأْتِيَهُمُ ٱلْبَيِّنَةُ رَسُولٌ مِّنَ ٱللَّهِ يَتْلُوا۟ صُحُفًا مُّطَهَّرَةً فِيهَا كُتُبٌ قَيِّمَةٌ', root: 'B-Y-N', trans: 'Les mécréants parmi les gens du Livre et les associateurs ne cesseront pas jusqu\'à ce que leur vienne la Preuve évidente : un Messager d\'Allah récitant des feuillets purifiés, contenant des prescriptions droites' },
+            { id: 'w2', text: 'وَمَا تَفَرَّقَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ إِلَّا مِنۢ بَعْدِ مَا جَآءَتْهُمُ ٱلْبَيِّنَةُ', root: 'B-Y-N', trans: 'Ceux à qui le Livre a été donné ne se sont divisés qu\'après que la Preuve évidente leur fut venue' },
+            { id: 'w3', text: 'وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ مُخْلِصِينَ لَهُ ٱلدِّينَ وَيُقِيمُوا۟ ٱلصَّلَوٰةَ وَيُؤْتُوا۟ ٱلزَّكَوٰةَ ۚ وَذَٰلِكَ دِينُ ٱلْقَيِّمَةِ', root: 'A-B-D', trans: 'Ils n\'ont reçu ordre que d\'adorer Allah avec sincérité, d\'accomplir la prière et d\'acquitter l\'aumône : voilà la religion de droiture' },
+            { id: 'w4', text: 'إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ أُو۟لَٰٓئِكَ هُمْ خَيْرُ ٱلْبَرِيَّةِ جَزَآؤُهُمْ عِندَ رَبِّهِمْ جَنَّٰتُ عَدْنٍ خَٰلِدِينَ فِيهَآ أَبَدًا', root: 'A-M-N', trans: 'Ceux qui croient et accomplissent de bonnes œuvres sont les meilleures créatures ; leur récompense sera les jardins d\'Éden, où ils demeureront éternellement' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'لَمْ يَكُنِ ٱلَّذِينَ كَفَرُوا۟', id: 1}, {text: 'وَمَا تَفَرَّقَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ', id: 2}, {text: 'وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ', id: 3}, {text: 'إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ', id: 4}],
+        rightCol: [{text: 'Les mécréants ne cesseront pas jusqu\'à la Preuve évidente', id: 1}, {text: 'Ils ne se sont divisés qu\'après la Preuve évidente', id: 2}, {text: 'Ils n\'ont reçu ordre que d\'adorer Allah sincèrement', id: 3}, {text: 'Ceux qui croient et font le bien sont les meilleures créatures', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Bayyinah validée ! Parcours Lecture Coranique terminé. +25 XP' }
     ]
   ];
 
