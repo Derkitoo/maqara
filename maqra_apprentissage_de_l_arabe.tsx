@@ -1350,7 +1350,7 @@ export default function ArabicLearningApp() {
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 0,
-      total: 11,
+      total: 14,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
       tagColor: 'bg-green-200 text-green-800'
@@ -1422,7 +1422,7 @@ export default function ArabicLearningApp() {
        title: 'Expressions du Quotidien',
        description: 'Phrases usuelles pour parler et saluer',
        progress: savedProgress[7] ?? 0,
-       total: 12,
+       total: 22,
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
@@ -4088,6 +4088,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'رَخِيص', name: 'Bon marché', instruction: 'Pour dire qu\'un prix est avantageux, peu élevé.', sound: 'Rakhīṣ', illustration: '🏷️', mnemonic: 'Opposé de Ghālin (cher)' },
       { type: 'qcm', instruction: 'Que signifie "رَخِيص" (Rakhīṣ) ?', options: ['Cher', 'Bon marché', 'Introuvable', 'Ancien'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 17 (Expressions) terminée ! Parcours Expressions du Quotidien (3e partie) : au marché. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أَحْمَر', name: 'Rouge', instruction: 'La couleur rouge, utile pour décrire un objet ou un vêtement.', sound: 'Aḥmar', illustration: '🔴', mnemonic: 'Même racine que "Ḥamrāʼ" (l\'Alhambra, littéralement "la rouge")' },
+      { type: 'qcm', instruction: 'Que signifie "أَحْمَر" (Aḥmar) ?', options: ['Bleu', 'Rouge', 'Vert', 'Jaune'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَزْرَق', name: 'Bleu', instruction: 'La couleur bleue, comme le ciel ou la mer.', sound: 'Azraq', illustration: '🔵', mnemonic: 'Pense au ciel (samāʼ) qui est azraq' },
+      { type: 'qcm', instruction: 'Que signifie "أَزْرَق" (Azraq) ?', options: ['Rouge', 'Vert', 'Bleu', 'Noir'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَخْضَر', name: 'Vert', instruction: 'La couleur verte, comme les plantes ou le drapeau de nombreux pays musulmans.', sound: 'Akhḍar', illustration: '🟢', mnemonic: 'Même racine que "Khaḍra" (verdure)' },
+      { type: 'qcm', instruction: 'Que signifie "أَخْضَر" (Akhḍar) ?', options: ['Jaune', 'Rouge', 'Bleu', 'Vert'], correctIndex: 3, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 18 (Expressions) terminée ! Les couleurs : rouge, bleu, vert. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أَسْوَد', name: 'Noir', instruction: 'La couleur noire, la plus foncée de toutes.', sound: 'Aswad', illustration: '⚫', mnemonic: 'Opposé de Abyaḍ (blanc)' },
+      { type: 'qcm', instruction: 'Que signifie "أَسْوَد" (Aswad) ?', options: ['Blanc', 'Noir', 'Gris', 'Doré'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَبْيَض', name: 'Blanc', instruction: 'La couleur blanche, la plus claire de toutes.', sound: 'Abyaḍ', illustration: '⚪', mnemonic: 'Opposé de Aswad (noir)' },
+      { type: 'qcm', instruction: 'Que signifie "أَبْيَض" (Abyaḍ) ?', options: ['Noir', 'Blanc', 'Gris', 'Jaune'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَصْفَر', name: 'Jaune', instruction: 'La couleur jaune, comme le soleil.', sound: 'Aṣfar', illustration: '🟡', mnemonic: 'Même racine que "Ṣufra" (teinte jaune)' },
+      { type: 'qcm', instruction: 'Que signifie "أَصْفَر" (Aṣfar) ?', options: ['Vert', 'Bleu', 'Jaune', 'Rouge'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 19 (Expressions) terminée ! Les couleurs : noir, blanc, jaune. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَذْهَب', name: 'Il va (Aller)', instruction: 'Le verbe pour indiquer un déplacement vers un lieu.', sound: 'Yadhhab', illustration: '🚶', mnemonic: 'Même racine que "Dhahāb" (aller, départ)' },
+      { type: 'qcm', instruction: 'Que signifie "يَذْهَب" (Yadhhab) ?', options: ['Il vient', 'Il va', 'Il reste', 'Il dort'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَأْتِي', name: 'Il vient (Venir)', instruction: 'Le verbe pour indiquer un déplacement vers le locuteur.', sound: 'Yaʼtī', illustration: '🚶‍♂️', mnemonic: 'Opposé de Yadhhab (aller)' },
+      { type: 'qcm', instruction: 'Que signifie "يَأْتِي" (Yaʼtī) ?', options: ['Il part', 'Il va', 'Il vient', 'Il attend'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَأْكُل', name: 'Il mange (Manger)', instruction: 'Le verbe le plus courant pour parler de nourriture.', sound: 'Yaʼkul', illustration: '🍽️', mnemonic: 'Même racine que "Akl" (nourriture)' },
+      { type: 'qcm', instruction: 'Que signifie "يَأْكُل" (Yaʼkul) ?', options: ['Il boit', 'Il mange', 'Il dort', 'Il cuisine'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 20 (Expressions) terminée ! Les verbes : aller, venir, manger. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَشْرَب', name: 'Il boit (Boire)', instruction: 'Le verbe pour parler de toute boisson.', sound: 'Yashrab', illustration: '🥤', mnemonic: 'Même racine que "Sharāb" (boisson)' },
+      { type: 'qcm', instruction: 'Que signifie "يَشْرَب" (Yashrab) ?', options: ['Il mange', 'Il boit', 'Il parle', 'Il écoute'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَنَام', name: 'Il dort (Dormir)', instruction: 'Le verbe pour indiquer le sommeil.', sound: 'Yanām', illustration: '😴', mnemonic: 'Même racine que "Nawm" (sommeil)' },
+      { type: 'qcm', instruction: 'Que signifie "يَنَام" (Yanām) ?', options: ['Il se réveille', 'Il dort', 'Il court', 'Il travaille'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَعْمَل', name: 'Il travaille (Travailler)', instruction: 'Le verbe pour parler d\'une activité professionnelle ou d\'une action en général.', sound: 'Yaʻmal', illustration: '💼', mnemonic: 'Même racine que "ʻAmal" (travail, action)' },
+      { type: 'qcm', instruction: 'Que signifie "يَعْمَل" (Yaʻmal) ?', options: ['Il se repose', 'Il joue', 'Il travaille', 'Il voyage'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 21 (Expressions) terminée ! Les verbes : boire, dormir, travailler. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمَطَار', name: 'L\'aéroport', instruction: 'Le lieu essentiel pour tout voyage en avion.', sound: 'Al-Maṭār', illustration: '✈️', mnemonic: 'Même racine que "Ṭayara" (voler)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمَطَار" (Al-Maṭār) ?', options: ['La gare', 'L\'aéroport', 'Le port', 'L\'hôtel'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'تَذْكِرَة', name: 'Billet', instruction: 'Le document nécessaire pour prendre un transport.', sound: 'Tadhkira', illustration: '🎫', mnemonic: 'Même racine que "Dhikr" (mention, rappel)' },
+      { type: 'qcm', instruction: 'Que signifie "تَذْكِرَة" (Tadhkira) ?', options: ['Passeport', 'Billet', 'Valise', 'Carte'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَيْنَ ٱلْمَحَطَّة؟', name: 'Où est la gare ?', instruction: 'Question essentielle pour s\'orienter en voyage.', sound: 'Ayna al-Maḥaṭṭa', illustration: '🚉', mnemonic: 'Combine "Ayna" (où) et "Maḥaṭṭa" (gare, station)' },
+      { type: 'qcm', instruction: 'Que signifie "أَيْنَ ٱلْمَحَطَّة؟" (Ayna al-Maḥaṭṭa) ?', options: ['Quelle heure est-il ?', 'Où est la gare ?', 'Combien ça coûte ?', 'Où est l\'hôtel ?'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 22 (Expressions) terminée ! Parcours Expressions du Quotidien (4e partie) : en voyage. +20 XP' }
     ]
   ];
 
