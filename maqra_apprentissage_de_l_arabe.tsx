@@ -1426,6 +1426,18 @@ export default function ArabicLearningApp() {
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
+    },
+    {
+       id: 8,
+       dateGroup: 'Concepts Avancés',
+       icon: '🖋️',
+       title: 'Calligraphie',
+       description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
+       progress: savedProgress[8] ?? 0,
+       total: 6,
+       tags: ['Calligraphie', 'Écriture'],
+       color: 'bg-cyan-100',
+       tagColor: 'bg-cyan-200 text-cyan-800'
     }
     ];
   });
@@ -3944,9 +3956,54 @@ export default function ArabicLearningApp() {
     ]
   ];
 
+  const calligraphyLessons = [
+    [
+      { type: 'intro', letter: 'ب', name: 'Bāʼ : les 4 formes', instruction: 'Chaque lettre arabe change de forme selon sa position dans le mot. Le Bāʼ isolé (ب) devient بـ en début de mot, ـبـ au milieu, et ـب à la fin.', sound: 'Bāʼ', illustration: '🔤', mnemonic: 'بَيْت (Bayt - Maison) : le Bāʼ y est en position initiale (بـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Bāʼ" en DÉBUT de mot ?', options: ['ـب', 'بـ', 'ـبـ', 'ب'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ت', name: 'Tāʼ : les 4 formes', instruction: 'Le Tāʼ isolé (ت) devient تـ en début de mot, ـتـ au milieu, et ـت à la fin. Les deux points restent toujours au-dessus, quelle que soit la forme.', sound: 'Tāʼ', illustration: '🔤', mnemonic: 'تَمْر (Tamr - Datte) : le Tāʼ y est en position initiale (تـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Tāʼ" au MILIEU d\'un mot ?', options: ['ت', 'تـ', 'ـتـ', 'ـت'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 1 (Calligraphie) terminée ! Bāʼ et Tāʼ : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ج', name: 'Jīm : les 4 formes', instruction: 'Le Jīm isolé (ج) devient جـ en début de mot, ـجـ au milieu, et ـج à la fin. Le point reste toujours sous la boucle.', sound: 'Jīm', illustration: '🔤', mnemonic: 'جَمَل (Jamal - Chameau) : le Jīm y est en position initiale (جـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Jīm" en FIN de mot ?', options: ['ج', 'جـ', 'ـجـ', 'ـج'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ح', name: 'Ḥāʼ : les 4 formes', instruction: 'Le Ḥāʼ isolé (ح) devient حـ en début de mot, ـحـ au milieu, et ـح à la fin. Sans aucun point, à toutes ses formes.', sound: 'Ḥāʼ', illustration: '🔤', mnemonic: 'حِصَان (Ḥiṣān - Cheval) : le Ḥāʼ y est en position initiale (حـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme isolée du "Ḥāʼ" ?', options: ['حـ', 'ـحـ', 'ح', 'ـح'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 2 (Calligraphie) terminée ! Jīm et Ḥāʼ : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'س', name: 'Sīn : les 4 formes', instruction: 'Le Sīn isolé (س) devient سـ en début de mot, ـسـ au milieu, et ـس à la fin. Les "trois dents" ne se voient bien que dans la forme isolée ou finale.', sound: 'Sīn', illustration: '🔤', mnemonic: 'سَمَكَة (Samaka - Poisson) : le Sīn y est en position initiale (سـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Sīn" au MILIEU d\'un mot ?', options: ['س', 'سـ', 'ـسـ', 'ـس'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ش', name: 'Shīn : les 4 formes', instruction: 'Le Shīn suit exactement le même tracé que le Sīn, avec trois points ajoutés au-dessus : شـ, ـشـ, ـش.', sound: 'Shīn', illustration: '🔤', mnemonic: 'شَمْس (Shams - Soleil) : le Shīn y est en position initiale (شـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Shīn" en DÉBUT de mot ?', options: ['ـش', 'شـ', 'ـشـ', 'ش'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 3 (Calligraphie) terminée ! Sīn et Shīn : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ع', name: 'ʿAyn : les 4 formes', instruction: 'Le ʿAyn isolé (ع) devient عـ en début de mot, ـعـ au milieu, et ـع à la fin. Sa forme change beaucoup plus que les autres lettres selon la position.', sound: 'ʿAyn', illustration: '🔤', mnemonic: 'عَيْن (ʿAyn - Œil) : le ʿAyn y est en position initiale (عـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "ʿAyn" en FIN de mot ?', options: ['عـ', 'ـعـ', 'ع', 'ـع'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ف', name: 'Fāʼ : les 4 formes', instruction: 'Le Fāʼ isolé (ف) devient فـ en début de mot, ـفـ au milieu, et ـف à la fin. Le point reste toujours au-dessus.', sound: 'Fāʼ', illustration: '🔤', mnemonic: 'فِيل (Fīl - Éléphant) : le Fāʼ y est en position initiale (فـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme isolée du "Fāʼ" ?', options: ['فـ', 'ـفـ', 'ـف', 'ف'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 4 (Calligraphie) terminée ! ʿAyn et Fāʼ : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ك', name: 'Kāf : les 4 formes', instruction: 'Le Kāf isolé (ك) devient كـ en début de mot, ـكـ au milieu, et ـك à la fin. La petite hampe interne disparaît souvent en position initiale.', sound: 'Kāf', illustration: '🔤', mnemonic: 'كَلْب (Kalb - Chien) : le Kāf y est en position initiale (كـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Kāf" au MILIEU d\'un mot ?', options: ['ك', 'كـ', 'ـكـ', 'ـك'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'م', name: 'Mīm : les 4 formes', instruction: 'Le Mīm isolé (م) devient مـ en début de mot, ـمـ au milieu, et ـم à la fin. Toujours ce petit cercle plein, plus ou moins étiré.', sound: 'Mīm', illustration: '🔤', mnemonic: 'مَاء (Māʼ - Eau) : le Mīm y est en position initiale (مـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Mīm" en FIN de mot ?', options: ['م', 'مـ', 'ـمـ', 'ـم'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 5 (Calligraphie) terminée ! Kāf et Mīm : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ا د ذ ر ز و', name: 'Les lettres non-connectrices', instruction: 'Six lettres ne se lient JAMAIS à la lettre suivante : ا (Alif), د (Dāl), ذ (Dhāl), ر (Rāʼ), ز (Zāy), و (Wāw). Elles n\'ont que 2 formes : isolée et finale, identiques.', sound: 'Alif, Dāl, Dhāl, Rāʼ, Zāy, Wāw', illustration: '🔗', mnemonic: 'Elles "cassent" toujours la liaison avec la lettre d\'après' },
+      { type: 'qcm', instruction: 'Laquelle de ces lettres NE se lie PAS à la lettre suivante ?', options: ['ب', 'د', 'س', 'م'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'دَار', name: 'Exemple : Dār (maison)', instruction: 'Dans دَار (Dār), le Dāl garde sa forme isolée bien qu\'il ne soit pas en fin de mot : c\'est une lettre non-connectrice, elle ne se lie jamais à la lettre suivante (ici le Alif).', sound: 'Dār', illustration: '🏠', mnemonic: 'Après un Dāl, la lettre suivante recommence "détachée"' },
+      { type: 'qcm', instruction: 'Pourquoi le Dāl de "دَار" garde-t-il sa forme isolée au milieu du mot ?', options: ['C\'est une erreur d\'écriture', 'Parce que Dāl est une lettre non-connectrice', 'Parce que Dāl est toujours en fin de mot', 'Parce que Dāl n\'a pas de point'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 6 (Calligraphie) terminée ! Vous connaissez les 6 lettres qui ne se lient jamais à la suivante (ا د ذ ر ز و). +20 XP' }
+    ]
+  ];
+
   // Associe chaque module à son tableau de leçons, pour l'écran de liste
   // des leçons et l'aperçu en lecture seule (sans lancer l'exercice).
-  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons, 6: asmaLessons, 7: expressionsLessons };
+  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons, 6: asmaLessons, 7: expressionsLessons, 8: calligraphyLessons };
 
   // Construit le paquet de cartes de révision à partir de ce que l'élève a
   // réellement étudié (leçons dont l'index < progression du module), plutôt
