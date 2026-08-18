@@ -821,7 +821,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 25,
+       total: 30,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -2146,7 +2146,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "سَمِيع" (Samīʻ) ?', options: ['Sourd', 'Audient', 'Muet', 'Aveugle'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'عَزِيز', name: 'Puissant', instruction: 'Un des noms divins : Celui dont la puissance est inégalable et jamais vaincue.', sound: 'ʻAzīz', illustration: '👑', mnemonic: 'La puissance et l\'honneur réunis' },
       { type: 'qcm', instruction: 'Que signifie "عَزِيز" (ʻAzīz) ?', options: ['Faible', 'Puissant', 'Petit', 'Absent'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 25 : parcours Fréquence Lexicale terminé, 75 mots mémorisés ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 25 : 75 mots fréquents mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'فَتْح', name: 'Victoire', instruction: 'La victoire ou l\'ouverture accordée par Dieu.', sound: 'Fatḥ', illustration: '🚪', mnemonic: 'Al-Fattāḥ, Celui qui ouvre', rootKey: 'F-T-H' },
+      { type: 'qcm', instruction: 'Que signifie "فَتْح" (Fatḥ) ?', options: ['Défaite', 'Victoire, ouverture', 'Silence', 'Voyage'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'غَيْب', name: 'L\'invisible', instruction: 'Ce qui échappe à la perception humaine, connu de Dieu seul.', sound: 'Ghayb', illustration: '🌫️', mnemonic: 'ʻĀlim al-Ghayb, Celui qui connaît l\'invisible', rootKey: 'GH-Y-B' },
+      { type: 'qcm', instruction: 'Que signifie "غَيْب" (Ghayb) ?', options: ['Le visible', 'L\'invisible', 'Le proche', 'Le bruit'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'شَهَادَة', name: 'Témoignage', instruction: 'L\'attestation de foi, premier pilier de l\'Islam.', sound: 'Shahāda', illustration: '📜', mnemonic: 'Ash-Shahīd, Le Témoin (nom divin)', rootKey: 'SH-H-D' },
+      { type: 'qcm', instruction: 'Que signifie "شَهَادَة" (Shahāda) ?', options: ['Témoignage, attestation', 'Question', 'Silence', 'Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 26 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'وُجُود', name: 'Existence', instruction: 'Le fait d\'être, d\'exister.', sound: 'Wujūd', illustration: '🌌', mnemonic: 'Al-Wājid, Celui qui possède tout', rootKey: 'W-J-D' },
+      { type: 'qcm', instruction: 'Que signifie "وُجُود" (Wujūd) ?', options: ['Absence', 'Existence', 'Doute', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حُسْن', name: 'Beauté', instruction: 'La beauté et la bonté réunies.', sound: 'Ḥusn', illustration: '🌸', mnemonic: 'Muḥsin, celui qui fait le bien avec excellence', rootKey: 'H-S-N' },
+      { type: 'qcm', instruction: 'Que signifie "حُسْن" (Ḥusn) ?', options: ['Laideur', 'Beauté', 'Colère', 'Faiblesse'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ذِكْر', name: 'Rappel', instruction: 'Le fait de se souvenir de Dieu et de L\'évoquer.', sound: 'Dhikr', illustration: '📿', mnemonic: 'Adh-Dhikr al-Ḥakīm, un nom du Coran', rootKey: 'DH-K-R' },
+      { type: 'qcm', instruction: 'Que signifie "ذِكْر" (Dhikr) ?', options: ['Oubli', 'Rappel, invocation', 'Refus', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 27 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سُجُود', name: 'Prosternation', instruction: 'L\'acte de se prosterner devant Dieu, sommet de la prière.', sound: 'Sujūd', illustration: '🙇', mnemonic: 'Masjid, le lieu de la prosternation', rootKey: 'S-J-D' },
+      { type: 'qcm', instruction: 'Que signifie "سُجُود" (Sujūd) ?', options: ['Debout', 'Prosternation', 'Assis', 'Marche'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'فُرْقَان', name: 'Le Discernement', instruction: 'Nom du Coran : ce qui distingue le vrai du faux.', sound: 'Furqān', illustration: '⚔️', mnemonic: 'Même racine que "Farraqa" (séparer)', rootKey: 'F-R-Q' },
+      { type: 'qcm', instruction: 'Que signifie "فُرْقَان" (Furqān) ?', options: ['Confusion', 'Le Discernement', 'Le Silence', 'L\'Oubli'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قَوْم', name: 'Peuple', instruction: 'Une communauté, un groupe de gens.', sound: 'Qawm', illustration: '👥', mnemonic: 'Qāʼim, celui qui se tient debout', rootKey: 'Q-W-M' },
+      { type: 'qcm', instruction: 'Que signifie "قَوْم" (Qawm) ?', options: ['Individu', 'Peuple', 'Animal', 'Objet'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 28 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مِيثَاق', name: 'Pacte', instruction: 'Une alliance solennelle, notamment celle entre Dieu et les croyants.', sound: 'Mīthāq', illustration: '🤝', mnemonic: 'Un engagement solide et durable' },
+      { type: 'qcm', instruction: 'Que signifie "مِيثَاق" (Mīthāq) ?', options: ['Rupture', 'Pacte, alliance', 'Doute', 'Guerre'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أُمَّة', name: 'Communauté', instruction: 'Le groupe des croyants unis autour d\'un même message.', sound: 'Umma', illustration: '🕌', mnemonic: 'Vient de "Umm" (mère), l\'origine commune' },
+      { type: 'qcm', instruction: 'Que signifie "أُمَّة" (Umma) ?', options: ['Individu', 'Communauté', 'Ennemi', 'Étranger'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'كَلِمَة', name: 'Parole', instruction: 'Un mot ou une parole, notamment la "Parole" divine.', sound: 'Kalima', illustration: '💬', mnemonic: 'La base du mot Kalām (discours)' },
+      { type: 'qcm', instruction: 'Que signifie "كَلِمَة" (Kalima) ?', options: ['Silence', 'Parole, mot', 'Geste', 'Regard'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 29 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَقِين', name: 'Certitude', instruction: 'La conviction absolue, sans doute possible.', sound: 'Yaqīn', illustration: '✅', mnemonic: 'Le plus haut degré de la foi' },
+      { type: 'qcm', instruction: 'Que signifie "يَقِين" (Yaqīn) ?', options: ['Doute', 'Certitude', 'Espoir', 'Peur'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'إِيمَان', name: 'Foi', instruction: 'La croyance intérieure, pilier central de la pratique.', sound: 'Īmān', illustration: '💫', mnemonic: 'Muʼmin, le croyant', rootKey: 'A-M-N' },
+      { type: 'qcm', instruction: 'Que signifie "إِيمَان" (Īmān) ?', options: ['Doute', 'Foi', 'Oubli', 'Refus'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَمَانَة', name: 'Confiance, dépôt', instruction: 'Ce qui est confié et doit être préservé avec intégrité.', sound: 'Amāna', illustration: '🔐', mnemonic: 'Même racine que Amn (sécurité)' },
+      { type: 'qcm', instruction: 'Que signifie "أَمَانَة" (Amāna) ?', options: ['Trahison', 'Confiance, dépôt', 'Perte', 'Vol'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 30 : parcours Fréquence Lexicale terminé, 90 mots mémorisés ! +20 XP' }
     ]
   ];
 
