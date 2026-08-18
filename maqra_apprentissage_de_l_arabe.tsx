@@ -1410,7 +1410,7 @@ export default function ArabicLearningApp() {
        title: 'Les 99 Noms d\'Allah',
        description: 'Al-Asmāʼ al-Ḥusnā, les plus beaux noms',
        progress: savedProgress[6] ?? 0,
-       total: 12,
+       total: 24,
        tags: ['Noms Divins', 'Spiritualité'],
        color: 'bg-amber-100',
        tagColor: 'bg-amber-200 text-amber-800'
@@ -3797,6 +3797,60 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'ٱلْقَوِيّ', name: 'Al-Qawiyy', instruction: 'Le Fort : Sa force est absolue, sans la moindre faiblesse ni limite ; toute puissance créée n\'est qu\'un reflet de la Sienne.', sound: 'Al-Qawiyy', illustration: '💪', mnemonic: 'Même racine que "Quwwa" (force)' },
       { type: 'qcm', instruction: 'Que signifie "ٱلْقَوِيّ" (Al-Qawiyy) ?', options: ['Le Fort', 'Le Faible', 'Le Fragile', 'L\'Épuisé'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 18 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (3e partie) : 54 noms explorés. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمَتِين', name: 'Al-Matīn', instruction: 'Le Ferme, l\'Inébranlable : Sa force est stable et invincible, sans jamais faiblir malgré l\'effort déployé. Souvent cité avec Al-Qawiyy.', sound: 'Al-Matīn', illustration: '🗻', mnemonic: 'La solidité qui ne cède jamais' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمَتِين" (Al-Matīn) ?', options: ['Le Ferme, l\'Inébranlable', 'Le Fragile', 'L\'Instable', 'Le Changeant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَلِيّ', name: 'Al-Waliyy', instruction: 'Le Protecteur Allié : Il prend en charge et soutient Ses serviteurs croyants comme un proche et fidèle allié, les guidant hors des ténèbres.', sound: 'Al-Waliyy', illustration: '🤝', mnemonic: 'Même racine que "Walī" (allié, tuteur)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَلِيّ" (Al-Waliyy) ?', options: ['Le Protecteur Allié', 'L\'Ennemi', 'L\'Étranger', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَمِيد', name: 'Al-Ḥamīd', instruction: 'Le Digne de Louange : Il est loué en Lui-même, par Sa perfection propre, indépendamment de la reconnaissance ou non de Sa création.', sound: 'Al-Ḥamīd', illustration: '🙌', mnemonic: 'Même racine que "Ḥamd" (louange)', rootKey: 'H-M-D' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَمِيد" (Al-Ḥamīd) ?', options: ['Le Digne de Louange', 'Le Blâmable', 'L\'Ingrat', 'L\'Oublié'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 19 (Noms d\'Allah) terminée ! Al-Matīn, Al-Waliyy, Al-Ḥamīd. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُحْصِي', name: 'Al-Muḥṣī', instruction: 'Celui qui dénombre tout : Il connaît et comptabilise avec une exactitude parfaite chaque chose de la création, jusqu\'au moindre détail.', sound: 'Al-Muḥṣī', illustration: '🔢', mnemonic: 'Même racine que "Iḥṣāʼ" (recensement)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُحْصِي" (Al-Muḥṣī) ?', options: ['Celui qui dénombre tout', 'Celui qui oublie tout', 'Celui qui ignore', 'Celui qui approxime'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُبْدِئ', name: 'Al-Mubdiʼ', instruction: 'L\'Initiateur : Il crée toute chose pour la première fois, à partir de rien et sans modèle préexistant.', sound: 'Al-Mubdiʼ', illustration: '🌱', mnemonic: 'Toujours cité avec Al-Muʻīd' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُبْدِئ" (Al-Mubdiʼ) ?', options: ['L\'Initiateur (première création)', 'Le Destructeur', 'Celui qui copie', 'Celui qui termine'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُعِيد', name: 'Al-Muʻīd', instruction: 'Celui qui recommence : Il ramène à la vie ce qui a disparu, notamment lors de la résurrection, tout comme Il l\'a créé une première fois.', sound: 'Al-Muʻīd', illustration: '🔄', mnemonic: 'Toujours cité avec Al-Mubdiʼ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُعِيد" (Al-Muʻīd) ?', options: ['Celui qui recommence', 'Celui qui abandonne', 'Celui qui efface', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 20 (Noms d\'Allah) terminée ! Al-Muḥṣī, Al-Mubdiʼ, Al-Muʻīd. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُحْيِي', name: 'Al-Muḥyī', instruction: 'Celui qui donne la vie : Il insuffle la vie à toute chose, du néant à l\'existence, et ressuscitera les morts le Jour du Jugement.', sound: 'Al-Muḥyī', illustration: '🌿', mnemonic: 'Même racine que "Ḥayāt" (vie)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُحْيِي" (Al-Muḥyī) ?', options: ['Celui qui donne la vie', 'Celui qui donne la mort', 'Celui qui ignore', 'Celui qui punit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُمِيت', name: 'Al-Mumīt', instruction: 'Celui qui donne la mort : Il reprend la vie qu\'Il a accordée, au moment précis qu\'Il détermine, en contrepoint d\'Al-Muḥyī.', sound: 'Al-Mumīt', illustration: '🕊️', mnemonic: 'Toujours cité avec Al-Muḥyī' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُمِيت" (Al-Mumīt) ?', options: ['Celui qui donne la mort', 'Celui qui donne la vie', 'Celui qui guérit', 'Celui qui protège'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَيّ', name: 'Al-Ḥayy', instruction: 'Le Vivant : Sa vie est éternelle, sans début ni fin, sans faiblesse ni sommeil ; Il est toujours cité avec Al-Qayyūm.', sound: 'Al-Ḥayy', illustration: '💚', mnemonic: 'Même racine que "Ḥayāt" (vie)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَيّ" (Al-Ḥayy) ?', options: ['Le Vivant', 'Le Mort', 'L\'Endormi', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 21 (Noms d\'Allah) terminée ! Al-Muḥyī, Al-Mumīt, Al-Ḥayy. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْقَيُّوم', name: 'Al-Qayyūm', instruction: 'Celui qui subsiste par Lui-même : Il n\'a besoin de rien ni personne, et toute la création dépend de Lui pour exister et subsister à chaque instant.', sound: 'Al-Qayyūm', illustration: '⛰️', mnemonic: 'Toujours cité avec Al-Ḥayy (Āyat al-Kursī)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقَيُّوم" (Al-Qayyūm) ?', options: ['Celui qui subsiste par Lui-même', 'Celui qui dépend des autres', 'Le Fragile', 'Le Passager'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَاجِد', name: 'Al-Wājid', instruction: 'Celui qui trouve tout : Rien ne Lui manque, Il possède tout ce qu\'Il veut sans jamais en être privé ni dans le besoin.', sound: 'Al-Wājid', illustration: '💎', mnemonic: 'Même racine que "Wujūd" (existence)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَاجِد" (Al-Wājid) ?', options: ['Celui qui trouve tout, ne manque de rien', 'Celui qui cherche', 'Celui qui perd', 'Celui qui manque'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَاحِد', name: 'Al-Wāḥid', instruction: 'L\'Unique : Il n\'a ni associé ni égal, absolument unique en Son essence, Ses attributs et Ses actes.', sound: 'Al-Wāḥid', illustration: '1️⃣', mnemonic: 'Même racine que "Wāḥid" (un, unique)', rootKey: 'W-H-D' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَاحِد" (Al-Wāḥid) ?', options: ['L\'Unique', 'Le Multiple', 'L\'Associé', 'Le Divisé'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 22 (Noms d\'Allah) terminée ! Al-Qayyūm, Al-Wājid, Al-Wāḥid. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلصَّمَد', name: 'Aṣ-Ṣamad', instruction: 'Le Seul à qui l\'on s\'en remet : toute la création a besoin de Lui pour subsister, alors que Lui n\'a besoin de rien ni de personne. Nom central de la sourate Al-Ikhlāṣ.', sound: 'Aṣ-Ṣamad', illustration: '🎯', mnemonic: 'Toute chose se tourne vers Lui, Lui vers rien' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلصَّمَد" (Aṣ-Ṣamad) ?', options: ['Celui dont tous ont besoin, qui n\'a besoin de rien', 'Celui qui a besoin des autres', 'Le Dépendant', 'Le Fragile'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ٱلْقَادِر', name: 'Al-Qādir', instruction: 'Le Capable : Il a le pouvoir de faire tout ce qu\'Il veut, sans aucune limite ni contrainte, à tout moment qu\'Il choisit.', sound: 'Al-Qādir', illustration: '⚡', mnemonic: 'Même racine que "Qudra" (capacité, pouvoir)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقَادِر" (Al-Qādir) ?', options: ['Le Capable, sans limite', 'L\'Incapable', 'Le Faible', 'L\'Hésitant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُقْتَدِر', name: 'Al-Muqtadir', instruction: 'Le Tout-Puissant Absolu : Sa capacité surpasse toute puissance créée ; Il exerce Son pouvoir avec une aisance totale et sans effort.', sound: 'Al-Muqtadir', illustration: '👑', mnemonic: 'Forme intensive d\'Al-Qādir' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُقْتَدِر" (Al-Muqtadir) ?', options: ['Le Tout-Puissant Absolu', 'Le Vulnérable', 'L\'Indécis', 'Le Dépendant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 23 (Noms d\'Allah) terminée ! Aṣ-Ṣamad, Al-Qādir, Al-Muqtadir. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْأَوَّل', name: 'Al-Awwal', instruction: 'Le Premier : Il existe avant toute chose, sans commencement, sans que rien ne L\'ait précédé.', sound: 'Al-Awwal', illustration: '🔢', mnemonic: 'Toujours cité avec Al-Ākhir' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْأَوَّل" (Al-Awwal) ?', options: ['Le Premier, sans commencement', 'Le Dernier', 'Le Milieu', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْآخِر', name: 'Al-Ākhir', instruction: 'Le Dernier : Il subsistera après la disparition de toute chose, sans fin, sans que rien ne Lui succède.', sound: 'Al-Ākhir', illustration: '🔚', mnemonic: 'Toujours cité avec Al-Awwal' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْآخِر" (Al-Ākhir) ?', options: ['Le Dernier, sans fin', 'Le Premier', 'Le Milieu', 'Le Passager'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلظَّاهِر', name: 'Aẓ-Ẓāhir', instruction: 'L\'Apparent : Son existence est manifeste à travers les innombrables signes de Sa création, visible par Ses effets bien qu\'invisible en Son essence.', sound: 'Aẓ-Ẓāhir', illustration: '🌅', mnemonic: 'Toujours cité avec Al-Bāṭin' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلظَّاهِر" (Aẓ-Ẓāhir) ?', options: ['L\'Apparent (par Ses signes)', 'Le Caché totalement', 'L\'Inexistant', 'L\'Oublié'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 24 (Noms d\'Allah) terminée ! Al-Awwal, Al-Ākhir, Aẓ-Ẓāhir. Parcours Les 99 Noms d\'Allah (4e partie) : 72 noms explorés. +20 XP' }
     ]
   ];
 
