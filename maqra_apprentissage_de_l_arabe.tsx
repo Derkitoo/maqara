@@ -596,6 +596,186 @@ export default function ArabicLearningApp() {
         { translit: 'Bāraka', trans: 'Il a béni', arabic: 'بَارَكَ' },
         { translit: 'Tabāraka Llāh', trans: 'Béni soit Dieu', arabic: 'تَبَارَكَ ٱللَّٰه' }
       ]
+    },
+    'F-T-H': {
+      arabic: 'فتح',
+      trans: 'Ouvrir, victoire',
+      words: [
+        { word: 'فَتْح', trans: 'Fatḥ', meaning: 'Victoire, ouverture', icon: '🚪', desc: 'La victoire ou l\'ouverture accordée par Dieu.' },
+        { word: 'فَاتِح', trans: 'Fātiḥ', meaning: 'Celui qui ouvre', icon: '🔑', desc: 'Un des noms divins : Celui qui ouvre les portes du bien.' }
+      ],
+      derivatives: [
+        { translit: 'Fataḥa', trans: 'Il a ouvert', arabic: 'فَتَحَ' },
+        { translit: 'Al-Fattāḥ', trans: 'Celui qui tranche et ouvre (nom divin)', arabic: 'ٱلْفَتَّاح' }
+      ]
+    },
+    'GH-Y-B': {
+      arabic: 'غيب',
+      trans: 'Invisible, absent',
+      words: [
+        { word: 'غَيْب', trans: 'Ghayb', meaning: 'L\'invisible', icon: '🌫️', desc: 'Ce qui échappe à la perception humaine, connu de Dieu seul.' },
+        { word: 'غَائِب', trans: 'Ghāʼib', meaning: 'Absent', icon: '👻', desc: 'Ce qui est caché ou absent.' }
+      ],
+      derivatives: [
+        { translit: 'Ghāba', trans: 'Il a disparu', arabic: 'غَابَ' },
+        { translit: 'ʻĀlim al-Ghayb', trans: 'Celui qui connaît l\'invisible', arabic: 'عَالِمُ ٱلْغَيْب' }
+      ]
+    },
+    'SH-H-D': {
+      arabic: 'شهد',
+      trans: 'Témoigner',
+      words: [
+        { word: 'شَهَادَة', trans: 'Shahāda', meaning: 'Témoignage, attestation', icon: '📜', desc: 'L\'attestation de foi, premier pilier de l\'Islam.' },
+        { word: 'شَاهِد', trans: 'Shāhid', meaning: 'Témoin', icon: '👁️', desc: 'Celui qui témoigne de ce qu\'il a vu ou su.' }
+      ],
+      derivatives: [
+        { translit: 'Shahida', trans: 'Il a témoigné', arabic: 'شَهِدَ' },
+        { translit: 'Ash-Shahīd', trans: 'Le Témoin (nom divin)', arabic: 'ٱلشَّهِيد' }
+      ]
+    },
+    'B-Y-N': {
+      arabic: 'بين',
+      trans: 'Clarté, distinction',
+      words: [
+        { word: 'بَيَان', trans: 'Bayān', meaning: 'Clarté, exposé', icon: '💡', desc: 'Le fait de rendre une chose claire et compréhensible.' },
+        { word: 'بَيِّنَة', trans: 'Bayyina', meaning: 'Preuve claire', icon: '🔎', desc: 'Un argument évident qui dissipe le doute.' }
+      ],
+      derivatives: [
+        { translit: 'Bayyana', trans: 'Il a clarifié', arabic: 'بَيَّنَ' },
+        { translit: 'Tabyīn', trans: 'Clarification', arabic: 'تَبْيِين' }
+      ]
+    },
+    'W-J-D': {
+      arabic: 'وجد',
+      trans: 'Trouver, exister',
+      words: [
+        { word: 'وُجُود', trans: 'Wujūd', meaning: 'Existence', icon: '🌌', desc: 'Le fait d\'être, d\'exister.' },
+        { word: 'مَوْجُود', trans: 'Mawjūd', meaning: 'Existant', icon: '✅', desc: 'Ce qui existe réellement.' }
+      ],
+      derivatives: [
+        { translit: 'Wajada', trans: 'Il a trouvé', arabic: 'وَجَدَ' },
+        { translit: 'Al-Wājid', trans: 'Celui qui possède tout (nom divin)', arabic: 'ٱلْوَاجِد' }
+      ]
+    },
+    'H-S-N': {
+      arabic: 'حسن',
+      trans: 'Beauté, bien',
+      words: [
+        { word: 'حُسْن', trans: 'Ḥusn', meaning: 'Beauté', icon: '🌸', desc: 'La beauté et la bonté réunies.' },
+        { word: 'مُحْسِن', trans: 'Muḥsin', meaning: 'Bienfaisant', icon: '🤲', desc: 'Celui qui fait le bien avec excellence.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥasan', trans: 'Beau, bon', arabic: 'حَسَن' },
+        { translit: 'Aḥsana', trans: 'Il a bien agi', arabic: 'أَحْسَنَ' }
+      ]
+    },
+    'S-A-D': {
+      arabic: 'سعد',
+      trans: 'Bonheur',
+      words: [
+        { word: 'سَعَادَة', trans: 'Saʻāda', meaning: 'Bonheur', icon: '😊', desc: 'L\'état de plénitude et de joie.' },
+        { word: 'سَعِيد', trans: 'Saʻīd', meaning: 'Heureux', icon: '🌞', desc: 'Celui qui connaît le bonheur.' }
+      ],
+      derivatives: [
+        { translit: 'Suʻūd', trans: 'Ascension, bonne fortune', arabic: 'صُعُود' },
+        { translit: 'Saʻīdan', trans: 'Heureusement', arabic: 'سَعِيدًا' }
+      ]
+    },
+    'DH-K-R': {
+      arabic: 'ذكر',
+      trans: 'Rappel, mention',
+      words: [
+        { word: 'ذِكْر', trans: 'Dhikr', meaning: 'Rappel, invocation', icon: '📿', desc: 'Le fait de se souvenir de Dieu et de L\'évoquer.' },
+        { word: 'ذَاكِر', trans: 'Dhākir', meaning: 'Celui qui se souvient', icon: '🧎', desc: 'Celui qui pratique le rappel de Dieu.' }
+      ],
+      derivatives: [
+        { translit: 'Dhakara', trans: 'Il s\'est souvenu', arabic: 'ذَكَرَ' },
+        { translit: 'Adh-Dhikr al-Ḥakīm', trans: 'Le Rappel plein de sagesse (le Coran)', arabic: 'ٱلذِّكْرُ ٱلْحَكِيم' }
+      ]
+    },
+    'S-J-D': {
+      arabic: 'سجد',
+      trans: 'Se prosterner',
+      words: [
+        { word: 'سُجُود', trans: 'Sujūd', meaning: 'Prosternation', icon: '🙇', desc: 'L\'acte de se prosterner devant Dieu, sommet de la prière.' },
+        { word: 'سَاجِد', trans: 'Sājid', meaning: 'Prosterné', icon: '🕌', desc: 'Celui qui est en prosternation.' }
+      ],
+      derivatives: [
+        { translit: 'Sajada', trans: 'Il s\'est prosterné', arabic: 'سَجَدَ' },
+        { translit: 'Masjid', trans: 'Mosquée (lieu de prosternation)', arabic: 'مَسْجِد' }
+      ]
+    },
+    'S-D-Q': {
+      arabic: 'صدق',
+      trans: 'Véracité',
+      words: [
+        { word: 'صَادِق', trans: 'Ṣādiq', meaning: 'Véridique', icon: '✅', desc: 'Celui dont la parole est toujours vraie.' },
+        { word: 'تَصْدِيق', trans: 'Taṣdīq', meaning: 'Confirmation', icon: '👍', desc: 'Le fait de confirmer la vérité de quelque chose.' }
+      ],
+      derivatives: [
+        { translit: 'Ṣadaqa', trans: 'Il a dit vrai', arabic: 'صَدَقَ' },
+        { translit: 'Ṣadaqa (aumône)', trans: 'Don sincère', arabic: 'صَدَقَة' }
+      ]
+    },
+    'F-R-Q': {
+      arabic: 'فرق',
+      trans: 'Distinguer, séparer',
+      words: [
+        { word: 'فُرْقَان', trans: 'Furqān', meaning: 'Le Discernement', icon: '⚔️', desc: 'Nom du Coran : ce qui distingue le vrai du faux.' },
+        { word: 'فَرْق', trans: 'Farq', meaning: 'Différence', icon: '↔️', desc: 'Ce qui sépare deux choses.' }
+      ],
+      derivatives: [
+        { translit: 'Farraqa', trans: 'Il a séparé', arabic: 'فَرَّقَ' },
+        { translit: 'Firqa', trans: 'Groupe, faction', arabic: 'فِرْقَة' }
+      ]
+    },
+    'KH-T-M': {
+      arabic: 'ختم',
+      trans: 'Sceller, terminer',
+      words: [
+        { word: 'خَاتَم', trans: 'Khātam', meaning: 'Sceau', icon: '💍', desc: 'Ce qui scelle et clôt, comme le Sceau des prophètes.' },
+        { word: 'خِتَام', trans: 'Khitām', meaning: 'Conclusion', icon: '🏁', desc: 'La fin, l\'achèvement d\'une chose.' }
+      ],
+      derivatives: [
+        { translit: 'Khatama', trans: 'Il a scellé', arabic: 'خَتَمَ' },
+        { translit: 'Khātam an-Nabiyyīn', trans: 'Le Sceau des prophètes', arabic: 'خَاتَمُ ٱلنَّبِيِّين' }
+      ]
+    },
+    'H-M-L': {
+      arabic: 'حمل',
+      trans: 'Porter',
+      words: [
+        { word: 'حَمْل', trans: 'Ḥaml', meaning: 'Fardeau, portée', icon: '🎒', desc: 'Ce qui est porté, physiquement ou moralement.' },
+        { word: 'حَامِل', trans: 'Ḥāmil', meaning: 'Porteur', icon: '💪', desc: 'Celui qui porte une charge.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥamala', trans: 'Il a porté', arabic: 'حَمَلَ' },
+        { translit: 'Ḥammāla al-Ḥaṭab', trans: 'La porteuse de bois (Sourate Al-Masad)', arabic: 'حَمَّالَةَ ٱلْحَطَب' }
+      ]
+    },
+    'A-B-R': {
+      arabic: 'عبر',
+      trans: 'Traverser, tirer leçon',
+      words: [
+        { word: 'عِبْرَة', trans: 'ʻIbra', meaning: 'Leçon', icon: '📖', desc: 'L\'enseignement que l\'on tire d\'un événement.' },
+        { word: 'عَابِر', trans: 'ʻĀbir', meaning: 'Passant', icon: '🚶', desc: 'Celui qui traverse, de passage.' }
+      ],
+      derivatives: [
+        { translit: 'ʻAbara', trans: 'Il a traversé', arabic: 'عَبَرَ' },
+        { translit: 'Iʻtabara', trans: 'Il a tiré une leçon', arabic: 'ٱعْتَبَرَ' }
+      ]
+    },
+    'Q-W-M': {
+      arabic: 'قوم',
+      trans: 'Se tenir debout, peuple',
+      words: [
+        { word: 'قَوْم', trans: 'Qawm', meaning: 'Peuple', icon: '👥', desc: 'Une communauté, un groupe de gens.' },
+        { word: 'قَائِم', trans: 'Qāʼim', meaning: 'Debout', icon: '🧍', desc: 'Celui qui se tient droit, en position debout.' }
+      ],
+      derivatives: [
+        { translit: 'Qāma', trans: 'Il s\'est levé', arabic: 'قَامَ' },
+        { translit: 'Al-Qayyūm', trans: 'Celui qui subsiste par Lui-même (nom divin)', arabic: 'ٱلْقَيُّوم' }
+      ]
     }
   };
 
@@ -653,7 +833,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 11,
+       total: 16,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -2026,7 +2206,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "حبب" (H-B-B) ?', options: ['Haïr', 'Aimer', 'Fuir', 'Ignorer'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'برك', name: 'Racine B-R-K', instruction: 'La racine B-R-K (برك) exprime la bénédiction. Elle donne بَرَكَة (Baraka - Bénédiction).', sound: 'B-R-K', illustration: '🌿', mnemonic: 'بَرَكَة (Baraka - Bénédiction)', rootKey: 'B-R-K' },
       { type: 'qcm', instruction: 'Que signifie la racine "برك" (B-R-K) ?', options: ['Maudire', 'Bénir', 'Détruire', 'Oublier'], correctIndex: 1, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 11 : parcours Le Secret des Racines terminé, 33 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 11 : 33 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'فتح', name: 'Racine F-T-H', instruction: 'La racine F-T-H (فتح) exprime l\'ouverture et la victoire. Elle donne فَتْح (Fatḥ - Victoire).', sound: 'F-T-H', illustration: '🚪', mnemonic: 'فَتْح (Fatḥ - Victoire)', rootKey: 'F-T-H' },
+      { type: 'qcm', instruction: 'Que signifie la racine "فتح" (F-T-H) ?', options: ['Fermer', 'Ouvrir, victoire', 'Détruire', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'غيب', name: 'Racine GH-Y-B', instruction: 'La racine GH-Y-B (غيب) exprime l\'invisible. Elle donne غَيْب (Ghayb - L\'invisible).', sound: 'GH-Y-B', illustration: '🌫️', mnemonic: 'غَيْب (Ghayb - L\'invisible)', rootKey: 'GH-Y-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غيب" (GH-Y-B) ?', options: ['Visible', 'Invisible, absent', 'Proche', 'Bruyant'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'شهد', name: 'Racine SH-H-D', instruction: 'La racine SH-H-D (شهد) exprime le témoignage. Elle donne شَهَادَة (Shahāda - Témoignage).', sound: 'SH-H-D', illustration: '📜', mnemonic: 'شَهَادَة (Shahāda - Témoignage)', rootKey: 'SH-H-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "شهد" (SH-H-D) ?', options: ['Douter', 'Témoigner', 'Oublier', 'Fuir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 12 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بين', name: 'Racine B-Y-N', instruction: 'La racine B-Y-N (بين) exprime la clarté. Elle donne بَيَان (Bayān - Clarté).', sound: 'B-Y-N', illustration: '💡', mnemonic: 'بَيَان (Bayān - Clarté)', rootKey: 'B-Y-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بين" (B-Y-N) ?', options: ['Confusion', 'Clarté, distinction', 'Silence', 'Vitesse'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وجد', name: 'Racine W-J-D', instruction: 'La racine W-J-D (وجد) exprime l\'existence. Elle donne وُجُود (Wujūd - Existence).', sound: 'W-J-D', illustration: '🌌', mnemonic: 'وُجُود (Wujūd - Existence)', rootKey: 'W-J-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وجد" (W-J-D) ?', options: ['Trouver, exister', 'Perdre', 'Chercher en vain', 'Ignorer'], correctIndex: 0, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حسن', name: 'Racine H-S-N', instruction: 'La racine H-S-N (حسن) exprime la beauté et le bien. Elle donne حُسْن (Ḥusn - Beauté).', sound: 'H-S-N', illustration: '🌸', mnemonic: 'حُسْن (Ḥusn - Beauté)', rootKey: 'H-S-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حسن" (H-S-N) ?', options: ['Laideur', 'Beauté, bien', 'Colère', 'Fatigue'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 13 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سعد', name: 'Racine S-A-D', instruction: 'La racine S-A-D (سعد) exprime le bonheur. Elle donne سَعَادَة (Saʻāda - Bonheur).', sound: 'S-A-D', illustration: '😊', mnemonic: 'سَعَادَة (Saʻāda - Bonheur)', rootKey: 'S-A-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سعد" (S-A-D) ?', options: ['Tristesse', 'Bonheur', 'Colère', 'Fatigue'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ذكر', name: 'Racine DH-K-R', instruction: 'La racine DH-K-R (ذكر) exprime le rappel. Elle donne ذِكْر (Dhikr - Rappel, invocation).', sound: 'DH-K-R', illustration: '📿', mnemonic: 'ذِكْر (Dhikr - Rappel)', rootKey: 'DH-K-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ذكر" (DH-K-R) ?', options: ['Oublier', 'Rappel, mention', 'Cacher', 'Refuser'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'سجد', name: 'Racine S-J-D', instruction: 'La racine S-J-D (سجد) exprime la prosternation. Elle donne سُجُود (Sujūd - Prosternation).', sound: 'S-J-D', illustration: '🙇', mnemonic: 'سُجُود (Sujūd - Prosternation)', rootKey: 'S-J-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سجد" (S-J-D) ?', options: ['Se lever', 'Se prosterner', 'Courir', 'Parler'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 14 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'صدق', name: 'Racine S-D-Q', instruction: 'La racine S-D-Q (صدق) exprime la véracité. Elle donne صَادِق (Ṣādiq - Véridique).', sound: 'S-D-Q', illustration: '✅', mnemonic: 'صَادِق (Ṣādiq - Véridique)', rootKey: 'S-D-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "صدق" (S-D-Q) ?', options: ['Mensonge', 'Véracité', 'Doute', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'فرق', name: 'Racine F-R-Q', instruction: 'La racine F-R-Q (فرق) exprime la distinction. Elle donne فُرْقَان (Furqān - Le Discernement, nom du Coran).', sound: 'F-R-Q', illustration: '⚔️', mnemonic: 'فُرْقَان (Furqān - Discernement)', rootKey: 'F-R-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "فرق" (F-R-Q) ?', options: ['Unir', 'Distinguer, séparer', 'Cacher', 'Suivre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ختم', name: 'Racine KH-T-M', instruction: 'La racine KH-T-M (ختم) exprime le sceau. Elle donne خَاتَم (Khātam - Sceau).', sound: 'KH-T-M', illustration: '💍', mnemonic: 'خَاتَم (Khātam - Sceau)', rootKey: 'KH-T-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ختم" (KH-T-M) ?', options: ['Commencer', 'Sceller, terminer', 'Ouvrir', 'Chercher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 15 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'حمل', name: 'Racine H-M-L', instruction: 'La racine H-M-L (حمل) exprime le fait de porter. Elle donne حَمْل (Ḥaml - Fardeau, portée).', sound: 'H-M-L', illustration: '🎒', mnemonic: 'حَمْل (Ḥaml - Fardeau)', rootKey: 'H-M-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حمل" (H-M-L) ?', options: ['Poser', 'Porter', 'Vendre', 'Casser'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'عبر', name: 'Racine A-B-R', instruction: 'La racine A-B-R (عبر) exprime la traversée et la leçon tirée. Elle donne عِبْرَة (ʻIbra - Leçon).', sound: 'A-B-R', illustration: '📖', mnemonic: 'عِبْرَة (ʻIbra - Leçon)', rootKey: 'A-B-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "عبر" (A-B-R) ?', options: ['Rester', 'Traverser, tirer leçon', 'Refuser', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قوم', name: 'Racine Q-W-M', instruction: 'La racine Q-W-M (قوم) exprime le fait de se tenir debout. Elle donne قَوْم (Qawm - Peuple).', sound: 'Q-W-M', illustration: '👥', mnemonic: 'قَوْم (Qawm - Peuple)', rootKey: 'Q-W-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قوم" (Q-W-M) ?', options: ['S\'asseoir', 'Se tenir debout, peuple', 'Voyager', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 16 : parcours Le Secret des Racines terminé, 48 racines explorées ! +20 XP' }
     ]
   ];
 
