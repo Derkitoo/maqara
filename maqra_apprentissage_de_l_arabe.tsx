@@ -1218,7 +1218,7 @@ export default function ArabicLearningApp() {
        title: 'Les 99 Noms d\'Allah',
        description: 'Al-Asmāʼ al-Ḥusnā, les plus beaux noms',
        progress: savedProgress[6] ?? 0,
-       total: 6,
+       total: 12,
        tags: ['Noms Divins', 'Spiritualité'],
        color: 'bg-amber-100',
        tagColor: 'bg-amber-200 text-amber-800'
@@ -3319,7 +3319,61 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "ٱلْوَدُود" (Al-Wadūd) ?', options: ['Le Plein d\'Amour', 'Le Haineux', 'L\'Indifférent', 'Le Distant'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'ٱلصَّبُور', name: 'Aṣ-Ṣabūr', instruction: 'Le Très Patient : Il ne hâte pas le châtiment malgré la désobéissance de Ses créatures.', sound: 'Aṣ-Ṣabūr', illustration: '⏳', mnemonic: 'Même racine que "Ṣabr" (patience)', rootKey: 'S-B-R' },
       { type: 'qcm', instruction: 'Que signifie "ٱلصَّبُور" (Aṣ-Ṣabūr) ?', options: ['Le Très Patient', 'L\'Impatient', 'Le Précipité', 'Le Colérique'], correctIndex: 0, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 6 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (1ère partie) complet : 18 noms explorés. +20 XP' }
+      { type: 'success', instruction: 'Leçon 6 (Noms d\'Allah) terminée ! 18 noms explorés. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُهَيْمِن', name: 'Al-Muhaymin', instruction: 'Le Protecteur Vigilant : Il veille sur toute chose et en garantit la préservation.', sound: 'Al-Muhaymin', illustration: '👁️', mnemonic: 'Toujours attentif, rien ne Lui échappe' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُهَيْمِن" (Al-Muhaymin) ?', options: ['Le Protecteur Vigilant', 'L\'Indifférent', 'L\'Absent', 'Le Distrait'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْجَبَّار', name: 'Al-Jabbār', instruction: 'Le Contraignant : Il redresse ce qui est brisé et impose Sa volonté à toute Sa création.', sound: 'Al-Jabbār', illustration: '💪', mnemonic: 'Celui qui répare et qui contraint' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْجَبَّار" (Al-Jabbār) ?', options: ['Le Contraignant, Réparateur', 'Le Faible', 'L\'Indécis', 'Le Passif'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُتَكَبِّر', name: 'Al-Mutakabbir', instruction: 'Le Superbe : La grandeur Lui appartient exclusivement, au-delà de toute imperfection.', sound: 'Al-Mutakabbir', illustration: '👑', mnemonic: 'La grandeur n\'appartient qu\'à Lui' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُتَكَبِّر" (Al-Mutakabbir) ?', options: ['Le Superbe (nom divin)', 'Le Petit', 'Le Faible', 'Le Timide'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 7 (Noms d\'Allah) terminée ! Al-Muhaymin, Al-Jabbār, Al-Mutakabbir. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْبَارِئ', name: 'Al-Bāriʼ', instruction: 'Le Créateur qui donne forme : Il crée chaque chose avec harmonie et sans défaut.', sound: 'Al-Bāriʼ', illustration: '🌱', mnemonic: 'Souvent cité avec Al-Khāliq et Al-Muṣawwir' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَارِئ" (Al-Bāriʼ) ?', options: ['Le Créateur harmonieux', 'Le Destructeur', 'L\'Imparfait', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُصَوِّر', name: 'Al-Muṣawwir', instruction: 'Le Formateur : Il donne à chaque créature sa forme unique et distincte.', sound: 'Al-Muṣawwir', illustration: '🎨', mnemonic: 'Celui qui façonne les formes' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُصَوِّر" (Al-Muṣawwir) ?', options: ['Le Formateur', 'Le Destructeur', 'L\'Immobile', 'L\'Aveugle'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَهَّاب', name: 'Al-Wahhāb', instruction: 'Le Dispensateur généreux : Il donne sans compter et sans attendre de contrepartie.', sound: 'Al-Wahhāb', illustration: '🎁', mnemonic: 'Le don pur et gratuit' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَهَّاب" (Al-Wahhāb) ?', options: ['Le Dispensateur généreux', 'L\'Avare', 'Celui qui prend', 'Le Silencieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 8 (Noms d\'Allah) terminée ! Al-Bāriʼ, Al-Muṣawwir, Al-Wahhāb. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْفَتَّاح', name: 'Al-Fattāḥ', instruction: 'Celui qui tranche et ouvre : Il ouvre les portes du bien et juge avec vérité.', sound: 'Al-Fattāḥ', illustration: '🚪', mnemonic: 'Même racine que "Fatḥ" (victoire)', rootKey: 'F-T-H' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْفَتَّاح" (Al-Fattāḥ) ?', options: ['Celui qui ouvre, tranche', 'Celui qui ferme', 'Celui qui cache', 'Celui qui détruit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْقَابِض', name: 'Al-Qābiḍ', instruction: 'Celui qui restreint : Il resserre la subsistance ou l\'âme selon Sa sagesse.', sound: 'Al-Qābiḍ', illustration: '✊', mnemonic: 'Souvent cité avec Al-Bāsiṭ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقَابِض" (Al-Qābiḍ) ?', options: ['Celui qui restreint', 'Celui qui étend', 'Celui qui ignore', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَاسِط', name: 'Al-Bāsiṭ', instruction: 'Celui qui étend : Il élargit la subsistance et la miséricorde selon Sa volonté.', sound: 'Al-Bāsiṭ', illustration: '🤲', mnemonic: 'Souvent cité avec Al-Qābiḍ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَاسِط" (Al-Bāsiṭ) ?', options: ['Celui qui étend', 'Celui qui restreint', 'Celui qui cache', 'Celui qui punit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 9 (Noms d\'Allah) terminée ! Al-Fattāḥ, Al-Qābiḍ, Al-Bāsiṭ. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْخَافِض', name: 'Al-Khāfiḍ', instruction: 'Celui qui abaisse : Il abaisse les orgueilleux et rabaisse ce qu\'Il veut.', sound: 'Al-Khāfiḍ', illustration: '⬇️', mnemonic: 'Souvent cité avec Ar-Rāfiʻ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْخَافِض" (Al-Khāfiḍ) ?', options: ['Celui qui abaisse', 'Celui qui élève', 'Celui qui répare', 'Celui qui pardonne'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّافِع', name: 'Ar-Rāfiʻ', instruction: 'Celui qui élève : Il élève en rang et en dignité qui Il veut.', sound: 'Ar-Rāfiʻ', illustration: '⬆️', mnemonic: 'Souvent cité avec Al-Khāfiḍ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّافِع" (Ar-Rāfiʻ) ?', options: ['Celui qui élève', 'Celui qui abaisse', 'Celui qui punit', 'Celui qui juge'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُعِزّ', name: 'Al-Muʻizz', instruction: 'Celui qui honore : Il accorde la puissance et l\'honneur à qui Il veut.', sound: 'Al-Muʻizz', illustration: '🏅', mnemonic: 'Souvent cité avec Al-Mudhill' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُعِزّ" (Al-Muʻizz) ?', options: ['Celui qui honore', 'Celui qui humilie', 'Celui qui ignore', 'Celui qui punit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 10 (Noms d\'Allah) terminée ! Al-Khāfiḍ, Ar-Rāfiʻ, Al-Muʻizz. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُذِلّ', name: 'Al-Mudhill', instruction: 'Celui qui humilie : Il retire l\'honneur et la puissance à qui Il veut.', sound: 'Al-Mudhill', illustration: '⬇️', mnemonic: 'Souvent cité avec Al-Muʻizz' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُذِلّ" (Al-Mudhill) ?', options: ['Celui qui humilie', 'Celui qui honore', 'Celui qui pardonne', 'Celui qui guide'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَسِيب', name: 'Al-Ḥasīb', instruction: 'Le Comptable : Il tient le compte exact de toutes les œuvres, et Il suffit à Ses serviteurs.', sound: 'Al-Ḥasīb', illustration: '📊', mnemonic: 'Même racine que "Ḥisāb" (compte)', rootKey: 'H-S-B' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَسِيب" (Al-Ḥasīb) ?', options: ['Le Comptable de toute chose', 'L\'Oublieux', 'L\'Indifférent', 'Le Silencieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْجَلِيل', name: 'Al-Jalīl', instruction: 'Le Majestueux : Sa grandeur et Sa majesté dépassent toute description.', sound: 'Al-Jalīl', illustration: '✨', mnemonic: 'La majesté suprême' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْجَلِيل" (Al-Jalīl) ?', options: ['Le Majestueux', 'Le Petit', 'Le Faible', 'L\'Ordinaire'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 11 (Noms d\'Allah) terminée ! Al-Mudhill, Al-Ḥasīb, Al-Jalīl. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْكَرِيم', name: 'Al-Karīm', instruction: 'Le Généreux : Sa générosité est sans limite et Il pardonne avec noblesse.', sound: 'Al-Karīm', illustration: '🎁', mnemonic: 'La générosité la plus noble' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْكَرِيم" (Al-Karīm) ?', options: ['Le Généreux', 'L\'Avare', 'Le Sévère', 'Le Distant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّقِيب', name: 'Ar-Raqīb', instruction: 'L\'Observateur vigilant : Rien ne Lui échappe, Il observe toute chose en permanence.', sound: 'Ar-Raqīb', illustration: '👀', mnemonic: 'La surveillance constante et bienveillante' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّقِيب" (Ar-Raqīb) ?', options: ['L\'Observateur vigilant', 'L\'Aveugle', 'L\'Absent', 'Le Distrait'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُجِيب', name: 'Al-Mujīb', instruction: 'Celui qui répond : Il exauce les invocations de Ses serviteurs qui L\'implorent.', sound: 'Al-Mujīb', illustration: '🤲', mnemonic: 'Celui qui répond aux prières' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُجِيب" (Al-Mujīb) ?', options: ['Celui qui répond (aux invocations)', 'Celui qui ignore', 'Celui qui refuse', 'Celui qui se tait'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 12 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (2e partie) complet : 36 noms explorés. +20 XP' }
     ]
   ];
 
