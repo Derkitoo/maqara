@@ -776,6 +776,186 @@ export default function ArabicLearningApp() {
         { translit: 'Qāma', trans: 'Il s\'est levé', arabic: 'قَامَ' },
         { translit: 'Al-Qayyūm', trans: 'Celui qui subsiste par Lui-même (nom divin)', arabic: 'ٱلْقَيُّوم' }
       ]
+    },
+    'N-S-R': {
+      arabic: 'نصر',
+      trans: 'Aider, secourir',
+      words: [
+        { word: 'نَصْر', trans: 'Naṣr', meaning: 'Victoire, secours', icon: '🏆', desc: 'L\'aide et le triomphe accordés par Dieu.' },
+        { word: 'نَاصِر', trans: 'Nāṣir', meaning: 'Celui qui secourt', icon: '🤝', desc: 'Celui qui apporte son aide et son soutien.' }
+      ],
+      derivatives: [
+        { translit: 'Naṣara', trans: 'Il a secouru', arabic: 'نَصَرَ' },
+        { translit: 'Anṣār', trans: 'Les Auxiliaires (compagnons de Médine)', arabic: 'أَنْصَار' }
+      ]
+    },
+    'GH-D-B': {
+      arabic: 'غضب',
+      trans: 'Colère',
+      words: [
+        { word: 'غَضَب', trans: 'Ghaḍab', meaning: 'Colère', icon: '😠', desc: 'Le courroux, souvent évoqué en contraste avec la miséricorde.' },
+        { word: 'غَضْبَان', trans: 'Ghaḍbān', meaning: 'En colère', icon: '🔥', desc: 'Celui qui est saisi par la colère.' }
+      ],
+      derivatives: [
+        { translit: 'Ghaḍiba', trans: 'Il s\'est mis en colère', arabic: 'غَضِبَ' },
+        { translit: 'Maghḍūb', trans: 'Ayant encouru la colère', arabic: 'مَغْضُوب' }
+      ]
+    },
+    'KH-W-F': {
+      arabic: 'خوف',
+      trans: 'Craindre',
+      words: [
+        { word: 'خَائِف', trans: 'Khāʼif', meaning: 'Craintif', icon: '😨', desc: 'Celui qui ressent la crainte.' },
+        { word: 'خَوْف', trans: 'Khawf', meaning: 'Peur', icon: '💭', desc: 'La crainte, équilibrée par l\'espoir en Dieu.' }
+      ],
+      derivatives: [
+        { translit: 'Khāfa', trans: 'Il a craint', arabic: 'خَافَ' },
+        { translit: 'Takhwīf', trans: 'Le fait d\'effrayer', arabic: 'تَخْوِيف' }
+      ]
+    },
+    'R-J-A': {
+      arabic: 'رجع',
+      trans: 'Retourner',
+      words: [
+        { word: 'رُجُوع', trans: 'Rujūʻ', meaning: 'Retour', icon: '↩️', desc: 'Le retour vers Dieu, thème central de l\'au-delà.' },
+        { word: 'مَرْجِع', trans: 'Marjiʻ', meaning: 'Lieu de retour', icon: '🏠', desc: 'La destination finale de toute chose.' }
+      ],
+      derivatives: [
+        { translit: 'Rajaʻa', trans: 'Il est retourné', arabic: 'رَجَعَ' },
+        { translit: 'Ilayhi Rājiʻūn', trans: 'C\'est vers Lui que nous retournons', arabic: 'إِلَيْهِ رَاجِعُون' }
+      ]
+    },
+    'H-F-Z': {
+      arabic: 'حفظ',
+      trans: 'Préserver, mémoriser',
+      words: [
+        { word: 'حِفْظ', trans: 'Ḥifẓ', meaning: 'Préservation, mémorisation', icon: '🧠', desc: 'Le fait de garder et de retenir, notamment le Coran.' },
+        { word: 'حَافِظ', trans: 'Ḥāfiẓ', meaning: 'Gardien', icon: '🛡️', desc: 'Celui qui préserve ou qui a mémorisé le Coran.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥafiẓa', trans: 'Il a préservé', arabic: 'حَفِظَ' },
+        { translit: 'Al-Ḥafīẓ', trans: 'Le Préservateur (nom divin)', arabic: 'ٱلْحَفِيظ' }
+      ]
+    },
+    'T-B-A': {
+      arabic: 'تبع',
+      trans: 'Suivre',
+      words: [
+        { word: 'اتِّبَاع', trans: 'Ittibāʻ', meaning: 'Le fait de suivre', icon: '👣', desc: 'Suivre un guide ou un enseignement avec fidélité.' },
+        { word: 'تَابِع', trans: 'Tābiʻ', meaning: 'Suiveur', icon: '🚶', desc: 'Celui qui suit quelqu\'un ou quelque chose.' }
+      ],
+      derivatives: [
+        { translit: 'Ittabaʻa', trans: 'Il a suivi', arabic: 'ٱتَّبَعَ' },
+        { translit: 'Tābiʻūn', trans: 'Les Suivants (génération après les compagnons)', arabic: 'تَابِعُون' }
+      ]
+    },
+    'D-L-L': {
+      arabic: 'ضلل',
+      trans: 'Égarer',
+      words: [
+        { word: 'ضَلَال', trans: 'Ḍalāl', meaning: 'Égarement', icon: '🌀', desc: 'Le fait de s\'écarter du droit chemin.' },
+        { word: 'ضَالّ', trans: 'Ḍāll', meaning: 'Égaré', icon: '🧭', desc: 'Celui qui a perdu le droit chemin.' }
+      ],
+      derivatives: [
+        { translit: 'Ḍalla', trans: 'Il s\'est égaré', arabic: 'ضَلَّ' },
+        { translit: 'Aḍalla', trans: 'Il a égaré (quelqu\'un)', arabic: 'أَضَلَّ' }
+      ]
+    },
+    'N-S-H': {
+      arabic: 'نصح',
+      trans: 'Conseiller',
+      words: [
+        { word: 'نَصِيحَة', trans: 'Naṣīḥa', meaning: 'Conseil', icon: '💡', desc: 'Une parole sincère donnée pour le bien d\'autrui.' },
+        { word: 'نَاصِح', trans: 'Nāṣiḥ', meaning: 'Conseiller', icon: '🗣️', desc: 'Celui qui donne des conseils sincères.' }
+      ],
+      derivatives: [
+        { translit: 'Naṣaḥa', trans: 'Il a conseillé', arabic: 'نَصَحَ' },
+        { translit: 'Nāṣiḥūn', trans: 'Les conseillers sincères', arabic: 'نَاصِحُون' }
+      ]
+    },
+    'B-SH-R': {
+      arabic: 'بشر',
+      trans: 'Annoncer, humanité',
+      words: [
+        { word: 'بَشَر', trans: 'Bashar', meaning: 'Être humain', icon: '🧑', desc: 'L\'humain, dans sa nature commune et mortelle.' },
+        { word: 'بُشْرَى', trans: 'Bushrā', meaning: 'Bonne nouvelle', icon: '📯', desc: 'Une annonce heureuse et réjouissante.' }
+      ],
+      derivatives: [
+        { translit: 'Bashshara', trans: 'Il a annoncé une bonne nouvelle', arabic: 'بَشَّرَ' },
+        { translit: 'Mubashshir', trans: 'Annonciateur de bonnes nouvelles', arabic: 'مُبَشِّر' }
+      ]
+    },
+    'GH-N-Y': {
+      arabic: 'غني',
+      trans: 'Richesse',
+      words: [
+        { word: 'غِنَى', trans: 'Ghinā', meaning: 'Richesse', icon: '💰', desc: 'L\'abondance de biens, ou la suffisance à soi-même de Dieu.' },
+        { word: 'غَنِيّ', trans: 'Ghaniyy', meaning: 'Riche', icon: '👑', desc: 'Un des noms divins : Celui qui n\'a besoin de rien.' }
+      ],
+      derivatives: [
+        { translit: 'Istaghnā', trans: 'Il s\'est passé de', arabic: 'ٱسْتَغْنَىٰ' },
+        { translit: 'Al-Ghaniyy', trans: 'Le Riche par excellence (nom divin)', arabic: 'ٱلْغَنِيّ' }
+      ]
+    },
+    'F-Q-R': {
+      arabic: 'فقر',
+      trans: 'Pauvreté',
+      words: [
+        { word: 'فَقْر', trans: 'Faqr', meaning: 'Pauvreté', icon: '🪫', desc: 'Le manque de biens, ou le besoin essentiel de Dieu.' },
+        { word: 'فَقِير', trans: 'Faqīr', meaning: 'Pauvre', icon: '🙏', desc: 'Celui qui est dans le besoin.' }
+      ],
+      derivatives: [
+        { translit: 'Faqura', trans: 'Il est devenu pauvre', arabic: 'فَقُرَ' },
+        { translit: 'Fuqarāʼ', trans: 'Les pauvres', arabic: 'فُقَرَاء' }
+      ]
+    },
+    'D-N-Y': {
+      arabic: 'دني',
+      trans: 'Ce bas monde, proximité',
+      words: [
+        { word: 'دُنْيَا', trans: 'Dunyā', meaning: 'Ce bas monde', icon: '🌍', desc: 'La vie terrestre, souvent opposée à l\'au-delà.' },
+        { word: 'أَدْنَى', trans: 'Adnā', meaning: 'Plus proche', icon: '📍', desc: 'Ce qui est le plus proche ou le plus bas.' }
+      ],
+      derivatives: [
+        { translit: 'Danā', trans: 'Il s\'est approché', arabic: 'دَنَا' },
+        { translit: 'Al-Ḥayāt Ad-Dunyā', trans: 'La vie de ce bas monde', arabic: 'ٱلْحَيَاةُ ٱلدُّنْيَا' }
+      ]
+    },
+    'A-KH-R': {
+      arabic: 'أخر',
+      trans: 'Autre, dernier',
+      words: [
+        { word: 'آخِرَة', trans: 'Ākhira', meaning: 'L\'au-delà', icon: '🌅', desc: 'La vie future, après la mort.' },
+        { word: 'آخَر', trans: 'Ākhar', meaning: 'Autre', icon: '🔀', desc: 'Ce qui est différent, un autre.' }
+      ],
+      derivatives: [
+        { translit: 'Ākhir', trans: 'Le Dernier (nom divin)', arabic: 'ٱلْآخِر' },
+        { translit: 'Yawm al-Ākhir', trans: 'Le Jour Dernier', arabic: 'ٱلْيَوْم ٱلْآخِر' }
+      ]
+    },
+    'Q-R-A': {
+      arabic: 'قرأ',
+      trans: 'Lire, réciter',
+      words: [
+        { word: 'قِرَاءَة', trans: 'Qirāʼa', meaning: 'Lecture', icon: '📖', desc: 'L\'acte de lire ou réciter le Coran.' },
+        { word: 'قَارِئ', trans: 'Qāriʼ', meaning: 'Lecteur, récitateur', icon: '🎙️', desc: 'Celui qui récite le Coran.' }
+      ],
+      derivatives: [
+        { translit: 'Qaraʼa', trans: 'Il a lu, récité', arabic: 'قَرَأَ' },
+        { translit: 'Al-Qurʼān', trans: 'Le Coran, "la Récitation"', arabic: 'ٱلْقُرْآن' }
+      ]
+    },
+    'K-B-R': {
+      arabic: 'كبر',
+      trans: 'Grandeur',
+      words: [
+        { word: 'كَبِير', trans: 'Kabīr', meaning: 'Grand', icon: '🏔️', desc: 'Ce qui est immense, un des noms divins.' },
+        { word: 'كِبْرِيَاء', trans: 'Kibriyāʼ', meaning: 'Orgueil, grandeur', icon: '👑', desc: 'La grandeur suprême, propre à Dieu seul.' }
+      ],
+      derivatives: [
+        { translit: 'Kabbara', trans: 'Il a proclamé la grandeur de Dieu', arabic: 'كَبَّرَ' },
+        { translit: 'Allāhu Akbar', trans: 'Dieu est le Plus Grand', arabic: 'ٱللَّٰهُ أَكْبَر' }
+      ]
     }
   };
 
@@ -833,7 +1013,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 16,
+       total: 21,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -2338,7 +2518,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "عبر" (A-B-R) ?', options: ['Rester', 'Traverser, tirer leçon', 'Refuser', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'قوم', name: 'Racine Q-W-M', instruction: 'La racine Q-W-M (قوم) exprime le fait de se tenir debout. Elle donne قَوْم (Qawm - Peuple).', sound: 'Q-W-M', illustration: '👥', mnemonic: 'قَوْم (Qawm - Peuple)', rootKey: 'Q-W-M' },
       { type: 'qcm', instruction: 'Que signifie la racine "قوم" (Q-W-M) ?', options: ['S\'asseoir', 'Se tenir debout, peuple', 'Voyager', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 16 : parcours Le Secret des Racines terminé, 48 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 16 : 48 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نصر', name: 'Racine N-S-R', instruction: 'La racine N-S-R (نصر) exprime le secours. Elle donne نَصْر (Naṣr - Victoire, secours).', sound: 'N-S-R', illustration: '🏆', mnemonic: 'نَصْر (Naṣr - Victoire)', rootKey: 'N-S-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نصر" (N-S-R) ?', options: ['Abandonner', 'Aider, secourir', 'Combattre', 'Fuir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'غضب', name: 'Racine GH-D-B', instruction: 'La racine GH-D-B (غضب) exprime la colère. Elle donne غَضَب (Ghaḍab - Colère).', sound: 'GH-D-B', illustration: '😠', mnemonic: 'غَضَب (Ghaḍab - Colère)', rootKey: 'GH-D-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غضب" (GH-D-B) ?', options: ['Joie', 'Colère', 'Calme', 'Patience'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'خوف', name: 'Racine KH-W-F', instruction: 'La racine KH-W-F (خوف) exprime la crainte. Elle donne خَوْف (Khawf - Peur).', sound: 'KH-W-F', illustration: '😨', mnemonic: 'خَوْف (Khawf - Peur)', rootKey: 'KH-W-F' },
+      { type: 'qcm', instruction: 'Que signifie la racine "خوف" (KH-W-F) ?', options: ['Courage', 'Craindre', 'Rire', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 17 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'رجع', name: 'Racine R-J-A', instruction: 'La racine R-J-A (رجع) exprime le retour. Elle donne رُجُوع (Rujūʻ - Retour).', sound: 'R-J-A', illustration: '↩️', mnemonic: 'رُجُوع (Rujūʻ - Retour)', rootKey: 'R-J-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "رجع" (R-J-A) ?', options: ['Partir', 'Retourner', 'Rester', 'Chercher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حفظ', name: 'Racine H-F-Z', instruction: 'La racine H-F-Z (حفظ) exprime la préservation. Elle donne حِفْظ (Ḥifẓ - Mémorisation).', sound: 'H-F-Z', illustration: '🧠', mnemonic: 'حِفْظ (Ḥifẓ - Mémorisation)', rootKey: 'H-F-Z' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حفظ" (H-F-Z) ?', options: ['Oublier', 'Préserver, mémoriser', 'Perdre', 'Détruire'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'تبع', name: 'Racine T-B-A', instruction: 'La racine T-B-A (تبع) exprime le fait de suivre. Elle donne اتِّبَاع (Ittibāʻ - Suivre).', sound: 'T-B-A', illustration: '👣', mnemonic: 'اتِّبَاع (Ittibāʻ - Suivre)', rootKey: 'T-B-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "تبع" (T-B-A) ?', options: ['Précéder', 'Suivre', 'Ignorer', 'Fuir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 18 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ضلل', name: 'Racine D-L-L', instruction: 'La racine D-L-L (ضلل) exprime l\'égarement. Elle donne ضَلَال (Ḍalāl - Égarement).', sound: 'D-L-L', illustration: '🌀', mnemonic: 'ضَلَال (Ḍalāl - Égarement)', rootKey: 'D-L-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ضلل" (D-L-L) ?', options: ['Guider', 'Égarer', 'Trouver', 'Voir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'نصح', name: 'Racine N-S-H', instruction: 'La racine N-S-H (نصح) exprime le conseil. Elle donne نَصِيحَة (Naṣīḥa - Conseil).', sound: 'N-S-H', illustration: '💡', mnemonic: 'نَصِيحَة (Naṣīḥa - Conseil)', rootKey: 'N-S-H' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نصح" (N-S-H) ?', options: ['Tromper', 'Conseiller', 'Cacher', 'Ignorer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'بشر', name: 'Racine B-SH-R', instruction: 'La racine B-SH-R (بشر) exprime l\'humanité et l\'annonce. Elle donne بُشْرَى (Bushrā - Bonne nouvelle).', sound: 'B-SH-R', illustration: '📯', mnemonic: 'بُشْرَى (Bushrā - Bonne nouvelle)', rootKey: 'B-SH-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بشر" (B-SH-R) ?', options: ['Mauvaise nouvelle', 'Annoncer, humanité', 'Silence', 'Doute'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 19 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'غني', name: 'Racine GH-N-Y', instruction: 'La racine GH-N-Y (غني) exprime la richesse. Elle donne غِنَى (Ghinā - Richesse).', sound: 'GH-N-Y', illustration: '💰', mnemonic: 'غِنَى (Ghinā - Richesse)', rootKey: 'GH-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غني" (GH-N-Y) ?', options: ['Pauvreté', 'Richesse', 'Faim', 'Soif'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'فقر', name: 'Racine F-Q-R', instruction: 'La racine F-Q-R (فقر) exprime la pauvreté. Elle donne فَقِير (Faqīr - Pauvre).', sound: 'F-Q-R', illustration: '🪫', mnemonic: 'فَقِير (Faqīr - Pauvre)', rootKey: 'F-Q-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "فقر" (F-Q-R) ?', options: ['Richesse', 'Pauvreté', 'Force', 'Beauté'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'دني', name: 'Racine D-N-Y', instruction: 'La racine D-N-Y (دني) exprime la proximité. Elle donne دُنْيَا (Dunyā - Ce bas monde).', sound: 'D-N-Y', illustration: '🌍', mnemonic: 'دُنْيَا (Dunyā - Ce bas monde)', rootKey: 'D-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "دني" (D-N-Y) ?', options: ['L\'au-delà lointain', 'Ce bas monde, proximité', 'Le ciel', 'L\'océan'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 20 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أخر', name: 'Racine A-KH-R', instruction: 'La racine A-KH-R (أخر) exprime ce qui est autre ou dernier. Elle donne آخِرَة (Ākhira - L\'au-delà).', sound: 'A-KH-R', illustration: '🌅', mnemonic: 'آخِرَة (Ākhira - L\'au-delà)', rootKey: 'A-KH-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "أخر" (A-KH-R) ?', options: ['Premier', 'Autre, dernier', 'Milieu', 'Identique'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قرأ', name: 'Racine Q-R-A', instruction: 'La racine Q-R-A (قرأ) exprime la lecture. Elle donne قِرَاءَة (Qirāʼa - Lecture) et le mot "Qurʼān".', sound: 'Q-R-A', illustration: '📖', mnemonic: 'قِرَاءَة (Qirāʼa - Lecture)', rootKey: 'Q-R-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قرأ" (Q-R-A) ?', options: ['Écrire', 'Lire, réciter', 'Écouter', 'Dessiner'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'كبر', name: 'Racine K-B-R', instruction: 'La racine K-B-R (كبر) exprime la grandeur. Elle donne كَبِير (Kabīr - Grand), comme dans "Allāhu Akbar".', sound: 'K-B-R', illustration: '🏔️', mnemonic: 'كَبِير (Kabīr - Grand)', rootKey: 'K-B-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "كبر" (K-B-R) ?', options: ['Petitesse', 'Grandeur', 'Faiblesse', 'Vitesse'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 21 : parcours Le Secret des Racines terminé, 63 racines explorées ! +20 XP' }
     ]
   ];
 
