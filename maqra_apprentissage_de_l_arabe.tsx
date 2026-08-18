@@ -1209,6 +1209,30 @@ export default function ArabicLearningApp() {
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
+    },
+    {
+       id: 6,
+       dateGroup: 'Concepts Avancés',
+       icon: '✨',
+       title: 'Les 99 Noms d\'Allah',
+       description: 'Al-Asmāʼ al-Ḥusnā, les plus beaux noms',
+       progress: savedProgress[6] ?? 0,
+       total: 6,
+       tags: ['Noms Divins', 'Spiritualité'],
+       color: 'bg-amber-100',
+       tagColor: 'bg-amber-200 text-amber-800'
+    },
+    {
+       id: 7,
+       dateGroup: 'Concepts Avancés',
+       icon: '💬',
+       title: 'Expressions du Quotidien',
+       description: 'Phrases usuelles pour parler et saluer',
+       progress: savedProgress[7] ?? 0,
+       total: 6,
+       tags: ['Conversation', 'Pratique'],
+       color: 'bg-teal-100',
+       tagColor: 'bg-teal-200 text-teal-800'
     }
     ];
   });
@@ -3241,9 +3265,123 @@ export default function ArabicLearningApp() {
     ]
   ];
 
+  const asmaLessons = [
+    [
+      { type: 'intro', letter: 'ٱلرَّحْمَٰن', name: 'Ar-Raḥmān', instruction: 'Le Tout Miséricordieux : Sa miséricorde englobe toutes Ses créatures, croyants ou non, en ce bas monde.', sound: 'Ar-Raḥmān', illustration: '🤲', mnemonic: 'Ouvre la Basmale et Al-Fatiha', rootKey: 'R-H-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّحْمَٰن" (Ar-Raḥmān) ?', options: ['Le Tout Miséricordieux', 'Le Vengeur', 'Le Silencieux', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّحِيم', name: 'Ar-Raḥīm', instruction: 'Le Très Miséricordieux : Sa miséricorde particulière est réservée aux croyants, dans l\'au-delà.', sound: 'Ar-Raḥīm', illustration: '💞', mnemonic: 'Toujours associé à Ar-Raḥmān', rootKey: 'R-H-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّحِيم" (Ar-Raḥīm) ?', options: ['Le Très Miséricordieux', 'Le Sévère', 'Le Lointain', 'L\'Oublieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمَلِك', name: 'Al-Malik', instruction: 'Le Roi, Le Souverain absolu : la royauté de toute chose Lui appartient sans partage.', sound: 'Al-Malik', illustration: '👑', mnemonic: 'Le vrai Roi, au-delà de tout roi terrestre' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمَلِك" (Al-Malik) ?', options: ['Le Roi, Souverain', 'Le Serviteur', 'Le Voyageur', 'Le Pauvre'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 1 (Noms d\'Allah) terminée ! Ar-Raḥmān, Ar-Raḥīm, Al-Malik. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْقُدُّوس', name: 'Al-Quddūs', instruction: 'Le Pur, Le Saint : Il est exempt de tout défaut, de toute imperfection.', sound: 'Al-Quddūs', illustration: '🤍', mnemonic: 'Racine de "Al-Quds" (Jérusalem, la Sainte)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقُدُّوس" (Al-Quddūs) ?', options: ['Le Pur, Le Saint', 'L\'Impur', 'Le Faible', 'L\'Injuste'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلسَّلَام', name: 'As-Salām', instruction: 'La Paix : Il est la source de toute paix, exempt de tout mal et de toute imperfection.', sound: 'As-Salām', illustration: '☮️', mnemonic: 'Même racine que "Salām" (paix)', rootKey: 'S-L-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلسَّلَام" (As-Salām) ?', options: ['La Paix', 'La Guerre', 'La Colère', 'Le Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْمُؤْمِن', name: 'Al-Muʼmin', instruction: 'Celui qui donne la sécurité et confirme la vérité de Ses promesses à Ses serviteurs.', sound: 'Al-Muʼmin', illustration: '🛡️', mnemonic: 'Même racine que "Īmān" (foi)', rootKey: 'A-M-N' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُؤْمِن" (Al-Muʼmin) ?', options: ['Celui qui donne la sécurité', 'Celui qui doute', 'Celui qui fuit', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 2 (Noms d\'Allah) terminée ! Al-Quddūs, As-Salām, Al-Muʼmin. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْعَزِيز', name: 'Al-ʻAzīz', instruction: 'Le Tout-Puissant : Sa puissance est inégalable et jamais vaincue.', sound: 'Al-ʻAzīz', illustration: '👑', mnemonic: 'Puissance et honneur réunis' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَزِيز" (Al-ʻAzīz) ?', options: ['Le Tout-Puissant', 'Le Faible', 'Le Petit', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَكِيم', name: 'Al-Ḥakīm', instruction: 'Le Sage : Sa sagesse imprègne toute Sa création et Ses décrets.', sound: 'Al-Ḥakīm', illustration: '🦉', mnemonic: 'Même racine que "Ḥikma" (sagesse)', rootKey: 'H-K-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَكِيم" (Al-Ḥakīm) ?', options: ['Le Sage', 'L\'Ignorant', 'Le Rapide', 'Le Distrait'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْخَالِق', name: 'Al-Khāliq', instruction: 'Le Créateur : Celui qui crée à partir de rien, sans modèle préalable.', sound: 'Al-Khāliq', illustration: '✨', mnemonic: 'Même racine que "Khalaqa" (créer)', rootKey: 'K-L-Q' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْخَالِق" (Al-Khāliq) ?', options: ['Le Créateur', 'Le Destructeur', 'Le Voyageur', 'Le Silencieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 3 (Noms d\'Allah) terminée ! Al-ʻAzīz, Al-Ḥakīm, Al-Khāliq. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْغَفُور', name: 'Al-Ghafūr', instruction: 'Le Très Pardonneur : Il pardonne abondamment les péchés de Ses serviteurs repentants.', sound: 'Al-Ghafūr', illustration: '🤍', mnemonic: 'Même racine que "Maghfira" (pardon)', rootKey: 'GH-F-R' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْغَفُور" (Al-Ghafūr) ?', options: ['Le Très Pardonneur', 'Le Sévère', 'Le Rancunier', 'L\'Oublieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلرَّزَّاق', name: 'Ar-Razzāq', instruction: 'Le Grand Pourvoyeur : Il accorde sans cesse la subsistance à toute Sa création.', sound: 'Ar-Razzāq', illustration: '🍞', mnemonic: 'Même racine que "Rizq" (subsistance)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلرَّزَّاق" (Ar-Razzāq) ?', options: ['Le Grand Pourvoyeur', 'Celui qui prive', 'Le Voyageur', 'Le Muet'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْعَلِيم', name: 'Al-ʻAlīm', instruction: 'L\'Omniscient : Sa connaissance embrasse toute chose, visible et invisible.', sound: 'Al-ʻAlīm', illustration: '🧠', mnemonic: 'Même racine que "ʻIlm" (savoir)', rootKey: 'A-L-M' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَلِيم" (Al-ʻAlīm) ?', options: ['L\'Omniscient', 'L\'Ignorant', 'Le Distrait', 'Le Muet'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 4 (Noms d\'Allah) terminée ! Al-Ghafūr, Ar-Razzāq, Al-ʻAlīm. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلسَّمِيع', name: 'As-Samīʻ', instruction: 'L\'Audient : Il entend tout, même le murmure le plus discret.', sound: 'As-Samīʻ', illustration: '👂', mnemonic: 'Souvent associé à Al-Baṣīr' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلسَّمِيع" (As-Samīʻ) ?', options: ['L\'Audient', 'Le Sourd', 'Le Muet', 'L\'Aveugle'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَصِير', name: 'Al-Baṣīr', instruction: 'Le Voyant : Il voit tout, jusqu\'au plus infime détail.', sound: 'Al-Baṣīr', illustration: '👁️', mnemonic: 'Souvent associé à As-Samīʻ' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَصِير" (Al-Baṣīr) ?', options: ['Le Voyant', 'L\'Aveugle', 'Le Sourd', 'Le Muet'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْعَدْل', name: 'Al-ʻAdl', instruction: 'Le Juste : Sa justice est absolue et parfaite, sans la moindre injustice.', sound: 'Al-ʻAdl', illustration: '⚖️', mnemonic: 'Même racine que "ʻAdl" (justice)', rootKey: 'A-D-L' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَدْل" (Al-ʻAdl) ?', options: ['Le Juste', 'L\'Injuste', 'Le Partial', 'Le Silencieux'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 5 (Noms d\'Allah) terminée ! As-Samīʻ, Al-Baṣīr, Al-ʻAdl. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱللَّطِيف', name: 'Al-Laṭīf', instruction: 'Le Doux, Le Subtil : Il connaît les détails les plus fins et traite Ses serviteurs avec douceur.', sound: 'Al-Laṭīf', illustration: '🌸', mnemonic: 'La bienveillance dans les détails' },
+      { type: 'qcm', instruction: 'Que signifie "ٱللَّطِيف" (Al-Laṭīf) ?', options: ['Le Doux, Le Subtil', 'Le Brutal', 'L\'Indifférent', 'Le Lointain'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَدُود', name: 'Al-Wadūd', instruction: 'Le Plein d\'Amour : Il aime Ses serviteurs vertueux et Se fait aimer d\'eux.', sound: 'Al-Wadūd', illustration: '💗', mnemonic: 'L\'amour divin réciproque' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَدُود" (Al-Wadūd) ?', options: ['Le Plein d\'Amour', 'Le Haineux', 'L\'Indifférent', 'Le Distant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلصَّبُور', name: 'Aṣ-Ṣabūr', instruction: 'Le Très Patient : Il ne hâte pas le châtiment malgré la désobéissance de Ses créatures.', sound: 'Aṣ-Ṣabūr', illustration: '⏳', mnemonic: 'Même racine que "Ṣabr" (patience)', rootKey: 'S-B-R' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلصَّبُور" (Aṣ-Ṣabūr) ?', options: ['Le Très Patient', 'L\'Impatient', 'Le Précipité', 'Le Colérique'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 6 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (1ère partie) complet : 18 noms explorés. +20 XP' }
+    ]
+  ];
+
+  const expressionsLessons = [
+    [
+      { type: 'intro', letter: 'مَرْحَبًا', name: 'Bonjour, Bienvenue', instruction: 'La salutation la plus courante et universelle en arabe.', sound: 'Marḥaban', illustration: '👋', mnemonic: 'Utilisable à tout moment de la journée' },
+      { type: 'qcm', instruction: 'Que signifie "مَرْحَبًا" (Marḥaban) ?', options: ['Au revoir', 'Bonjour, Bienvenue', 'Merci', 'Pardon'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلسَّلَامُ عَلَيْكُمْ', name: 'Que la paix soit sur vous', instruction: 'La salutation islamique par excellence, échangée entre musulmans.', sound: 'As-Salāmu ʻAlaykum', illustration: '☮️', mnemonic: 'On répond "Wa ʻalaykum as-salām"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلسَّلَامُ عَلَيْكُمْ" ?', options: ['Que la paix soit sur vous', 'Comment allez-vous ?', 'À bientôt', 'Bon appétit'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'مَعَ ٱلسَّلَامَة', name: 'Au revoir', instruction: 'Littéralement "avec la sécurité/la paix" : une formule d\'adieu chaleureuse.', sound: 'Maʻa s-Salāma', illustration: '🚶', mnemonic: 'Souhaite un bon retour à l\'autre' },
+      { type: 'qcm', instruction: 'Que signifie "مَعَ ٱلسَّلَامَة" (Maʻa s-Salāma) ?', options: ['Bonjour', 'Au revoir', 'Merci', 'Excusez-moi'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 1 (Expressions) terminée ! Les salutations de base. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مِنْ فَضْلِكَ', name: 'S\'il te plaît', instruction: 'Formule de politesse pour accompagner une demande.', sound: 'Min Faḍlik', illustration: '🙏', mnemonic: 'Littéralement "de ta grâce"' },
+      { type: 'qcm', instruction: 'Que signifie "مِنْ فَضْلِكَ" (Min Faḍlik) ?', options: ['Merci', 'S\'il te plaît', 'Pardon', 'Bienvenue'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'شُكْرًا', name: 'Merci', instruction: 'L\'expression de gratitude la plus simple et directe.', sound: 'Shukran', illustration: '🙌', mnemonic: 'Même racine que "Shukr" (gratitude)' },
+      { type: 'qcm', instruction: 'Que signifie "شُكْرًا" (Shukran) ?', options: ['Merci', 'Bonjour', 'Excusez-moi', 'Peut-être'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'عَفْوًا', name: 'De rien, Pardon', instruction: 'Utilisé pour répondre à un remerciement, ou pour s\'excuser.', sound: 'ʻAfwan', illustration: '😊', mnemonic: 'Un mot à double usage' },
+      { type: 'qcm', instruction: 'Que signifie "عَفْوًا" (ʻAfwan) ?', options: ['De rien / Pardon', 'Au revoir', 'Absolument', 'Jamais'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 2 (Expressions) terminée ! Les formules de politesse. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كَيْفَ حَالُكَ؟', name: 'Comment vas-tu ?', instruction: 'La question la plus courante pour prendre des nouvelles de quelqu\'un.', sound: 'Kayfa Ḥāluk', illustration: '❓', mnemonic: 'Se demande à un homme (Ḥāluki pour une femme)' },
+      { type: 'qcm', instruction: 'Que signifie "كَيْفَ حَالُكَ؟" ?', options: ['Comment vas-tu ?', 'Où es-tu ?', 'Quel âge as-tu ?', 'Que fais-tu ?'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'مَا ٱسْمُكَ؟', name: 'Quel est ton nom ?', instruction: 'Question de base pour faire connaissance.', sound: 'Mā Ismuk', illustration: '🙋', mnemonic: 'Ismuki pour une femme' },
+      { type: 'qcm', instruction: 'Que signifie "مَا ٱسْمُكَ؟" ?', options: ['Quel âge as-tu ?', 'Quel est ton nom ?', 'D\'où viens-tu ?', 'Que veux-tu ?'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'مِنْ أَيْنَ أَنْتَ؟', name: 'D\'où viens-tu ?', instruction: 'Pour demander l\'origine ou le pays de quelqu\'un.', sound: 'Min Ayna Anta', illustration: '🌍', mnemonic: 'Min Ayna Anti pour une femme' },
+      { type: 'qcm', instruction: 'Que signifie "مِنْ أَيْنَ أَنْتَ؟" ?', options: ['Où vas-tu ?', 'D\'où viens-tu ?', 'Quel âge as-tu ?', 'Comment t\'appelles-tu ?'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 3 (Expressions) terminée ! Les questions de base. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أَنَا بِخَيْر', name: 'Je vais bien', instruction: 'La réponse la plus courante à "Comment vas-tu ?".', sound: 'Anā Bikhayr', illustration: '😊', mnemonic: 'Littéralement "je suis dans le bien"' },
+      { type: 'qcm', instruction: 'Que signifie "أَنَا بِخَيْر" (Anā Bikhayr) ?', options: ['Je vais bien', 'Je suis fatigué', 'Je ne sais pas', 'Je m\'appelle...'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ٱسْمِي', name: 'Je m\'appelle...', instruction: 'Pour se présenter, suivi de son prénom.', sound: 'Ismī', illustration: '🪪', mnemonic: 'Littéralement "mon nom (est)"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱسْمِي" (Ismī) ?', options: ['Mon âge', 'Je m\'appelle... / Mon nom', 'Mon pays', 'Ma famille'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'نَعَمْ / لَا', name: 'Oui / Non', instruction: 'Les deux réponses de base à toute question fermée.', sound: 'Naʻam / Lā', illustration: '✅', mnemonic: 'Les deux mots les plus utilisés' },
+      { type: 'qcm', instruction: 'Que signifie "نَعَمْ" (Naʻam) ?', options: ['Oui', 'Non', 'Peut-être', 'Jamais'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 4 (Expressions) terminée ! Les réponses courantes. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كَمِ ٱلسَّاعَة؟', name: 'Quelle heure est-il ?', instruction: 'Question pratique du quotidien pour demander l\'heure.', sound: 'Kam is-Sāʻa', illustration: '🕐', mnemonic: 'Littéralement "combien l\'heure ?"' },
+      { type: 'qcm', instruction: 'Que signifie "كَمِ ٱلسَّاعَة؟" (Kam is-Sāʻa) ?', options: ['Quel jour est-il ?', 'Quelle heure est-il ?', 'Quel âge as-tu ?', 'Combien ça coûte ?'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'أَيْنَ...؟', name: 'Où est... ?', instruction: 'Pour demander l\'emplacement de quelque chose ou quelqu\'un.', sound: 'Ayna', illustration: '📍', mnemonic: 'Suivi du nom de ce que l\'on cherche' },
+      { type: 'qcm', instruction: 'Que signifie "أَيْنَ...؟" (Ayna) ?', options: ['Quand... ?', 'Où est... ?', 'Pourquoi... ?', 'Comment... ?'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أُرِيدُ', name: 'Je veux', instruction: 'Pour exprimer un souhait ou une demande, suivi d\'un nom ou verbe.', sound: 'Urīdu', illustration: '🙋‍♂️', mnemonic: 'Très utile pour faire une demande simple' },
+      { type: 'qcm', instruction: 'Que signifie "أُرِيدُ" (Urīdu) ?', options: ['Je vais', 'Je veux', 'Je pense', 'Je sais'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 5 (Expressions) terminée ! Expressions pratiques du quotidien. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'إِن شَاءَ ٱللَّٰه', name: 'Si Dieu le veut', instruction: 'Expression utilisée en parlant du futur, rappelant que tout dépend de la volonté de Dieu.', sound: 'In Shāʼ Allāh', illustration: '🤲', mnemonic: 'Très courante avant toute projection future' },
+      { type: 'qcm', instruction: 'Quand utilise-t-on "إِن شَاءَ ٱللَّٰه" (In Shāʼ Allāh) ?', options: ['En parlant du passé', 'En parlant du futur', 'Pour remercier', 'Pour s\'excuser'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ٱلْحَمْدُ لِلَّٰه', name: 'Louange à Dieu', instruction: 'Expression de gratitude envers Dieu, utilisée en toute occasion, bonne ou difficile.', sound: 'Al-Ḥamdu Lillāh', illustration: '🙌', mnemonic: 'Premier mot d\'Al-Fatiha après la Basmala', rootKey: 'H-M-D' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَمْدُ لِلَّٰه" (Al-Ḥamdu Lillāh) ?', options: ['Louange à Dieu', 'Que Dieu pardonne', 'Dieu est grand', 'Que la paix soit sur vous'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'بَارَكَ ٱللَّٰهُ فِيك', name: 'Que Dieu te bénisse', instruction: 'Formule de remerciement chaleureuse et bénédiction pour l\'autre.', sound: 'Bāraka Llāhu Fīk', illustration: '🌿', mnemonic: 'Une façon de dire merci en bénissant', rootKey: 'B-R-K' },
+      { type: 'qcm', instruction: 'Que signifie "بَارَكَ ٱللَّٰهُ فِيك" ?', options: ['Que Dieu te punisse', 'Que Dieu te bénisse', 'Que Dieu t\'oublie', 'Que Dieu t\'éloigne'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 6 (Expressions) terminée ! Parcours Expressions du Quotidien complet. +20 XP' }
+    ]
+  ];
+
   // Associe chaque module à son tableau de leçons, pour l'écran de liste
   // des leçons et l'aperçu en lecture seule (sans lancer l'exercice).
-  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons };
+  const moduleLessonsMap = { 1: qaidaLessons, 2: quranLessons, 3: freqVocabLessons, 4: rootsLessons, 5: tajwidLessons, 6: asmaLessons, 7: expressionsLessons };
 
   // Construit le paquet de cartes de révision à partir de ce que l'élève a
   // réellement étudié (leçons dont l'index < progression du module), plutôt
