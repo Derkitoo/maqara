@@ -3820,7 +3820,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Quand utilise-t-on "تَفَضَّلْ" (Tafaḍḍal) ?', options: ['Pour dire au revoir', 'Pour inviter/offrir quelque chose', 'Pour s\'excuser', 'Pour refuser'], correctIndex: 1, textStyle: 'text-lg' },
       { type: 'intro', letter: 'مُمْتَاز', name: 'Excellent', instruction: 'Pour exprimer une forte approbation ou satisfaction.', sound: 'Mumtāz', illustration: '⭐', mnemonic: 'Le compliment par excellence' },
       { type: 'qcm', instruction: 'Que signifie "مُمْتَاز" (Mumtāz) ?', options: ['Médiocre', 'Excellent', 'Ordinaire', 'Mauvais'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 12 (Expressions) terminée ! Parcours Expressions du Quotidien (2e partie) complet. +20 XP' }
+      { type: 'success', instruction: 'Leçon 12 (Expressions) terminée ! Tafaḍḍal, Lā Baʼs, Mumtāz. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أَرْبَعَة', name: 'Quatre', instruction: 'Le quatrième nombre, pour continuer le comptage après trois.', sound: 'Arbaʻa', illustration: '4️⃣', mnemonic: 'Suit directement Thalātha (trois)' },
+      { type: 'qcm', instruction: 'Que signifie "أَرْبَعَة" (Arbaʻa) ?', options: ['Deux', 'Trois', 'Quatre', 'Cinq'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'خَمْسَة', name: 'Cinq', instruction: 'Le cinquième nombre, une main entière sur les doigts.', sound: 'Khamsa', illustration: '5️⃣', mnemonic: 'Comme les cinq doigts de la main' },
+      { type: 'qcm', instruction: 'Que signifie "خَمْسَة" (Khamsa) ?', options: ['Trois', 'Quatre', 'Cinq', 'Six'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'سِتَّة', name: 'Six', instruction: 'Le sixième nombre, qui poursuit la série après cinq.', sound: 'Sitta', illustration: '6️⃣', mnemonic: 'Une main plus un doigt de l\'autre' },
+      { type: 'qcm', instruction: 'Que signifie "سِتَّة" (Sitta) ?', options: ['Quatre', 'Cinq', 'Six', 'Sept'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 13 (Expressions) terminée ! Les nombres 4 à 6. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'أُخْت', name: 'Sœur', instruction: 'Le mot pour désigner sa sœur, aussi utilisé entre amies proches.', sound: 'Ukht', illustration: '👧', mnemonic: 'Féminin de "Akh" (frère)' },
+      { type: 'qcm', instruction: 'Que signifie "أُخْت" (Ukht) ?', options: ['Frère', 'Sœur', 'Mère', 'Fille'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱبْن', name: 'Fils', instruction: 'Le mot pour désigner son fils.', sound: 'Ibn', illustration: '👶', mnemonic: 'Aussi utilisé dans les noms de famille arabes (ex : Ibn Sīnā)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱبْن" (Ibn) ?', options: ['Fille', 'Fils', 'Père', 'Oncle'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱبْنَة', name: 'Fille', instruction: 'Le mot pour désigner sa fille.', sound: 'Ibna', illustration: '👧', mnemonic: 'Féminin de "Ibn" (fils)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱبْنَة" (Ibna) ?', options: ['Fils', 'Fille', 'Sœur', 'Mère'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 14 (Expressions) terminée ! Sœur, fils, fille. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'حَارّ', name: 'Chaud', instruction: 'Pour décrire une forte chaleur, du temps ou d\'un plat.', sound: 'Ḥārr', illustration: '🔥', mnemonic: 'Opposé de Bārid (froid)' },
+      { type: 'qcm', instruction: 'Que signifie "حَارّ" (Ḥārr) ?', options: ['Froid', 'Chaud', 'Tiède', 'Humide'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'بَارِد', name: 'Froid', instruction: 'Pour décrire une basse température, du temps ou d\'une boisson.', sound: 'Bārid', illustration: '❄️', mnemonic: 'Opposé de Ḥārr (chaud)' },
+      { type: 'qcm', instruction: 'Que signifie "بَارِد" (Bārid) ?', options: ['Chaud', 'Froid', 'Doux', 'Sec'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلطَّقْس جَمِيل', name: 'Il fait beau', instruction: 'Expression courante pour commenter un temps agréable.', sound: 'Aṭ-Ṭaqs Jamīl', illustration: '☀️', mnemonic: 'Littéralement "le temps (est) beau"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلطَّقْس جَمِيل" (Aṭ-Ṭaqs Jamīl) ?', options: ['Il pleut', 'Il fait beau', 'Il fait froid', 'C\'est la nuit'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 15 (Expressions) terminée ! Parler de la météo. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سَعِيد', name: 'Heureux, Content', instruction: 'Pour exprimer la joie ou la satisfaction.', sound: 'Saʻīd', illustration: '😄', mnemonic: 'Opposé de Ḥazīn (triste)' },
+      { type: 'qcm', instruction: 'Que signifie "سَعِيد" (Saʻīd) ?', options: ['Triste', 'Heureux, Content', 'Fatigué', 'En colère'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حَزِين', name: 'Triste', instruction: 'Pour exprimer la tristesse ou la peine.', sound: 'Ḥazīn', illustration: '😢', mnemonic: 'Opposé de Saʻīd (heureux)' },
+      { type: 'qcm', instruction: 'Que signifie "حَزِين" (Ḥazīn) ?', options: ['Heureux', 'Triste', 'Surpris', 'Calme'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مُتْعَب', name: 'Fatigué', instruction: 'Pour exprimer la fatigue physique ou mentale.', sound: 'Mutʻab', illustration: '😴', mnemonic: 'Utile après une longue journée' },
+      { type: 'qcm', instruction: 'Que signifie "مُتْعَب" (Mutʻab) ?', options: ['Reposé', 'En forme', 'Fatigué', 'Content'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 16 (Expressions) terminée ! Exprimer ses émotions. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بِكَمْ هَذَا؟', name: 'Combien ça coûte ?', instruction: 'Question essentielle pour faire ses achats au marché ou en boutique.', sound: 'Bikam Hādhā', illustration: '💰', mnemonic: 'Littéralement "avec combien ceci ?"' },
+      { type: 'qcm', instruction: 'Que signifie "بِكَمْ هَذَا؟" (Bikam Hādhā) ?', options: ['Qu\'est-ce que c\'est ?', 'Combien ça coûte ?', 'Où est-ce ?', 'C\'est à qui ?'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'غَالٍ', name: 'Cher', instruction: 'Pour dire qu\'un prix est élevé.', sound: 'Ghālin', illustration: '💸', mnemonic: 'Opposé de Rakhīṣ (bon marché)' },
+      { type: 'qcm', instruction: 'Que signifie "غَالٍ" (Ghālin) ?', options: ['Bon marché', 'Cher', 'Gratuit', 'Petit'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'رَخِيص', name: 'Bon marché', instruction: 'Pour dire qu\'un prix est avantageux, peu élevé.', sound: 'Rakhīṣ', illustration: '🏷️', mnemonic: 'Opposé de Ghālin (cher)' },
+      { type: 'qcm', instruction: 'Que signifie "رَخِيص" (Rakhīṣ) ?', options: ['Cher', 'Bon marché', 'Introuvable', 'Ancien'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 17 (Expressions) terminée ! Parcours Expressions du Quotidien (3e partie) : au marché. +20 XP' }
     ]
   ];
 
