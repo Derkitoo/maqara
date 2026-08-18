@@ -1539,7 +1539,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 29,
+      total: 34,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -2801,7 +2801,112 @@ export default function ArabicLearningApp() {
         leftCol: [{text: 'لَمْ يَكُنِ ٱلَّذِينَ كَفَرُوا۟', id: 1}, {text: 'وَمَا تَفَرَّقَ ٱلَّذِينَ أُوتُوا۟ ٱلْكِتَٰبَ', id: 2}, {text: 'وَمَآ أُمِرُوٓا۟ إِلَّا لِيَعْبُدُوا۟ ٱللَّهَ', id: 3}, {text: 'إِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ', id: 4}],
         rightCol: [{text: 'Les mécréants ne cesseront pas jusqu\'à la Preuve évidente', id: 1}, {text: 'Ils ne se sont divisés qu\'après la Preuve évidente', id: 2}, {text: 'Ils n\'ont reçu ordre que d\'adorer Allah sincèrement', id: 3}, {text: 'Ceux qui croient et font le bien sont les meilleures créatures', id: 4}]
       },
-      { type: 'success', instruction: 'Sourate Al-Bayyinah validée ! Parcours Lecture Coranique terminé. +25 XP' }
+      { type: 'success', instruction: 'Sourate Al-Bayyinah validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Aʻlā : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 87, ayah: 1 }, { surah: 87, ayah: 2 }, { surah: 87, ayah: 3 }, { surah: 87, ayah: 4 }, { surah: 87, ayah: 5 }, { surah: 87, ayah: 6 }, { surah: 87, ayah: 7 }, { surah: 87, ayah: 8 }, { surah: 87, ayah: 9 }, { surah: 87, ayah: 14 }, { surah: 87, ayah: 15 }],
+         words: [
+            { id: 'w1', text: 'سَبِّحِ ٱسْمَ رَبِّكَ ٱلْأَعْلَى ٱلَّذِى خَلَقَ فَسَوَّىٰ وَٱلَّذِى قَدَّرَ فَهَدَىٰ', root: 'K-L-Q', trans: 'Glorifie le Nom de ton Seigneur, le Très-Haut, qui a créé et harmonieusement formé, qui a déterminé et guidé' },
+            { id: 'w2', text: 'وَٱلَّذِىٓ أَخْرَجَ ٱلْمَرْعَىٰ فَجَعَلَهُۥ غُثَآءً أَحْوَىٰ سَنُقْرِئُكَ فَلَا تَنسَىٰٓ', root: null, trans: 'Celui qui a fait sortir le pâturage puis l\'a rendu chaume sombre. Nous te ferons réciter, tu n\'oublieras pas' },
+            { id: 'w3', text: 'إِلَّا مَا شَآءَ ٱللَّهُ ۚ إِنَّهُۥ يَعْلَمُ ٱلْجَهْرَ وَمَا يَخْفَىٰ وَنُيَسِّرُكَ لِلْيُسْرَىٰ فَذَكِّرْ إِن نَّفَعَتِ ٱلذِّكْرَىٰ', root: 'A-L-M', trans: 'sauf ce qu\'Allah veut. Il connaît l\'apparent et le caché. Nous te faciliterons la voie la plus aisée. Rappelle donc, si le rappel doit profiter' },
+            { id: 'w4', text: 'قَدْ أَفْلَحَ مَن تَزَكَّىٰ وَذَكَرَ ٱسْمَ رَبِّهِۦ فَصَلَّىٰ', root: 'Z-K-W', trans: 'Réussit, certes, celui qui se purifie, se rappelle le Nom de son Seigneur et fait la prière' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'سَبِّحِ ٱسْمَ رَبِّكَ ٱلْأَعْلَى', id: 1}, {text: 'وَٱلَّذِىٓ أَخْرَجَ ٱلْمَرْعَىٰ', id: 2}, {text: 'إِلَّا مَا شَآءَ ٱللَّهُ', id: 3}, {text: 'قَدْ أَفْلَحَ مَن تَزَكَّىٰ', id: 4}],
+        rightCol: [{text: 'Glorifie le Nom de ton Seigneur, le Très-Haut', id: 1}, {text: 'Celui qui a fait sortir le pâturage', id: 2}, {text: 'sauf ce qu\'Allah veut', id: 3}, {text: 'Réussit celui qui se purifie', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Aʻlā validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate At-Tāriq (versets 1-10) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 86, ayah: 1 }, { surah: 86, ayah: 2 }, { surah: 86, ayah: 3 }, { surah: 86, ayah: 4 }, { surah: 86, ayah: 5 }, { surah: 86, ayah: 6 }, { surah: 86, ayah: 7 }, { surah: 86, ayah: 8 }, { surah: 86, ayah: 9 }, { surah: 86, ayah: 10 }],
+         words: [
+            { id: 'w1', text: 'وَٱلسَّمَآءِ وَٱلطَّارِقِ وَمَآ أَدْرَىٰكَ مَا ٱلطَّارِقُ ٱلنَّجْمُ ٱلثَّاقِبُ', root: null, trans: 'Par le ciel et l\'Astre nocturne ! Et qui te dira ce qu\'est l\'Astre nocturne ? C\'est l\'étoile perçante' },
+            { id: 'w2', text: 'إِن كُلُّ نَفْسٍ لَّمَّا عَلَيْهَا حَافِظٌ فَلْيَنظُرِ ٱلْإِنسَٰنُ مِمَّ خُلِقَ خُلِقَ مِن مَّآءٍ دَافِقٍ', root: 'H-F-Z', trans: 'Il n\'est pas d\'âme sur qui il n\'y ait un gardien. Que l\'homme considère de quoi il a été créé : il a été créé d\'une eau jaillissante' },
+            { id: 'w3', text: 'يَخْرُجُ مِنۢ بَيْنِ ٱلصُّلْبِ وَٱلتَّرَآئِبِ إِنَّهُۥ عَلَىٰ رَجْعِهِۦ لَقَادِرٌ', root: null, trans: 'sortie d\'entre les lombes et les côtes. Il est certes capable de le ramener à la vie' },
+            { id: 'w4', text: 'يَوْمَ تُبْلَى ٱلسَّرَآئِرُ فَمَا لَهُۥ مِن قُوَّةٍ وَلَا نَاصِرٍ', root: 'N-S-R', trans: 'Le jour où les secrets seront dévoilés, il n\'aura alors ni force ni secoureur' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلسَّمَآءِ وَٱلطَّارِقِ', id: 1}, {text: 'إِن كُلُّ نَفْسٍ لَّمَّا عَلَيْهَا حَافِظٌ', id: 2}, {text: 'يَخْرُجُ مِنۢ بَيْنِ ٱلصُّلْبِ وَٱلتَّرَآئِبِ', id: 3}, {text: 'يَوْمَ تُبْلَى ٱلسَّرَآئِرُ', id: 4}],
+        rightCol: [{text: 'Par le ciel et l\'Astre nocturne !', id: 1}, {text: 'Il n\'est pas d\'âme sur qui il n\'y ait un gardien', id: 2}, {text: 'sortie d\'entre les lombes et les côtes', id: 3}, {text: 'Le jour où les secrets seront dévoilés', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate At-Tāriq (1-10) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Ghāshiyah (versets 1-11, 17-20) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 88, ayah: 1 }, { surah: 88, ayah: 2 }, { surah: 88, ayah: 3 }, { surah: 88, ayah: 4 }, { surah: 88, ayah: 5 }, { surah: 88, ayah: 6 }, { surah: 88, ayah: 7 }, { surah: 88, ayah: 8 }, { surah: 88, ayah: 9 }, { surah: 88, ayah: 10 }, { surah: 88, ayah: 11 }, { surah: 88, ayah: 17 }, { surah: 88, ayah: 18 }, { surah: 88, ayah: 19 }, { surah: 88, ayah: 20 }],
+         words: [
+            { id: 'w1', text: 'هَلْ أَتَىٰكَ حَدِيثُ ٱلْغَٰشِيَةِ وُجُوهٌ يَوْمَئِذٍ خَٰشِعَةٌ عَامِلَةٌ نَّاصِبَةٌ', root: null, trans: 'Le récit de l\'Enveloppante t\'est-il parvenu ? Ce jour-là, des visages seront humiliés, fatigués, harassés' },
+            { id: 'w2', text: 'تَصْلَىٰ نَارًا حَامِيَةً تُسْقَىٰ مِنْ عَيْنٍ ءَانِيَةٍ لَّيْسَ لَهُمْ طَعَامٌ إِلَّا مِن ضَرِيعٍ', root: null, trans: 'Ils brûleront dans un Feu ardent, abreuvés d\'une source bouillante ; il n\'y aura pour eux d\'autre nourriture que le Ḍarīʻ (plante amère)' },
+            { id: 'w3', text: 'وُجُوهٌ يَوْمَئِذٍ نَّاعِمَةٌ لِّسَعْيِهَا رَاضِيَةٌ فِى جَنَّةٍ عَالِيَةٍ لَّا تَسْمَعُ فِيهَا لَٰغِيَةً', root: null, trans: 'Ce jour-là, d\'autres visages seront radieux, satisfaits de leurs efforts, dans un Jardin élevé, où ils n\'entendront aucune parole vaine' },
+            { id: 'w4', text: 'أَفَلَا يَنظُرُونَ إِلَى ٱلْإِبِلِ كَيْفَ خُلِقَتْ وَإِلَى ٱلسَّمَآءِ كَيْفَ رُفِعَتْ وَإِلَى ٱلْجِبَالِ كَيْفَ نُصِبَتْ وَإِلَى ٱلْأَرْضِ كَيْفَ سُطِحَتْ', root: 'K-L-Q', trans: 'Ne considèrent-ils donc pas le chameau, comment il a été créé, le ciel, comment il a été élevé, les montagnes, comment elles ont été dressées, la terre, comment elle a été nivelée' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'هَلْ أَتَىٰكَ حَدِيثُ ٱلْغَٰشِيَةِ', id: 1}, {text: 'تَصْلَىٰ نَارًا حَامِيَةً', id: 2}, {text: 'وُجُوهٌ يَوْمَئِذٍ نَّاعِمَةٌ', id: 3}, {text: 'أَفَلَا يَنظُرُونَ إِلَى ٱلْإِبِلِ', id: 4}],
+        rightCol: [{text: 'Le récit de l\'Enveloppante t\'est-il parvenu ?', id: 1}, {text: 'Ils brûleront dans un Feu ardent', id: 2}, {text: 'D\'autres visages seront radieux', id: 3}, {text: 'Ne considèrent-ils donc pas le chameau', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Ghāshiyah (1-11, 17-20) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Burūj (versets 1-11) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 85, ayah: 1 }, { surah: 85, ayah: 2 }, { surah: 85, ayah: 3 }, { surah: 85, ayah: 4 }, { surah: 85, ayah: 5 }, { surah: 85, ayah: 6 }, { surah: 85, ayah: 7 }, { surah: 85, ayah: 8 }, { surah: 85, ayah: 9 }, { surah: 85, ayah: 10 }, { surah: 85, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'وَٱلسَّمَآءِ ذَاتِ ٱلْبُرُوجِ وَٱلْيَوْمِ ٱلْمَوْعُودِ وَشَاهِدٍ وَمَشْهُودٍ', root: null, trans: 'Par le ciel muni de constellations ! Par le Jour promis ! Par le témoin et ce dont on témoigne !' },
+            { id: 'w2', text: 'قُتِلَ أَصْحَٰبُ ٱلْأُخْدُودِ ٱلنَّارِ ذَاتِ ٱلْوَقُودِ إِذْ هُمْ عَلَيْهَا قُعُودٌ وَهُمْ عَلَىٰ مَا يَفْعَلُونَ بِٱلْمُؤْمِنِينَ شُهُودٌ', root: 'SH-H-D', trans: 'Périssent les gens de la Fosse, du feu ravitaillé en combustible, quand ils étaient assis tout autour, témoins de ce qu\'ils faisaient aux croyants' },
+            { id: 'w3', text: 'وَمَا نَقَمُوا۟ مِنْهُمْ إِلَّآ أَن يُؤْمِنُوا۟ بِٱللَّهِ ٱلْعَزِيزِ ٱلْحَمِيدِ ٱلَّذِى لَهُۥ مُلْكُ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ', root: 'A-M-N', trans: 'Ils ne leur reprochaient rien d\'autre que de croire en Allah, le Puissant, le Digne de louange, à qui appartient le royaume des cieux et de la terre' },
+            { id: 'w4', text: 'إِنَّ ٱلَّذِينَ فَتَنُوا۟ ٱلْمُؤْمِنِينَ وَٱلْمُؤْمِنَٰتِ ثُمَّ لَمْ يَتُوبُوا۟ فَلَهُمْ عَذَابُ جَهَنَّمَ ۖ وَإِنَّ ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ لَهُمْ جَنَّٰتٌ تَجْرِى مِن تَحْتِهَا ٱلْأَنْهَٰرُ', root: 'J-N-N', trans: 'Ceux qui ont éprouvé les croyants sans se repentir auront le châtiment de la Géhenne ; ceux qui croient et font le bien auront des Jardins sous lesquels coulent les rivières' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلسَّمَآءِ ذَاتِ ٱلْبُرُوجِ', id: 1}, {text: 'قُتِلَ أَصْحَٰبُ ٱلْأُخْدُودِ', id: 2}, {text: 'وَمَا نَقَمُوا۟ مِنْهُمْ إِلَّآ أَن يُؤْمِنُوا۟', id: 3}, {text: 'إِنَّ ٱلَّذِينَ فَتَنُوا۟ ٱلْمُؤْمِنِينَ', id: 4}],
+        rightCol: [{text: 'Par le ciel muni de constellations !', id: 1}, {text: 'Périssent les gens de la Fosse', id: 2}, {text: 'Ils ne leur reprochaient que de croire en Allah', id: 3}, {text: 'Ceux qui ont éprouvé les croyants sans se repentir', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Burūj (1-11) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Inshiqāq (versets 1-9) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 84, ayah: 1 }, { surah: 84, ayah: 2 }, { surah: 84, ayah: 3 }, { surah: 84, ayah: 4 }, { surah: 84, ayah: 5 }, { surah: 84, ayah: 6 }, { surah: 84, ayah: 7 }, { surah: 84, ayah: 8 }, { surah: 84, ayah: 9 }],
+         words: [
+            { id: 'w1', text: 'إِذَا ٱلسَّمَآءُ ٱنشَقَّتْ وَأَذِنَتْ لِرَبِّهَا وَحُقَّتْ', root: null, trans: 'Quand le ciel se déchirera et obéira à son Seigneur, comme il se doit' },
+            { id: 'w2', text: 'وَإِذَا ٱلْأَرْضُ مُدَّتْ وَأَلْقَتْ مَا فِيهَا وَتَخَلَّتْ', root: null, trans: 'et quand la terre sera nivelée, qu\'elle rejettera ce qu\'elle contient et se videra' },
+            { id: 'w3', text: 'يَٰٓأَيُّهَا ٱلْإِنسَٰنُ إِنَّكَ كَادِحٌ إِلَىٰ رَبِّكَ كَدْحًا فَمُلَٰقِيهِ', root: null, trans: 'Ô homme, tu peines vers ton Seigneur sans relâche, et tu Le rencontreras' },
+            { id: 'w4', text: 'فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ فَسَوْفَ يُحَاسَبُ حِسَابًا يَسِيرًا وَيَنقَلِبُ إِلَىٰٓ أَهْلِهِۦ مَسْرُورًا', root: 'K-T-B', trans: 'Quant à celui à qui son livre sera remis dans sa main droite, il sera soumis à un jugement facile et retournera aux siens tout joyeux' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'إِذَا ٱلسَّمَآءُ ٱنشَقَّتْ', id: 1}, {text: 'وَإِذَا ٱلْأَرْضُ مُدَّتْ', id: 2}, {text: 'يَٰٓأَيُّهَا ٱلْإِنسَٰنُ إِنَّكَ كَادِحٌ', id: 3}, {text: 'فَأَمَّا مَنْ أُوتِىَ كِتَٰبَهُۥ بِيَمِينِهِۦ', id: 4}],
+        rightCol: [{text: 'Quand le ciel se déchirera', id: 1}, {text: 'quand la terre sera nivelée', id: 2}, {text: 'Ô homme, tu peines vers ton Seigneur', id: 3}, {text: 'Celui à qui son livre sera remis dans sa main droite', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Inshiqāq (1-9) validée ! Parcours Lecture Coranique enrichi : 5 nouvelles sourates du Juz ʻAmma. +25 XP' }
     ]
   ];
 
