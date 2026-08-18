@@ -3655,7 +3655,61 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie "ٱلرَّقِيب" (Ar-Raqīb) ?', options: ['L\'Observateur vigilant', 'L\'Aveugle', 'L\'Absent', 'Le Distrait'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'ٱلْمُجِيب', name: 'Al-Mujīb', instruction: 'Celui qui répond : Il exauce les invocations sincères de Ses serviteurs qui L\'implorent, parfois immédiatement, parfois plus tard, et toujours selon ce qui leur est le meilleur.', sound: 'Al-Mujīb', illustration: '🤲', mnemonic: 'Celui qui répond aux prières' },
       { type: 'qcm', instruction: 'Que signifie "ٱلْمُجِيب" (Al-Mujīb) ?', options: ['Celui qui répond (aux invocations)', 'Celui qui ignore', 'Celui qui refuse', 'Celui qui se tait'], correctIndex: 0, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 12 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (2e partie) complet : 36 noms explorés. +20 XP' }
+      { type: 'success', instruction: 'Leçon 12 (Noms d\'Allah) terminée ! Al-Karīm, Ar-Raqīb, Al-Mujīb. 36 noms explorés. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْغَفَّار', name: 'Al-Ghaffār', instruction: 'Le Grand Absoluteur : Il pardonne inlassablement, à chaque récidive, à la différence d\'Al-Ghafūr qui insiste sur l\'abondance du pardon.', sound: 'Al-Ghaffār', illustration: '🕊️', mnemonic: 'Le pardon qui se répète sans fin', rootKey: 'GH-F-R' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْغَفَّار" (Al-Ghaffār) ?', options: ['Le Grand Absoluteur (pardon répété)', 'Le Rancunier', 'L\'Indifférent', 'Le Sévère'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْقَهَّار', name: 'Al-Qahhār', instruction: 'Le Dominateur Suprême : Il soumet toute chose à Sa volonté ; rien ni personne ne peut Lui résister ou échapper à Son emprise.', sound: 'Al-Qahhār', illustration: '⚡', mnemonic: 'La domination absolue et sans partage' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقَهَّار" (Al-Qahhār) ?', options: ['Le Dominateur Suprême', 'Le Soumis', 'Le Faible', 'L\'Hésitant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْخَبِير', name: 'Al-Khabīr', instruction: 'Le Parfaitement Informé : Il connaît la réalité intime et cachée de toute chose, bien au-delà des simples apparences.', sound: 'Al-Khabīr', illustration: '🔍', mnemonic: 'Même racine que "Khabar" (nouvelle, information)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْخَبِير" (Al-Khabīr) ?', options: ['Le Parfaitement Informé', 'L\'Ignorant', 'Le Distrait', 'L\'Absent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 13 (Noms d\'Allah) terminée ! Al-Ghaffār, Al-Qahhār, Al-Khabīr. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْحَلِيم', name: 'Al-Ḥalīm', instruction: 'Le Longanime : Il ne se précipite jamais dans le châtiment malgré les fautes commises, laissant à chacun le temps de se repentir.', sound: 'Al-Ḥalīm', illustration: '🌿', mnemonic: 'La patience douce face à la faute' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَلِيم" (Al-Ḥalīm) ?', options: ['Le Longanime, l\'Indulgent', 'Le Précipité', 'Le Vengeur', 'L\'Impatient'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْعَظِيم', name: 'Al-ʻAẓīm', instruction: 'L\'Immense : Sa grandeur dépasse toute mesure et toute imagination humaine ; rien dans la création ne peut rivaliser avec Sa majesté.', sound: 'Al-ʻAẓīm', illustration: '🌌', mnemonic: 'Même racine que "ʻAẓama" (grandeur)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَظِيم" (Al-ʻAẓīm) ?', options: ['L\'Immense', 'Le Petit', 'L\'Ordinaire', 'Le Limité'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلشَّكُور', name: 'Ash-Shakūr', instruction: 'Le Reconnaissant : Il récompense généreusement la moindre bonne action, même minime, et multiplie la récompense au-delà du mérite.', sound: 'Ash-Shakūr', illustration: '🌟', mnemonic: 'Même racine que "Shukr" (gratitude)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلشَّكُور" (Ash-Shakūr) ?', options: ['Le Reconnaissant', 'L\'Ingrat', 'L\'Oublieux', 'L\'Indifférent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 14 (Noms d\'Allah) terminée ! Al-Ḥalīm, Al-ʻAẓīm, Ash-Shakūr. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْعَلِيّ', name: 'Al-ʻAliyy', instruction: 'Le Très-Haut : Il est élevé au-dessus de toute Sa création, transcendant en essence, en attributs et en majesté.', sound: 'Al-ʻAliyy', illustration: '🕋', mnemonic: 'Même racine que "ʻUluww" (élévation)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْعَلِيّ" (Al-ʻAliyy) ?', options: ['Le Très-Haut', 'Le Bas', 'L\'Ordinaire', 'Le Petit'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْكَبِير', name: 'Al-Kabīr', instruction: 'Le Grand : Sa grandeur est absolue et ne peut être égalée par rien ni personne dans toute la création.', sound: 'Al-Kabīr', illustration: '🏔️', mnemonic: 'Souvent dit dans le takbīr "Allāhu Akbar"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْكَبِير" (Al-Kabīr) ?', options: ['Le Grand', 'Le Petit', 'Le Faible', 'Le Discret'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَفِيظ', name: 'Al-Ḥafīẓ', instruction: 'Le Gardien Protecteur : Il préserve toute chose de la disparition et protège Ses serviteurs des dangers visibles et invisibles.', sound: 'Al-Ḥafīẓ', illustration: '🛡️', mnemonic: 'Même racine que "Ḥifẓ" (mémorisation, préservation)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَفِيظ" (Al-Ḥafīẓ) ?', options: ['Le Gardien Protecteur', 'Celui qui néglige', 'L\'Absent', 'Le Distrait'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 15 (Noms d\'Allah) terminée ! Al-ʻAliyy, Al-Kabīr, Al-Ḥafīẓ. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمُقِيت', name: 'Al-Muqīt', instruction: 'Celui qui nourrit et sustente : Il pourvoit à la subsistance et aux besoins de chaque créature avec une précision parfaite.', sound: 'Al-Muqīt', illustration: '🍇', mnemonic: 'Même racine que "Qūt" (nourriture)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمُقِيت" (Al-Muqīt) ?', options: ['Celui qui nourrit et sustente', 'Celui qui prive', 'Celui qui ignore', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَاسِع', name: 'Al-Wāsiʻ', instruction: 'Le Vaste : Sa miséricorde, Sa connaissance et Ses dons ne connaissent aucune limite ni aucune frontière.', sound: 'Al-Wāsiʻ', illustration: '🌊', mnemonic: 'Même racine que "Wusʻ" (vastitude)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَاسِع" (Al-Wāsiʻ) ?', options: ['Le Vaste, sans limite', 'L\'Étroit', 'Le Limité', 'Le Restreint'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْحَكَم', name: 'Al-Ḥakam', instruction: 'L\'Arbitre Suprême : Il juge avec une équité parfaite entre Ses créatures et tranche tout différend avec une vérité absolue.', sound: 'Al-Ḥakam', illustration: '⚖️', mnemonic: 'Même racine qu\'Al-Ḥakīm et "Ḥukm" (jugement)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَكَم" (Al-Ḥakam) ?', options: ['L\'Arbitre Suprême', 'Le Partial', 'L\'Indécis', 'L\'Injuste'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 16 (Noms d\'Allah) terminée ! Al-Muqīt, Al-Wāsiʻ, Al-Ḥakam. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْمَجِيد', name: 'Al-Majīd', instruction: 'Le Glorieux : Sa gloire et Sa noblesse sont infinies, dignes de toute louange et de toute vénération.', sound: 'Al-Majīd', illustration: '👑', mnemonic: 'Même racine que "Majd" (gloire)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْمَجِيد" (Al-Majīd) ?', options: ['Le Glorieux', 'Le Modeste', 'L\'Effacé', 'L\'Inconnu'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْبَاعِث', name: 'Al-Bāʻith', instruction: 'Celui qui ressuscite : Il redonnera vie à tous les morts le Jour de la Résurrection pour les rétribuer selon leurs œuvres.', sound: 'Al-Bāʻith', illustration: '🌅', mnemonic: 'Même racine que "Baʻth" (résurrection, envoi)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْبَاعِث" (Al-Bāʻith) ?', options: ['Celui qui ressuscite', 'Celui qui détruit', 'Celui qui endort', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلشَّهِيد', name: 'Ash-Shahīd', instruction: 'Le Témoin : Il est témoin de toute chose, présent et pleinement conscient de tout ce qui se passe, en public comme en secret.', sound: 'Ash-Shahīd', illustration: '👁️‍🗨️', mnemonic: 'Même racine que "Shahāda" (témoignage)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلشَّهِيد" (Ash-Shahīd) ?', options: ['Le Témoin', 'L\'Absent', 'L\'Aveugle', 'L\'Indifférent'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 17 (Noms d\'Allah) terminée ! Al-Majīd, Al-Bāʻith, Ash-Shahīd. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْحَقّ', name: 'Al-Ḥaqq', instruction: 'La Vérité Absolue : Son existence est la seule vérité incontestable, et tout ce qui existe dépend entièrement de Lui.', sound: 'Al-Ḥaqq', illustration: '💎', mnemonic: 'Même racine que "Ḥaqīqa" (réalité, vérité)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْحَقّ" (Al-Ḥaqq) ?', options: ['La Vérité Absolue', 'Le Mensonge', 'L\'Illusion', 'Le Doute'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْوَكِيل', name: 'Al-Wakīl', instruction: 'Le Garant suprême : Il prend en charge les affaires de quiconque s\'en remet à Lui avec une confiance sincère (tawakkul).', sound: 'Al-Wakīl', illustration: '🤝', mnemonic: 'Même racine que "Tawakkul" (confiance en Dieu)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْوَكِيل" (Al-Wakīl) ?', options: ['Le Garant suprême', 'L\'Abandonneur', 'L\'Indifférent', 'Le Fuyant'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْقَوِيّ', name: 'Al-Qawiyy', instruction: 'Le Fort : Sa force est absolue, sans la moindre faiblesse ni limite ; toute puissance créée n\'est qu\'un reflet de la Sienne.', sound: 'Al-Qawiyy', illustration: '💪', mnemonic: 'Même racine que "Quwwa" (force)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْقَوِيّ" (Al-Qawiyy) ?', options: ['Le Fort', 'Le Faible', 'Le Fragile', 'L\'Épuisé'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 18 (Noms d\'Allah) terminée ! Parcours Les 99 Noms d\'Allah (3e partie) : 54 noms explorés. +20 XP' }
     ]
   ];
 
