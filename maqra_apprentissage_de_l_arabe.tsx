@@ -1434,7 +1434,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 6,
+       total: 10,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -3998,6 +3998,34 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'دَار', name: 'Exemple : Dār (maison)', instruction: 'Dans دَار (Dār), le Dāl garde sa forme isolée bien qu\'il ne soit pas en fin de mot : c\'est une lettre non-connectrice, elle ne se lie jamais à la lettre suivante (ici le Alif).', sound: 'Dār', illustration: '🏠', mnemonic: 'Après un Dāl, la lettre suivante recommence "détachée"' },
       { type: 'qcm', instruction: 'Pourquoi le Dāl de "دَار" garde-t-il sa forme isolée au milieu du mot ?', options: ['C\'est une erreur d\'écriture', 'Parce que Dāl est une lettre non-connectrice', 'Parce que Dāl est toujours en fin de mot', 'Parce que Dāl n\'a pas de point'], correctIndex: 1, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 6 (Calligraphie) terminée ! Vous connaissez les 6 lettres qui ne se lient jamais à la suivante (ا د ذ ر ز و). +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ث', name: 'Thāʼ : les 4 formes', instruction: 'Le Thāʼ isolé (ث) devient ثـ en début de mot, ـثـ au milieu, et ـث à la fin. Il suit exactement le tracé du Tāʼ, avec un point de plus (trois au lieu de deux).', sound: 'Thāʼ', illustration: '🔤', mnemonic: 'ثَعْلَب (Thaʻlab - Renard) : le Thāʼ y est en position initiale (ثـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Thāʼ" au MILIEU d\'un mot ?', options: ['ث', 'ثـ', 'ـثـ', 'ـث'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'خ', name: 'Khāʼ : les 4 formes', instruction: 'Le Khāʼ isolé (خ) devient خـ en début de mot, ـخـ au milieu, et ـخ à la fin. Même tracé que le Ḥāʼ, avec un point ajouté au-dessus.', sound: 'Khāʼ', illustration: '🔤', mnemonic: 'خُبْز (Khubz - Pain) : le Khāʼ y est en position initiale (خـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Khāʼ" en FIN de mot ?', options: ['خ', 'خـ', 'ـخـ', 'ـخ'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 7 (Calligraphie) terminée ! Thāʼ et Khāʼ : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ص', name: 'Ṣād : les 4 formes', instruction: 'Le Ṣād isolé (ص) devient صـ en début de mot, ـصـ au milieu, et ـص à la fin. La boucle emphatique reste bien visible à toutes les formes.', sound: 'Ṣād', illustration: '🔤', mnemonic: 'صَابُون (Ṣābūn - Savon) : le Ṣād y est en position initiale (صـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Ṣād" en DÉBUT de mot ?', options: ['ـص', 'صـ', 'ـصـ', 'ص'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ض', name: 'Ḍād : les 4 formes', instruction: 'Le Ḍād isolé (ض) devient ضـ en début de mot, ـضـ au milieu, et ـض à la fin. Même tracé que le Ṣād, avec un point ajouté au-dessus.', sound: 'Ḍād', illustration: '🔤', mnemonic: 'ضِفْدَع (Ḍifdaʻ - Grenouille) : le Ḍād y est en position initiale (ضـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Ḍād" au MILIEU d\'un mot ?', options: ['ض', 'ضـ', 'ـضـ', 'ـض'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 8 (Calligraphie) terminée ! Ṣād et Ḍād : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ط', name: 'Ṭāʼ : les 4 formes', instruction: 'Le Ṭāʼ isolé (ط) devient طـ en début de mot, ـطـ au milieu, et ـط à la fin. La hampe verticale raccourcit souvent en position initiale ou médiane.', sound: 'Ṭāʼ', illustration: '🔤', mnemonic: 'طَائِر (Ṭāʼir - Oiseau) : le Ṭāʼ y est en position initiale (طـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme isolée du "Ṭāʼ" ?', options: ['طـ', 'ـطـ', 'ط', 'ـط'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ظ', name: 'Ẓāʼ : les 4 formes', instruction: 'Le Ẓāʼ isolé (ظ) devient ظـ en début de mot, ـظـ au milieu, et ـظ à la fin. Même tracé que le Ṭāʼ, avec un point ajouté au-dessus.', sound: 'Ẓāʼ', illustration: '🔤', mnemonic: 'ظُهْر (Ẓuhr - Midi) : le Ẓāʼ y est en position initiale (ظـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Ẓāʼ" en FIN de mot ?', options: ['ظ', 'ظـ', 'ـظـ', 'ـظ'], correctIndex: 3, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 9 (Calligraphie) terminée ! Ṭāʼ et Ẓāʼ : leurs 4 formes maîtrisées. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'غ', name: 'Ghayn : les 4 formes', instruction: 'Le Ghayn isolé (غ) devient غـ en début de mot, ـغـ au milieu, et ـغ à la fin. Même tracé que le ʿAyn, avec un point ajouté au-dessus.', sound: 'Ghayn', illustration: '🔤', mnemonic: 'غُرَاب (Ghurāb - Corbeau) : le Ghayn y est en position initiale (غـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Ghayn" au MILIEU d\'un mot ?', options: ['غ', 'غـ', 'ـغـ', 'ـغ'], correctIndex: 2, textStyle: 'text-5xl' },
+      { type: 'intro', letter: 'ق', name: 'Qāf : les 4 formes', instruction: 'Le Qāf isolé (ق) devient قـ en début de mot, ـقـ au milieu, et ـق à la fin. Les deux points restent toujours au-dessus.', sound: 'Qāf', illustration: '🔤', mnemonic: 'قَمَر (Qamar - Lune) : le Qāf y est en position initiale (قـ)' },
+      { type: 'qcm', instruction: 'Quelle est la forme du "Qāf" en DÉBUT de mot ?', options: ['ـق', 'قـ', 'ـقـ', 'ق'], correctIndex: 1, textStyle: 'text-5xl' },
+      { type: 'success', instruction: 'Leçon 10 (Calligraphie) terminée ! Ghayn et Qāf : leurs 4 formes maîtrisées. 20 lettres explorées sur 28. +20 XP' }
     ]
   ];
 
