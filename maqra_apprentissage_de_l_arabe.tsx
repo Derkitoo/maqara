@@ -1025,7 +1025,7 @@ export default function ArabicLearningApp() {
        title: 'Tajwid',
        description: 'Les règles de récitation (أحكام التجويد)',
        progress: savedProgress[5] ?? 0,
-       total: 10,
+       total: 13,
        tags: ['Tajwid', 'Récitation'],
        color: 'bg-rose-100',
        tagColor: 'bg-rose-200 text-rose-800'
@@ -2856,7 +2856,76 @@ export default function ArabicLearningApp() {
         mnemonic: 'ر + Kasra = léger'
       },
       { type: 'qcm', instruction: 'Comment se prononce le ر dans "رِجَال" ?', options: ['Emphatique (Tafkhīm)', 'Léger (Tarqīq)', 'Il disparaît', 'Comme un ل'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'success', instruction: 'Leçon 10 (Tajwid) terminée ! Parcours Tajwid complet : les 4 règles du Nūn Sākin, Qalqala, Ghunna, les 3 règles du Mīm Sākinah et le Tafkhīm/Tarqīq du Rāʼ. +20 XP' }
+      { type: 'success', instruction: 'Leçon 10 (Tajwid) terminée ! Les 4 règles du Nūn Sākin, Qalqala, Ghunna, les 3 règles du Mīm Sākinah et le Tafkhīm/Tarqīq du Rāʼ maîtrisés. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'جَآءَ',
+        name: 'Madd Wājib Muttaṣil (مد واجب متصل)',
+        instruction: 'Quand une lettre de Madd (ا و ي) est suivie d\'un Hamza (ء) dans le MÊME mot, l\'allongement devient obligatoire : 4 à 5 temps au lieu de 2.',
+        sound: 'Jāʼa',
+        illustration: '➖➖',
+        mnemonic: 'Madd + ء dans le même mot = 4-5 temps'
+      },
+      { type: 'qcm', instruction: 'Qu\'est-ce que le Madd Wājib Muttaṣil ?', options: ['Madd + Sukūn dans le même mot', 'Madd + Hamza dans le même mot', 'Madd entre deux mots', 'Madd bref normal'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ٱلسَّمَآءِ',
+        name: 'Exemple : ٱلسَّمَآءِ',
+        instruction: 'L\'Alif de Madd dans "ٱلسَّمَآءِ" est suivi du Hamza (ء), toujours dans le même mot : Madd Wājib Muttaṣil, allongement obligatoire.',
+        sound: 'As-Samāʼ',
+        illustration: '➖➖',
+        mnemonic: 'Alif + ء = allongement obligatoire'
+      },
+      { type: 'qcm', instruction: 'Combien de temps dure le Madd Wājib Muttaṣil ?', options: ['1 temps', '2 temps', '4 à 5 temps', '10 temps'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 11 (Tajwid) terminée ! Vous maîtrisez le Madd Wājib Muttaṣil. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'يَا أَيُّهَا',
+        name: 'Madd Jāʼiz Munfaṣil (مد جائز منفصل)',
+        instruction: 'Quand une lettre de Madd termine un mot et qu\'un Hamza (ء) commence le mot SUIVANT, l\'allongement est permis et variable : 2 à 5 temps selon le récitateur.',
+        sound: 'Yā Ayyuhā',
+        illustration: '➖➖',
+        mnemonic: 'Madd fin de mot + ء début de mot suivant'
+      },
+      { type: 'qcm', instruction: 'Qu\'est-ce qui distingue le Madd Jāʼiz Munfaṣil du Madd Wājib Muttaṣil ?', options: ['Le Hamza est dans un autre mot', 'Il n\'y a pas de Hamza', 'C\'est plus court', 'C\'est le même Madd'], correctIndex: 0, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'فِي أَنفُسِكُمْ',
+        name: 'Exemple : فِي أَنفُسِكُمْ',
+        instruction: 'Le Yāʼ de Madd de "فِي" termine ce mot, et "أَنفُسِكُمْ" commence par un Hamza : Madd Jāʼiz Munfaṣil.',
+        sound: 'Fī Anfusikum',
+        illustration: '➖➖',
+        mnemonic: 'Madd + ء séparés par un espace entre mots'
+      },
+      { type: 'qcm', instruction: 'Combien de temps peut durer le Madd Jāʼiz Munfaṣil ?', options: ['Toujours 1 temps', '2 à 5 temps (variable)', 'Toujours 6 temps', 'Il n\'y a pas d\'allongement'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 12 (Tajwid) terminée ! Vous maîtrisez le Madd Jāʼiz Munfaṣil. +15 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ٱلضَّآلِّينَ',
+        name: 'Madd Lāzim (مد لازم)',
+        instruction: 'Quand une lettre de Madd est suivie d\'un Sukūn PERMANENT (pas seulement à la pause) dans le même mot, l\'allongement est le plus long : 6 temps, toujours.',
+        sound: 'Aḍ-Ḍāllīn',
+        illustration: '➖➖➖',
+        mnemonic: 'Madd + Sukūn permanent = 6 temps, le plus long'
+      },
+      { type: 'qcm', instruction: 'Quand applique-t-on le Madd Lāzim ?', options: ['Madd + Hamza', 'Madd + Fatḥa', 'Madd + Sukūn permanent', 'Madd en fin de verset seulement'], correctIndex: 2, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ءَآلْـَٔانَ',
+        name: 'Exemple : آلْـَٔانَ',
+        instruction: '"آلْآنَ" (maintenant) contient un Alif de Madd suivi d\'un Lām avec Sukūn permanent : Madd Lāzim, 6 temps.',
+        sound: 'Al-Āna',
+        illustration: '➖➖➖',
+        mnemonic: 'Le Madd le plus long du Tajwid'
+      },
+      { type: 'qcm', instruction: 'Combien de temps dure le Madd Lāzim ?', options: ['2 temps', '4 temps', '6 temps', 'Il varie librement'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 13 (Tajwid) terminée ! Parcours Tajwid complet : les 4 règles du Nūn Sākin, Qalqala, Ghunna, les 3 règles du Mīm Sākinah, le Tafkhīm/Tarqīq du Rāʼ et les 3 types de Madd Farʻī. +20 XP' }
     ]
   ];
 
