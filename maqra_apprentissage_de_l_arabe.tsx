@@ -1137,6 +1137,198 @@ export default function ArabicLearningApp() {
         { translit: 'ʻAdala', trans: 'Il a été juste', arabic: 'عَدَلَ' },
         { translit: 'Al-ʻAdl', trans: 'Le Juste (nom divin)', arabic: 'ٱلْعَدْل' }
       ]
+    },
+    'GH-R-B': {
+      arabic: 'غرب',
+      trans: 'Ouest, étrange',
+      words: [
+        { word: 'غَرْب', trans: 'Gharb', meaning: 'Ouest', icon: '🌇', desc: 'La direction du couchant.' },
+        { word: 'غَرِيب', trans: 'Gharīb', meaning: 'Étranger, étrange', icon: '🧳', desc: 'Celui qui vient d\'ailleurs, ou ce qui surprend.' }
+      ],
+      derivatives: [
+        { translit: 'Ghāba', trans: 'Il s\'est couché (le soleil)', arabic: 'غَرَبَ' },
+        { translit: 'Al-Maghrib', trans: 'Le Couchant, le Maroc', arabic: 'ٱلْمَغْرِب' }
+      ]
+    },
+    'SH-R-Q': {
+      arabic: 'شرق',
+      trans: 'Est, lever',
+      words: [
+        { word: 'شَرْق', trans: 'Sharq', meaning: 'Est', icon: '🌅', desc: 'La direction du levant.' },
+        { word: 'شُرُوق', trans: 'Shurūq', meaning: 'Lever du soleil', icon: '☀️', desc: 'Le moment où le soleil se lève.' }
+      ],
+      derivatives: [
+        { translit: 'Sharaqat', trans: 'Il s\'est levé (le soleil)', arabic: 'شَرَقَتْ' },
+        { translit: 'Al-Mashriq', trans: 'Le Levant', arabic: 'ٱلْمَشْرِق' }
+      ]
+    },
+    'T-M-M': {
+      arabic: 'تمم',
+      trans: 'Achever',
+      words: [
+        { word: 'تَمَام', trans: 'Tamām', meaning: 'Achèvement', icon: '✅', desc: 'L\'état de ce qui est complet et parfait.' },
+        { word: 'تَامّ', trans: 'Tāmm', meaning: 'Complet', icon: '💯', desc: 'Ce à quoi rien ne manque.' }
+      ],
+      derivatives: [
+        { translit: 'Tamma', trans: 'Il s\'est achevé', arabic: 'تَمَّ' },
+        { translit: 'Atmama', trans: 'Il a mené à terme', arabic: 'أَتْمَمَ' }
+      ]
+    },
+    'B-D-A': {
+      arabic: 'بدأ',
+      trans: 'Commencer',
+      words: [
+        { word: 'بِدَايَة', trans: 'Bidāya', meaning: 'Début', icon: '🏁', desc: 'Le commencement d\'une chose.' },
+        { word: 'مُبْتَدِئ', trans: 'Mubtadiʼ', meaning: 'Débutant', icon: '🌱', desc: 'Celui qui commence tout juste.' }
+      ],
+      derivatives: [
+        { translit: 'Badaʼa', trans: 'Il a commencé', arabic: 'بَدَأَ' },
+        { translit: 'Al-Bādiʼ', trans: 'Celui qui commence toute chose (nom divin)', arabic: 'ٱلْبَادِئ' }
+      ]
+    },
+    'N-H-Y': {
+      arabic: 'نهي',
+      trans: 'Finir, interdire',
+      words: [
+        { word: 'نِهَايَة', trans: 'Nihāya', meaning: 'Fin', icon: '🏁', desc: 'Le terme, la conclusion d\'une chose.' },
+        { word: 'نَهْي', trans: 'Nahy', meaning: 'Interdiction', icon: '🚫', desc: 'L\'ordre de ne pas faire quelque chose.' }
+      ],
+      derivatives: [
+        { translit: 'Nahā', trans: 'Il a interdit', arabic: 'نَهَىٰ' },
+        { translit: 'Al-Amr bil-Maʻrūf wan-Nahy ʻan al-Munkar', trans: 'Ordonner le bien et interdire le mal', arabic: 'ٱلْأَمْرُ بِٱلْمَعْرُوفِ وَٱلنَّهْيُ عَنِ ٱلْمُنْكَر' }
+      ]
+    },
+    'H-L-L': {
+      arabic: 'حلل',
+      trans: 'Résoudre, permettre',
+      words: [
+        { word: 'حَلّ', trans: 'Ḥall', meaning: 'Solution', icon: '🔓', desc: 'La résolution d\'un problème.' },
+        { word: 'حَلَال', trans: 'Ḥalāl', meaning: 'Permis', icon: '✅', desc: 'Ce qui est autorisé par la loi religieuse.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥalla', trans: 'Il a résolu, permis', arabic: 'حَلَّ' },
+        { translit: 'Taḥlīl', trans: 'Analyse', arabic: 'تَحْلِيل' }
+      ]
+    },
+    'B-N-Y': {
+      arabic: 'بني',
+      trans: 'Construire',
+      words: [
+        { word: 'بِنَاء', trans: 'Bināʼ', meaning: 'Construction', icon: '🏗️', desc: 'L\'acte de bâtir, ou l\'édifice lui-même.' },
+        { word: 'بَانِي', trans: 'Bānī', meaning: 'Bâtisseur', icon: '👷', desc: 'Celui qui construit.' }
+      ],
+      derivatives: [
+        { translit: 'Banā', trans: 'Il a construit', arabic: 'بَنَىٰ' },
+        { translit: 'Banū Ādam', trans: 'Les fils d\'Adam (l\'humanité)', arabic: 'بَنُو آدَم' }
+      ]
+    },
+    'K-SH-F': {
+      arabic: 'كشف',
+      trans: 'Dévoiler',
+      words: [
+        { word: 'كَشْف', trans: 'Kashf', meaning: 'Dévoilement', icon: '🔍', desc: 'Le fait de révéler ce qui était caché.' },
+        { word: 'كَاشِف', trans: 'Kāshif', meaning: 'Celui qui dévoile', icon: '💡', desc: 'Celui qui lève un voile ou une épreuve.' }
+      ],
+      derivatives: [
+        { translit: 'Kashafa', trans: 'Il a dévoilé', arabic: 'كَشَفَ' },
+        { translit: 'Lā Kāshifa Lahu', trans: 'Nul ne peut la dévoiler (l\'épreuve)', arabic: 'لَا كَاشِفَ لَهُ' }
+      ]
+    },
+    'Z-H-R': {
+      arabic: 'ظهر',
+      trans: 'Apparaître',
+      words: [
+        { word: 'ظُهُور', trans: 'Ẓuhūr', meaning: 'Apparition', icon: '🌟', desc: 'Le fait de devenir visible, manifeste.' },
+        { word: 'ظَاهِر', trans: 'Ẓāhir', meaning: 'Apparent', icon: '👁️', desc: 'Un des noms divins : Celui dont l\'existence est manifeste par Ses signes.' }
+      ],
+      derivatives: [
+        { translit: 'Ẓahara', trans: 'Il est apparu', arabic: 'ظَهَرَ' },
+        { translit: 'Aẓ-Ẓāhir', trans: 'L\'Apparent (nom divin)', arabic: 'ٱلظَّاهِر' }
+      ]
+    },
+    'B-T-N': {
+      arabic: 'بطن',
+      trans: 'Intérieur, caché',
+      words: [
+        { word: 'بَاطِن', trans: 'Bāṭin', meaning: 'Caché', icon: '🌑', desc: 'Un des noms divins : Celui dont l\'Essence est cachée, imperceptible.' },
+        { word: 'بَطْن', trans: 'Baṭn', meaning: 'Ventre, intérieur', icon: '📦', desc: 'Ce qui est à l\'intérieur, non visible.' }
+      ],
+      derivatives: [
+        { translit: 'Al-Bāṭin', trans: 'Le Caché (nom divin, associé à Aẓ-Ẓāhir)', arabic: 'ٱلْبَاطِن' },
+        { translit: 'Bāṭinan', trans: 'Intérieurement', arabic: 'بَاطِنًا' }
+      ]
+    },
+    'Q-D-M': {
+      arabic: 'قدم',
+      trans: 'Avancer, ancien',
+      words: [
+        { word: 'قَدِيم', trans: 'Qadīm', meaning: 'Ancien', icon: '📜', desc: 'Ce qui existe depuis toujours, sans commencement.' },
+        { word: 'تَقَدُّم', trans: 'Taqaddum', meaning: 'Progrès', icon: '📈', desc: 'Le fait d\'avancer, de progresser.' }
+      ],
+      derivatives: [
+        { translit: 'Qaddama', trans: 'Il a fait avancer, présenté', arabic: 'قَدَّمَ' },
+        { translit: 'Muqaddima', trans: 'Introduction', arabic: 'مُقَدِّمَة' }
+      ]
+    },
+    'H-R-B': {
+      arabic: 'حرب',
+      trans: 'Guerre',
+      words: [
+        { word: 'حَرْب', trans: 'Ḥarb', meaning: 'Guerre', icon: '⚔️', desc: 'Le conflit armé, opposé à la paix (Salām).' },
+        { word: 'مُحَارِب', trans: 'Muḥārib', meaning: 'Combattant', icon: '🛡️', desc: 'Celui qui fait la guerre.' }
+      ],
+      derivatives: [
+        { translit: 'Ḥāraba', trans: 'Il a combattu', arabic: 'حَارَبَ' },
+        { translit: 'Fa\'dhanū bi-Ḥarbin', trans: 'Attendez-vous alors à une guerre', arabic: 'فَأْذَنُوا بِحَرْبٍ' }
+      ]
+    },
+    'S-L-K': {
+      arabic: 'سلك',
+      trans: 'Suivre un chemin',
+      words: [
+        { word: 'مَسْلَك', trans: 'Maslak', meaning: 'Voie, chemin', icon: '🛤️', desc: 'Le chemin que l\'on emprunte.' },
+        { word: 'سَالِك', trans: 'Sālik', meaning: 'Celui qui chemine', icon: '🚶', desc: 'Celui qui progresse sur une voie.' }
+      ],
+      derivatives: [
+        { translit: 'Salaka', trans: 'Il a suivi un chemin', arabic: 'سَلَكَ' },
+        { translit: 'Sulūk', trans: 'Conduite, cheminement spirituel', arabic: 'سُلُوك' }
+      ]
+    },
+    'W-S-L': {
+      arabic: 'وصل',
+      trans: 'Relier, arriver',
+      words: [
+        { word: 'وُصُول', trans: 'Wuṣūl', meaning: 'Arrivée', icon: '🏁', desc: 'Le fait de parvenir à destination.' },
+        { word: 'صِلَة', trans: 'Ṣila', meaning: 'Lien', icon: '🔗', desc: 'Le lien, notamment le lien de parenté (Ṣilat ar-Raḥim).' }
+      ],
+      derivatives: [
+        { translit: 'Waṣala', trans: 'Il est arrivé', arabic: 'وَصَلَ' },
+        { translit: 'Ṣilat ar-Raḥim', trans: 'Le maintien des liens de parenté', arabic: 'صِلَةُ ٱلرَّحِم' }
+      ]
+    },
+    'Q-S-D': {
+      arabic: 'قصد',
+      trans: 'Intention, diriger',
+      words: [
+        { word: 'قَصْد', trans: 'Qaṣd', meaning: 'Intention', icon: '🎯', desc: 'Le but visé dans une action.' },
+        { word: 'مَقْصِد', trans: 'Maqṣid', meaning: 'But, objectif', icon: '🏹', desc: 'La finalité recherchée.' }
+      ],
+      derivatives: [
+        { translit: 'Qaṣada', trans: 'Il a eu l\'intention de', arabic: 'قَصَدَ' },
+        { translit: 'Wa-qṣid fī Mashyika', trans: 'Sois modéré dans ta démarche', arabic: 'وَٱقْصِدْ فِى مَشْيِكَ' }
+      ]
+    },
+    'F-K-R': {
+      arabic: 'فكر',
+      trans: 'Penser',
+      words: [
+        { word: 'فِكْر', trans: 'Fikr', meaning: 'Pensée', icon: '💭', desc: 'L\'activité de l\'esprit, la réflexion.' },
+        { word: 'مُفَكِّر', trans: 'Mufakkir', meaning: 'Penseur', icon: '🧠', desc: 'Celui qui réfléchit profondément.' }
+      ],
+      derivatives: [
+        { translit: 'Tafakkara', trans: 'Il a réfléchi', arabic: 'تَفَكَّرَ' },
+        { translit: 'Yatafakkarūn', trans: 'Ils réfléchissent', arabic: 'يَتَفَكَّرُون' }
+      ]
     }
   };
 
@@ -1194,7 +1386,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 26,
+       total: 31,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -2900,7 +3092,52 @@ export default function ArabicLearningApp() {
       { type: 'qcm', instruction: 'Que signifie la racine "خلص" (KH-L-S) ?', options: ['Hypocrisie', 'Sincérité, pureté', 'Doute', 'Mélange'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'عدل', name: 'Racine A-D-L', instruction: 'La racine A-D-L (عدل) exprime la justice. Elle donne عَدْل (ʻAdl - Justice).', sound: 'A-D-L', illustration: '⚖️', mnemonic: 'عَدْل (ʻAdl - Justice)', rootKey: 'A-D-L' },
       { type: 'qcm', instruction: 'Que signifie la racine "عدل" (A-D-L) ?', options: ['Injustice', 'Justice', 'Doute', 'Rapidité'], correctIndex: 1, textStyle: 'text-3xl' },
-      { type: 'success', instruction: 'Leçon 26 : parcours Le Secret des Racines terminé, 78 racines explorées ! +20 XP' }
+      { type: 'success', instruction: 'Leçon 26 : 78 racines explorées ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'غرب', name: 'Racine GH-R-B', instruction: 'La racine GH-R-B (غرب) exprime l\'ouest. Elle donne غَرْب (Gharb - Ouest).', sound: 'GH-R-B', illustration: '🌇', mnemonic: 'غَرْب (Gharb - Ouest)', rootKey: 'GH-R-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غرب" (GH-R-B) ?', options: ['Est', 'Ouest, étrange', 'Nord', 'Sud'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'شرق', name: 'Racine SH-R-Q', instruction: 'La racine SH-R-Q (شرق) exprime l\'est. Elle donne شُرُوق (Shurūq - Lever du soleil).', sound: 'SH-R-Q', illustration: '🌅', mnemonic: 'شُرُوق (Shurūq - Lever du soleil)', rootKey: 'SH-R-Q' },
+      { type: 'qcm', instruction: 'Que signifie la racine "شرق" (SH-R-Q) ?', options: ['Ouest', 'Est, lever', 'Nord', 'Sud'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'تمم', name: 'Racine T-M-M', instruction: 'La racine T-M-M (تمم) exprime l\'achèvement. Elle donne تَمَام (Tamām - Achèvement).', sound: 'T-M-M', illustration: '✅', mnemonic: 'تَمَام (Tamām - Achèvement)', rootKey: 'T-M-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "تمم" (T-M-M) ?', options: ['Commencer', 'Achever', 'Détruire', 'Cacher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 27 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بدأ', name: 'Racine B-D-A', instruction: 'La racine B-D-A (بدأ) exprime le commencement. Elle donne بِدَايَة (Bidāya - Début).', sound: 'B-D-A', illustration: '🏁', mnemonic: 'بِدَايَة (Bidāya - Début)', rootKey: 'B-D-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بدأ" (B-D-A) ?', options: ['Finir', 'Commencer', 'Attendre', 'Répéter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'نهي', name: 'Racine N-H-Y', instruction: 'La racine N-H-Y (نهي) exprime la fin et l\'interdiction. Elle donne نِهَايَة (Nihāya - Fin).', sound: 'N-H-Y', illustration: '🏁', mnemonic: 'نِهَايَة (Nihāya - Fin)', rootKey: 'N-H-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نهي" (N-H-Y) ?', options: ['Commencer', 'Finir, interdire', 'Permettre', 'Continuer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حلل', name: 'Racine H-L-L', instruction: 'La racine H-L-L (حلل) exprime la résolution et la permission. Elle donne حَلَال (Ḥalāl - Permis).', sound: 'H-L-L', illustration: '🔓', mnemonic: 'حَلَال (Ḥalāl - Permis)', rootKey: 'H-L-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حلل" (H-L-L) ?', options: ['Interdire', 'Résoudre, permettre', 'Cacher', 'Compliquer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 28 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بني', name: 'Racine B-N-Y', instruction: 'La racine B-N-Y (بني) exprime la construction. Elle donne بِنَاء (Bināʼ - Construction).', sound: 'B-N-Y', illustration: '🏗️', mnemonic: 'بِنَاء (Bināʼ - Construction)', rootKey: 'B-N-Y' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بني" (B-N-Y) ?', options: ['Détruire', 'Construire', 'Vendre', 'Acheter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'كشف', name: 'Racine K-SH-F', instruction: 'La racine K-SH-F (كشف) exprime le dévoilement. Elle donne كَشْف (Kashf - Dévoilement).', sound: 'K-SH-F', illustration: '🔍', mnemonic: 'كَشْف (Kashf - Dévoilement)', rootKey: 'K-SH-F' },
+      { type: 'qcm', instruction: 'Que signifie la racine "كشف" (K-SH-F) ?', options: ['Cacher', 'Dévoiler', 'Ignorer', 'Fermer'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ظهر', name: 'Racine Z-H-R', instruction: 'La racine Z-H-R (ظهر) exprime l\'apparition. Elle donne ظَاهِر (Ẓāhir - Apparent, nom divin).', sound: 'Z-H-R', illustration: '🌟', mnemonic: 'ظَاهِر (Ẓāhir - Apparent)', rootKey: 'Z-H-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ظهر" (Z-H-R) ?', options: ['Disparaître', 'Apparaître', 'Se cacher', 'S\'endormir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 29 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بطن', name: 'Racine B-T-N', instruction: 'La racine B-T-N (بطن) exprime ce qui est caché. Elle donne بَاطِن (Bāṭin - Caché, nom divin).', sound: 'B-T-N', illustration: '🌑', mnemonic: 'بَاطِن (Bāṭin - Caché)', rootKey: 'B-T-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بطن" (B-T-N) ?', options: ['Visible', 'Intérieur, caché', 'Lointain', 'Bruyant'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قدم', name: 'Racine Q-D-M', instruction: 'La racine Q-D-M (قدم) exprime l\'ancienneté et le progrès. Elle donne قَدِيم (Qadīm - Ancien).', sound: 'Q-D-M', illustration: '📜', mnemonic: 'قَدِيم (Qadīm - Ancien)', rootKey: 'Q-D-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قدم" (Q-D-M) ?', options: ['Nouveau', 'Avancer, ancien', 'Reculer', 'S\'arrêter'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'حرب', name: 'Racine H-R-B', instruction: 'La racine H-R-B (حرب) exprime la guerre. Elle donne حَرْب (Ḥarb - Guerre).', sound: 'H-R-B', illustration: '⚔️', mnemonic: 'حَرْب (Ḥarb - Guerre)', rootKey: 'H-R-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "حرب" (H-R-B) ?', options: ['Paix', 'Guerre', 'Amour', 'Silence'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 30 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سلك', name: 'Racine S-L-K', instruction: 'La racine S-L-K (سلك) exprime le fait de suivre un chemin. Elle donne مَسْلَك (Maslak - Voie).', sound: 'S-L-K', illustration: '🛤️', mnemonic: 'مَسْلَك (Maslak - Voie)', rootKey: 'S-L-K' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سلك" (S-L-K) ?', options: ['S\'arrêter', 'Suivre un chemin', 'Se perdre', 'Revenir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وصل', name: 'Racine W-S-L', instruction: 'La racine W-S-L (وصل) exprime le lien et l\'arrivée. Elle donne وُصُول (Wuṣūl - Arrivée).', sound: 'W-S-L', illustration: '🏁', mnemonic: 'وُصُول (Wuṣūl - Arrivée)', rootKey: 'W-S-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وصل" (W-S-L) ?', options: ['Partir', 'Relier, arriver', 'Rompre', 'Perdre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'قصد', name: 'Racine Q-S-D', instruction: 'La racine Q-S-D (قصد) exprime l\'intention. Elle donne قَصْد (Qaṣd - Intention).', sound: 'Q-S-D', illustration: '🎯', mnemonic: 'قَصْد (Qaṣd - Intention)', rootKey: 'Q-S-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قصد" (Q-S-D) ?', options: ['Hasard', 'Intention, diriger', 'Oubli', 'Refus'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 31 : parcours Le Secret des Racines terminé, 94 racines explorées ! +20 XP' }
     ]
   ];
 
