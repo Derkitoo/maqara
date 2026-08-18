@@ -1434,7 +1434,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 16,
+       total: 21,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -4244,6 +4244,48 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'سَلَام', instruction: 'Tracez "سَلَام" (Salām), en observant le Mīm final isolé.' },
       { type: 'qcm', instruction: 'Pourquoi le Mīm final de "سَلَام" est-il isolé, comme le Bāʼ dans "كِتَاب" ?', options: ['Parce qu\'il suit un Alif, lettre non-connectrice', 'Parce que Mīm ne se lie jamais', 'Parce que c\'est un nom divin', 'Parce que le mot est court'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 16 (Calligraphie) terminée ! Vous maîtrisez la liaison des lettres dans des mots complets : بَيْت, كِتَاب, مُحَمَّد, سَلَام. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'رَجُل', name: 'Liaison : Rajul (Homme)', instruction: 'Nouvelle règle : quand un mot COMMENCE par une lettre non-connectrice, la lettre suivante repart "à zéro". Dans رَجُل : ر (isolée, 1ère lettre) puis جـ prend quand même sa forme INITIALE, comme si le mot recommençait après elle.', sound: 'Rajul', illustration: '🧑', mnemonic: 'Le Rāʼ initial ne transmet rien au Jīm qui suit' },
+      { type: 'trace', letter: 'رَجُل', instruction: 'Tracez "رَجُل" (Rajul), en observant le petit espace après le Rāʼ.' },
+      { type: 'qcm', instruction: 'Dans "رَجُل", sous quelle forme apparaît le Jīm (2e lettre) ?', options: ['Isolée', 'Initiale', 'Médiane', 'Finale'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'دِين', name: 'Liaison : Dīn (Religion)', instruction: 'Même logique dans دِين : د (isolée, 1ère lettre, non-connectrice) puis يـ prend sa forme INITIALE, et ن prend sa forme finale car reliée au Yāʼ.', sound: 'Dīn', illustration: '☪️', mnemonic: 'Le Dāl initial ne transmet rien au Yāʼ qui suit' },
+      { type: 'trace', letter: 'دِين', instruction: 'Tracez "دِين" (Dīn), en observant le petit espace après le Dāl.' },
+      { type: 'qcm', instruction: 'Pourquoi le Yāʼ de "دِين" prend-il sa forme initiale et non médiane ?', options: ['Le Dāl qui précède ne transmet aucune liaison', 'Le Yāʼ ne se lie jamais', 'C\'est la dernière lettre', 'C\'est une erreur'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 17 (Calligraphie) terminée ! Vous savez ce qui se passe quand un mot commence par une lettre non-connectrice. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'وَلَد', name: 'Liaison : Walad (Garçon)', instruction: 'Encore la même règle dans وَلَد : و (isolé, 1ère lettre non-connectrice) puis لـ prend sa forme INITIALE, et د garde sa forme habituelle (isolée = finale pour cette lettre non-connectrice).', sound: 'Walad', illustration: '👦', mnemonic: 'Le Wāw initial ne transmet rien au Lām qui suit' },
+      { type: 'trace', letter: 'وَلَد', instruction: 'Tracez "وَلَد" (Walad), en observant le petit espace après le Wāw.' },
+      { type: 'qcm', instruction: 'Dans "وَلَد", sous quelle forme apparaît le Lām (2e lettre) ?', options: ['Isolée', 'Initiale', 'Médiane', 'Finale'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'ذَهَب', name: 'Liaison : Dhahab (Or)', instruction: 'Dernier exemple de la règle dans ذَهَب : ذ (isolé, 1ère lettre non-connectrice) puis هـ prend sa forme INITIALE, et ب prend sa forme finale car reliée au Hāʼ.', sound: 'Dhahab', illustration: '🪙', mnemonic: 'Le Dhāl initial ne transmet rien au Hāʼ qui suit' },
+      { type: 'trace', letter: 'ذَهَب', instruction: 'Tracez "ذَهَب" (Dhahab), en observant le petit espace après le Dhāl.' },
+      { type: 'qcm', instruction: 'Pourquoi le Bāʼ de "ذَهَب" est-il en forme finale (ـب) ?', options: ['Il est relié au Hāʼ qui le précède', 'Il ne se lie jamais', 'C\'est la première lettre', 'Le Dhāl le relie directement'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 18 (Calligraphie) terminée ! Rajul, Dīn, Walad, Dhahab : la règle des mots commençant par une non-connectrice est acquise. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'جَمِيل', name: 'Liaison : Jamīl (Beau)', instruction: 'Un mot entièrement lié, sans aucune coupure : جـ (initiale) + ـمـ (médiane) + ـيـ (médiane) + ل (finale). Les quatre lettres s\'enchaînent en un seul geste.', sound: 'Jamīl', illustration: '🌺', mnemonic: 'Jīm, Mīm, Yāʼ, Lām : toutes connectrices' },
+      { type: 'trace', letter: 'جَمِيل', instruction: 'Tracez "جَمِيل" (Jamīl) en un seul geste continu, sans lever le stylo.' },
+      { type: 'qcm', instruction: 'Combien de "coupures" (lettres non-connectrices) y a-t-il dans "جَمِيل" ?', options: ['Aucune', 'Une', 'Deux', 'Trois'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'قَلَم', name: 'Liaison : Qalam (Stylo)', instruction: 'Autre mot entièrement lié : قـ (initiale) + ـلـ (médiane) + م (finale). Un mot court et fluide, parfait pour s\'entraîner à la liaison rapide.', sound: 'Qalam', illustration: '🖊️', mnemonic: 'Qāf, Lām, Mīm : toutes connectrices' },
+      { type: 'trace', letter: 'قَلَم', instruction: 'Tracez "قَلَم" (Qalam) en un seul geste continu.' },
+      { type: 'qcm', instruction: 'Dans "قَلَم", sous quelle forme apparaît le Mīm final ?', options: ['Isolée', 'Initiale', 'Médiane', 'Finale'], correctIndex: 3, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 19 (Calligraphie) terminée ! Jamīl et Qalam : deux mots entièrement liés, sans coupure. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سُبْحَان', name: 'Liaison : Subḥān', instruction: 'Dans سُبْحَان (comme dans "SubḥanAllāh") : سـ + ـبـ + ـحـ + ا (l\'Alif reçoit la liaison du Ḥāʼ) + ن. Comme dans كِتَاب, le Nūn final est ISOLÉ car l\'Alif ne transmet rien vers l\'avant.', sound: 'Subḥān', illustration: '🤲', mnemonic: 'Encore la règle de l\'Alif qui casse la chaîne' },
+      { type: 'trace', letter: 'سُبْحَان', instruction: 'Tracez "سُبْحَان" (Subḥān), en observant le Nūn final isolé après l\'Alif.' },
+      { type: 'qcm', instruction: 'Pourquoi le Nūn final de "سُبْحَان" est-il isolé ?', options: ['Il suit un Alif, lettre non-connectrice', 'Le Nūn ne se lie jamais', 'C\'est un mot religieux', 'Erreur d\'écriture'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: 'نُور', name: 'Liaison : Nūr (Lumière)', instruction: 'Dans نُور : نـ (initiale) + و (le Wāw reçoit la liaison du Nūn, donc forme finale) + ر (isolée, car le Wāw, non-connecteur, ne transmet rien vers l\'avant). Deux non-connecteurs qui s\'enchaînent !', sound: 'Nūr', illustration: '💡', mnemonic: 'Wāw et Rāʼ sont tous deux non-connecteurs' },
+      { type: 'trace', letter: 'نُور', instruction: 'Tracez "نُور" (Nūr), en observant les deux "coupures" successives.' },
+      { type: 'qcm', instruction: 'Pourquoi le Rāʼ final de "نُور" est-il isolé ?', options: ['Le Wāw qui précède ne transmet rien (non-connecteur)', 'Le Rāʼ est toujours lié', 'C\'est la première lettre', 'Erreur d\'écriture'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 20 (Calligraphie) terminée ! Subḥān et Nūr : vous reconnaissez les chaînes de lettres non-connectrices. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلسَّلَام', name: 'Synthèse : As-Salām', instruction: 'Synthèse finale : ٱ (Hamzat al-Waṣl, isolée) + لّ (Lām assimilé en Shadda sur le Sīn, lettre solaire) + سّـ + ـلـ + ا (finale) + م (isolé, car l\'Alif ne transmet rien). Ce mot combine liaison, Shadda et lettre solaire !', sound: 'As-Salām', illustration: '☮️', mnemonic: 'Le résumé parfait de tout ce que vous avez appris' },
+      { type: 'trace', letter: 'ٱلسَّلَام', instruction: 'Tracez "ٱلسَّلَام" (As-Salām) en appliquant tout ce que vous avez appris sur la liaison.' },
+      { type: 'qcm', instruction: 'Dans "ٱلسَّلَام", pourquoi le Mīm final est-il isolé ?', options: ['Il suit un Alif, non-connecteur', 'C\'est un nom divin', 'Le Mīm ne se lie jamais', 'Erreur d\'écriture'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 21 (Calligraphie) terminée ! Avec ٱلسَّلَام, vous combinez liaison, Shadda et lettre solaire : la calligraphie arabe n\'a plus de secret pour vous. +25 XP' }
     ]
   ];
 
