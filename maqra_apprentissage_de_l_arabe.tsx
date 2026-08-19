@@ -1506,6 +1506,179 @@ export default function ArabicLearningApp() {
       derivatives: [
         { translit: 'Shajarat al-Khuld', trans: 'L\'Arbre de l\'éternité (récit d\'Adam)', arabic: 'شَجَرَةُ ٱلْخُلْد' }
       ]
+    },
+    'N-F-S': {
+      arabic: 'نفس',
+      trans: 'Âme, Soi',
+      words: [
+        { word: 'نَفْس', trans: 'Nafs', meaning: 'Âme, soi-même', icon: '🫧', desc: 'Chaque âme goûtera la mort (kullu nafsin dhāʼiqatul-mawt).' },
+        { word: 'أَنْفُس', trans: 'Anfus', meaning: 'Âmes (pluriel)', icon: '👥', desc: 'Le pluriel de Nafs, souvent utilisé pour parler de soi-même collectivement.' }
+      ],
+      derivatives: [
+        { translit: 'Nafas', trans: 'Souffle', arabic: 'نَفَس' },
+        { translit: 'Tanaffasa', trans: 'Il a respiré', arabic: 'تَنَفَّسَ' }
+      ]
+    },
+    'W-A-D': {
+      arabic: 'وعد',
+      trans: 'Promesse',
+      words: [
+        { word: 'وَعْد', trans: 'Waʻd', meaning: 'Promesse', icon: '🤝', desc: 'L\'engagement pris, notamment la promesse divine.' },
+        { word: 'مِيعَاد', trans: 'Mīʻād', meaning: 'Rendez-vous, échéance', icon: '📅', desc: 'Le moment fixé pour la réalisation d\'une promesse.' }
+      ],
+      derivatives: [
+        { translit: 'Waʻada', trans: 'Il a promis', arabic: 'وَعَدَ' },
+        { translit: 'Waʻīd', trans: 'Menace, avertissement', arabic: 'وَعِيد' }
+      ]
+    },
+    'Y-T-M': {
+      arabic: 'يتم',
+      trans: 'Orphelin',
+      words: [
+        { word: 'يَتِيم', trans: 'Yatīm', meaning: 'Orphelin', icon: '🧒', desc: 'L\'enfant ayant perdu son père ; sa protection est fortement recommandée dans le Coran.' },
+        { word: 'يَتَامَى', trans: 'Yatāmā', meaning: 'Orphelins (pluriel)', icon: '👶', desc: 'Le pluriel de Yatīm.' }
+      ],
+      derivatives: [
+        { translit: 'Yatama', trans: 'Être orphelin', arabic: 'يَتِمَ' }
+      ]
+    },
+    'S-K-N': {
+      arabic: 'سكن',
+      trans: 'Calme, Habitation',
+      words: [
+        { word: 'سَكَن', trans: 'Sakan', meaning: 'Calme, quiétude', icon: '🕊️', desc: 'L\'état de tranquillité intérieure.' },
+        { word: 'مَسْكَن', trans: 'Maskan', meaning: 'Demeure', icon: '🏠', desc: 'Le lieu où l\'on habite.' }
+      ],
+      derivatives: [
+        { translit: 'Sakana', trans: 'Il s\'est calmé, il a habité', arabic: 'سَكَنَ' },
+        { translit: 'Sakīna', trans: 'Quiétude, paix intérieure', arabic: 'سَكِينَة' }
+      ]
+    },
+    'A-J-L': {
+      arabic: 'أجل',
+      trans: 'Terme fixé',
+      words: [
+        { word: 'أَجَل', trans: 'Ajal', meaning: 'Terme fixé, échéance', icon: '⏳', desc: 'Le moment déterminé pour une échéance, notamment la mort.' },
+        { word: 'آجِل', trans: 'Ājil', meaning: 'Différé, futur', icon: '🔜', desc: 'Ce qui est reporté à plus tard.' }
+      ],
+      derivatives: [
+        { translit: 'Ajalun Musammā', trans: 'Un terme désigné', arabic: 'أَجَلٌ مُّسَمًّى' }
+      ]
+    },
+    'B-T-L': {
+      arabic: 'بطل',
+      trans: 'Vain, Faux',
+      words: [
+        { word: 'بَاطِل', trans: 'Bāṭil', meaning: 'Faux, vain', icon: '❌', desc: 'Ce qui est sans fondement, opposé à la vérité (Ḥaqq).' },
+        { word: 'إِبْطَال', trans: 'Ibṭāl', meaning: 'Annulation', icon: '🚫', desc: 'Le fait de rendre nul et non avenu.' }
+      ],
+      derivatives: [
+        { translit: 'Baṭala', trans: 'Être vain, s\'annuler', arabic: 'بَطَلَ' }
+      ]
+    },
+    'K-L-L': {
+      arabic: 'كل',
+      trans: 'Totalité',
+      words: [
+        { word: 'كُلّ', trans: 'Kull', meaning: 'Chaque, tout', icon: '🌐', desc: 'Pour désigner la totalité ou chaque élément d\'un ensemble.' },
+        { word: 'كُلِّيَّة', trans: 'Kulliyya', meaning: 'Totalité, faculté', icon: '📚', desc: 'L\'ensemble complet d\'une chose.' }
+      ],
+      derivatives: [
+        { translit: 'Kilā', trans: 'Les deux (à la fois)', arabic: 'كِلَا' }
+      ]
+    },
+    'M-L-K': {
+      arabic: 'ملك',
+      trans: 'Royauté, Ange',
+      words: [
+        { word: 'مَلِك', trans: 'Malik', meaning: 'Roi', icon: '👑', desc: 'Le souverain, celui qui détient l\'autorité suprême.' },
+        { word: 'مَلَك', trans: 'Malak', meaning: 'Ange', icon: '👼', desc: 'Créature de lumière, serviteur obéissant de Dieu.' }
+      ],
+      derivatives: [
+        { translit: 'Mulk', trans: 'Royaume, souveraineté', arabic: 'مُلْك' },
+        { translit: 'Malakūt', trans: 'Royaume céleste', arabic: 'مَلَكُوت' }
+      ]
+    },
+    'S-W-R': {
+      arabic: 'سور',
+      trans: 'Sourate, Enceinte',
+      words: [
+        { word: 'سُورَة', trans: 'Sūra', meaning: 'Sourate, chapitre', icon: '📖', desc: 'Chaque grande division du Coran, composée de plusieurs versets.' },
+        { word: 'سُور', trans: 'Sūr', meaning: 'Muraille, rempart', icon: '🧱', desc: 'Une enceinte qui délimite et protège.' }
+      ],
+      derivatives: [
+        { translit: 'Aswār', trans: 'Murailles (pluriel)', arabic: 'أَسْوَار' }
+      ]
+    },
+    'R-W-H': {
+      arabic: 'روح',
+      trans: 'Esprit',
+      words: [
+        { word: 'رُوح', trans: 'Rūḥ', meaning: 'Esprit', icon: '💨', desc: 'Le souffle de vie insufflé par Dieu, ou l\'ange Gabriel (Ar-Rūḥ al-Amīn).' },
+        { word: 'رِيح', trans: 'Rīḥ', meaning: 'Vent', icon: '🌬️', desc: 'Même racine, le vent qui souffle.' }
+      ],
+      derivatives: [
+        { translit: 'Rawḥ', trans: 'Répit, soulagement', arabic: 'رَوْح' },
+        { translit: 'Ar-Rūḥ al-Amīn', trans: 'L\'Esprit Fidèle (l\'ange Gabriel)', arabic: 'ٱلرُّوحُ ٱلْأَمِين' }
+      ]
+    },
+    'N-B-A': {
+      arabic: 'نبأ',
+      trans: 'Nouvelle',
+      words: [
+        { word: 'نَبَأ', trans: 'Nabaʼ', meaning: 'Nouvelle, information', icon: '📰', desc: 'Une annonce importante ; titre de la sourate An-Nabaʼ.' },
+        { word: 'أَنۢبَاء', trans: 'Anbāʼ', meaning: 'Nouvelles (pluriel)', icon: '📢', desc: 'Le pluriel de Nabaʼ.' }
+      ],
+      derivatives: [
+        { translit: 'Nabbaʼa', trans: 'Il a informé', arabic: 'نَبَّأَ' },
+        { translit: 'An-Nabaʼ al-ʻAẓīm', trans: 'La grande nouvelle', arabic: 'ٱلنَّبَإِ ٱلْعَظِيمِ' }
+      ]
+    },
+    'Q-N-T': {
+      arabic: 'قنت',
+      trans: 'Piété, Dévotion',
+      words: [
+        { word: 'قَانِت', trans: 'Qānit', meaning: 'Pieux, dévot', icon: '🤲', desc: 'Celui qui se tient dans une dévotion prolongée et obéissante.' },
+        { word: 'قُنُوت', trans: 'Qunūt', meaning: 'Dévotion prolongée', icon: '🕌', desc: 'Un état d\'invocation et de soumission continue.' }
+      ],
+      derivatives: [
+        { translit: 'Qanata', trans: 'Il a été dévoué, obéissant', arabic: 'قَنَتَ' }
+      ]
+    },
+    'GH-D-W': {
+      arabic: 'غدو',
+      trans: 'Matin',
+      words: [
+        { word: 'غَدَاة', trans: 'Ghadāt', meaning: 'Matinée', icon: '🌅', desc: 'Le début de la journée.' },
+        { word: 'غُدُوّ', trans: 'Ghuduww', meaning: 'Le fait d\'aller le matin', icon: '🚶', desc: 'L\'action de se déplacer tôt le matin.' }
+      ],
+      derivatives: [
+        { translit: 'Ghadan', trans: 'Demain', arabic: 'غَدًا' }
+      ]
+    },
+    'D-R-B': {
+      arabic: 'ضرب',
+      trans: 'Frapper, Exemple',
+      words: [
+        { word: 'ضَرْب', trans: 'Ḍarb', meaning: 'Coup, façon, type', icon: '👊', desc: 'L\'action de frapper, ou une manière de faire.' },
+        { word: 'مَضْرِب', trans: 'Maḍrib', meaning: 'Lieu où l\'on frappe', icon: '📍', desc: 'L\'endroit ou le contexte d\'une action.' }
+      ],
+      derivatives: [
+        { translit: 'Ḍaraba', trans: 'Il a frappé, donné (un exemple)', arabic: 'ضَرَبَ' },
+        { translit: 'Yaḍribu Mathalan', trans: 'Il donne un exemple', arabic: 'يَضْرِبُ مَثَلًا' }
+      ]
+    },
+    'A-K-L': {
+      arabic: 'أكل',
+      trans: 'Manger',
+      words: [
+        { word: 'أَكْل', trans: 'Akl', meaning: 'Le fait de manger', icon: '🍽️', desc: 'L\'action de se nourrir.' },
+        { word: 'مَأْكَل', trans: 'Maʼkal', meaning: 'Nourriture', icon: '🍞', desc: 'Ce qui est mangé.' }
+      ],
+      derivatives: [
+        { translit: 'Akala', trans: 'Il a mangé', arabic: 'أَكَلَ' },
+        { translit: 'Ākil', trans: 'Mangeur', arabic: 'ءَاكِل' }
+      ]
     }
   };
 
@@ -1563,7 +1736,7 @@ export default function ArabicLearningApp() {
        title: 'Le Secret des Racines',
        description: 'La matrice trilitère (التصريف) et le Sarf',
        progress: savedProgress[4] ?? 0,
-       total: 36,
+       total: 41,
        tags: ['Morphologie', 'Grammaire'],
        color: 'bg-indigo-100',
        tagColor: 'bg-indigo-100 text-indigo-800'
@@ -3832,6 +4005,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'شجر', name: 'Racine SH-J-R', instruction: 'La racine SH-J-R (شجر) exprime l\'arbre. Elle donne شَجَرَة (Shajara - Arbre), symbole récurrent dans le Coran.', sound: 'SH-J-R', illustration: '🌳', mnemonic: 'شَجَرَة (Shajara - Arbre)', rootKey: 'SH-J-R' },
       { type: 'qcm', instruction: 'Que signifie la racine "شجر" (SH-J-R) ?', options: ['Fleur', 'Arbre', 'Herbe', 'Fruit'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'success', instruction: 'Leçon 36 : 15 nouvelles racines explorées, 109 racines au total ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نفس', name: 'Racine N-F-S', instruction: 'La racine N-F-S (نفس) exprime l\'âme et le soi. Elle donne نَفْس (Nafs - Âme, soi-même).', sound: 'N-F-S', illustration: '🫧', mnemonic: 'نَفْس (Nafs - Âme, soi-même)', rootKey: 'N-F-S' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نفس" (N-F-S) ?', options: ['Corps', 'Âme, soi', 'Esprit malin', 'Ombre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'وعد', name: 'Racine W-A-D', instruction: 'La racine W-A-D (وعد) exprime la promesse. Elle donne وَعْد (Waʻd - Promesse).', sound: 'W-A-D', illustration: '🤝', mnemonic: 'وَعْد (Waʻd - Promesse)', rootKey: 'W-A-D' },
+      { type: 'qcm', instruction: 'Que signifie la racine "وعد" (W-A-D) ?', options: ['Menace', 'Promesse', 'Doute', 'Regret'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'يتم', name: 'Racine Y-T-M', instruction: 'La racine Y-T-M (يتم) exprime l\'orphelinat. Elle donne يَتِيم (Yatīm - Orphelin).', sound: 'Y-T-M', illustration: '🧒', mnemonic: 'يَتِيم (Yatīm - Orphelin)', rootKey: 'Y-T-M' },
+      { type: 'qcm', instruction: 'Que signifie la racine "يتم" (Y-T-M) ?', options: ['Riche', 'Orphelin', 'Voyageur', 'Savant'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 37 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سكن', name: 'Racine S-K-N', instruction: 'La racine S-K-N (سكن) exprime le calme et l\'habitation. Elle donne سَكِينَة (Sakīna - Quiétude).', sound: 'S-K-N', illustration: '🕊️', mnemonic: 'سَكِينَة (Sakīna - Quiétude)', rootKey: 'S-K-N' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سكن" (S-K-N) ?', options: ['Agitation', 'Calme, habitation', 'Bruit', 'Colère'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'أجل', name: 'Racine A-J-L', instruction: 'La racine A-J-L (أجل) exprime le terme fixé. Elle donne أَجَل (Ajal - Échéance).', sound: 'A-J-L', illustration: '⏳', mnemonic: 'أَجَل (Ajal - Échéance)', rootKey: 'A-J-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "أجل" (A-J-L) ?', options: ['Début', 'Terme fixé, échéance', 'Milieu', 'Vitesse'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'بطل', name: 'Racine B-T-L', instruction: 'La racine B-T-L (بطل) exprime la vanité et le faux. Elle donne بَاطِل (Bāṭil - Faux).', sound: 'B-T-L', illustration: '❌', mnemonic: 'بَاطِل (Bāṭil - Faux)', rootKey: 'B-T-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "بطل" (B-T-L) ?', options: ['Vrai', 'Faux, vain', 'Solide', 'Éternel'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 38 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كل', name: 'Racine K-L-L', instruction: 'La racine K-L-L (كل) exprime la totalité. Elle donne كُلّ (Kull - Chaque, tout).', sound: 'K-L-L', illustration: '🌐', mnemonic: 'كُلّ (Kull - Chaque, tout)', rootKey: 'K-L-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "كل" (K-L-L) ?', options: ['Rien', 'Chaque, tout', 'Peu', 'Quelques-uns'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ملك', name: 'Racine M-L-K', instruction: 'La racine M-L-K (ملك) exprime la royauté. Elle donne مَلِك (Malik - Roi) et مَلَك (Malak - Ange).', sound: 'M-L-K', illustration: '👑', mnemonic: 'مَلِك (Malik - Roi)', rootKey: 'M-L-K' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ملك" (M-L-K) ?', options: ['Pauvreté', 'Royauté, ange', 'Guerre', 'Voyage'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'سور', name: 'Racine S-W-R', instruction: 'La racine S-W-R (سور) exprime la sourate et l\'enceinte. Elle donne سُورَة (Sūra - Chapitre du Coran).', sound: 'S-W-R', illustration: '📖', mnemonic: 'سُورَة (Sūra - Chapitre du Coran)', rootKey: 'S-W-R' },
+      { type: 'qcm', instruction: 'Que signifie la racine "سور" (S-W-R) ?', options: ['Verset', 'Sourate, chapitre', 'Ligne', 'Page'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 39 : 3 racines explorées ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'روح', name: 'Racine R-W-H', instruction: 'La racine R-W-H (روح) exprime l\'esprit. Elle donne رُوح (Rūḥ - Esprit).', sound: 'R-W-H', illustration: '💨', mnemonic: 'رُوح (Rūḥ - Esprit)', rootKey: 'R-W-H' },
+      { type: 'qcm', instruction: 'Que signifie la racine "روح" (R-W-H) ?', options: ['Corps', 'Esprit', 'Vent seulement', 'Terre'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'نبأ', name: 'Racine N-B-A', instruction: 'La racine N-B-A (نبأ) exprime la nouvelle. Elle donne نَبَأ (Nabaʼ - Nouvelle), titre de la sourate An-Nabaʼ.', sound: 'N-B-A', illustration: '📰', mnemonic: 'نَبَأ (Nabaʼ - Nouvelle)', rootKey: 'N-B-A' },
+      { type: 'qcm', instruction: 'Que signifie la racine "نبأ" (N-B-A) ?', options: ['Silence', 'Nouvelle, information', 'Question', 'Réponse'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'ضرب', name: 'Racine D-R-B', instruction: 'La racine D-R-B (ضرب) exprime l\'action de frapper et de donner un exemple. Elle donne ضَرْب (Ḍarb - Coup, façon).', sound: 'D-R-B', illustration: '👊', mnemonic: 'يَضْرِبُ مَثَلًا (il donne un exemple)', rootKey: 'D-R-B' },
+      { type: 'qcm', instruction: 'Que signifie la racine "ضرب" (D-R-B) ?', options: ['Caresser', 'Frapper, donner un exemple', 'Chanter', 'Dormir'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 40 : 3 racines explorées, 121 racines au total ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'قنت', name: 'Racine Q-N-T', instruction: 'La racine Q-N-T (قنت) exprime la piété et la dévotion. Elle donne قَانِت (Qānit - Pieux, dévot).', sound: 'Q-N-T', illustration: '🤲', mnemonic: 'قَانِت (Qānit - Pieux)', rootKey: 'Q-N-T' },
+      { type: 'qcm', instruction: 'Que signifie la racine "قنت" (Q-N-T) ?', options: ['Négligence', 'Piété, dévotion', 'Colère', 'Doute'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'غدو', name: 'Racine GH-D-W', instruction: 'La racine GH-D-W (غدو) exprime le matin. Elle donne غَدَاة (Ghadāt - Matinée).', sound: 'GH-D-W', illustration: '🌅', mnemonic: 'غَدَاة (Ghadāt - Matinée)', rootKey: 'GH-D-W' },
+      { type: 'qcm', instruction: 'Que signifie la racine "غدو" (GH-D-W) ?', options: ['Soir', 'Matin', 'Nuit', 'Midi'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'intro', letter: 'أكل', name: 'Racine A-K-L', instruction: 'La racine A-K-L (أكل) exprime le fait de manger. Elle donne أَكْل (Akl - Le fait de manger).', sound: 'A-K-L', illustration: '🍽️', mnemonic: 'أَكْل (Akl - Le fait de manger)', rootKey: 'A-K-L' },
+      { type: 'qcm', instruction: 'Que signifie la racine "أكل" (A-K-L) ?', options: ['Boire', 'Manger', 'Dormir', 'Marcher'], correctIndex: 1, textStyle: 'text-3xl' },
+      { type: 'success', instruction: 'Leçon 41 : parcours Le Secret des Racines encore enrichi, 124 racines au total ! +20 XP' }
     ]
   ];
 
