@@ -1539,7 +1539,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 34,
+      total: 39,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -1551,7 +1551,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 45,
+       total: 50,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -2947,6 +2947,111 @@ export default function ArabicLearningApp() {
         rightCol: [{text: 'Quand le ciel se déchirera', id: 1}, {text: 'quand la terre sera nivelée', id: 2}, {text: 'Ô homme, tu peines vers ton Seigneur', id: 3}, {text: 'Celui à qui son livre sera remis dans sa main droite', id: 4}]
       },
       { type: 'success', instruction: 'Sourate Al-Inshiqāq (1-9) validée ! Parcours Lecture Coranique enrichi : 5 nouvelles sourates du Juz ʻAmma. +25 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Mulk (versets 1-4) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 67, ayah: 1 }, { surah: 67, ayah: 2 }, { surah: 67, ayah: 3 }, { surah: 67, ayah: 4 }],
+         words: [
+            { id: 'w1', text: 'تَبَارَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ', root: 'Q-D-R', trans: 'Béni soit Celui entre les mains de qui est la royauté, et Il est Omnipotent' },
+            { id: 'w2', text: 'ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ', root: 'K-L-Q', trans: 'Celui qui a créé la mort et la vie afin de vous éprouver, lequel de vous agira le mieux ; et Il est Le Puissant, Le Pardonneur' },
+            { id: 'w3', text: 'ٱلَّذِى خَلَقَ سَبْعَ سَمَٰوَٰتٍ طِبَاقًا ۖ مَّا تَرَىٰ فِى خَلْقِ ٱلرَّحْمَٰنِ مِن تَفَٰوُتٍ ۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍ', root: 'R-H-M', trans: 'Celui qui a créé sept cieux superposés ; tu ne vois dans la création du Tout Miséricordieux nulle disproportion. Ramène le regard : y vois-tu une brèche ?' },
+            { id: 'w4', text: 'ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًا وَهُوَ حَسِيرٌ', root: null, trans: 'Puis, ramène le regard à deux fois : le regard te reviendra humilié et fatigué' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'تَبَارَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ', id: 1}, {text: 'ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ', id: 2}, {text: 'ٱلَّذِى خَلَقَ سَبْعَ سَمَٰوَٰتٍ طِبَاقًا', id: 3}, {text: 'ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ', id: 4}],
+        rightCol: [{text: 'Béni soit Celui entre les mains de qui est la royauté', id: 1}, {text: 'Celui qui a créé la mort et la vie pour vous éprouver', id: 2}, {text: 'Celui qui a créé sept cieux superposés', id: 3}, {text: 'Ramène le regard à deux fois', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Mulk (1-4) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate An-Nabaʼ (versets 1-11) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 78, ayah: 1 }, { surah: 78, ayah: 2 }, { surah: 78, ayah: 3 }, { surah: 78, ayah: 4 }, { surah: 78, ayah: 5 }, { surah: 78, ayah: 6 }, { surah: 78, ayah: 7 }, { surah: 78, ayah: 8 }, { surah: 78, ayah: 9 }, { surah: 78, ayah: 10 }, { surah: 78, ayah: 11 }],
+         words: [
+            { id: 'w1', text: 'عَمَّ يَتَسَآءَلُونَ عَنِ ٱلنَّبَإِ ٱلْعَظِيمِ ٱلَّذِى هُمْ فِيهِ مُخْتَلِفُونَ', root: null, trans: 'Sur quoi s\'interrogent-ils mutuellement ? Sur la grande nouvelle, à propos de laquelle ils divergent' },
+            { id: 'w2', text: 'كَلَّا سَيَعْلَمُونَ ثُمَّ كَلَّا سَيَعْلَمُونَ', root: null, trans: 'Non ! ils sauront bientôt. Encore une fois, non ! ils sauront bientôt' },
+            { id: 'w3', text: 'أَلَمْ نَجْعَلِ ٱلْأَرْضَ مِهَٰدًا وَٱلْجِبَالَ أَوْتَادًا وَخَلَقْنَٰكُمْ أَزْوَٰجًا وَجَعَلْنَا نَوْمَكُمْ سُبَاتًا', root: 'K-L-Q', trans: 'N\'avons-Nous pas fait de la terre une couche et des montagnes des piquets ? Nous vous avons créés en couples et fait de votre sommeil un repos' },
+            { id: 'w4', text: 'وَجَعَلْنَا ٱلَّيْلَ لِبَاسًا وَجَعَلْنَا ٱلنَّهَارَ مَعَاشًا', root: null, trans: 'et fait de la nuit un vêtement, et fait du jour un moment pour vivre' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'عَمَّ يَتَسَآءَلُونَ', id: 1}, {text: 'كَلَّا سَيَعْلَمُونَ', id: 2}, {text: 'أَلَمْ نَجْعَلِ ٱلْأَرْضَ مِهَٰدًا', id: 3}, {text: 'وَجَعَلْنَا ٱلَّيْلَ لِبَاسًا', id: 4}],
+        rightCol: [{text: 'Sur quoi s\'interrogent-ils mutuellement ?', id: 1}, {text: 'Non ! ils sauront bientôt', id: 2}, {text: 'N\'avons-Nous pas fait de la terre une couche ?', id: 3}, {text: 'Nous avons fait de la nuit un vêtement', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate An-Nabaʼ (1-11) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate At-Takwīr (versets 1-9) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 81, ayah: 1 }, { surah: 81, ayah: 2 }, { surah: 81, ayah: 3 }, { surah: 81, ayah: 4 }, { surah: 81, ayah: 5 }, { surah: 81, ayah: 6 }, { surah: 81, ayah: 7 }, { surah: 81, ayah: 8 }, { surah: 81, ayah: 9 }],
+         words: [
+            { id: 'w1', text: 'إِذَا ٱلشَّمْسُ كُوِّرَتْ وَإِذَا ٱلنُّجُومُ ٱنكَدَرَتْ وَإِذَا ٱلْجِبَالُ سُيِّرَتْ', root: null, trans: 'Quand le soleil sera obscurci, et que les étoiles perdront leur éclat, et que les montagnes seront mises en marche' },
+            { id: 'w2', text: 'وَإِذَا ٱلْعِشَارُ عُطِّلَتْ وَإِذَا ٱلْوُحُوشُ حُشِرَتْ وَإِذَا ٱلْبِحَارُ سُجِّرَتْ', root: null, trans: 'et que les chamelles à terme seront délaissées, et que les bêtes sauvages seront rassemblées, et que les mers seront portées à ébullition' },
+            { id: 'w3', text: 'وَإِذَا ٱلنُّفُوسُ زُوِّجَتْ وَإِذَا ٱلْمَوْءُۥدَةُ سُئِلَتْ', root: null, trans: 'et que les âmes seront appariées, et que la fillette enterrée vivante sera interrogée' },
+            { id: 'w4', text: 'بِأَىِّ ذَنۢبٍ قُتِلَتْ', root: null, trans: 'pour quel péché elle a été tuée' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'إِذَا ٱلشَّمْسُ كُوِّرَتْ', id: 1}, {text: 'وَإِذَا ٱلْعِشَارُ عُطِّلَتْ', id: 2}, {text: 'وَإِذَا ٱلنُّفُوسُ زُوِّجَتْ', id: 3}, {text: 'بِأَىِّ ذَنۢبٍ قُتِلَتْ', id: 4}],
+        rightCol: [{text: 'Quand le soleil sera obscurci', id: 1}, {text: 'Les chamelles à terme seront délaissées', id: 2}, {text: 'Les âmes seront appariées', id: 3}, {text: 'Pour quel péché elle a été tuée', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate At-Takwīr (1-9) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Infiṭār (versets 1-7) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 82, ayah: 1 }, { surah: 82, ayah: 2 }, { surah: 82, ayah: 3 }, { surah: 82, ayah: 4 }, { surah: 82, ayah: 5 }, { surah: 82, ayah: 6 }, { surah: 82, ayah: 7 }],
+         words: [
+            { id: 'w1', text: 'إِذَا ٱلسَّمَآءُ ٱنفَطَرَتْ وَإِذَا ٱلْكَوَاكِبُ ٱنتَثَرَتْ وَإِذَا ٱلْبِحَارُ فُجِّرَتْ وَإِذَا ٱلْقُبُورُ بُعْثِرَتْ', root: null, trans: 'Quand le ciel se fendra, et que les étoiles se disperseront, et que les mers seront confondues, et que les tombeaux seront bouleversés' },
+            { id: 'w2', text: 'عَلِمَتْ نَفْسٌ مَّا قَدَّمَتْ وَأَخَّرَتْ', root: null, trans: 'chaque âme saura ce qu\'elle a avancé et ce qu\'elle a remis à plus tard' },
+            { id: 'w3', text: 'يَٰٓأَيُّهَا ٱلْإِنسَٰنُ مَا غَرَّكَ بِرَبِّكَ ٱلْكَرِيمِ', root: null, trans: 'Ô homme, qu\'est-ce qui t\'a trompé au sujet de ton Seigneur, Le Généreux' },
+            { id: 'w4', text: 'ٱلَّذِى خَلَقَكَ فَسَوَّىٰكَ فَعَدَلَكَ', root: 'K-L-Q', trans: 'qui t\'a créé, puis t\'a formé harmonieusement, et t\'a proportionné' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'إِذَا ٱلسَّمَآءُ ٱنفَطَرَتْ', id: 1}, {text: 'عَلِمَتْ نَفْسٌ مَّا قَدَّمَتْ', id: 2}, {text: 'يَٰٓأَيُّهَا ٱلْإِنسَٰنُ', id: 3}, {text: 'ٱلَّذِى خَلَقَكَ فَسَوَّىٰكَ', id: 4}],
+        rightCol: [{text: 'Quand le ciel se fendra', id: 1}, {text: 'Chaque âme saura ce qu\'elle a avancé', id: 2}, {text: 'Ô homme, qu\'est-ce qui t\'a trompé', id: 3}, {text: 'Qui t\'a créé, puis t\'a formé harmonieusement', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Infiṭār (1-7) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Muṭaffifīn (versets 1-6) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 83, ayah: 1 }, { surah: 83, ayah: 2 }, { surah: 83, ayah: 3 }, { surah: 83, ayah: 4 }, { surah: 83, ayah: 5 }, { surah: 83, ayah: 6 }],
+         words: [
+            { id: 'w1', text: 'وَيْلٌ لِّلْمُطَفِّفِينَ', root: null, trans: 'Malheur aux fraudeurs' },
+            { id: 'w2', text: 'ٱلَّذِينَ إِذَا ٱكْتَالُوا۟ عَلَى ٱلنَّاسِ يَسْتَوْفُونَ وَإِذَا كَالُوهُمْ أَو وَّزَنُوهُمْ يُخْسِرُونَ', root: null, trans: 'qui, lorsqu\'ils font mesurer pour eux-mêmes, exigent la pleine mesure, mais qui, lorsqu\'ils mesurent ou pèsent pour les autres, les lèsent' },
+            { id: 'w3', text: 'أَلَا يَظُنُّ أُو۟لَٰٓئِكَ أَنَّهُم مَّبْعُوثُونَ لِيَوْمٍ عَظِيمٍ', root: 'B-A-TH', trans: 'Ne pensent-ils pas qu\'ils seront ressuscités en un jour immense' },
+            { id: 'w4', text: 'يَوْمَ يَقُومُ ٱلنَّاسُ لِرَبِّ ٱلْعَٰلَمِينَ', root: null, trans: 'le jour où les hommes se tiendront devant le Seigneur des mondes' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَيْلٌ لِّلْمُطَفِّفِينَ', id: 1}, {text: 'ٱلَّذِينَ إِذَا ٱكْتَالُوا۟', id: 2}, {text: 'أَلَا يَظُنُّ أُو۟لَٰٓئِكَ', id: 3}, {text: 'يَوْمَ يَقُومُ ٱلنَّاسُ', id: 4}],
+        rightCol: [{text: 'Malheur aux fraudeurs', id: 1}, {text: 'Qui exigent la pleine mesure pour eux-mêmes', id: 2}, {text: 'Ne pensent-ils pas qu\'ils seront ressuscités ?', id: 3}, {text: 'Le jour où les hommes se tiendront devant le Seigneur des mondes', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Muṭaffifīn (1-6) validée ! Parcours Lecture Coranique encore enrichi : 5 sourates supplémentaires du Juz ʻAmma, dont l\'ouverture de la célèbre sourate Al-Mulk. +25 XP' }
     ]
   ];
 
@@ -3355,6 +3460,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'شَجَرَة', name: 'Arbre', instruction: 'Symbole récurrent dans le Coran (l\'arbre béni, l\'arbre maudit).', sound: 'Shajara', illustration: '🌳', mnemonic: 'Shajarat al-Khuld, l\'Arbre de l\'éternité', rootKey: 'SH-J-R' },
       { type: 'qcm', instruction: 'Que signifie "شَجَرَة" (Shajara) ?', options: ['Fleur', 'Arbre', 'Herbe', 'Fruit'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 45 : parcours Fréquence Lexicale enrichi, 135 mots mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'قَبْل', name: 'Avant', instruction: 'Préposition indiquant l\'antériorité dans le temps.', sound: 'Qabl', illustration: '⏮️', mnemonic: 'Opposé de Baʻd (après)' },
+      { type: 'qcm', instruction: 'Que signifie "قَبْل" (Qabl) ?', options: ['Après', 'Avant', 'Pendant', 'Jamais'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'إِلَى', name: 'Vers, Jusqu\'à', instruction: 'Préposition de direction ou de limite.', sound: 'Ilā', illustration: '➡️', mnemonic: 'Indique le but ou la destination' },
+      { type: 'qcm', instruction: 'Que signifie "إِلَى" (Ilā) ?', options: ['Depuis', 'Vers, jusqu\'à', 'Avec', 'Sans'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَعَ', name: 'Avec', instruction: 'Préposition d\'accompagnement.', sound: 'Maʻa', illustration: '🤝', mnemonic: 'Indique la compagnie, la présence commune' },
+      { type: 'qcm', instruction: 'Que signifie "مَعَ" (Maʻa) ?', options: ['Sans', 'Avec', 'Contre', 'Loin de'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 46 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كُلّ', name: 'Chaque, Tout', instruction: 'Pour désigner la totalité ou chaque élément d\'un ensemble.', sound: 'Kull', illustration: '🌐', mnemonic: 'Très fréquent : "Kullu shayʼ" (toute chose)' },
+      { type: 'qcm', instruction: 'Que signifie "كُلّ" (Kull) ?', options: ['Rien', 'Chaque, tout', 'Peu', 'Quelques-uns'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'شَيْء', name: 'Chose', instruction: 'Le mot le plus général pour désigner une chose, un objet.', sound: 'Shayʼ', illustration: '📦', mnemonic: '"Kullu shayʼ" (toute chose)' },
+      { type: 'qcm', instruction: 'Que signifie "شَيْء" (Shayʼ) ?', options: ['Personne', 'Chose', 'Lieu', 'Temps'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'نَفْس', name: 'Âme, Soi', instruction: 'Désigne l\'âme, ou la personne elle-même ("soi-même").', sound: 'Nafs', illustration: '🫧', mnemonic: 'Chaque نَفْس (âme) goûtera la mort' },
+      { type: 'qcm', instruction: 'Que signifie "نَفْس" (Nafs) ?', options: ['Corps', 'Âme, soi', 'Esprit du mal', 'Ombre'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 47 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بَاطِل', name: 'Faux, Vain', instruction: 'Ce qui est sans fondement, opposé à la vérité (Ḥaqq).', sound: 'Bāṭil', illustration: '❌', mnemonic: 'Opposé de Ḥaqq (vérité)' },
+      { type: 'qcm', instruction: 'Que signifie "بَاطِل" (Bāṭil) ?', options: ['Vrai', 'Faux, vain', 'Solide', 'Éternel'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَلَائِكَة', name: 'Anges', instruction: 'Les créatures de lumière, serviteurs obéissants de Dieu.', sound: 'Malāʼika', illustration: '👼', mnemonic: 'Pluriel de "Malak" (ange)' },
+      { type: 'qcm', instruction: 'Que signifie "مَلَائِكَة" (Malāʼika) ?', options: ['Démons', 'Anges', 'Prophètes', 'Djinns'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'وَعْد', name: 'Promesse', instruction: 'L\'engagement pris envers quelqu\'un.', sound: 'Waʻd', illustration: '🤝', mnemonic: 'Waʻdullāh, la promesse de Dieu' },
+      { type: 'qcm', instruction: 'Que signifie "وَعْد" (Waʻd) ?', options: ['Menace', 'Promesse', 'Doute', 'Regret'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 48 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَتِيم', name: 'Orphelin', instruction: 'L\'enfant ayant perdu son père, dont la protection est fortement recommandée dans le Coran.', sound: 'Yatīm', illustration: '🧒', mnemonic: 'Le Prophète ﷺ lui-même fut orphelin' },
+      { type: 'qcm', instruction: 'Que signifie "يَتِيم" (Yatīm) ?', options: ['Riche', 'Orphelin', 'Voyageur', 'Étranger'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مِسْكِين', name: 'Indigent', instruction: 'La personne dans le besoin, souvent citée avec l\'orphelin dans les recommandations coraniques.', sound: 'Miskīn', illustration: '🙏', mnemonic: 'Même racine que "Sakan" (calme, apaisement)' },
+      { type: 'qcm', instruction: 'Que signifie "مِسْكِين" (Miskīn) ?', options: ['Riche', 'Indigent', 'Voyageur', 'Savant'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صَدَقَة', name: 'Aumône', instruction: 'Le don volontaire fait pour la face de Dieu.', sound: 'Ṣadaqa', illustration: '🤲', mnemonic: 'Même racine que "Ṣidq" (sincérité)', rootKey: 'S-D-Q' },
+      { type: 'qcm', instruction: 'Que signifie "صَدَقَة" (Ṣadaqa) ?', options: ['Dette', 'Aumône, don', 'Impôt', 'Amende'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 49 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'آيَة', name: 'Signe, Verset', instruction: 'Désigne un signe de Dieu dans la création, ou un verset du Coran.', sound: 'Āya', illustration: '✨', mnemonic: 'Chaque verset du Coran est une Āya, un signe' },
+      { type: 'qcm', instruction: 'Que signifie "آيَة" (Āya) ?', options: ['Chapitre', 'Signe, verset', 'Lettre', 'Mot'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'سُورَة', name: 'Sourate, Chapitre', instruction: 'Chaque grande division du Coran, composée de plusieurs versets (Āyāt).', sound: 'Sūra', illustration: '📖', mnemonic: 'Le Coran compte 114 Sūra' },
+      { type: 'qcm', instruction: 'Que signifie "سُورَة" (Sūra) ?', options: ['Verset', 'Sourate, chapitre', 'Ligne', 'Page'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَجَل', name: 'Terme fixé', instruction: 'Le moment déterminé pour une échéance, notamment la mort.', sound: 'Ajal', illustration: '⏳', mnemonic: '"Ajal musammā", un terme désigné' },
+      { type: 'qcm', instruction: 'Que signifie "أَجَل" (Ajal) ?', options: ['Début', 'Terme fixé, échéance', 'Milieu', 'Vitesse'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 50 : parcours Fréquence Lexicale encore enrichi, 150 mots mémorisés ! +20 XP' }
     ]
   ];
 
