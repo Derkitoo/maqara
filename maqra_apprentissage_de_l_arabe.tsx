@@ -1551,7 +1551,7 @@ export default function ArabicLearningApp() {
        title: 'Fréquence Lexicale',
        description: 'Les mots clés qui composent 80% du Coran',
        progress: savedProgress[3] ?? 0,
-       total: 40,
+       total: 45,
        tags: ['Vocabulaire', 'Coran'],
        color: 'bg-yellow-100',
        tagColor: 'bg-yellow-200 text-yellow-800'
@@ -3310,6 +3310,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'مَسْلَك', name: 'Voie', instruction: 'Le chemin que l\'on emprunte, au sens propre ou figuré.', sound: 'Maslak', illustration: '🛤️', mnemonic: 'Sālik, celui qui chemine', rootKey: 'S-L-K' },
       { type: 'qcm', instruction: 'Que signifie "مَسْلَك" (Maslak) ?', options: ['Impasse', 'Voie, chemin', 'Mur', 'Frontière'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 40 : parcours Fréquence Lexicale terminé, 120 mots mémorisés ! +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نَظَر', name: 'Regard', instruction: 'L\'action de regarder ou de considérer une chose.', sound: 'Naẓar', illustration: '👀', mnemonic: 'Manẓar, le paysage que l\'on regarde', rootKey: 'N-Z-R' },
+      { type: 'qcm', instruction: 'Que signifie "نَظَر" (Naẓar) ?', options: ['Ouïe', 'Regard', 'Toucher', 'Goût'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'سَمْع', name: 'Ouïe', instruction: 'Le sens de l\'audition.', sound: 'Samʻ', illustration: '👂', mnemonic: 'As-Samīʻ, l\'Audient (nom divin)', rootKey: 'S-M-A' },
+      { type: 'qcm', instruction: 'Que signifie "سَمْع" (Samʻ) ?', options: ['Vue', 'Ouïe', 'Odorat', 'Parole'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَنْطِق', name: 'Logique', instruction: 'La science du raisonnement, littéralement "façon de parler".', sound: 'Manṭiq', illustration: '🧩', mnemonic: 'Nāṭiq, doué de parole', rootKey: 'N-T-Q' },
+      { type: 'qcm', instruction: 'Que signifie "مَنْطِق" (Manṭiq) ?', options: ['Silence', 'Logique', 'Chant', 'Écriture'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 41 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'هُبُوط', name: 'Descente', instruction: 'Le fait de descendre d\'un lieu élevé.', sound: 'Hubūṭ', illustration: '⬇️', mnemonic: 'Habaṭa, il est descendu', rootKey: 'H-B-T' },
+      { type: 'qcm', instruction: 'Que signifie "هُبُوط" (Hubūṭ) ?', options: ['Montée', 'Descente', 'Arrêt', 'Vol'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'سَفَر', name: 'Voyage', instruction: 'Le déplacement loin de son lieu de résidence.', sound: 'Safar', illustration: '🧳', mnemonic: 'Musāfir, le voyageur', rootKey: 'S-F-R' },
+      { type: 'qcm', instruction: 'Que signifie "سَفَر" (Safar) ?', options: ['Repos', 'Voyage', 'Sommeil', 'Repas'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قُرْب', name: 'Proximité', instruction: 'L\'état d\'être proche de quelque chose.', sound: 'Qurb', illustration: '🤏', mnemonic: 'Qarīb, proche', rootKey: 'Q-R-B' },
+      { type: 'qcm', instruction: 'Que signifie "قُرْب" (Qurb) ?', options: ['Éloignement', 'Proximité', 'Absence', 'Différence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 42 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بُعْد', name: 'Distance', instruction: 'L\'état d\'être loin, l\'éloignement.', sound: 'Buʻd', illustration: '📏', mnemonic: 'Baʻīd, loin', rootKey: 'B-A-D' },
+      { type: 'qcm', instruction: 'Que signifie "بُعْد" (Buʻd) ?', options: ['Proximité', 'Distance, éloignement', 'Hauteur', 'Largeur'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'خُرُوج', name: 'Sortie', instruction: 'L\'action de sortir d\'un lieu.', sound: 'Khurūj', illustration: '🚪', mnemonic: 'Makhraj, le point de sortie', rootKey: 'KH-R-J' },
+      { type: 'qcm', instruction: 'Que signifie "خُرُوج" (Khurūj) ?', options: ['Entrée', 'Sortie', 'Arrêt', 'Retour'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'دُخُول', name: 'Entrée', instruction: 'L\'action d\'entrer dans un lieu.', sound: 'Dukhūl', illustration: '🚪', mnemonic: 'Madkhal, le point d\'entrée', rootKey: 'D-KH-L' },
+      { type: 'qcm', instruction: 'Que signifie "دُخُول" (Dukhūl) ?', options: ['Sortie', 'Entrée', 'Fermeture', 'Attente'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 43 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'طَلَب', name: 'Demande', instruction: 'L\'action de demander ou de rechercher quelque chose.', sound: 'Ṭalab', illustration: '🙋', mnemonic: 'Ṭālib, l\'étudiant qui cherche le savoir', rootKey: 'T-L-B' },
+      { type: 'qcm', instruction: 'Que signifie "طَلَب" (Ṭalab) ?', options: ['Refus', 'Demande, requête', 'Don', 'Silence'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'وَجْه', name: 'Visage', instruction: 'Le visage, aussi utilisé pour évoquer la Face d\'Allah.', sound: 'Wajh', illustration: '😊', mnemonic: 'Wijha, la direction vers laquelle on s\'oriente', rootKey: 'W-J-H' },
+      { type: 'qcm', instruction: 'Que signifie "وَجْه" (Wajh) ?', options: ['Dos', 'Visage', 'Pied', 'Main'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أَمْر', name: 'Ordre, Affaire', instruction: 'Un commandement, ou une affaire à traiter.', sound: 'Amr', illustration: '📜', mnemonic: 'Amīr, celui qui détient l\'autorité', rootKey: 'A-M-R' },
+      { type: 'qcm', instruction: 'Que signifie "أَمْر" (Amr) ?', options: ['Silence', 'Ordre, affaire', 'Question', 'Doute'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 44 : 3 mots fréquents mémorisés ! +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'نَهْر', name: 'Fleuve', instruction: 'Un cours d\'eau, souvent cité au Paradis dans le Coran.', sound: 'Nahr', illustration: '🏞️', mnemonic: 'Anhār, les fleuves du Paradis', rootKey: 'N-H-R' },
+      { type: 'qcm', instruction: 'Que signifie "نَهْر" (Nahr) ?', options: ['Montagne', 'Fleuve', 'Désert', 'Nuage'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'جَبَل', name: 'Montagne', instruction: 'Une élévation naturelle du sol, souvent citée dans le Coran.', sound: 'Jabal', illustration: '⛰️', mnemonic: 'Jibāl, les montagnes-piquets de la terre', rootKey: 'J-B-L' },
+      { type: 'qcm', instruction: 'Que signifie "جَبَل" (Jabal) ?', options: ['Vallée', 'Montagne', 'Rivière', 'Plaine'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'شَجَرَة', name: 'Arbre', instruction: 'Symbole récurrent dans le Coran (l\'arbre béni, l\'arbre maudit).', sound: 'Shajara', illustration: '🌳', mnemonic: 'Shajarat al-Khuld, l\'Arbre de l\'éternité', rootKey: 'SH-J-R' },
+      { type: 'qcm', instruction: 'Que signifie "شَجَرَة" (Shajara) ?', options: ['Fleur', 'Arbre', 'Herbe', 'Fruit'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 45 : parcours Fréquence Lexicale enrichi, 135 mots mémorisés ! +20 XP' }
     ]
   ];
 
