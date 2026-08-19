@@ -1599,7 +1599,7 @@ export default function ArabicLearningApp() {
        title: 'Expressions du Quotidien',
        description: 'Phrases usuelles pour parler et saluer',
        progress: savedProgress[7] ?? 0,
-       total: 22,
+       total: 27,
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
@@ -4802,6 +4802,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'أَيْنَ ٱلْمَحَطَّة؟', name: 'Où est la gare ?', instruction: 'Question essentielle pour s\'orienter en voyage.', sound: 'Ayna al-Maḥaṭṭa', illustration: '🚉', mnemonic: 'Combine "Ayna" (où) et "Maḥaṭṭa" (gare, station)' },
       { type: 'qcm', instruction: 'Que signifie "أَيْنَ ٱلْمَحَطَّة؟" (Ayna al-Maḥaṭṭa) ?', options: ['Quelle heure est-il ?', 'Où est la gare ?', 'Combien ça coûte ?', 'Où est l\'hôtel ?'], correctIndex: 1, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 22 (Expressions) terminée ! Parcours Expressions du Quotidien (4e partie) : en voyage. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كَبِير', name: 'Grand', instruction: 'Pour décrire une grande taille.', sound: 'Kabīr', illustration: '📏', mnemonic: 'Opposé de Ṣaghīr (petit)' },
+      { type: 'qcm', instruction: 'Que signifie "كَبِير" (Kabīr) ?', options: ['Petit', 'Grand', 'Moyen', 'Étroit'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'صَغِير', name: 'Petit', instruction: 'Pour décrire une petite taille.', sound: 'Ṣaghīr', illustration: '🤏', mnemonic: 'Opposé de Kabīr (grand)' },
+      { type: 'qcm', instruction: 'Que signifie "صَغِير" (Ṣaghīr) ?', options: ['Grand', 'Petit', 'Large', 'Lourd'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'جَدِيد', name: 'Nouveau', instruction: 'Pour décrire quelque chose de neuf, récent.', sound: 'Jadīd', illustration: '✨', mnemonic: 'Opposé de Qadīm (ancien)' },
+      { type: 'qcm', instruction: 'Que signifie "جَدِيد" (Jadīd) ?', options: ['Ancien', 'Nouveau', 'Cassé', 'Sale'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 23 (Expressions) terminée ! Grand, petit, nouveau. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'رَأْس', name: 'Tête', instruction: 'Le mot pour désigner la tête.', sound: 'Raʼs', illustration: '🧠', mnemonic: 'Même racine que "Raʼīs" (chef, président)' },
+      { type: 'qcm', instruction: 'Que signifie "رَأْس" (Raʼs) ?', options: ['Main', 'Tête', 'Pied', 'Œil'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَد', name: 'Main', instruction: 'Le mot pour désigner la main.', sound: 'Yad', illustration: '✋', mnemonic: 'Un mot très court et fréquent' },
+      { type: 'qcm', instruction: 'Que signifie "يَد" (Yad) ?', options: ['Pied', 'Main', 'Tête', 'Dos'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قَلْب', name: 'Cœur', instruction: 'Le mot pour désigner le cœur, aussi utilisé au sens figuré.', sound: 'Qalb', illustration: '❤️', mnemonic: 'Souvent utilisé pour parler des sentiments' },
+      { type: 'qcm', instruction: 'Que signifie "قَلْب" (Qalb) ?', options: ['Cerveau', 'Cœur', 'Estomac', 'Poumon'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 24 (Expressions) terminée ! Tête, main, cœur. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'بَيْت', name: 'Maison', instruction: 'Le mot pour désigner la maison ou le foyer.', sound: 'Bayt', illustration: '🏠', mnemonic: 'Aussi utilisé pour "vers" en poésie' },
+      { type: 'qcm', instruction: 'Que signifie "بَيْت" (Bayt) ?', options: ['École', 'Maison', 'Magasin', 'Hôpital'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'غُرْفَة', name: 'Chambre, Pièce', instruction: 'Le mot pour désigner une pièce ou une chambre dans la maison.', sound: 'Ghurfa', illustration: '🛏️', mnemonic: 'Une pièce à l\'intérieur du Bayt' },
+      { type: 'qcm', instruction: 'Que signifie "غُرْفَة" (Ghurfa) ?', options: ['Jardin', 'Chambre, pièce', 'Toit', 'Porte'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مَطْبَخ', name: 'Cuisine', instruction: 'Le mot pour désigner la cuisine, la pièce où l\'on prépare la nourriture.', sound: 'Maṭbakh', illustration: '🍳', mnemonic: 'Même racine que "Ṭabakha" (cuisiner)' },
+      { type: 'qcm', instruction: 'Que signifie "مَطْبَخ" (Maṭbakh) ?', options: ['Salon', 'Cuisine', 'Salle de bain', 'Garage'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 25 (Expressions) terminée ! Maison, chambre, cuisine. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'طَبِيب', name: 'Médecin', instruction: 'Le mot pour désigner un médecin.', sound: 'Ṭabīb', illustration: '🩺', mnemonic: 'Même racine que "Ṭibb" (médecine)' },
+      { type: 'qcm', instruction: 'Que signifie "طَبِيب" (Ṭabīb) ?', options: ['Enseignant', 'Médecin', 'Ingénieur', 'Avocat'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مُعَلِّم', name: 'Enseignant', instruction: 'Le mot pour désigner un enseignant, un professeur.', sound: 'Muʻallim', illustration: '👨‍🏫', mnemonic: 'Même racine que "ʻIlm" (savoir)' },
+      { type: 'qcm', instruction: 'Que signifie "مُعَلِّم" (Muʻallim) ?', options: ['Médecin', 'Enseignant', 'Cuisinier', 'Marchand'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'مُهَنْدِس', name: 'Ingénieur', instruction: 'Le mot pour désigner un ingénieur.', sound: 'Muhandis', illustration: '👷', mnemonic: 'Racine liée à "Handasa" (ingénierie, géométrie)' },
+      { type: 'qcm', instruction: 'Que signifie "مُهَنْدِس" (Muhandis) ?', options: ['Ingénieur', 'Fermier', 'Pêcheur', 'Musicien'], correctIndex: 0, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 26 (Expressions) terminée ! Médecin, enseignant, ingénieur. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يَرَى', name: 'Il voit (Voir)', instruction: 'Le verbe pour parler de la vue.', sound: 'Yarā', illustration: '👀', mnemonic: 'Même racine que "Ruʼya" (vision)' },
+      { type: 'qcm', instruction: 'Que signifie "يَرَى" (Yarā) ?', options: ['Il entend', 'Il voit', 'Il touche', 'Il sent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَقْرَأ', name: 'Il lit (Lire)', instruction: 'Le verbe pour parler de la lecture, même racine que "Qurʼān".', sound: 'Yaqraʼ', illustration: '📖', mnemonic: 'Même racine que "Qurʼān" (récitation)', rootKey: 'Q-R-A' },
+      { type: 'qcm', instruction: 'Que signifie "يَقْرَأ" (Yaqraʼ) ?', options: ['Il écrit', 'Il lit', 'Il parle', 'Il chante'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَكْتُب', name: 'Il écrit (Écrire)', instruction: 'Le verbe pour parler de l\'écriture.', sound: 'Yaktub', illustration: '✍️', mnemonic: 'Même racine que "Kitāb" (livre)', rootKey: 'K-T-B' },
+      { type: 'qcm', instruction: 'Que signifie "يَكْتُب" (Yaktub) ?', options: ['Il lit', 'Il écrit', 'Il dessine', 'Il efface'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 27 (Expressions) terminée ! Parcours Expressions du Quotidien (5e partie) : voir, lire, écrire. +20 XP' }
     ]
   ];
 
