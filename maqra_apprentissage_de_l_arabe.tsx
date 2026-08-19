@@ -1527,7 +1527,7 @@ export default function ArabicLearningApp() {
       title: 'Qaïda',
       description: 'Sons & lettres emphatiques (القاعدة النورانية)',
       progress: savedProgress[1] ?? 0,
-      total: 14,
+      total: 16,
       tags: ['Phonétique', 'Bases'],
       color: 'bg-green-100',
       tagColor: 'bg-green-200 text-green-800'
@@ -2179,6 +2179,46 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'مَكْتَب', instruction: 'Tracez "Maktab", en marquant bien le Sukūn sur le Kāf.' },
       { type: 'qcm', instruction: 'Comment se lit "مَكْتَب" (Mīm-Fatḥa, Kāf-Sukūn, Tāʼ-Fatḥa, Bāʼ) ?', options: ['Makataba', 'Maktab', 'Miktab', 'Maktub'], correctIndex: 1, textStyle: 'text-3xl' },
       { type: 'success', instruction: 'Leçon 14 terminée ! Vous savez maintenant assembler des lettres voyellées en mots complets : le Qaïda est maîtrisé. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'بِسْمِ ٱللَّٰهِ',
+        name: 'Capstone : بِسْمِ ٱللَّٰهِ',
+        instruction: 'Décodons ensemble une phrase complète avec tout ce que vous avez appris : بِسْمِ (Bismi, avec Kasra) + ٱللَّٰهِ (Allāhi, Hamzat al-Waṣl silencieuse + lettre solaire assimilée par la Shadda sur le Lām).',
+        sound: 'Bismillāh',
+        illustration: '📿',
+        mnemonic: 'Le "ل" de "al-" s\'assimile ici dans le second ل (Shadda)'
+      },
+      { type: 'trace', letter: 'بِسْمِ ٱللَّٰهِ', instruction: 'Tracez "بِسْمِ ٱللَّٰهِ", en reliant bien chaque lettre.' },
+      { type: 'qcm', instruction: 'Comment se lit "بِسْمِ ٱللَّٰهِ" en une seule phrase liée ?', options: ['Bismi Allāhi (séparé)', 'Bismillāhi (lié)', 'Basmalāh', 'Bisimallāh'], correctIndex: 1, textStyle: 'text-2xl' },
+      {
+        type: 'intro',
+        letter: 'ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',
+        name: 'Capstone : ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',
+        instruction: 'La suite de la Basmala : ٱلرَّحْمَٰنِ (Ar-Raḥmān, lettre solaire ر + Madd par Alif sur le Mīm) et ٱلرَّحِيمِ (Ar-Raḥīm, même schéma avec Madd par Yāʼ).',
+        sound: 'Ar-Raḥmānir-Raḥīm',
+        illustration: '📿',
+        mnemonic: 'Deux Madd et une lettre solaire dans la même phrase'
+      },
+      { type: 'trace', letter: 'ٱلرَّحْمَٰنِ ٱلرَّحِيمِ', instruction: 'Tracez "ٱلرَّحْمَٰنِ ٱلرَّحِيمِ" en entier.' },
+      { type: 'qcm', instruction: 'Pourquoi le "ل" de "ٱلرَّحْمَٰنِ" ne se prononce-t-il pas séparément du ر ?', options: ['Le ر est une lettre solaire', 'Le ل est muet par nature', 'C\'est une erreur d\'écriture', 'Le ر a un Sukūn'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 15 terminée ! Vous avez décodé la Basmala complète : بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ. +20 XP' }
+    ],
+    [
+      {
+        type: 'intro',
+        letter: 'ٱلْحَمْدُ لِلَّٰهِ رَبِّ ٱلْعَالَمِينَ',
+        name: 'Capstone final : ٱلْحَمْدُ لِلَّٰهِ',
+        instruction: 'Dernier défi de lecture : ٱلْحَمْدُ (Al-Ḥamdu, lettre lunaire, ل se prononce clairement) لِلَّٰهِ (Lillāhi, avec Shadda sur le Lām) رَبِّ (Rabbi, avec Shadda sur le Bāʼ) ٱلْعَالَمِينَ (Al-ʻĀlamīn, lettre lunaire + Madd par Alif).',
+        sound: 'Al-Ḥamdu Lillāhi Rabbil-ʻĀlamīn',
+        illustration: '🕌',
+        mnemonic: 'Premier verset d\'Al-Fātiḥa après la Basmala'
+      },
+      { type: 'trace', letter: 'ٱلْحَمْدُ لِلَّٰهِ رَبِّ ٱلْعَالَمِينَ', instruction: 'Tracez la phrase entière, en liant chaque mot correctement.' },
+      { type: 'qcm', instruction: 'Le "ل" de "ٱلْحَمْدُ" est-il une lettre solaire ou lunaire ?', options: ['Solaire (il s\'assimile)', 'Lunaire (il se prononce clairement)', 'Ni l\'un ni l\'autre', 'Cela dépend du récitateur'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'qcm', instruction: 'Combien de fois la Shadda apparaît-elle dans "لِلَّٰهِ رَبِّ" ?', options: ['Une fois', 'Deux fois', 'Trois fois', 'Aucune'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 16 terminée ! Félicitations : vous savez désormais décoder n\'importe quel mot ou phrase du Qaïda, harakat, Madd, Hamza, lettres solaires/lunaires et liaisons comprises. +25 XP' }
     ]
   ];
 
