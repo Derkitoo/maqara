@@ -1611,7 +1611,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 21,
+       total: 25,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -5000,6 +5000,51 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: 'ٱلسَّلَام', instruction: 'Tracez "ٱلسَّلَام" (As-Salām) en appliquant tout ce que vous avez appris sur la liaison.' },
       { type: 'qcm', instruction: 'Dans "ٱلسَّلَام", pourquoi le Mīm final est-il isolé ?', options: ['Il suit un Alif, non-connecteur', 'C\'est un nom divin', 'Le Mīm ne se lie jamais', 'Erreur d\'écriture'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 21 (Calligraphie) terminée ! Avec ٱلسَّلَام, vous combinez liaison, Shadda et lettre solaire : la calligraphie arabe n\'a plus de secret pour vous. +25 XP' }
+    ],
+    [
+      { type: 'intro', letter: '٠', name: 'Chiffre 0 : Ṣifr', instruction: 'Les chiffres arabes-indiens (الأرقام العربية) s\'écrivent différemment des lettres. Le ٠ (zéro) est un simple petit point plein, comme un cercle rempli.', sound: 'Ṣifr', illustration: '0️⃣', mnemonic: 'Un simple point plein = zéro' },
+      { type: 'trace', letter: '٠', instruction: 'Tracez le chiffre ٠ (zéro), un petit point plein.' },
+      { type: 'qcm', instruction: 'Comment s\'écrit le zéro en chiffres arabes-indiens ?', options: ['Une barre verticale', 'Un point plein', 'Une boucle avec queue', 'Un triangle'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: '١', name: 'Chiffre 1 : Wāḥid', instruction: 'Le ١ (un) est une simple barre verticale, identique au tracé de l\'Alif (ا) en lettre.', sound: 'Wāḥid', illustration: '1️⃣', mnemonic: 'Comme un Alif, une hampe droite' },
+      { type: 'trace', letter: '١', instruction: 'Tracez le chiffre ١ (un), une hampe verticale.' },
+      { type: 'qcm', instruction: 'À quelle lettre arabe ressemble le chiffre ١ (un) ?', options: ['Bāʼ', 'Alif', 'Mīm', 'Nūn'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: '٢', name: 'Chiffre 2 : Ithnān', instruction: 'Le ٢ (deux) s\'écrit avec une courbe qui descend puis se recourbe, un peu comme un "٢" tracé d\'un seul geste.', sound: 'Ithnān', illustration: '2️⃣', mnemonic: 'Une courbe descendante, en un seul geste' },
+      { type: 'trace', letter: '٢', instruction: 'Tracez le chiffre ٢ (deux), une courbe fluide.' },
+      { type: 'qcm', instruction: 'Combien de temps faut-il pour écrire ٢ (deux) sans lever le stylo ?', options: ['Deux gestes', 'Un seul geste continu', 'Trois gestes', 'Il faut lever le stylo à chaque fois'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 22 (Calligraphie) terminée ! Vous tracez ٠، ١، ٢ (0, 1, 2). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: '٣', name: 'Chiffre 3 : Thalātha', instruction: 'Le ٣ (trois) s\'écrit avec une double courbe, un peu comme deux petites boucles reliées.', sound: 'Thalātha', illustration: '3️⃣', mnemonic: 'Deux petites boucles reliées' },
+      { type: 'trace', letter: '٣', instruction: 'Tracez le chiffre ٣ (trois).' },
+      { type: 'qcm', instruction: 'Comment se trace le chiffre ٣ (trois) ?', options: ['Une seule ligne droite', 'Une double courbe, comme deux boucles', 'Un point', 'Un triangle'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: '٤', name: 'Chiffre 4 : Arbaʻa', instruction: 'Le ٤ (quatre) ressemble à un petit triangle ouvert avec une queue vers la droite.', sound: 'Arbaʻa', illustration: '4️⃣', mnemonic: 'Un triangle ouvert avec une queue' },
+      { type: 'trace', letter: '٤', instruction: 'Tracez le chiffre ٤ (quatre).' },
+      { type: 'qcm', instruction: 'À quelle forme ressemble le chiffre ٤ (quatre) ?', options: ['Un cercle', 'Un triangle ouvert avec une queue', 'Une barre droite', 'Une boucle double'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: '٥', name: 'Chiffre 5 : Khamsa', instruction: 'Le ٥ (cinq) ressemble à un cœur ou un point plein avec une petite queue, très différent du "5" occidental.', sound: 'Khamsa', illustration: '5️⃣', mnemonic: 'Un cœur plein, comme le ٠ mais avec une queue' },
+      { type: 'trace', letter: '٥', instruction: 'Tracez le chiffre ٥ (cinq).' },
+      { type: 'qcm', instruction: 'À quoi ressemble le chiffre ٥ (cinq) en écriture arabe-indienne ?', options: ['Un cercle vide', 'Un cœur ou point plein avec une queue', 'Une barre verticale', 'Un carré'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 23 (Calligraphie) terminée ! Vous tracez ٣، ٤، ٥ (3, 4, 5). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: '٦', name: 'Chiffre 6 : Sitta', instruction: 'Le ٦ (six) s\'écrit avec une petite boucle fermée en haut, prolongée d\'une courte queue.', sound: 'Sitta', illustration: '6️⃣', mnemonic: 'Une petite boucle fermée avec une queue courte' },
+      { type: 'trace', letter: '٦', instruction: 'Tracez le chiffre ٦ (six).' },
+      { type: 'qcm', instruction: 'Comment se trace le chiffre ٦ (six) ?', options: ['Une barre droite', 'Une boucle fermée avec une queue courte', 'Un point simple', 'Deux traits parallèles'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: '٧', name: 'Chiffre 7 : Sabʻa', instruction: 'Le ٧ (sept) s\'écrit avec une courbe en "v" retourné, assez proche visuellement du chiffre latin 7 inversé.', sound: 'Sabʻa', illustration: '7️⃣', mnemonic: 'Une courbe en "v", à l\'envers du 7 latin' },
+      { type: 'trace', letter: '٧', instruction: 'Tracez le chiffre ٧ (sept).' },
+      { type: 'qcm', instruction: 'À quelle forme ressemble le chiffre ٧ (sept) ?', options: ['Une boucle fermée', 'Une courbe en "v"', 'Un point', 'Une croix'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'intro', letter: '٨', name: 'Chiffre 8 : Thamāniya', instruction: 'Le ٨ (huit) s\'écrit avec une courbe en forme de "v" plus profonde, presque comme un grand crochet.', sound: 'Thamāniya', illustration: '8️⃣', mnemonic: 'Un grand crochet profond' },
+      { type: 'trace', letter: '٨', instruction: 'Tracez le chiffre ٨ (huit).' },
+      { type: 'qcm', instruction: 'Comment se trace le chiffre ٨ (huit) ?', options: ['Un grand crochet profond', 'Un point plein', 'Une barre verticale', 'Une boucle double'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 24 (Calligraphie) terminée ! Vous tracez ٦، ٧، ٨ (6, 7, 8). +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: '٩', name: 'Chiffre 9 : Tisʻa', instruction: 'Le ٩ (neuf) s\'écrit avec une boucle fermée en bas, prolongée d\'une hampe vers le haut, un peu comme un "9" inversé.', sound: 'Tisʻa', illustration: '9️⃣', mnemonic: 'Une boucle basse avec une hampe montante' },
+      { type: 'trace', letter: '٩', instruction: 'Tracez le chiffre ٩ (neuf).' },
+      { type: 'qcm', instruction: 'Comment se trace le chiffre ٩ (neuf) ?', options: ['Une boucle basse avec une hampe montante', 'Un simple point', 'Deux traits parallèles', 'Un triangle'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'intro', letter: '١٤٤٦', name: 'Synthèse : écrire un nombre complet', instruction: 'Les chiffres se combinent comme en français, de gauche à droite (contrairement aux lettres, lues de droite à gauche) : ١٤٤٦ se lit "mille quatre cent quarante-six".', sound: '1446', illustration: '🔢', mnemonic: 'Les chiffres arabes s\'écrivent de gauche à droite !' },
+      { type: 'trace', letter: '١٤٤٦', instruction: 'Tracez le nombre "١٤٤٦" en entier, de gauche à droite.' },
+      { type: 'qcm', instruction: 'Dans quel sens écrit-on les chiffres arabes-indiens, contrairement aux lettres ?', options: ['De droite à gauche, comme les lettres', 'De gauche à droite', 'De haut en bas', 'Cela varie selon le pays'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 25 (Calligraphie) terminée ! Vous connaissez les 10 chiffres arabes-indiens (٠ à ٩) et savez écrire un nombre complet. +25 XP' }
     ]
   ];
 
