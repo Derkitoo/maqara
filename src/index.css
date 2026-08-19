@@ -7,3 +7,64 @@ html, body, #root {
   overflow: hidden;
   overscroll-behavior: none;
 }
+
+/*
+ * Mode sombre.
+ *
+ * L'app est écrite avec des centaines de classes Tailwind (bg-white,
+ * text-gray-900, etc.) codées en dur écran par écran plutôt qu'avec les
+ * variantes dark: de Tailwind. Retoucher individuellement chaque écran serait
+ * un chantier énorme ; on retrouve donc le même effet visuel en réécrivant
+ * en CSS les classes utilitaires les plus fréquentes, sous le sélecteur
+ * .dark-mode posé sur le conteneur racine quand l'utilisateur active le
+ * bouton "Mode Sombre" dans les Réglages. C'est un correctif ciblé sur les
+ * surfaces principales (fonds, textes, bordures) : une passe manuelle
+ * écran par écran resterait la prochaine étape pour un mode sombre
+ * irréprochable au pixel près.
+ */
+.dark-mode {
+  color-scheme: dark;
+}
+
+.dark-mode.bg-\[\#e3dcc9\] { background-color: #0b1220 !important; }
+.dark-mode .bg-\[\#fbf9f4\] { background-color: #0f172a !important; }
+.dark-mode .bg-\[\#f3efe4\] { background-color: #0f172a !important; }
+
+.dark-mode .bg-white { background-color: #1e293b !important; }
+.dark-mode .bg-gray-50 { background-color: #172033 !important; }
+.dark-mode .bg-gray-100 { background-color: #24324a !important; }
+.dark-mode .bg-gray-200 { background-color: #2f3f5a !important; }
+.dark-mode .bg-gray-800 { background-color: #0b1220 !important; }
+.dark-mode .bg-gray-900 { background-color: #0b1220 !important; }
+.dark-mode .bg-gray-950 { background-color: #060a13 !important; }
+
+.dark-mode .bg-sky-50 { background-color: #12233d !important; }
+.dark-mode .bg-sky-100 { background-color: #163156 !important; }
+.dark-mode .bg-sky-200 { background-color: #1c3f6e !important; }
+
+.dark-mode .bg-yellow-100 { background-color: #3a2f0f !important; }
+.dark-mode .bg-amber-100 { background-color: #3a2f0f !important; }
+.dark-mode .bg-rose-100 { background-color: #3a1620 !important; }
+.dark-mode .bg-teal-100 { background-color: #103330 !important; }
+.dark-mode .bg-indigo-100 { background-color: #221b45 !important; }
+.dark-mode .bg-cyan-100 { background-color: #0f2f38 !important; }
+.dark-mode .bg-green-100 { background-color: #163420 !important; }
+
+.dark-mode .text-gray-900,
+.dark-mode .text-gray-800,
+.dark-mode .text-gray-700 { color: #e5eaf3 !important; }
+.dark-mode .text-gray-600,
+.dark-mode .text-gray-500 { color: #9aabc4 !important; }
+.dark-mode .text-gray-400,
+.dark-mode .text-gray-300 { color: #6b7c99 !important; }
+
+.dark-mode .border-gray-50,
+.dark-mode .border-gray-100,
+.dark-mode .border-gray-200,
+.dark-mode .border-gray-300 { border-color: #2a3b57 !important; }
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #1e293b !important;
+  color: #e5eaf3 !important;
+}
