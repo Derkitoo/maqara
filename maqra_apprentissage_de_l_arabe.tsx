@@ -138,6 +138,60 @@ const loadSavedProgress = () => {
   }
 };
 
+// --- Série de jours (streak) calculée depuis l'historique réel de pratique ---
+// (remplace l'ancien streakData codé en dur, qui affichait toujours les mêmes
+// dates factices quelle que soit l'activité réelle de l'utilisateur).
+const toISODate = (date) => {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+};
+
+// Ajoute la date du jour à l'historique si elle n'y est pas déjà.
+const withTodayMarkedActive = (dates) => {
+  const today = toISODate(new Date());
+  return dates.includes(today) ? dates : [...dates, today];
+};
+
+// Nombre de jours consécutifs de pratique jusqu'à aujourd'hui. La série reste
+// "vivante" tant que l'utilisateur a pratiqué hier, même s'il n'a pas encore
+// ouvert l'app aujourd'hui.
+const computeCurrentStreak = (dates) => {
+  const set = new Set(dates);
+  const cursor = new Date();
+  if (!set.has(toISODate(cursor))) {
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  let streak = 0;
+  while (set.has(toISODate(cursor))) {
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streak;
+};
+
+// Les 6 derniers jours (aujourd'hui inclus), avec leur statut réel, pour la
+// mini-frise affichée sur le tableau de bord.
+const computeStreakDisplayDays = (dates) => {
+  const set = new Set(dates);
+  const todayIso = toISODate(new Date());
+  const shortLabel = new Intl.DateTimeFormat('fr-FR', { month: 'short', day: 'numeric' });
+  const days = [];
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const iso = toISODate(d);
+    const isToday = iso === todayIso;
+    const wasActive = set.has(iso);
+    let status;
+    if (wasActive) status = isToday ? 'current' : 'fire';
+    else status = isToday ? 'today-pending' : 'missed';
+    days.push({ date: shortLabel.format(d), status });
+  }
+  return days;
+};
+
 export default function ArabicLearningApp() {
 
   const { user, signInWithGoogle, signOut } = useSupabaseAuth();
@@ -180,7 +234,13 @@ export default function ArabicLearningApp() {
   const [currentSurvQuestion, setCurrentSurvQuestion] = useState(0);
   const [showProModal, setShowProModal] = useState(false);
   const [notificationsEnabled, setNotificationsEnabled] = useState(() => loadSavedProgress().notificationsEnabled ?? true);
+  const [notificationPermissionDenied, setNotificationPermissionDenied] = useState(false);
   const [darkMode, setDarkMode] = useState(() => loadSavedProgress().darkMode ?? false);
+  // Historique des jours où l'élève a réellement pratiqué (au moins une leçon
+  // ou une session de révision terminée), au format ISO 'YYYY-MM-DD'. Sert de
+  // base à la série de jours (streak) affichée sur le tableau de bord et le
+  // profil, pour remplacer les données factices précédentes.
+  const [activeDates, setActiveDates] = useState(() => loadSavedProgress().activeDates ?? []);
   const [showContextualRoot, setShowContextualRoot] = useState(false);
   const [currentRootWord, setCurrentRootWord] = useState(null);
   const [readWordsStatus, setReadWordsStatus] = useState({});
@@ -5645,14 +5705,10 @@ export default function ArabicLearningApp() {
     setCurrentScreen('lessonPreview');
   };
 
-  const streakData = [
-    { date: 'Août 10', status: 'fire' },
-    { date: 'Août 11', status: 'fire' },
-    { date: 'Août 12', status: 'missed' },
-    { date: 'Août 13', status: 'fire' },
-    { date: 'Août 14', status: 'current' },
-    { date: 'Août 15', status: 'future' },
-  ];
+  // Série de jours calculée depuis l'historique réel de pratique (activeDates),
+  // et non plus des données factices fixes.
+  const streakData = computeStreakDisplayDays(activeDates);
+  const currentStreakCount = computeCurrentStreak(activeDates);
 
   useEffect(() => {
     let interval = null;
@@ -5756,7 +5812,7 @@ export default function ArabicLearningApp() {
       const modulesProgress = {};
       modules.forEach(m => { modulesProgress[m.id] = m.progress; });
       localStorage.setItem('maqra_progress', JSON.stringify({
-        userXp, modulesProgress, notificationsEnabled, soundEnabled, darkMode, learningFocus
+        userXp, modulesProgress, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates
       }));
     } catch (e) {}
 
@@ -5770,7 +5826,65 @@ export default function ArabicLearningApp() {
         modules.map(m => ({ user_id: user.id, module_id: m.id, progress: m.progress, updated_at: new Date().toISOString() }))
       ).then(() => {});
     }
-  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus, user]);
+  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates, user]);
+
+  // Active/désactive réellement les notifications : demande la permission du
+  // navigateur (l'ancien toggle ne faisait que basculer un booléen stocké,
+  // sans jamais appeler l'API Notification). Si la permission est refusée,
+  // le toggle reste désactivé et un message l'explique dans les Réglages.
+  const handleToggleNotifications = async () => {
+    if (notificationsEnabled) {
+      setNotificationsEnabled(false);
+      return;
+    }
+    if (typeof window === 'undefined' || !('Notification' in window)) {
+      setNotificationPermissionDenied(true);
+      return;
+    }
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission === 'granted') {
+        setNotificationPermissionDenied(false);
+        setNotificationsEnabled(true);
+        try {
+          new Notification('Maqra', { body: 'Rappels activés : vous recevrez une notification si vous n\'avez pas encore pratiqué dans la journée.' });
+        } catch (e) {}
+      } else {
+        setNotificationPermissionDenied(true);
+        setNotificationsEnabled(false);
+      }
+    } catch (e) {
+      setNotificationPermissionDenied(true);
+      setNotificationsEnabled(false);
+    }
+  };
+
+  // Rappel quotidien best-effort : tant que l'app reste ouverte (onglet actif
+  // ou PWA en arrière-plan récent), on vérifie périodiquement si l'utilisateur
+  // n'a pas encore pratiqué aujourd'hui et on envoie au plus une notification
+  // par jour, le soir. Sans serveur de push, un vrai rappel app-fermée n'est
+  // pas possible ; ceci reste honnête sur cette limite (voir Réglages).
+  useEffect(() => {
+    if (!notificationsEnabled || typeof window === 'undefined' || !('Notification' in window)) return;
+    const checkAndNotify = () => {
+      if (Notification.permission !== 'granted') return;
+      const today = toISODate(new Date());
+      const hour = new Date().getHours();
+      if (activeDates.includes(today) || hour < 18) return;
+      let lastNotified = null;
+      try { lastNotified = localStorage.getItem('maqra_last_notified'); } catch (e) {}
+      if (lastNotified === today) return;
+      try {
+        new Notification('Maqra — Petit rappel 📿', {
+          body: 'Vous n\'avez pas encore pratiqué aujourd\'hui. Une leçon rapide pour garder votre série ?'
+        });
+        localStorage.setItem('maqra_last_notified', today);
+      } catch (e) {}
+    };
+    checkAndNotify();
+    const interval = setInterval(checkAndNotify, 30 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [notificationsEnabled, activeDates]);
 
   const resetLessonStates = () => {
     setLessonStep(0);
@@ -5845,7 +5959,7 @@ export default function ArabicLearningApp() {
 
   const completeLesson = (moduleId) => {
     setUserXp(prev => prev + 15);
-    setModules(prevModules => 
+    setModules(prevModules =>
       prevModules.map(mod => {
         if (mod.id === moduleId && mod.progress < mod.total) {
           return { ...mod, progress: mod.progress + 1 };
@@ -5853,6 +5967,7 @@ export default function ArabicLearningApp() {
         return mod;
       })
     );
+    setActiveDates(prev => withTodayMarkedActive(prev));
     setCurrentScreen('dashboard');
     resetLessonStates();
   };
@@ -5872,6 +5987,7 @@ export default function ArabicLearningApp() {
     } else {
       setCurrentCardIndex(-1);
       setUserXp(prev => prev + 15);
+      setActiveDates(prev => withTodayMarkedActive(prev));
     }
   };
 
@@ -5948,7 +6064,11 @@ export default function ArabicLearningApp() {
 
           <div className="flex items-center space-x-2 mb-4 relative z-10">
             <span className="text-2xl">🔥</span>
-            <h2 className="text-xl font-bold text-gray-800">1 jour de série !</h2>
+            <h2 className="text-xl font-bold text-gray-800">
+              {currentStreakCount > 0
+                ? `${currentStreakCount} jour${currentStreakCount > 1 ? 's' : ''} de série !`
+                : 'Commencez votre série !'}
+            </h2>
           </div>
 
           <div className="flex justify-between items-center relative z-10">
@@ -5958,9 +6078,10 @@ export default function ArabicLearningApp() {
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center
                   ${item.status === 'missed' ? '' : 'bg-white shadow-sm'}
                   ${item.status === 'current' ? 'border-2 border-sky-400 bg-sky-50' : ''}
-                  ${item.status === 'future' ? 'bg-sky-50' : ''}
+                  ${item.status === 'today-pending' ? 'border-2 border-dashed border-sky-300 bg-sky-50' : ''}
                 `}>
                   {item.status === 'fire' && <span className="text-lg">🔥</span>}
+                  {item.status === 'current' && <span className="text-lg">🔥</span>}
                   {item.status === 'missed' && <X className="text-gray-800" size={16} strokeWidth={3}/>}
                 </div>
               </div>
@@ -6669,8 +6790,8 @@ export default function ArabicLearningApp() {
           <div className="grid grid-cols-3 gap-4">
              <div className="flex flex-col items-center bg-gray-50 p-3 rounded-2xl border border-gray-100">
                 <span className="text-2xl mb-1">🔥</span>
-                <span className="font-bold text-gray-900">1</span>
-                <span className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Jour</span>
+                <span className="font-bold text-gray-900">{currentStreakCount}</span>
+                <span className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Jour{currentStreakCount > 1 ? 's' : ''}</span>
              </div>
              <div className="flex flex-col items-center bg-gray-50 p-3 rounded-2xl border border-gray-100">
                 <span className="text-2xl mb-1">⭐</span>
@@ -6777,12 +6898,17 @@ export default function ArabicLearningApp() {
                    <p className="text-xs text-gray-500">Pour maintenir votre série quotidienne</p>
                 </div>
                 <button
-                   onClick={() => setNotificationsEnabled(!notificationsEnabled)}
+                   onClick={handleToggleNotifications}
                    className={`w-12 h-7 rounded-full transition-colors relative p-1 ${notificationsEnabled ? 'bg-sky-500' : 'bg-gray-200'}`}
                 >
                    <div className={`w-5 h-5 bg-white rounded-full transition-transform ${notificationsEnabled ? 'transform translate-x-5' : ''}`}></div>
                 </button>
              </div>
+             {notificationPermissionDenied && (
+                <p className="text-xs text-rose-500 -mt-4">
+                   Les notifications sont bloquées dans les réglages de votre navigateur. Autorisez-les pour recevoir des rappels.
+                </p>
+             )}
 
              <div className="flex items-center justify-between">
                 <div>
@@ -7310,7 +7436,7 @@ export default function ArabicLearningApp() {
   );
 
   return (
-    <div className="flex items-center justify-center h-[100dvh] w-screen overflow-hidden bg-[#e3dcc9] font-sans">
+    <div className={`flex items-center justify-center h-[100dvh] w-screen overflow-hidden bg-[#e3dcc9] font-sans ${darkMode ? 'dark-mode' : ''}`}>
       <div className="relative w-full max-w-[560px] h-full bg-[#fbf9f4] flex flex-col shadow-[0_0_60px_rgba(0,0,0,0.12)]">
 
         {currentScreen === 'onboarding' && renderOnboarding()}
