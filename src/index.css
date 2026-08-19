@@ -68,3 +68,43 @@ html, body, #root {
   background-color: #1e293b !important;
   color: #e5eaf3 !important;
 }
+
+/*
+ * Vue Enfant.
+ *
+ * Même technique que le mode sombre ci-dessus : on réécrit les classes
+ * Tailwind les plus fréquentes sous .child-mode plutôt que de retoucher
+ * chaque écran. Ici on privilégie des formes plus rondes et un accent
+ * rose/violet ludique à la place du bleu "sky" habituel, sans toucher aux
+ * couleurs de retour fonctionnel (vert = correct, rouge = incorrect) pour
+ * ne jamais brouiller la compréhension d'un exercice.
+ */
+.child-mode {
+  --child-radius-bump: 8px;
+}
+
+.child-mode .rounded-3xl,
+.child-mode .rounded-2xl,
+.child-mode .rounded-\[24px\],
+.child-mode .rounded-\[2\.5rem\] {
+  border-radius: calc(1.5rem + var(--child-radius-bump)) !important;
+}
+
+.child-mode button {
+  font-weight: 800 !important;
+}
+
+.child-mode .bg-sky-500 { background-color: #ec4899 !important; }
+.child-mode .text-sky-600 { color: #db2777 !important; }
+.child-mode .border-sky-400 { border-color: #ec4899 !important; }
+
+/* bg-sky-50/100 sont des fonds pastel clairs pensés pour un texte sombre :
+   ne les appliquer qu'en Vue Enfant SANS Mode Sombre, sinon le texte clair
+   du Mode Sombre devient illisible dessus (texte clair sur fond clair). */
+.child-mode:not(.dark-mode) .bg-sky-100 { background-color: #fce7f3 !important; }
+.child-mode:not(.dark-mode) .bg-sky-50 { background-color: #fdf2f8 !important; }
+
+.child-mode h1,
+.child-mode h2 {
+  letter-spacing: -0.01em;
+}

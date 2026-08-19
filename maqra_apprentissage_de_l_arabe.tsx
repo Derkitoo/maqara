@@ -192,6 +192,9 @@ const computeStreakDisplayDays = (dates) => {
   return days;
 };
 
+// --- Vue Enfant : couleurs de confettis pour les animations de récompense ---
+const CONFETTI_COLORS = ['#f97316', '#facc15', '#22c55e', '#38bdf8', '#a78bfa', '#f472b6'];
+
 export default function ArabicLearningApp() {
 
   const { user, signInWithGoogle, signOut } = useSupabaseAuth();
@@ -241,6 +244,11 @@ export default function ArabicLearningApp() {
   // base à la série de jours (streak) affichée sur le tableau de bord et le
   // profil, pour remplacer les données factices précédentes.
   const [activeDates, setActiveDates] = useState(() => loadSavedProgress().activeDates ?? []);
+  // Vue Enfant : thème plus coloré + navigation simplifiée + mascotte et
+  // animations de récompense. Persisté comme darkMode.
+  const [childMode, setChildMode] = useState(() => loadSavedProgress().childMode ?? false);
+  const [mascotMood, setMascotMood] = useState('neutral');
+  const [confettiPieces, setConfettiPieces] = useState([]);
   const [showContextualRoot, setShowContextualRoot] = useState(false);
   const [currentRootWord, setCurrentRootWord] = useState(null);
   const [readWordsStatus, setReadWordsStatus] = useState({});
@@ -5710,6 +5718,53 @@ export default function ArabicLearningApp() {
   const streakData = computeStreakDisplayDays(activeDates);
   const currentStreakCount = computeCurrentStreak(activeDates);
 
+  // Fait réagir la mascotte de la Vue Enfant (content/déçue) pendant
+  // quelques secondes, puis revient à son expression neutre.
+  const triggerMascotMood = (mood) => {
+    setMascotMood(mood);
+    setTimeout(() => setMascotMood('neutral'), 1800);
+  };
+
+  // Génère une pluie de confettis CSS pendant ~2,5s (Vue Enfant uniquement).
+  const triggerConfetti = (count = 24) => {
+    const pieces = Array.from({ length: count }).map((_, i) => ({
+      id: `${Date.now()}-${i}`,
+      left: Math.random() * 100,
+      color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+      delay: Math.random() * 0.3,
+      duration: 1.6 + Math.random() * 0.8,
+      rotate: Math.floor(Math.random() * 360),
+    }));
+    setConfettiPieces(pieces);
+    setTimeout(() => setConfettiPieces([]), 2600);
+  };
+
+  // Vue Enfant : la mascotte réagit et des confettis tombent dès qu'une
+  // réponse vient d'être vérifiée (voir handleActionClick, qui bascule
+  // isAnswerChecked à true dès que l'élève clique sur "Vérifier").
+  useEffect(() => {
+    if (!childMode || !isAnswerChecked) return;
+    const stepData = activeLesson[lessonStep];
+    if (!stepData) return;
+    let correct = null;
+    if (stepData.type === 'qcm' || stepData.type === 'listen') correct = selectedAnswer === stepData.correctIndex;
+    else if (stepData.type === 'build') correct = buildSentence.join('') === stepData.correctOrder.join('');
+    if (correct === null) return;
+    triggerMascotMood(correct ? 'happy' : 'sad');
+    if (correct) triggerConfetti(16);
+  }, [isAnswerChecked, childMode]);
+
+  // Vue Enfant : grande pluie de confettis dès l'arrivée sur l'écran "Bravo !"
+  // de fin de leçon.
+  useEffect(() => {
+    if (!childMode) return;
+    const stepData = activeLesson[lessonStep];
+    if (stepData && stepData.type === 'success') {
+      triggerMascotMood('happy');
+      triggerConfetti(30);
+    }
+  }, [lessonStep, childMode]);
+
   useEffect(() => {
     let interval = null;
     if (currentScreen === 'survival' && survivalPhase === 'playing' && survivalTime > 0) {
@@ -5812,7 +5867,7 @@ export default function ArabicLearningApp() {
       const modulesProgress = {};
       modules.forEach(m => { modulesProgress[m.id] = m.progress; });
       localStorage.setItem('maqra_progress', JSON.stringify({
-        userXp, modulesProgress, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates
+        userXp, modulesProgress, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates, childMode
       }));
     } catch (e) {}
 
@@ -5826,7 +5881,7 @@ export default function ArabicLearningApp() {
         modules.map(m => ({ user_id: user.id, module_id: m.id, progress: m.progress, updated_at: new Date().toISOString() }))
       ).then(() => {});
     }
-  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates, user]);
+  }, [userXp, modules, notificationsEnabled, soundEnabled, darkMode, learningFocus, activeDates, childMode, user]);
 
   // Active/désactive réellement les notifications : demande la permission du
   // navigateur (l'ancien toggle ne faisait que basculer un booléen stocké,
@@ -6048,16 +6103,51 @@ export default function ArabicLearningApp() {
     } catch (e) {}
   };
 
+  // Mascotte de la Vue Enfant : un petit hibou (📖 symbole du savoir dans
+  // beaucoup de cultures) qui réagit aux réponses de l'élève. `size` en
+  // classes Tailwind pour l'adapter selon l'écran (dashboard vs leçon).
+  const renderMascot = (size = 'text-5xl') => {
+    const face = mascotMood === 'happy' ? '🦉' : mascotMood === 'sad' ? '🦉' : '🦉';
+    const bubble = mascotMood === 'happy' ? 'Bravo ! 🎉' : mascotMood === 'sad' ? 'Réessaie !' : null;
+    const moodClass = mascotMood === 'happy' ? 'mascot-happy' : mascotMood === 'sad' ? 'mascot-sad' : 'mascot-neutral';
+    return (
+      <div className="flex flex-col items-center">
+        {bubble && (
+          <div className="mb-1 px-3 py-1 bg-white rounded-full shadow-md text-xs font-bold text-gray-800 animation-fade-in">
+            {bubble}
+          </div>
+        )}
+        <span className={`${size} inline-block ${moodClass}`}>{face}</span>
+      </div>
+    );
+  };
+
   const renderDashboard = () => (
     <div className="flex-1 flex flex-col relative overflow-hidden bg-[#f3efe4]">
       <div className="flex-1 overflow-y-auto px-6 pb-32 hide-scrollbar">
         <div className="flex justify-between items-center mt-4 mb-6">
           <h1 className="text-[30px] font-extrabold text-gray-900 tracking-tight">Maqra</h1>
-          <div className="flex items-center space-x-1.5 bg-yellow-100 px-3.5 py-1.5 rounded-full border border-yellow-200">
-            <span className="text-yellow-500">★</span>
-            <span className="text-sm font-bold text-yellow-700">{userXp} XP</span>
+          <div className="flex items-center gap-2">
+            {childMode && renderMascot('text-3xl')}
+            <div className="flex items-center space-x-1.5 bg-yellow-100 px-3.5 py-1.5 rounded-full border border-yellow-200">
+              <span className="text-yellow-500">★</span>
+              <span className="text-sm font-bold text-yellow-700">{userXp} XP</span>
+            </div>
           </div>
         </div>
+
+        {childMode && (
+          <div
+            onClick={() => setCurrentScreen('survival')}
+            className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 rounded-3xl p-5 mb-6 cursor-pointer hover:scale-[1.02] transition-transform shadow-lg flex items-center justify-between"
+          >
+            <div>
+              <h2 className="text-white font-extrabold text-lg mb-1">🎮 Envie de jouer ?</h2>
+              <p className="text-white/90 text-xs font-semibold">Essaie le Mode Survie, un mini-jeu chrono !</p>
+            </div>
+            <span className="text-4xl">🕹️</span>
+          </div>
+        )}
 
         <div className="bg-sky-100 rounded-3xl p-5 mb-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-sky-200 rounded-full blur-2xl -mr-10 -mt-10 opacity-50"></div>
@@ -6276,6 +6366,12 @@ export default function ArabicLearningApp() {
             <span>5</span>
           </div>
         </div>
+
+        {childMode && (
+          <div className="absolute top-16 right-3 z-20">
+            {renderMascot('text-4xl')}
+          </div>
+        )}
 
         <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col justify-center hide-scrollbar">
 
@@ -6935,6 +7031,19 @@ export default function ArabicLearningApp() {
                    <div className={`w-5 h-5 bg-white rounded-full transition-transform ${darkMode ? 'transform translate-x-5' : ''}`}></div>
                 </button>
              </div>
+
+             <div className="flex items-center justify-between">
+                <div>
+                   <p className="font-bold text-gray-900">🎈 Vue Enfant</p>
+                   <p className="text-xs text-gray-500">Couleurs vives, mascotte, confettis et navigation simplifiée</p>
+                </div>
+                <button
+                   onClick={() => setChildMode(!childMode)}
+                   className={`w-12 h-7 rounded-full transition-colors relative p-1 ${childMode ? 'bg-pink-500' : 'bg-gray-200'}`}
+                >
+                   <div className={`w-5 h-5 bg-white rounded-full transition-transform ${childMode ? 'transform translate-x-5' : ''}`}></div>
+                </button>
+             </div>
           </div>
 
           <div className="bg-white rounded-3xl p-5 shadow-sm border border-gray-100 space-y-4">
@@ -7436,7 +7545,7 @@ export default function ArabicLearningApp() {
   );
 
   return (
-    <div className={`flex items-center justify-center h-[100dvh] w-screen overflow-hidden bg-[#e3dcc9] font-sans ${darkMode ? 'dark-mode' : ''}`}>
+    <div className={`flex items-center justify-center h-[100dvh] w-screen overflow-hidden bg-[#e3dcc9] font-sans ${darkMode ? 'dark-mode' : ''} ${childMode ? 'child-mode' : ''}`}>
       <div className="relative w-full max-w-[560px] h-full bg-[#fbf9f4] flex flex-col shadow-[0_0_60px_rgba(0,0,0,0.12)]">
 
         {currentScreen === 'onboarding' && renderOnboarding()}
@@ -7455,6 +7564,24 @@ export default function ArabicLearningApp() {
         
         {renderContextualRootModal()}
         {renderProModal()}
+        {childMode && confettiPieces.length > 0 && (
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-[100]">
+            {confettiPieces.map(p => (
+              <span
+                key={p.id}
+                className="absolute top-0 block rounded-sm"
+                style={{
+                  left: `${p.left}%`,
+                  width: '8px',
+                  height: '14px',
+                  backgroundColor: p.color,
+                  transform: `rotate(${p.rotate}deg)`,
+                  animation: `confettiFall ${p.duration}s ease-in ${p.delay}s forwards`,
+                }}
+              />
+            ))}
+          </div>
+        )}
 
         {(currentScreen !== 'onboarding' && currentScreen !== 'launch' && currentScreen !== 'lesson' && currentScreen !== 'ai-tutor' && currentScreen !== 'roots' && currentScreen !== 'survival' && currentScreen !== 'moduleLessons' && currentScreen !== 'lessonPreview') && (
           <div className="absolute bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 shadow-[0_-8px_24px_rgba(0,0,0,0.04)]">
@@ -7463,19 +7590,28 @@ export default function ArabicLearningApp() {
                    <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'dashboard' ? 'bg-sky-100' : ''}`}>▦</span>
                    <span className="text-[11px] font-semibold">Modules</span>
                 </button>
-                <button onClick={() => setCurrentScreen('revision')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'revision' ? 'text-sky-600' : 'text-gray-400'}`}>
-                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'revision' ? 'bg-sky-100' : ''}`}>📖</span>
-                   <span className="text-[11px] font-semibold">Révision</span>
-                </button>
+                {childMode ? (
+                  <button onClick={() => setCurrentScreen('survival')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'survival' ? 'text-sky-600' : 'text-gray-400'}`}>
+                     <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'survival' ? 'bg-sky-100' : ''}`}>🎮</span>
+                     <span className="text-[11px] font-semibold">Jouer</span>
+                  </button>
+                ) : (
+                  <button onClick={() => setCurrentScreen('revision')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'revision' ? 'text-sky-600' : 'text-gray-400'}`}>
+                     <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'revision' ? 'bg-sky-100' : ''}`}>📖</span>
+                     <span className="text-[11px] font-semibold">Révision</span>
+                  </button>
+                )}
                 <div className="flex-1 flex flex-col items-center justify-end">
-                   <button onClick={() => setCurrentScreen('ai-tutor')} className="w-14 h-14 -mt-8 bg-gradient-to-tr from-sky-400 to-indigo-500 text-white rounded-full flex items-center justify-center shadow-[0_12px_22px_rgba(56,189,248,0.4)] border-4 border-white text-xl hover:scale-105 transition-transform">
+                   <button onClick={() => setCurrentScreen('ai-tutor')} className={`w-14 h-14 -mt-8 text-white rounded-full flex items-center justify-center shadow-[0_12px_22px_rgba(56,189,248,0.4)] border-4 border-white text-xl hover:scale-105 transition-transform ${childMode ? 'bg-gradient-to-tr from-pink-400 to-orange-400' : 'bg-gradient-to-tr from-sky-400 to-indigo-500'}`}>
                       ✨
                    </button>
                 </div>
-                <button onClick={() => setCurrentScreen('leaderboard')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'leaderboard' ? 'text-sky-600' : 'text-gray-400'}`}>
-                   <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'leaderboard' ? 'bg-sky-100' : ''}`}>🏆</span>
-                   <span className="text-[11px] font-semibold">Ligue</span>
-                </button>
+                {!childMode && (
+                  <button onClick={() => setCurrentScreen('leaderboard')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'leaderboard' ? 'text-sky-600' : 'text-gray-400'}`}>
+                     <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'leaderboard' ? 'bg-sky-100' : ''}`}>🏆</span>
+                     <span className="text-[11px] font-semibold">Ligue</span>
+                  </button>
+                )}
                 <button onClick={() => setCurrentScreen('profile')} className={`flex-1 flex flex-col items-center gap-1 py-2 ${currentScreen === 'profile' ? 'text-sky-600' : 'text-gray-400'}`}>
                    <span className={`w-10 h-7 rounded-[14px] flex items-center justify-center text-[17px] ${currentScreen === 'profile' ? 'bg-sky-100' : ''}`}>👤</span>
                    <span className="text-[11px] font-semibold">Profil</span>
@@ -7516,6 +7652,28 @@ export default function ArabicLearningApp() {
           0%, 100% { opacity: .5; }
           50% { opacity: 1; }
         }
+        @keyframes confettiFall {
+          0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+          100% { transform: translateY(640px) rotate(360deg); opacity: 0; }
+        }
+        @keyframes mascotBounceHappy {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-10px) rotate(-8deg); }
+          50% { transform: translateY(0) rotate(0deg); }
+          75% { transform: translateY(-6px) rotate(8deg); }
+        }
+        @keyframes mascotWiggleSad {
+          0%, 100% { transform: translateX(0) rotate(0deg); }
+          25% { transform: translateX(-4px) rotate(-4deg); }
+          75% { transform: translateX(4px) rotate(4deg); }
+        }
+        @keyframes mascotIdle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
+        .mascot-happy { animation: mascotBounceHappy 0.6s ease-in-out; }
+        .mascot-sad { animation: mascotWiggleSad 0.4s ease-in-out; }
+        .mascot-neutral { animation: mascotIdle 2.4s ease-in-out infinite; }
       `}} />
     </div>
   );
