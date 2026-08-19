@@ -1772,7 +1772,7 @@ export default function ArabicLearningApp() {
        title: 'Expressions du Quotidien',
        description: 'Phrases usuelles pour parler et saluer',
        progress: savedProgress[7] ?? 0,
-       total: 27,
+       total: 32,
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
@@ -5300,6 +5300,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'يَكْتُب', name: 'Il écrit (Écrire)', instruction: 'Le verbe pour parler de l\'écriture.', sound: 'Yaktub', illustration: '✍️', mnemonic: 'Même racine que "Kitāb" (livre)', rootKey: 'K-T-B' },
       { type: 'qcm', instruction: 'Que signifie "يَكْتُب" (Yaktub) ?', options: ['Il lit', 'Il écrit', 'Il dessine', 'Il efface'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 27 (Expressions) terminée ! Parcours Expressions du Quotidien (5e partie) : voir, lire, écrire. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْجُمُعَة', name: 'Vendredi', instruction: 'Le jour du rassemblement, jour de la prière collective en islam.', sound: 'Al-Jumuʻa', illustration: '🕌', mnemonic: 'Même racine que "Jamaʻa" (rassembler)', rootKey: 'J-M-A' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْجُمُعَة" (Al-Jumuʻa) ?', options: ['Lundi', 'Vendredi', 'Dimanche', 'Jeudi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلسَّبْت', name: 'Samedi', instruction: 'Le sixième jour, souvent associé au repos.', sound: 'As-Sabt', illustration: '📅', mnemonic: 'Vient de "Sabt" (repos, sabbat)' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلسَّبْت" (As-Sabt) ?', options: ['Mardi', 'Samedi', 'Mercredi', 'Vendredi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْأَحَد', name: 'Dimanche', instruction: 'Le premier jour de la semaine dans le calendrier arabe.', sound: 'Al-Aḥad', illustration: '📅', mnemonic: 'Littéralement "le premier"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْأَحَد" (Al-Aḥad) ?', options: ['Samedi', 'Dimanche', 'Lundi', 'Jeudi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 28 (Expressions) terminée ! Vendredi, samedi, dimanche. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْإِثْنَيْن', name: 'Lundi', instruction: 'Le deuxième jour de la semaine.', sound: 'Al-Ithnayn', illustration: '📅', mnemonic: 'Littéralement "le deux"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْإِثْنَيْن" (Al-Ithnayn) ?', options: ['Dimanche', 'Lundi', 'Mardi', 'Samedi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلثُّلَاثَاء', name: 'Mardi', instruction: 'Le troisième jour de la semaine.', sound: 'Ath-Thulāthāʼ', illustration: '📅', mnemonic: 'Littéralement "le trois"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلثُّلَاثَاء" (Ath-Thulāthāʼ) ?', options: ['Lundi', 'Mardi', 'Mercredi', 'Vendredi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ٱلْأَرْبِعَاء', name: 'Mercredi', instruction: 'Le quatrième jour de la semaine.', sound: 'Al-Arbiʻāʼ', illustration: '📅', mnemonic: 'Littéralement "le quatre"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْأَرْبِعَاء" (Al-Arbiʻāʼ) ?', options: ['Mardi', 'Mercredi', 'Jeudi', 'Dimanche'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 29 (Expressions) terminée ! Lundi, mardi, mercredi. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْخَمِيس', name: 'Jeudi', instruction: 'Le cinquième jour de la semaine.', sound: 'Al-Khamīs', illustration: '📅', mnemonic: 'Littéralement "le cinq"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْخَمِيس" (Al-Khamīs) ?', options: ['Mercredi', 'Jeudi', 'Vendredi', 'Lundi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'لِمَاذَا؟', name: 'Pourquoi ?', instruction: 'La question la plus courante pour demander une raison.', sound: 'Limādhā', illustration: '❓', mnemonic: 'Littéralement "pour quelle chose"' },
+      { type: 'qcm', instruction: 'Que signifie "لِمَاذَا؟" (Limādhā) ?', options: ['Où ?', 'Pourquoi ?', 'Quand ?', 'Qui ?'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'كَيْفَ؟', name: 'Comment ?', instruction: 'La question pour demander la manière dont une chose se fait.', sound: 'Kayfa', illustration: '❓', mnemonic: 'Déjà rencontré dans "Kayfa Ḥāluk" (comment vas-tu)' },
+      { type: 'qcm', instruction: 'Que signifie "كَيْفَ؟" (Kayfa) ?', options: ['Pourquoi ?', 'Comment ?', 'Combien ?', 'Quoi ?'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 30 (Expressions) terminée ! Jeudi, pourquoi, comment. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'يُحِبّ', name: 'Il aime (Aimer)', instruction: 'Le verbe pour exprimer l\'affection ou la préférence.', sound: 'Yuḥibb', illustration: '❤️', mnemonic: 'Même racine que "Ḥubb" (amour)', rootKey: 'H-B-B' },
+      { type: 'qcm', instruction: 'Que signifie "يُحِبّ" (Yuḥibb) ?', options: ['Il déteste', 'Il aime', 'Il ignore', 'Il oublie'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَسْتَطِيع', name: 'Il peut (Pouvoir)', instruction: 'Le verbe pour exprimer la capacité de faire quelque chose.', sound: 'Yastaṭīʻ', illustration: '💪', mnemonic: 'Même racine que "Ṭāqa" (capacité, énergie)' },
+      { type: 'qcm', instruction: 'Que signifie "يَسْتَطِيع" (Yastaṭīʻ) ?', options: ['Il refuse', 'Il peut', 'Il oublie', 'Il attend'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'يَكْرَه', name: 'Il déteste (Détester)', instruction: 'Le verbe pour exprimer l\'aversion, opposé d\'aimer.', sound: 'Yakrah', illustration: '😣', mnemonic: 'Opposé de "Yuḥibb" (il aime)' },
+      { type: 'qcm', instruction: 'Que signifie "يَكْرَه" (Yakrah) ?', options: ['Il aime', 'Il déteste', 'Il admire', 'Il respecte'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 31 (Expressions) terminée ! Aimer, pouvoir, détester. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'ٱلْآن', name: 'Maintenant', instruction: 'Pour désigner le moment présent.', sound: 'Al-Ān', illustration: '⏰', mnemonic: 'Le mot le plus simple pour "maintenant"' },
+      { type: 'qcm', instruction: 'Que signifie "ٱلْآن" (Al-Ān) ?', options: ['Hier', 'Maintenant', 'Demain', 'Jamais'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'لَاحِقًا', name: 'Plus tard', instruction: 'Pour reporter une action à un moment ultérieur.', sound: 'Lāḥiqan', illustration: '⏭️', mnemonic: 'Même racine que "Lāḥiq" (suivant, ultérieur)' },
+      { type: 'qcm', instruction: 'Que signifie "لَاحِقًا" (Lāḥiqan) ?', options: ['Immédiatement', 'Plus tard', 'Jamais', 'Toujours'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'دَائِمًا', name: 'Toujours', instruction: 'Pour exprimer une action ou un état permanent.', sound: 'Dāʼiman', illustration: '♾️', mnemonic: 'Même racine que "Dāʼim" (permanent)' },
+      { type: 'qcm', instruction: 'Que signifie "دَائِمًا" (Dāʼiman) ?', options: ['Jamais', 'Toujours', 'Parfois', 'Rarement'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 32 (Expressions) terminée ! Parcours Expressions du Quotidien (6e partie) : jours de la semaine, questions et temps. +20 XP' }
     ]
   ];
 
