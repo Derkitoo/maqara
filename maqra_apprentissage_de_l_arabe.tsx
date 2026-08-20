@@ -16,8 +16,30 @@ import {
   Zap,
   Play,
   Crown,
-  CheckCircle
+  CheckCircle,
+  BookA,
+  BookOpen,
+  Star,
+  Sprout,
+  Mic2,
+  MessageCircle,
+  PenTool
 } from 'lucide-react';
+
+// Icônes modernes (Lucide, traits fins) pour les cartes de module du
+// tableau de bord, en remplacement des emoji. Le module.icon (emoji)
+// original reste inchangé et sert toujours de repli ailleurs (ex. dans
+// la liste des leçons, quand une leçon n'a pas sa propre illustration).
+const MODULE_ICON_MAP = {
+  1: { Icon: BookA, color: 'text-emerald-600' },
+  2: { Icon: BookOpen, color: 'text-sky-600' },
+  3: { Icon: Star, color: 'text-amber-600' },
+  4: { Icon: Sprout, color: 'text-indigo-600' },
+  5: { Icon: Mic2, color: 'text-rose-600' },
+  6: { Icon: Sparkles, color: 'text-amber-500' },
+  7: { Icon: MessageCircle, color: 'text-teal-600' },
+  8: { Icon: PenTool, color: 'text-cyan-600' },
+};
 
 const DrawingCanvas = ({ backgroundLetter }) => {
   const canvasRef = useRef(null);
@@ -6491,27 +6513,49 @@ export default function ArabicLearningApp() {
 
         <h3 className="text-[15px] font-extrabold text-gray-900 mb-3.5 ml-0.5">Vos parcours</h3>
         <div className="grid grid-cols-2 gap-3.5">
-          {modules.map((module) => (
+          {modules.map((module) => {
+            const pct = Math.min(100, Math.round((module.progress / module.total) * 100));
+            const isComplete = module.progress >= module.total;
+            return (
             <div
               key={module.id}
               onClick={() => handleModuleClick(module.id)}
-              className={`${module.color} rounded-[24px] p-[18px] cursor-pointer hover:scale-[1.02] transition-transform shadow-sm flex flex-col min-h-[190px]`}
+              className={`${module.color} relative overflow-hidden rounded-[24px] p-[18px] cursor-pointer hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] transition-all shadow-sm hover:shadow-lg flex flex-col min-h-[190px] border border-white/40`}
             >
-              <div className="w-11 h-11 rounded-[14px] bg-white flex items-center justify-center text-[22px] shadow-sm mb-3">
-                {module.icon}
+              {/* Halo décoratif, même motif que la carte "série" du dashboard */}
+              <div className="absolute -right-6 -top-8 w-28 h-28 bg-white/40 rounded-full blur-2xl pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/[0.04] pointer-events-none"></div>
+
+              {isComplete && (
+                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-sm z-10">
+                  <Check size={13} strokeWidth={3.5}/>
+                </div>
+              )}
+
+              <div className="relative w-11 h-11 rounded-[14px] bg-white flex items-center justify-center shadow-[0_4px_10px_rgba(0,0,0,0.08)] mb-3">
+                {(() => {
+                  const iconEntry = MODULE_ICON_MAP[module.id];
+                  if (!iconEntry) return <span className="text-[22px]">{module.icon}</span>;
+                  const { Icon, color } = iconEntry;
+                  return <Icon size={22} strokeWidth={2.25} className={color}/>;
+                })()}
               </div>
-              <h4 className="text-[15px] font-extrabold text-gray-900 mb-1.5 leading-tight">{module.title}</h4>
-              <p className="text-xs text-gray-600 mb-3 leading-relaxed flex-1">
+              <h4 className="relative text-[15px] font-extrabold text-gray-900 mb-1.5 leading-tight">{module.title}</h4>
+              <p className="relative text-xs text-gray-600 mb-3 leading-relaxed flex-1">
                 {module.description}
               </p>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-1.5 bg-white/60 rounded-full overflow-hidden">
-                  <div className="h-full bg-gray-800 rounded-full" style={{ width: `${Math.round((module.progress / module.total) * 100)}%` }}></div>
+              <div className="relative flex items-center gap-2">
+                <div className="flex-1 h-2 bg-white/60 rounded-full overflow-hidden shadow-inner">
+                  <div
+                    className={`h-full rounded-full transition-all duration-500 ${isComplete ? 'bg-emerald-500' : 'bg-gradient-to-r from-gray-700 to-gray-900'}`}
+                    style={{ width: `${pct}%` }}
+                  ></div>
                 </div>
-                <span className="text-[11px] font-bold text-gray-700">{module.progress}/{module.total}</span>
+                <span className="text-[11px] font-bold text-gray-700 tabular-nums">{module.progress}/{module.total}</span>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
