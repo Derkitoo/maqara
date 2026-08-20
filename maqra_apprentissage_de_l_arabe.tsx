@@ -1874,7 +1874,7 @@ export default function ArabicLearningApp() {
        title: 'Calligraphie',
        description: 'Les formes des lettres et leurs liaisons (الخط العربي)',
        progress: savedProgress[8] ?? 0,
-       total: 25,
+       total: 27,
        tags: ['Calligraphie', 'Écriture'],
        color: 'bg-cyan-100',
        tagColor: 'bg-cyan-200 text-cyan-800'
@@ -5783,6 +5783,18 @@ export default function ArabicLearningApp() {
       { type: 'trace', letter: '١٤٤٦', instruction: 'Tracez le nombre "١٤٤٦" en entier, de gauche à droite.' },
       { type: 'qcm', instruction: 'Dans quel sens écrit-on les chiffres arabes-indiens, contrairement aux lettres ?', options: ['De droite à gauche, comme les lettres', 'De gauche à droite', 'De haut en bas', 'Cela varie selon le pays'], correctIndex: 1, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 25 (Calligraphie) terminée ! Vous connaissez les 10 chiffres arabes-indiens (٠ à ٩) et savez écrire un nombre complet. +25 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مَكْتَبَة', name: 'Liaison : Maktaba (Bibliothèque)', instruction: 'Un mot plus long et entièrement lié : مـ (initiale) + ـكـ (médiane) + ـتـ (médiane) + ـبـ (médiane) + ة (finale). La Tāʼ Marbūṭa (ة) n\'a que 2 formes (isolée/finale identiques) : elle ne peut jamais être initiale ou médiane, car un mot ne continue jamais après elle.', sound: 'Maktaba', illustration: '📚', mnemonic: 'La Tāʼ Marbūṭa clôt toujours le mot' },
+      { type: 'trace', letter: 'مَكْتَبَة', instruction: 'Tracez "مَكْتَبَة" (Maktaba) en un seul geste continu, jusqu\'à la Tāʼ Marbūṭa finale.' },
+      { type: 'qcm', instruction: 'Pourquoi la Tāʼ Marbūṭa (ة) n\'a-t-elle jamais de forme initiale ou médiane ?', options: ['Parce qu\'elle est toujours en fin de mot', 'Parce qu\'elle ne se lie jamais', 'Parce que c\'est une erreur d\'écriture', 'Parce qu\'elle est comme l\'Alif'], correctIndex: 0, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 26 (Calligraphie) terminée ! Vous savez lier مَكْتَبَة (Maktaba) et comprenez les formes limitées de la Tāʼ Marbūṭa. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مَدِينَة', name: 'Liaison : Madīna (Ville)', instruction: 'Dans مَدِينَة : مـ (initiale) + د (isolée, non-connectrice) + يـ (repart en initiale, comme dans دِين) + ـنـ (médiane) + ة (finale). Ce mot combine deux règles déjà apprises : la lettre non-connectrice ET la Tāʼ Marbūṭa.', sound: 'Madīna', illustration: '🏙️', mnemonic: 'Comme دِين, mais avec deux lettres de plus' },
+      { type: 'trace', letter: 'مَدِينَة', instruction: 'Tracez "مَدِينَة" (Madīna), en observant la coupure après le Dāl.' },
+      { type: 'qcm', instruction: 'Dans "مَدِينَة", sous quelle forme apparaît le Yāʼ après le Dāl ?', options: ['Isolée', 'Initiale', 'Médiane', 'Finale'], correctIndex: 1, textStyle: 'text-lg' },
+      { type: 'success', instruction: 'Leçon 27 (Calligraphie) terminée ! Parcours Calligraphie encore enrichi : vous combinez désormais toutes les règles de liaison sur des mots longs. +20 XP' }
     ]
   ];
 
