@@ -6368,6 +6368,28 @@ export default function ArabicLearningApp() {
     return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
   };
 
+  // ÉCHANTILLON DE DESIGN (non poussé) : Expressions du Quotidien mélange
+  // des dizaines de mini-thèmes (salutations, famille, couleurs, animaux,
+  // transport...). Plutôt que d'inventer un mot-clé par leçon, on regroupe
+  // en 4 grandes familles qui couvrent le plus grand nombre d'expressions,
+  // en réutilisant encore les mêmes 4 couleurs de FREQ_CATEGORY_THEME avec
+  // un sens propre à ce module. Clé = `letter` (l'expression arabe, unique).
+  const EXPR_WORD_CATEGORY = {
+    // Salutations, politesse & religieux (slot 'worship' -> vert)
+    'مَرْحَبًا': 'worship', 'ٱلسَّلَامُ عَلَيْكُمْ': 'worship', 'مَعَ ٱلسَّلَامَة': 'worship', 'مِنْ فَضْلِكَ': 'worship', 'شُكْرًا': 'worship', 'عَفْوًا': 'worship', 'إِن شَاءَ ٱللَّٰه': 'worship', 'ٱلْحَمْدُ لِلَّٰه': 'worship', 'بَارَكَ ٱللَّٰهُ فِيك': 'worship', 'لَا بَأْس': 'worship', 'تَفَضَّلْ': 'worship', 'مُمْتَاز': 'worship',
+    // Personnes & famille (slot 'society' -> rose)
+    'أَب': 'society', 'أُمّ': 'society', 'أَخ': 'society', 'أُخْت': 'society', 'ٱبْن': 'society', 'ٱبْنَة': 'society', 'طَبِيب': 'society', 'مُعَلِّم': 'society', 'مُهَنْدِس': 'society',
+    // Temps, lieux & nature (slot 'akhirah' -> orange)
+    'كَمِ ٱلسَّاعَة؟': 'akhirah', 'أَيْنَ...؟': 'akhirah', 'يَمِين': 'akhirah', 'يَسَار': 'akhirah', 'أَمَام': 'akhirah', 'ٱلْيَوْم': 'akhirah', 'غَدًا': 'akhirah', 'أَمْس': 'akhirah', 'ٱلْمَطَار': 'akhirah', 'تَذْكِرَة': 'akhirah', 'أَيْنَ ٱلْمَحَطَّة؟': 'akhirah', 'ٱلْجُمُعَة': 'akhirah', 'ٱلسَّبْت': 'akhirah', 'ٱلْأَحَد': 'akhirah', 'ٱلْإِثْنَيْن': 'akhirah', 'ٱلثُّلَاثَاء': 'akhirah', 'ٱلْأَرْبِعَاء': 'akhirah', 'ٱلْخَمِيس': 'akhirah', 'ٱلْآن': 'akhirah', 'لَاحِقًا': 'akhirah', 'دَائِمًا': 'akhirah', 'سَيَّارَة': 'akhirah', 'قِطَار': 'akhirah', 'طَائِرَة': 'akhirah', 'كَلْب': 'akhirah', 'قِطّ': 'akhirah', 'طَائِر': 'akhirah',
+    // Corps & qualités (slot 'divine' -> violet)
+    'حَارّ': 'divine', 'بَارِد': 'divine', 'سَعِيد': 'divine', 'حَزِين': 'divine', 'مُتْعَب': 'divine', 'غَالٍ': 'divine', 'رَخِيص': 'divine', 'أَحْمَر': 'divine', 'أَزْرَق': 'divine', 'أَخْضَر': 'divine', 'أَسْوَد': 'divine', 'أَبْيَض': 'divine', 'أَصْفَر': 'divine', 'كَبِير': 'divine', 'صَغِير': 'divine', 'جَدِيد': 'divine', 'رَأْس': 'divine', 'يَد': 'divine', 'قَلْب': 'divine', 'عَيْن': 'divine', 'أُذُن': 'divine', 'فَم': 'divine',
+  };
+
+  const getExpressionsTheme = (letter = '') => {
+    const category = EXPR_WORD_CATEGORY[letter];
+    return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -6682,7 +6704,9 @@ export default function ArabicLearningApp() {
                 ? getRootsTheme(stepData.rootKey || '')
                 : activeModuleId === 6
                   ? getAsmaTheme(stepData.name || '')
-                  : getLetterTheme(stepData.name || '');
+                  : activeModuleId === 7
+                    ? getExpressionsTheme(stepData.letter || '')
+                    : getLetterTheme(stepData.name || '');
             return (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
