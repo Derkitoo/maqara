@@ -1780,7 +1780,7 @@ export default function ArabicLearningApp() {
       title: 'Lecture Coranique',
       description: 'Juz Amma, décodage syllabique et audio natif',
       progress: savedProgress[2] ?? 0,
-      total: 39,
+      total: 44,
       tags: ['Coran', 'Fluidité'],
       color: 'bg-sky-100',
       tagColor: 'bg-blue-100 text-blue-800'
@@ -3293,6 +3293,111 @@ export default function ArabicLearningApp() {
         rightCol: [{text: 'Malheur aux fraudeurs', id: 1}, {text: 'Qui exigent la pleine mesure pour eux-mêmes', id: 2}, {text: 'Ne pensent-ils pas qu\'ils seront ressuscités ?', id: 3}, {text: 'Le jour où les hommes se tiendront devant le Seigneur des mondes', id: 4}]
       },
       { type: 'success', instruction: 'Sourate Al-Muṭaffifīn (1-6) validée ! Parcours Lecture Coranique encore enrichi : 5 sourates supplémentaires du Juz ʻAmma, dont l\'ouverture de la célèbre sourate Al-Mulk. +25 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Fajr (versets 1-5, 27-30) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 89, ayah: 1 }, { surah: 89, ayah: 2 }, { surah: 89, ayah: 3 }, { surah: 89, ayah: 4 }, { surah: 89, ayah: 5 }, { surah: 89, ayah: 27 }, { surah: 89, ayah: 28 }, { surah: 89, ayah: 29 }, { surah: 89, ayah: 30 }],
+         words: [
+            { id: 'w1', text: 'وَٱلْفَجْرِ وَلَيَالٍ عَشْرٍ وَٱلشَّفْعِ وَٱلْوَتْرِ', root: null, trans: 'Par l\'aube ! Par les dix nuits ! Par le pair et l\'impair !' },
+            { id: 'w2', text: 'وَٱلَّيْلِ إِذَا يَسْرِ هَلْ فِى ذَٰلِكَ قَسَمٌ لِّذِى حِجْرٍ', root: null, trans: 'Par la nuit quand elle s\'écoule ! N\'y a-t-il pas là un serment, pour quiconque a de l\'intelligence ?' },
+            { id: 'w3', text: 'يَٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ ٱرْجِعِىٓ إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً', root: 'N-F-S', trans: 'Ô âme apaisée ! Retourne vers ton Seigneur, satisfaite et agréée !' },
+            { id: 'w4', text: 'فَٱدْخُلِى فِى عِبَٰدِى وَٱدْخُلِى جَنَّتِى', root: 'A-B-D', trans: 'Entre parmi Mes serviteurs ! Et entre dans Mon Paradis !' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلْفَجْرِ', id: 1}, {text: 'وَٱلَّيْلِ إِذَا يَسْرِ', id: 2}, {text: 'يَٰٓأَيَّتُهَا ٱلنَّفْسُ ٱلْمُطْمَئِنَّةُ', id: 3}, {text: 'فَٱدْخُلِى فِى عِبَٰدِى', id: 4}],
+        rightCol: [{text: 'Par l\'aube !', id: 1}, {text: 'Par la nuit quand elle s\'écoule !', id: 2}, {text: 'Ô âme apaisée !', id: 3}, {text: 'Entre parmi Mes serviteurs !', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Fajr (1-5, 27-30) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Balad (versets 1-10) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 90, ayah: 1 }, { surah: 90, ayah: 2 }, { surah: 90, ayah: 3 }, { surah: 90, ayah: 4 }, { surah: 90, ayah: 5 }, { surah: 90, ayah: 8 }, { surah: 90, ayah: 9 }, { surah: 90, ayah: 10 }],
+         words: [
+            { id: 'w1', text: 'لَآ أُقْسِمُ بِهَٰذَا ٱلْبَلَدِ وَأَنتَ حِلٌّۢ بِهَٰذَا ٱلْبَلَدِ وَوَالِدٍ وَمَا وَلَدَ', root: null, trans: 'Je jure par cette Cité, et toi, tu es un habitant de cette Cité, et par le père et ce qu\'il a engendré !' },
+            { id: 'w2', text: 'لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِى كَبَدٍ أَيَحْسَبُ أَن لَّن يَقْدِرَ عَلَيْهِ أَحَدٌ', root: 'K-L-Q', trans: 'Nous avons créé l\'homme pour un effort constant. Pense-t-il que personne n\'a de pouvoir sur lui ?' },
+            { id: 'w3', text: 'أَلَمْ نَجْعَل لَّهُۥ عَيْنَيْنِ وَلِسَانًا وَشَفَتَيْنِ', root: null, trans: 'Ne lui avons-Nous pas fait deux yeux, une langue et deux lèvres ?' },
+            { id: 'w4', text: 'وَهَدَيْنَٰهُ ٱلنَّجْدَيْنِ', root: 'H-D-Y', trans: 'Et ne l\'avons-Nous pas guidé sur les deux voies (le bien et le mal) ?' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'لَآ أُقْسِمُ بِهَٰذَا ٱلْبَلَدِ', id: 1}, {text: 'لَقَدْ خَلَقْنَا ٱلْإِنسَٰنَ فِى كَبَدٍ', id: 2}, {text: 'أَلَمْ نَجْعَل لَّهُۥ عَيْنَيْنِ', id: 3}, {text: 'وَهَدَيْنَٰهُ ٱلنَّجْدَيْنِ', id: 4}],
+        rightCol: [{text: 'Je jure par cette Cité', id: 1}, {text: 'Nous avons créé l\'homme pour un effort constant', id: 2}, {text: 'Ne lui avons-Nous pas fait deux yeux ?', id: 3}, {text: 'Nous l\'avons guidé sur les deux voies', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Balad (1-10) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Qalam (versets 1-4) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 68, ayah: 1 }, { surah: 68, ayah: 2 }, { surah: 68, ayah: 3 }, { surah: 68, ayah: 4 }],
+         words: [
+            { id: 'w1', text: 'نٓ ۚ وَٱلْقَلَمِ وَمَا يَسْطُرُونَ', root: null, trans: 'Nūn. Par la plume et ce qu\'ils écrivent !' },
+            { id: 'w2', text: 'مَآ أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍ', root: 'N-A-M', trans: 'Tu n\'es pas, par la grâce de ton Seigneur, un possédé' },
+            { id: 'w3', text: 'وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ', root: 'A-J-L', trans: 'et il y aura pour toi certes une récompense jamais interrompue' },
+            { id: 'w4', text: 'وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ', root: null, trans: 'et tu es certes d\'une moralité éminente' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'وَٱلْقَلَمِ وَمَا يَسْطُرُونَ', id: 1}, {text: 'مَآ أَنتَ بِنِعْمَةِ رَبِّكَ', id: 2}, {text: 'وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍ', id: 3}, {text: 'وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ', id: 4}],
+        rightCol: [{text: 'Par la plume et ce qu\'ils écrivent', id: 1}, {text: 'Tu n\'es pas un possédé', id: 2}, {text: 'Une récompense jamais interrompue', id: 3}, {text: 'Tu es d\'une moralité éminente', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Qalam (1-4) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Muzzammil (versets 1-8) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 73, ayah: 1 }, { surah: 73, ayah: 2 }, { surah: 73, ayah: 3 }, { surah: 73, ayah: 4 }, { surah: 73, ayah: 5 }, { surah: 73, ayah: 6 }, { surah: 73, ayah: 7 }, { surah: 73, ayah: 8 }],
+         words: [
+            { id: 'w1', text: 'يَٰٓأَيُّهَا ٱلْمُزَّمِّلُ قُمِ ٱلَّيْلَ إِلَّا قَلِيلًا', root: null, trans: 'Ô toi qui te revêts (de ton manteau) ! Lève-toi (pour prier) la nuit, sauf une petite partie' },
+            { id: 'w2', text: 'نِّصْفَهُۥٓ أَوِ ٱنقُصْ مِنْهُ قَلِيلًا أَوْ زِدْ عَلَيْهِ وَرَتِّلِ ٱلْقُرْءَانَ تَرْتِيلًا', root: 'Q-R-A', trans: 'sa moitié, ou un peu moins, ou un peu plus. Et récite le Coran, lentement et clairement' },
+            { id: 'w3', text: 'إِنَّا سَنُلْقِى عَلَيْكَ قَوْلًا ثَقِيلًا إِنَّ نَاشِئَةَ ٱلَّيْلِ هِىَ أَشَدُّ وَطْـًٔا وَأَقْوَمُ قِيلًا', root: 'Q-W-L', trans: 'Nous allons te révéler des paroles lourdes de sens. La prière pendant la nuit est plus efficace et plus propice à la récitation' },
+            { id: 'w4', text: 'إِنَّ لَكَ فِى ٱلنَّهَارِ سَبْحًا طَوِيلًا وَٱذْكُرِ ٱسْمَ رَبِّكَ وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا', root: 'DH-K-R', trans: 'Tu as, dans la journée, une longue occupation. Et rappelle-toi le nom de ton Seigneur et voue-toi à Lui totalement' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'يَٰٓأَيُّهَا ٱلْمُزَّمِّلُ', id: 1}, {text: 'نِّصْفَهُۥٓ أَوِ ٱنقُصْ مِنْهُ قَلِيلًا', id: 2}, {text: 'إِنَّا سَنُلْقِى عَلَيْكَ قَوْلًا ثَقِيلًا', id: 3}, {text: 'إِنَّ لَكَ فِى ٱلنَّهَارِ سَبْحًا طَوِيلًا', id: 4}],
+        rightCol: [{text: 'Ô toi qui te revêts !', id: 1}, {text: 'Récite le Coran lentement et clairement', id: 2}, {text: 'Des paroles lourdes de sens', id: 3}, {text: 'Une longue occupation dans la journée', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Muzzammil (1-8) validée ! +20 XP' }
+    ],
+    [
+      {
+         type: 'reading',
+         instruction: 'Sourate Al-Insān (versets 1-3, 5-6) : appuyez sur chaque groupe de versets pour le traduire',
+         verses: [{ surah: 76, ayah: 1 }, { surah: 76, ayah: 2 }, { surah: 76, ayah: 3 }, { surah: 76, ayah: 5 }, { surah: 76, ayah: 6 }],
+         words: [
+            { id: 'w1', text: 'هَلْ أَتَىٰ عَلَى ٱلْإِنسَٰنِ حِينٌ مِّنَ ٱلدَّهْرِ لَمْ يَكُن شَيْـًٔا مَّذْكُورًا', root: null, trans: 'S\'est-il écoulé pour l\'homme un laps de temps durant lequel il n\'était même pas une chose mentionnable ?' },
+            { id: 'w2', text: 'إِنَّا خَلَقْنَا ٱلْإِنسَٰنَ مِن نُّطْفَةٍ أَمْشَاجٍ نَّبْتَلِيهِ فَجَعَلْنَٰهُ سَمِيعًۢا بَصِيرًا', root: 'K-L-Q', trans: 'Nous avons créé l\'homme d\'une goutte mélangée, pour l\'éprouver. Nous l\'avons fait entendant et voyant' },
+            { id: 'w3', text: 'إِنَّا هَدَيْنَٰهُ ٱلسَّبِيلَ إِمَّا شَاكِرًا وَإِمَّا كَفُورًا', root: 'H-D-Y', trans: 'Nous l\'avons guidé dans le chemin, qu\'il soit reconnaissant ou ingrat' },
+            { id: 'w4', text: 'إِنَّ ٱلْأَبْرَارَ يَشْرَبُونَ مِن كَأْسٍ كَانَ مِزَاجُهَا كَافُورًا عَيْنًا يَشْرَبُ بِهَا عِبَادُ ٱللَّهِ يُفَجِّرُونَهَا تَفْجِيرًا', root: 'A-B-D', trans: 'Les vertueux boiront d\'une coupe mélangée de camphre, d\'une source dont les serviteurs d\'Allah boiront, la faisant jaillir en abondance' },
+         ]
+      },
+      {
+        type: 'match',
+        instruction: 'Associez chaque groupe de versets à sa traduction',
+        pairs: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+        leftCol: [{text: 'هَلْ أَتَىٰ عَلَى ٱلْإِنسَٰنِ', id: 1}, {text: 'إِنَّا خَلَقْنَا ٱلْإِنسَٰنَ مِن نُّطْفَةٍ', id: 2}, {text: 'إِنَّا هَدَيْنَٰهُ ٱلسَّبِيلَ', id: 3}, {text: 'إِنَّ ٱلْأَبْرَارَ يَشْرَبُونَ', id: 4}],
+        rightCol: [{text: 'S\'est-il écoulé pour l\'homme un laps de temps ?', id: 1}, {text: 'Nous avons créé l\'homme d\'une goutte mélangée', id: 2}, {text: 'Nous l\'avons guidé dans le chemin', id: 3}, {text: 'Les vertueux boiront d\'une coupe de camphre', id: 4}]
+      },
+      { type: 'success', instruction: 'Sourate Al-Insān (1-3, 5-6) validée ! Parcours Lecture Coranique enrichi : 5 sourates supplémentaires (Al-Fajr, Al-Balad, Al-Qalam, Al-Muzzammil, Al-Insān). +25 XP' }
     ]
   ];
 
