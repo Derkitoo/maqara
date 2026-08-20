@@ -6726,39 +6726,42 @@ export default function ArabicLearningApp() {
                    </div>
                 )}
 
-                <div dir="rtl" className="flex flex-wrap justify-center gap-x-[14px] gap-y-[18px] mb-10 bg-white p-[22px] rounded-3xl shadow-inner border border-gray-100">
-                   {stepData.words.map((word) => {
-                      const isRead = readWordsStatus[word.id];
-                      const isActive = activeReadWord?.id === word.id;
-                      return (
-                         <button
-                            key={word.id}
-                            onClick={() => handleReadWordClick(word)}
-                            className={`font-arabic relative text-[34px] font-bold p-1.5 transition-all rounded-xl
-                               ${isActive ? 'text-sky-600 bg-sky-50' :
-                                 isRead ? 'text-gray-800' : 'text-gray-400 hover:text-gray-600'}`}
-                         >
-                            {word.text}
-                         </button>
-                      )
-                   })}
+                <div className="relative mb-10 rounded-3xl bg-gradient-to-br from-amber-50 via-white to-emerald-50/40 border border-amber-100 shadow-inner overflow-hidden">
+                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-200"></div>
+                   <div dir="rtl" className="flex flex-wrap justify-center gap-x-[14px] gap-y-[18px] p-[22px] pt-[26px]">
+                      {stepData.words.map((word) => {
+                         const isRead = readWordsStatus[word.id];
+                         const isActive = activeReadWord?.id === word.id;
+                         return (
+                            <button
+                               key={word.id}
+                               onClick={() => handleReadWordClick(word)}
+                               className={`font-arabic relative text-[34px] font-bold p-1.5 transition-all rounded-xl
+                                  ${isActive ? 'text-amber-700 bg-amber-100 shadow-sm' :
+                                    isRead ? 'text-gray-800 border-b-[3px] border-emerald-300' : 'text-gray-400 hover:text-gray-600'}`}
+                            >
+                               {word.text}
+                            </button>
+                         )
+                      })}
+                   </div>
                 </div>
 
                 <div className={`transition-all duration-300 w-full ${activeReadWord ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
                    {activeReadWord && (
-                      <div className="bg-white rounded-3xl p-5 shadow-lg border border-sky-100 relative overflow-hidden">
-                         <div className="absolute top-0 right-0 w-24 h-24 bg-sky-50 rounded-full blur-xl -mr-8 -mt-8 opacity-70"></div>
-                         
+                      <div className="bg-white rounded-3xl p-5 shadow-lg border border-amber-100 relative overflow-hidden">
+                         <div className="absolute top-0 right-0 w-24 h-24 bg-amber-50 rounded-full blur-xl -mr-8 -mt-8 opacity-70"></div>
+
                          <div className="flex justify-between items-start mb-3 relative z-10">
                             <div>
                                <h3 className="font-arabic text-2xl font-bold text-gray-900 mb-1">{activeReadWord.text}</h3>
-                               <p className="text-sky-600 font-medium text-sm">{activeReadWord.trans}</p>
+                               <p className="text-amber-700 font-medium text-sm">{activeReadWord.trans}</p>
                             </div>
-                            <button onClick={() => speakArabic(activeReadWord.text)} className="bg-sky-100 text-sky-600 p-3 rounded-full hover:bg-sky-200 transition-colors">
+                            <button onClick={() => speakArabic(activeReadWord.text)} className="bg-amber-100 text-amber-700 p-3 rounded-full hover:bg-amber-200 transition-colors">
                                <Volume2 size={20}/>
                             </button>
                          </div>
-                         
+
                          {activeReadWord.root && (
                             <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
                                <div className="flex items-center space-x-2">
