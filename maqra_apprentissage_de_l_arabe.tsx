@@ -1840,7 +1840,7 @@ export default function ArabicLearningApp() {
        title: 'Expressions du Quotidien',
        description: 'Phrases usuelles pour parler et saluer',
        progress: savedProgress[7] ?? 0,
-       total: 32,
+       total: 37,
        tags: ['Conversation', 'Pratique'],
        color: 'bg-teal-100',
        tagColor: 'bg-teal-200 text-teal-800'
@@ -5518,6 +5518,51 @@ export default function ArabicLearningApp() {
       { type: 'intro', letter: 'دَائِمًا', name: 'Toujours', instruction: 'Pour exprimer une action ou un état permanent.', sound: 'Dāʼiman', illustration: '♾️', mnemonic: 'Même racine que "Dāʼim" (permanent)' },
       { type: 'qcm', instruction: 'Que signifie "دَائِمًا" (Dāʼiman) ?', options: ['Jamais', 'Toujours', 'Parfois', 'Rarement'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'success', instruction: 'Leçon 32 (Expressions) terminée ! Parcours Expressions du Quotidien (6e partie) : jours de la semaine, questions et temps. +20 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'كَلْب', name: 'Chien', instruction: 'Le mot pour désigner un chien.', sound: 'Kalb', illustration: '🐕', mnemonic: 'Un animal fréquemment cité en arabe' },
+      { type: 'qcm', instruction: 'Que signifie "كَلْب" (Kalb) ?', options: ['Chat', 'Chien', 'Oiseau', 'Cheval'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قِطّ', name: 'Chat', instruction: 'Le mot pour désigner un chat.', sound: 'Qiṭṭ', illustration: '🐈', mnemonic: 'Un animal très apprécié dans la culture arabe' },
+      { type: 'qcm', instruction: 'Que signifie "قِطّ" (Qiṭṭ) ?', options: ['Chien', 'Chat', 'Souris', 'Lapin'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'طَائِر', name: 'Oiseau', instruction: 'Le mot pour désigner un oiseau.', sound: 'Ṭāʼir', illustration: '🐦', mnemonic: 'Même racine que "Ṭayarān" (vol)' },
+      { type: 'qcm', instruction: 'Que signifie "طَائِر" (Ṭāʼir) ?', options: ['Poisson', 'Oiseau', 'Insecte', 'Serpent'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 33 (Expressions) terminée ! Chien, chat, oiseau. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'مَلَابِس', name: 'Vêtements', instruction: 'Le mot général pour désigner les vêtements.', sound: 'Malābis', illustration: '👕', mnemonic: 'Même racine que "Labisa" (porter, s\'habiller)' },
+      { type: 'qcm', instruction: 'Que signifie "مَلَابِس" (Malābis) ?', options: ['Chaussures', 'Vêtements', 'Bijoux', 'Sac'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قَمِيص', name: 'Chemise', instruction: 'Le mot pour désigner une chemise.', sound: 'Qamīṣ', illustration: '👔', mnemonic: 'Un vêtement porté sur le haut du corps' },
+      { type: 'qcm', instruction: 'Que signifie "قَمِيص" (Qamīṣ) ?', options: ['Pantalon', 'Chemise', 'Manteau', 'Chapeau'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'حِذَاء', name: 'Chaussures', instruction: 'Le mot pour désigner des chaussures.', sound: 'Ḥidhāʼ', illustration: '👟', mnemonic: 'Toujours utilisé avant d\'entrer dans une mosquée' },
+      { type: 'qcm', instruction: 'Que signifie "حِذَاء" (Ḥidhāʼ) ?', options: ['Chapeau', 'Chaussures', 'Ceinture', 'Gants'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 34 (Expressions) terminée ! Vêtements, chemise, chaussures. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سَيَّارَة', name: 'Voiture', instruction: 'Le mot pour désigner une voiture.', sound: 'Sayyāra', illustration: '🚗', mnemonic: 'Même racine que "Sāra" (avancer, voyager)' },
+      { type: 'qcm', instruction: 'Que signifie "سَيَّارَة" (Sayyāra) ?', options: ['Vélo', 'Voiture', 'Bateau', 'Bus'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'قِطَار', name: 'Train', instruction: 'Le mot pour désigner un train.', sound: 'Qiṭār', illustration: '🚆', mnemonic: 'Utile pour parler de voyage en train' },
+      { type: 'qcm', instruction: 'Que signifie "قِطَار" (Qiṭār) ?', options: ['Avion', 'Train', 'Voiture', 'Taxi'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'طَائِرَة', name: 'Avion', instruction: 'Le mot pour désigner un avion.', sound: 'Ṭāʼira', illustration: '✈️', mnemonic: 'Même racine que "Ṭāʼir" (oiseau) : ce qui vole' },
+      { type: 'qcm', instruction: 'Que signifie "طَائِرَة" (Ṭāʼira) ?', options: ['Train', 'Avion', 'Bateau', 'Vélo'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 35 (Expressions) terminée ! Voiture, train, avion. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'عَيْن', name: 'Œil', instruction: 'Le mot pour désigner l\'œil.', sound: 'ʻAyn', illustration: '👁️', mnemonic: 'Même mot que "ʻAyn" (source d\'eau)' },
+      { type: 'qcm', instruction: 'Que signifie "عَيْن" (ʻAyn) ?', options: ['Oreille', 'Œil', 'Nez', 'Bouche'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'أُذُن', name: 'Oreille', instruction: 'Le mot pour désigner l\'oreille.', sound: 'Udhun', illustration: '👂', mnemonic: 'Même racine que "Adhān" (l\'appel à la prière)' },
+      { type: 'qcm', instruction: 'Que signifie "أُذُن" (Udhun) ?', options: ['Œil', 'Oreille', 'Main', 'Pied'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'فَم', name: 'Bouche', instruction: 'Le mot pour désigner la bouche.', sound: 'Fam', illustration: '👄', mnemonic: 'Un mot court et très utile' },
+      { type: 'qcm', instruction: 'Que signifie "فَم" (Fam) ?', options: ['Nez', 'Bouche', 'Menton', 'Front'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 36 (Expressions) terminée ! Œil, oreille, bouche. +15 XP' }
+    ],
+    [
+      { type: 'intro', letter: 'سَبْعَة', name: 'Sept', instruction: 'Le septième nombre.', sound: 'Sabʻa', illustration: '7️⃣', mnemonic: 'Suit directement Sitta (six)' },
+      { type: 'qcm', instruction: 'Que signifie "سَبْعَة" (Sabʻa) ?', options: ['Six', 'Sept', 'Huit', 'Neuf'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'ثَمَانِيَة', name: 'Huit', instruction: 'Le huitième nombre.', sound: 'Thamāniya', illustration: '8️⃣', mnemonic: 'Suit directement Sabʻa (sept)' },
+      { type: 'qcm', instruction: 'Que signifie "ثَمَانِيَة" (Thamāniya) ?', options: ['Sept', 'Huit', 'Neuf', 'Dix'], correctIndex: 1, textStyle: 'text-2xl' },
+      { type: 'intro', letter: 'تِسْعَة', name: 'Neuf', instruction: 'Le neuvième nombre.', sound: 'Tisʻa', illustration: '9️⃣', mnemonic: 'Suit directement Thamāniya (huit)' },
+      { type: 'qcm', instruction: 'Que signifie "تِسْعَة" (Tisʻa) ?', options: ['Sept', 'Huit', 'Neuf', 'Dix'], correctIndex: 2, textStyle: 'text-2xl' },
+      { type: 'success', instruction: 'Leçon 37 (Expressions) terminée ! Parcours Expressions du Quotidien (7e partie) : animaux, vêtements, transport, visage et nombres 7-9. +20 XP' }
     ]
   ];
 
