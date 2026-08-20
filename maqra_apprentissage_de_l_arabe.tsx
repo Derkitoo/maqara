@@ -346,7 +346,7 @@ export default function ArabicLearningApp() {
       arabic: 'سلم',
       trans: 'Paix / Soumission',
       words: [
-        { word: 'سَلَام', trans: 'Salām', meaning: 'Paix', icon: '☮️', desc: 'La salutation universelle entre musulmans.' },
+        { word: 'سَلَام', trans: 'Salām', meaning: 'Paix', icon: '🕊️', desc: 'La salutation universelle entre musulmans.' },
         { word: 'إِسْلَام', trans: 'Islām', meaning: 'Soumission à Dieu', icon: '🕌', desc: 'Le nom de la religion, dérivé de la racine de la paix.' }
       ],
       derivatives: [
@@ -3361,7 +3361,7 @@ export default function ArabicLearningApp() {
       { type: 'success', instruction: 'Leçon 7 : 3 mots fréquents mémorisés ! +15 XP' }
     ],
     [
-      { type: 'intro', letter: 'سَلَام', name: 'Paix', instruction: 'La salutation universelle entre musulmans, même racine qu\'"Islam".', sound: 'Salām', illustration: '☮️', mnemonic: 'Même racine qu\'Islam', rootKey: 'S-L-M' },
+      { type: 'intro', letter: 'سَلَام', name: 'Paix', instruction: 'La salutation universelle entre musulmans, même racine qu\'"Islam".', sound: 'Salām', illustration: '🕊️', mnemonic: 'Même racine qu\'Islam', rootKey: 'S-L-M' },
       { type: 'qcm', instruction: 'Que signifie "سَلَام" (Salām) ?', options: ['Guerre', 'Paix', 'Colère', 'Peur'], correctIndex: 1, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'حَمْد', name: 'Louange', instruction: 'Premier mot d\'Al-Fatiha après la Basmala.', sound: 'Ḥamd', illustration: '🙌', mnemonic: 'Même racine que Muḥammad', rootKey: 'H-M-D' },
       { type: 'qcm', instruction: 'Que signifie "حَمْد" (Ḥamd) ?', options: ['Louange', 'Tristesse', 'Question', 'Réponse'], correctIndex: 0, textStyle: 'text-2xl' },
@@ -3769,7 +3769,7 @@ export default function ArabicLearningApp() {
       { type: 'success', instruction: 'Leçon 2 : 3 racines explorées ! +15 XP' }
     ],
     [
-      { type: 'intro', letter: 'سلم', name: 'Racine S-L-M', instruction: 'La racine S-L-M (سلم) exprime la paix. Elle donne سَلَام (Salām - Paix) et le mot "Islam".', sound: 'S-L-M', illustration: '☮️', mnemonic: 'سَلَام (Salām - Paix)', rootKey: 'S-L-M' },
+      { type: 'intro', letter: 'سلم', name: 'Racine S-L-M', instruction: 'La racine S-L-M (سلم) exprime la paix. Elle donne سَلَام (Salām - Paix) et le mot "Islam".', sound: 'S-L-M', illustration: '🕊️', mnemonic: 'سَلَام (Salām - Paix)', rootKey: 'S-L-M' },
       { type: 'qcm', instruction: 'Que signifie la racine "سلم" (S-L-M) ?', options: ['Guerre', 'Richesse', 'Paix / Soumission', 'Rapidité'], correctIndex: 2, textStyle: 'text-3xl' },
       { type: 'intro', letter: 'عبد', name: 'Racine A-B-D', instruction: 'La racine A-B-D (عبد) exprime l\'adoration. Elle donne عَبْد (ʻAbd - Serviteur).', sound: 'A-B-D', illustration: '🙏', mnemonic: 'عَبْد (ʻAbd - Serviteur)', rootKey: 'A-B-D' },
       { type: 'qcm', instruction: 'Que signifie la racine "عبد" (A-B-D) ?', options: ['Adorer / Servir', 'Combattre', 'Voyager', 'Construire'], correctIndex: 0, textStyle: 'text-3xl' },
@@ -4838,7 +4838,7 @@ export default function ArabicLearningApp() {
     [
       { type: 'intro', letter: 'ٱلْقُدُّوس', name: 'Al-Quddūs', instruction: 'Le Pur, le Saint : Il est totalement exempt de tout défaut, de toute ressemblance avec la création et de toute imperfection imaginable. Ce nom partage sa racine avec \'Al-Quds\' (Jérusalem) et \'Taqdīs\' (sanctification).', sound: 'Al-Quddūs', illustration: '🤍', mnemonic: 'Racine de "Al-Quds" (Jérusalem, la Sainte)' },
       { type: 'qcm', instruction: 'Que signifie "ٱلْقُدُّوس" (Al-Quddūs) ?', options: ['Le Pur, Le Saint', 'L\'Impur', 'Le Faible', 'L\'Injuste'], correctIndex: 0, textStyle: 'text-2xl' },
-      { type: 'intro', letter: 'ٱلسَّلَام', name: 'As-Salām', instruction: 'La Paix : Il est Lui-même exempt de tout défaut, et Il est la source de toute paix véritable accordée à Ses serviteurs, en ce monde comme au Paradis, la \'Demeure de la Paix\' (Dār as-Salām).', sound: 'As-Salām', illustration: '☮️', mnemonic: 'Même racine que "Salām" (paix)', rootKey: 'S-L-M' },
+      { type: 'intro', letter: 'ٱلسَّلَام', name: 'As-Salām', instruction: 'La Paix : Il est Lui-même exempt de tout défaut, et Il est la source de toute paix véritable accordée à Ses serviteurs, en ce monde comme au Paradis, la \'Demeure de la Paix\' (Dār as-Salām).', sound: 'As-Salām', illustration: '🕊️', mnemonic: 'Même racine que "Salām" (paix)', rootKey: 'S-L-M' },
       { type: 'qcm', instruction: 'Que signifie "ٱلسَّلَام" (As-Salām) ?', options: ['La Paix', 'La Guerre', 'La Colère', 'Le Doute'], correctIndex: 0, textStyle: 'text-2xl' },
       { type: 'intro', letter: 'ٱلْمُؤْمِن', name: 'Al-Muʼmin', instruction: 'Celui qui donne la sécurité : Il rassure Ses serviteurs et confirme la vérité de Ses promesses envers eux ; c\'est aussi Lui qui accorde la foi (Īmān) dans le cœur de qui Il veut.', sound: 'Al-Muʼmin', illustration: '🛡️', mnemonic: 'Même racine que "Īmān" (foi)', rootKey: 'A-M-N' },
       { type: 'qcm', instruction: 'Que signifie "ٱلْمُؤْمِن" (Al-Muʼmin) ?', options: ['Celui qui donne la sécurité', 'Celui qui doute', 'Celui qui fuit', 'Celui qui oublie'], correctIndex: 0, textStyle: 'text-2xl' },
@@ -5129,7 +5129,7 @@ export default function ArabicLearningApp() {
     [
       { type: 'intro', letter: 'مَرْحَبًا', name: 'Bonjour, Bienvenue', instruction: 'La salutation la plus courante et universelle en arabe.', sound: 'Marḥaban', illustration: '👋', mnemonic: 'Utilisable à tout moment de la journée' },
       { type: 'qcm', instruction: 'Que signifie "مَرْحَبًا" (Marḥaban) ?', options: ['Au revoir', 'Bonjour, Bienvenue', 'Merci', 'Pardon'], correctIndex: 1, textStyle: 'text-2xl' },
-      { type: 'intro', letter: 'ٱلسَّلَامُ عَلَيْكُمْ', name: 'Que la paix soit sur vous', instruction: 'La salutation islamique par excellence, échangée entre musulmans.', sound: 'As-Salāmu ʻAlaykum', illustration: '☮️', mnemonic: 'On répond "Wa ʻalaykum as-salām"' },
+      { type: 'intro', letter: 'ٱلسَّلَامُ عَلَيْكُمْ', name: 'Que la paix soit sur vous', instruction: 'La salutation islamique par excellence, échangée entre musulmans.', sound: 'As-Salāmu ʻAlaykum', illustration: '🕊️', mnemonic: 'On répond "Wa ʻalaykum as-salām"' },
       { type: 'qcm', instruction: 'Que signifie "ٱلسَّلَامُ عَلَيْكُمْ" ?', options: ['Que la paix soit sur vous', 'Comment allez-vous ?', 'À bientôt', 'Bon appétit'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'intro', letter: 'مَعَ ٱلسَّلَامَة', name: 'Au revoir', instruction: 'Littéralement "avec la sécurité/la paix" : une formule d\'adieu chaleureuse.', sound: 'Maʻa s-Salāma', illustration: '🚶', mnemonic: 'Souhaite un bon retour à l\'autre' },
       { type: 'qcm', instruction: 'Que signifie "مَعَ ٱلسَّلَامَة" (Maʻa s-Salāma) ?', options: ['Bonjour', 'Au revoir', 'Merci', 'Excusez-moi'], correctIndex: 1, textStyle: 'text-lg' },
@@ -5520,7 +5520,7 @@ export default function ArabicLearningApp() {
       { type: 'success', instruction: 'Leçon 15 (Calligraphie) terminée ! Vous savez lier les quatre lettres de مُحَمَّد (Muḥammad). +15 XP' }
     ],
     [
-      { type: 'intro', letter: 'سَلَام', name: 'Liaison : Salām (Paix)', instruction: 'Dans سَلَام : س (initiale) + ل (médiane) + ا (finale, l\'Alif reçoit la liaison du Lām) + م. Comme dans كِتَاب, le Mīm final apparaît ISOLÉ car l\'Alif ne transmet aucune liaison vers l\'avant.', sound: 'Salām', illustration: '☮️', mnemonic: 'Même logique que Kitāb : Alif casse la chaîne' },
+      { type: 'intro', letter: 'سَلَام', name: 'Liaison : Salām (Paix)', instruction: 'Dans سَلَام : س (initiale) + ل (médiane) + ا (finale, l\'Alif reçoit la liaison du Lām) + م. Comme dans كِتَاب, le Mīm final apparaît ISOLÉ car l\'Alif ne transmet aucune liaison vers l\'avant.', sound: 'Salām', illustration: '🕊️', mnemonic: 'Même logique que Kitāb : Alif casse la chaîne' },
       { type: 'trace', letter: 'سَلَام', instruction: 'Tracez "سَلَام" (Salām), en observant le Mīm final isolé.' },
       { type: 'qcm', instruction: 'Pourquoi le Mīm final de "سَلَام" est-il isolé, comme le Bāʼ dans "كِتَاب" ?', options: ['Parce qu\'il suit un Alif, lettre non-connectrice', 'Parce que Mīm ne se lie jamais', 'Parce que c\'est un nom divin', 'Parce que le mot est court'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 16 (Calligraphie) terminée ! Vous maîtrisez la liaison des lettres dans des mots complets : بَيْت, كِتَاب, مُحَمَّد, سَلَام. +20 XP' }
@@ -5562,7 +5562,7 @@ export default function ArabicLearningApp() {
       { type: 'success', instruction: 'Leçon 20 (Calligraphie) terminée ! Subḥān et Nūr : vous reconnaissez les chaînes de lettres non-connectrices. +15 XP' }
     ],
     [
-      { type: 'intro', letter: 'ٱلسَّلَام', name: 'Synthèse : As-Salām', instruction: 'Synthèse finale : ٱ (Hamzat al-Waṣl, isolée) + لّ (Lām assimilé en Shadda sur le Sīn, lettre solaire) + سّـ + ـلـ + ا (finale) + م (isolé, car l\'Alif ne transmet rien). Ce mot combine liaison, Shadda et lettre solaire !', sound: 'As-Salām', illustration: '☮️', mnemonic: 'Le résumé parfait de tout ce que vous avez appris' },
+      { type: 'intro', letter: 'ٱلسَّلَام', name: 'Synthèse : As-Salām', instruction: 'Synthèse finale : ٱ (Hamzat al-Waṣl, isolée) + لّ (Lām assimilé en Shadda sur le Sīn, lettre solaire) + سّـ + ـلـ + ا (finale) + م (isolé, car l\'Alif ne transmet rien). Ce mot combine liaison, Shadda et lettre solaire !', sound: 'As-Salām', illustration: '🕊️', mnemonic: 'Le résumé parfait de tout ce que vous avez appris' },
       { type: 'trace', letter: 'ٱلسَّلَام', instruction: 'Tracez "ٱلسَّلَام" (As-Salām) en appliquant tout ce que vous avez appris sur la liaison.' },
       { type: 'qcm', instruction: 'Dans "ٱلسَّلَام", pourquoi le Mīm final est-il isolé ?', options: ['Il suit un Alif, non-connecteur', 'C\'est un nom divin', 'Le Mīm ne se lie jamais', 'Erreur d\'écriture'], correctIndex: 0, textStyle: 'text-lg' },
       { type: 'success', instruction: 'Leçon 21 (Calligraphie) terminée ! Avec ٱلسَّلَام, vous combinez liaison, Shadda et lettre solaire : la calligraphie arabe n\'a plus de secret pour vous. +25 XP' }
