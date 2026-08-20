@@ -6080,6 +6080,27 @@ export default function ArabicLearningApp() {
     return 'text-[22px]';
   };
 
+  // ÉCHANTILLON DE DESIGN (non poussé) : palette par famille de lettre pour la
+  // carte d'introduction du Qaïda, déduite des mots-clés déjà présents dans
+  // `name` ("Légère", "Emphatique", "Gutturale"...). Retombe sur le bleu
+  // "sky" d'origine pour tout ce qui ne matche aucun mot-clé (donc aucun
+  // changement visuel pour les autres modules).
+  const getLetterTheme = (name = '') => {
+    if (name.includes('Emphatique')) {
+      return { card: 'from-amber-50 to-orange-50 border-amber-200', badge: 'bg-amber-100 text-amber-700 border-amber-200', mnemonic: 'bg-amber-50 border-amber-100 text-amber-900' };
+    }
+    if (name.includes('Gutturale')) {
+      return { card: 'from-violet-50 to-purple-50 border-violet-200', badge: 'bg-violet-100 text-violet-700 border-violet-200', mnemonic: 'bg-violet-50 border-violet-100 text-violet-900' };
+    }
+    if (name.includes('Nasale')) {
+      return { card: 'from-emerald-50 to-green-50 border-emerald-200', badge: 'bg-emerald-100 text-emerald-700 border-emerald-200', mnemonic: 'bg-emerald-50 border-emerald-100 text-emerald-900' };
+    }
+    if (name.includes('Semi-voyelle') || name.includes('Voyelle')) {
+      return { card: 'from-teal-50 to-cyan-50 border-teal-200', badge: 'bg-teal-100 text-teal-700 border-teal-200', mnemonic: 'bg-teal-50 border-teal-100 text-teal-900' };
+    }
+    return { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -6228,24 +6249,36 @@ export default function ArabicLearningApp() {
               const isCurrent = idx === mod.progress;
               const isLocked = idx > mod.progress;
               const itemCount = getLessonPreviewItems(lessonSteps).length;
+              // ÉCHANTILLON DE DESIGN (non poussé) : icône propre à la leçon,
+              // reprise de l'illustration de sa première carte plutôt que
+              // l'icône générique du module répétée sur toutes les lignes.
+              const firstIntro = (lessonSteps || []).find(s => s.type === 'intro');
+              const lessonIcon = firstIntro?.illustration || mod.icon;
               return (
                 <div
                   key={idx}
                   onClick={() => isLocked ? openLessonPreview(activeModuleId, idx) : startLesson(activeModuleId, idx)}
-                  className={`rounded-2xl p-4 flex items-center gap-3 cursor-pointer border transition-colors ${
-                    isDone ? 'bg-green-50 border-green-200' :
-                    isCurrent ? `${mod.color} border-transparent shadow-sm` :
-                    'bg-white border-gray-200 opacity-70 hover:opacity-100'
+                  className={`relative rounded-[20px] p-4 flex items-center gap-3.5 cursor-pointer transition-all overflow-hidden ${
+                    isDone ? 'bg-white border border-green-200' :
+                    isCurrent ? `${mod.color} border border-white shadow-md hover:shadow-lg hover:-translate-y-0.5` :
+                    'bg-white/70 border border-gray-200/70 grayscale opacity-60 hover:opacity-90 hover:grayscale-0'
                   }`}
                 >
-                  <div className={`w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center text-lg ${
-                    isDone ? 'bg-green-500 text-white' : isLocked ? 'bg-gray-200 text-gray-400' : 'bg-white'
+                  <div className={`relative w-11 h-11 flex-shrink-0 rounded-2xl flex items-center justify-center text-xl shadow-sm ${
+                    isDone ? 'bg-green-100' : isLocked ? 'bg-gray-100' : 'bg-white'
                   }`}>
-                    {isDone ? '✓' : isLocked ? '🔒' : mod.icon}
+                    {isDone ? <Check className="text-green-500" size={22} strokeWidth={3}/> : isLocked ? '🔒' : lessonIcon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-gray-900">Leçon {idx + 1}</p>
-                    <p className="text-xs text-gray-500">
+                    <div className="flex items-center gap-1.5">
+                      <p className="text-sm font-bold text-gray-900">Leçon {idx + 1}</p>
+                      {isCurrent && (
+                        <span className="text-[9px] font-bold text-white bg-green-500 px-1.5 py-[3px] rounded-full uppercase tracking-wide">
+                          À faire
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-500 font-medium">
                       {isLocked ? 'Verrouillée — terminez la leçon précédente' : `${itemCount} élément${itemCount > 1 ? 's' : ''}`}
                     </p>
                   </div>
@@ -6375,17 +6408,22 @@ export default function ArabicLearningApp() {
 
         <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col justify-center hide-scrollbar">
 
-          {stepData.type === 'intro' && (
+          {stepData.type === 'intro' && (() => {
+            const letterTheme = getLetterTheme(stepData.name || '');
+            return (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
 
-              <div className="bg-white w-full max-w-[320px] py-5 px-5 rounded-[2.5rem] shadow-[0_10px_25px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col items-center justify-center mb-3">
-                <span className={`font-arabic ${arabicIntroSizeClass(stepData.letter)} font-bold text-gray-900 leading-tight mb-4 text-center break-words max-w-full`}>{stepData.letter}</span>
-                <span className="text-[12px] text-gray-500 font-semibold tracking-wide bg-white px-3 py-1.5 rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.05)] mb-4 text-center break-words max-w-full">{stepData.name}</span>
+              <div className={`relative w-full max-w-[320px] py-6 px-5 rounded-[2.5rem] shadow-[0_10px_25px_rgba(0,0,0,0.08)] border bg-gradient-to-br ${letterTheme.card} flex flex-col items-center justify-center mb-3 overflow-hidden`}>
+                {stepData.illustration && (
+                  <span className="absolute -right-4 -top-4 text-7xl opacity-[0.15] rotate-12 select-none pointer-events-none">{stepData.illustration}</span>
+                )}
+                <span className={`relative font-arabic ${arabicIntroSizeClass(stepData.letter)} font-bold text-gray-900 leading-tight mb-4 text-center break-words max-w-full`}>{stepData.letter}</span>
+                <span className={`relative text-[12px] font-bold tracking-wide px-3 py-1.5 rounded-2xl shadow-sm mb-4 text-center break-words max-w-full border ${letterTheme.badge}`}>{stepData.name}</span>
                 {stepData.mnemonic && (
-                  <div className="flex items-start space-x-2 bg-sky-50 px-3 py-1.5 rounded-2xl border border-sky-100 max-w-full">
+                  <div className={`relative flex items-start space-x-2 px-3 py-1.5 rounded-2xl border max-w-full ${letterTheme.mnemonic}`}>
                     <span className="text-lg flex-shrink-0">{stepData.illustration}</span>
-                    <span className="font-arabic text-[13px] font-bold text-sky-900 text-left break-words">{stepData.mnemonic}</span>
+                    <span className="font-arabic text-[13px] font-bold text-left break-words">{stepData.mnemonic}</span>
                   </div>
                 )}
               </div>
@@ -6420,7 +6458,8 @@ export default function ArabicLearningApp() {
                 </div>
               )}
             </div>
-          )}
+            );
+          })()}
 
           {stepData.type === 'trace' && (
             <div className="flex flex-col items-center justify-start flex-1 animation-fade-in w-full max-w-sm mx-auto">
