@@ -6320,6 +6320,29 @@ export default function ArabicLearningApp() {
     return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
   };
 
+  // ÉCHANTILLON DE DESIGN (non poussé) : même logique que Fréquence Lexicale
+  // (name = toujours "Racine X-Y-Z", donc aucun mot-clé exploitable). On
+  // classe cette fois par rootKey (déjà présent sur chaque step, unique),
+  // avec les mêmes 4 catégories et la même palette que Fréquence Lexicale
+  // pour rester cohérent visuellement dans toute l'app. Les racines sans
+  // catégorie nette (verbes de mouvement, nature, action...) gardent le
+  // dégradé bleu par défaut.
+  const ROOTS_KEY_CATEGORY = {
+    // Divin & attributs
+    'A-L-H': 'divine', 'R-B-B': 'divine', 'K-L-Q': 'divine', 'H-K-M': 'divine', 'Q-D-R': 'divine', 'A-L-M': 'divine', 'GH-F-R': 'divine', 'A-D-L': 'divine', 'K-B-R': 'divine',
+    // Adoration & spiritualité
+    'R-H-M': 'worship', 'H-M-D': 'worship', 'S-L-M': 'worship', 'A-B-D': 'worship', 'A-M-N': 'worship', 'S-B-R': 'worship', 'SH-K-R': 'worship', 'W-Q-Y': 'worship', 'S-L-W': 'worship', 'Z-K-W': 'worship', 'B-R-K': 'worship', 'S-J-D': 'worship', 'DH-K-R': 'worship', 'S-D-Q': 'worship', 'KH-L-S': 'worship', 'Q-N-T': 'worship', 'N-S-H': 'worship', 'H-S-N': 'worship', 'J-H-D': 'worship',
+    // Au-delà / eschatologie
+    'Y-W-M': 'akhirah', 'A-DH-B': 'akhirah', 'J-Z-Y': 'akhirah', 'H-Y-Y': 'akhirah', 'M-W-T': 'akhirah', 'B-A-TH': 'akhirah', 'D-N-Y': 'akhirah', 'A-KH-R': 'akhirah', 'J-N-N': 'akhirah', 'A-J-L': 'akhirah', 'H-S-B': 'akhirah',
+    // Société & valeurs morales
+    'GH-D-B': 'society', 'KH-W-F': 'society', 'N-S-R': 'society', 'D-L-L': 'society', 'B-SH-R': 'society', 'GH-N-Y': 'society', 'F-Q-R': 'society', 'W-H-D': 'society', 'GH-F-L': 'society', 'J-H-L': 'society', 'F-D-L': 'society', 'Q-W-M': 'society', 'Y-T-M': 'society', 'S-K-N': 'society', 'B-T-L': 'society', 'M-L-K': 'society', 'N-F-S': 'society', 'W-A-D': 'society', 'H-F-Z': 'society', 'T-B-A': 'society',
+  };
+
+  const getRootsTheme = (rootKey = '') => {
+    const category = ROOTS_KEY_CATEGORY[rootKey];
+    return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -6630,7 +6653,9 @@ export default function ArabicLearningApp() {
           {stepData.type === 'intro' && (() => {
             const letterTheme = activeModuleId === 3
               ? getFreqLexicaleTheme(stepData.letter || '')
-              : getLetterTheme(stepData.name || '');
+              : activeModuleId === 4
+                ? getRootsTheme(stepData.rootKey || '')
+                : getLetterTheme(stepData.name || '');
             return (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
