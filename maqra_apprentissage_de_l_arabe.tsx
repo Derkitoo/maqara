@@ -6287,6 +6287,39 @@ export default function ArabicLearningApp() {
     return { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
   };
 
+  // ÉCHANTILLON DE DESIGN (non poussé) : contrairement à Qaïda/Tajwid, les 150
+  // mots de Fréquence Lexicale n'ont pas de mot-clé de famille dans `name`
+  // (ce sont des traductions libres, chacune différente). On associe donc
+  // chaque mot arabe (clé unique, contrairement à `name` qui a des doublons)
+  // à une catégorie sémantique choisie à la main. Les mots absents de cette
+  // liste (environ la moitié, souvent verbes/nature/notions abstraites)
+  // gardent le dégradé bleu par défaut, qui reste déjà soigné.
+  const FREQ_WORD_CATEGORY = {
+    // Grammaire / particules
+    'قُلْ': 'gram', 'مِن': 'gram', 'فِي': 'gram', 'عَلَى': 'gram', 'إِنَّ': 'gram', 'ٱلَّذِينَ': 'gram', 'مَا': 'gram', 'لَا': 'gram', 'هُوَ': 'gram', 'أَنْتَ': 'gram', 'نَحْنُ': 'gram', 'قَبْل': 'gram', 'إِلَى': 'gram', 'مَعَ': 'gram', 'كُلّ': 'gram', 'شَيْء': 'gram',
+    // Divin & attributs
+    'رَبّ': 'divine', 'إِلَٰه': 'divine', 'حَقّ': 'divine', 'عَظِيم': 'divine', 'خَالِق': 'divine', 'غَفُور': 'divine', 'حِكْمَة': 'divine', 'قُدْرَة': 'divine', 'عَزِيز': 'divine', 'كَبِير': 'divine',
+    // Adoration & spiritualité
+    'سَلَام': 'worship', 'حَمْد': 'worship', 'رَحْمَة': 'worship', 'صَبْر': 'worship', 'تَقْوَى': 'worship', 'صَلَاة': 'worship', 'زَكَاة': 'worship', 'شُكْر': 'worship', 'دُعَاء': 'worship', 'بَرَكَة': 'worship', 'تَوْبَة': 'worship', 'إِحْسَان': 'worship', 'ذِكْر': 'worship', 'سُجُود': 'worship', 'يَقِين': 'worship', 'إِيمَان': 'worship', 'جِهَاد': 'worship', 'تَوْحِيد': 'worship', 'إِخْلَاص': 'worship', 'صَدَقَة': 'worship',
+    // Au-delà / eschatologie
+    'يَوْم': 'akhirah', 'جَنَّة': 'akhirah', 'نَار': 'akhirah', 'حَيَاة': 'akhirah', 'مَوْت': 'akhirah', 'عَذَاب': 'akhirah', 'جَزَاء': 'akhirah', 'أَجْر': 'akhirah', 'حِسَاب': 'akhirah', 'دُنْيَا': 'akhirah', 'آخِرَة': 'akhirah', 'بَعْث': 'akhirah', 'أَجَل': 'akhirah',
+    // Société & valeurs morales
+    'عَبْد': 'society', 'ٱلنَّاس': 'society', 'خَيْر': 'society', 'صِدْق': 'society', 'فَضْل': 'society', 'كَافِر': 'society', 'صَالِح': 'society', 'ظُلْم': 'society', 'عَدْل': 'society', 'حَلَال': 'society', 'حَرَام': 'society', 'شَيْطَان': 'society', 'مَلَك': 'society', 'قَوْم': 'society', 'مِيثَاق': 'society', 'أُمَّة': 'society', 'أَمَانَة': 'society', 'خَلِيفَة': 'society', 'جَمَاعَة': 'society', 'فَقِير': 'society', 'غَنِيّ': 'society', 'بَاطِل': 'society', 'مَلَائِكَة': 'society', 'وَعْد': 'society', 'يَتِيم': 'society', 'مِسْكِين': 'society',
+  };
+
+  const FREQ_CATEGORY_THEME = {
+    gram: { card: 'from-slate-50 to-gray-100 border-slate-200', badge: 'bg-slate-100 text-slate-700 border-slate-200', mnemonic: 'bg-slate-50 border-slate-100 text-slate-900' },
+    divine: { card: 'from-violet-50 to-purple-50 border-violet-200', badge: 'bg-violet-100 text-violet-700 border-violet-200', mnemonic: 'bg-violet-50 border-violet-100 text-violet-900' },
+    worship: { card: 'from-emerald-50 to-green-50 border-emerald-200', badge: 'bg-emerald-100 text-emerald-700 border-emerald-200', mnemonic: 'bg-emerald-50 border-emerald-100 text-emerald-900' },
+    akhirah: { card: 'from-amber-50 to-orange-50 border-amber-200', badge: 'bg-amber-100 text-amber-700 border-amber-200', mnemonic: 'bg-amber-50 border-amber-100 text-amber-900' },
+    society: { card: 'from-rose-50 to-pink-50 border-rose-200', badge: 'bg-rose-100 text-rose-700 border-rose-200', mnemonic: 'bg-rose-50 border-rose-100 text-rose-900' },
+  };
+
+  const getFreqLexicaleTheme = (letter = '') => {
+    const category = FREQ_WORD_CATEGORY[letter];
+    return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -6595,7 +6628,9 @@ export default function ArabicLearningApp() {
         <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col justify-center hide-scrollbar">
 
           {stepData.type === 'intro' && (() => {
-            const letterTheme = getLetterTheme(stepData.name || '');
+            const letterTheme = activeModuleId === 3
+              ? getFreqLexicaleTheme(stepData.letter || '')
+              : getLetterTheme(stepData.name || '');
             return (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
