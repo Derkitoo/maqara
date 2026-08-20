@@ -6080,23 +6080,59 @@ export default function ArabicLearningApp() {
     return 'text-[22px]';
   };
 
-  // ÉCHANTILLON DE DESIGN (non poussé) : palette par famille de lettre pour la
-  // carte d'introduction du Qaïda, déduite des mots-clés déjà présents dans
-  // `name` ("Légère", "Emphatique", "Gutturale"...). Retombe sur le bleu
-  // "sky" d'origine pour tout ce qui ne matche aucun mot-clé (donc aucun
-  // changement visuel pour les autres modules).
+  // Palette par famille de règle/lettre pour la carte d'introduction,
+  // déduite des mots-clés déjà présents dans `name`. Étendue leçon par
+  // leçon (Qaïda d'abord, puis Tajwid) : chaque module garde son propre
+  // vocabulaire, donc les règles d'un module ne se déclenchent jamais chez
+  // un autre. Retombe sur le bleu "sky" d'origine si rien ne matche.
   const getLetterTheme = (name = '') => {
-    if (name.includes('Emphatique')) {
+    // Qaïda : familles phonétiques
+    if (name.includes('Emphatique') || name.includes('Tafkhīm')) {
       return { card: 'from-amber-50 to-orange-50 border-amber-200', badge: 'bg-amber-100 text-amber-700 border-amber-200', mnemonic: 'bg-amber-50 border-amber-100 text-amber-900' };
     }
     if (name.includes('Gutturale')) {
       return { card: 'from-violet-50 to-purple-50 border-violet-200', badge: 'bg-violet-100 text-violet-700 border-violet-200', mnemonic: 'bg-violet-50 border-violet-100 text-violet-900' };
     }
-    if (name.includes('Nasale')) {
+    if (name.includes('Nasale') || name.includes('Nasalisation') || name.includes('Ghunna')) {
       return { card: 'from-emerald-50 to-green-50 border-emerald-200', badge: 'bg-emerald-100 text-emerald-700 border-emerald-200', mnemonic: 'bg-emerald-50 border-emerald-100 text-emerald-900' };
     }
     if (name.includes('Semi-voyelle') || name.includes('Voyelle')) {
       return { card: 'from-teal-50 to-cyan-50 border-teal-200', badge: 'bg-teal-100 text-teal-700 border-teal-200', mnemonic: 'bg-teal-50 border-teal-100 text-teal-900' };
+    }
+    // Tajwid : familles de règles de récitation
+    if (name.includes('Idghām')) {
+      return { card: 'from-purple-50 to-fuchsia-50 border-purple-200', badge: 'bg-purple-100 text-purple-700 border-purple-200', mnemonic: 'bg-purple-50 border-purple-100 text-purple-900' };
+    }
+    if (name.includes('Iqlāb')) {
+      return { card: 'from-orange-50 to-amber-50 border-orange-200', badge: 'bg-orange-100 text-orange-700 border-orange-200', mnemonic: 'bg-orange-50 border-orange-100 text-orange-900' };
+    }
+    if (name.includes('Ikhfāʼ')) {
+      return { card: 'from-slate-50 to-gray-100 border-slate-200', badge: 'bg-slate-100 text-slate-700 border-slate-200', mnemonic: 'bg-slate-50 border-slate-100 text-slate-900' };
+    }
+    if (name.includes('Iẓhār')) {
+      return { card: 'from-cyan-50 to-sky-50 border-cyan-200', badge: 'bg-cyan-100 text-cyan-700 border-cyan-200', mnemonic: 'bg-cyan-50 border-cyan-100 text-cyan-900' };
+    }
+    if (name.includes('Qalqala')) {
+      return { card: 'from-pink-50 to-rose-50 border-pink-200', badge: 'bg-pink-100 text-pink-700 border-pink-200', mnemonic: 'bg-pink-50 border-pink-100 text-pink-900' };
+    }
+    if (name.includes('Madd')) {
+      return { card: 'from-indigo-50 to-blue-50 border-indigo-200', badge: 'bg-indigo-100 text-indigo-700 border-indigo-200', mnemonic: 'bg-indigo-50 border-indigo-100 text-indigo-900' };
+    }
+    if (name.includes('Waqf') || name.toLowerCase().includes('signe')) {
+      return { card: 'from-rose-50 to-red-50 border-rose-200', badge: 'bg-rose-100 text-rose-700 border-rose-200', mnemonic: 'bg-rose-50 border-rose-100 text-rose-900' };
+    }
+    if (name.includes('Makhārij') || name.includes('Ḥalq') || name.includes('Lisān') || name.includes('Shafatān') || name.includes('Khayshūm') || name.includes('Jawf') || name.includes('Ṣifāt') || name.includes('Hams') || name.includes('Jahr') || name.includes('Istiʻlāʼ')) {
+      return { card: 'from-fuchsia-50 to-violet-50 border-fuchsia-200', badge: 'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200', mnemonic: 'bg-fuchsia-50 border-fuchsia-100 text-fuchsia-900' };
+    }
+    // Calligraphie : les 3 grandes familles de leçons
+    if (name.includes('les 4 formes')) {
+      return { card: 'from-teal-50 to-cyan-50 border-teal-200', badge: 'bg-teal-100 text-teal-700 border-teal-200', mnemonic: 'bg-teal-50 border-teal-100 text-teal-900' };
+    }
+    if (name.includes('Liaison')) {
+      return { card: 'from-purple-50 to-fuchsia-50 border-purple-200', badge: 'bg-purple-100 text-purple-700 border-purple-200', mnemonic: 'bg-purple-50 border-purple-100 text-purple-900' };
+    }
+    if (name.includes('Chiffre')) {
+      return { card: 'from-lime-50 to-yellow-50 border-lime-200', badge: 'bg-lime-100 text-lime-700 border-lime-200', mnemonic: 'bg-lime-50 border-lime-100 text-lime-900' };
     }
     return { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
   };
