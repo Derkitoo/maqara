@@ -6343,6 +6343,31 @@ export default function ArabicLearningApp() {
     return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
   };
 
+  // ÉCHANTILLON DE DESIGN (non poussé) : les 99 Noms d'Allah sont TOUS des
+  // attributs divins par nature, donc la catégorie "divine" utilisée pour
+  // Fréquence Lexicale/Racines n'aiderait pas à les distinguer entre eux. On
+  // réutilise plutôt les 4 mêmes couleurs de FREQ_CATEGORY_THEME avec un sens
+  // propre à ce module, sur les 4 grandes familles classiques des Asmāʼ
+  // al-Ḥusnā : Majesté/Puissance (violet), Miséricorde/Amour (vert),
+  // Création/Providence (orange), Justice/Rétribution (rose). Les noms plus
+  // difficiles à classer (connaissance, perception, temporalité...) gardent
+  // le dégradé bleu par défaut.
+  const ASMA_NAME_CATEGORY = {
+    // Majesté & Puissance (réutilise le slot 'divine' -> violet)
+    'Al-Malik': 'divine', 'Al-ʻAzīz': 'divine', 'Al-Muhaymin': 'divine', 'Al-Jabbār': 'divine', 'Al-Mutakabbir': 'divine', 'Al-Khāfiḍ': 'divine', 'Ar-Rāfiʻ': 'divine', 'Al-Muʻizz': 'divine', 'Al-Mudhill': 'divine', 'Al-Jalīl': 'divine', 'Al-Qahhār': 'divine', 'Al-ʻAẓīm': 'divine', 'Al-ʻAliyy': 'divine', 'Al-Kabīr': 'divine', 'Al-Majīd': 'divine', 'Al-Qawiyy': 'divine', 'Al-Matīn': 'divine', 'Al-Ḥayy': 'divine', 'Al-Qayyūm': 'divine', 'Al-Wāḥid': 'divine', 'Aṣ-Ṣamad': 'divine', 'Al-Qādir': 'divine', 'Al-Muqtadir': 'divine', 'Al-Mutaʻālī': 'divine', 'Mālik-ul-Mulk': 'divine', 'Dhul-Jalāli wal-Ikrām': 'divine', 'Al-Ghaniyy': 'divine', 'Al-Bāqī': 'divine', 'Al-Wārith': 'divine', 'Al-Fard': 'divine', 'Al-Witr': 'divine',
+    // Miséricorde, Amour & Pardon (réutilise le slot 'worship' -> vert)
+    'Ar-Raḥmān': 'worship', 'Ar-Raḥīm': 'worship', 'As-Salām': 'worship', 'Al-Ghafūr': 'worship', 'Al-Laṭīf': 'worship', 'Al-Wadūd': 'worship', 'Aṣ-Ṣabūr': 'worship', 'Al-Karīm': 'worship', 'Al-Mujīb': 'worship', 'Al-Ghaffār': 'worship', 'Al-Ḥalīm': 'worship', 'Ash-Shakūr': 'worship', 'Al-Wakīl': 'worship', 'Al-Waliyy': 'worship', 'Al-Barr': 'worship', 'At-Tawwāb': 'worship', 'Al-ʻAfuww': 'worship', 'Ar-Raʼūf': 'worship', 'Al-Muʻṭī': 'worship',
+    // Création & Providence (réutilise le slot 'akhirah' -> orange)
+    'Al-Khāliq': 'akhirah', 'Ar-Razzāq': 'akhirah', 'Al-Bāriʼ': 'akhirah', 'Al-Muṣawwir': 'akhirah', 'Al-Wahhāb': 'akhirah', 'Al-Fattāḥ': 'akhirah', 'Al-Qābiḍ': 'akhirah', 'Al-Bāsiṭ': 'akhirah', 'Al-Muqīt': 'akhirah', 'Al-Bāʻith': 'akhirah', 'Al-Mubdiʼ': 'akhirah', 'Al-Muʻīd': 'akhirah', 'Al-Muḥyī': 'akhirah', 'Al-Mumīt': 'akhirah', 'Al-Mughnī': 'akhirah', 'An-Nāfiʻ': 'akhirah', 'Al-Badīʻ': 'akhirah',
+    // Justice, Rétribution & Protection (réutilise le slot 'society' -> rose)
+    'Al-ʻAdl': 'society', 'Al-Ḥasīb': 'society', 'Al-Ḥafīẓ': 'society', 'Al-Ḥakam': 'society', 'Al-Muḥṣī': 'society', 'Al-Muntaqim': 'society', 'Al-Muqsiṭ': 'society', 'Al-Māniʻ': 'society', 'Aḍ-Ḍārr': 'society',
+  };
+
+  const getAsmaTheme = (name = '') => {
+    const category = ASMA_NAME_CATEGORY[name];
+    return category ? FREQ_CATEGORY_THEME[category] : { card: 'from-sky-50 to-blue-50 border-sky-200', badge: 'bg-sky-100 text-sky-700 border-sky-200', mnemonic: 'bg-sky-50 border-sky-100 text-sky-900' };
+  };
+
   const speakArabic = (text) => {
     try {
       if (!window.speechSynthesis || !text) return;
@@ -6655,7 +6680,9 @@ export default function ArabicLearningApp() {
               ? getFreqLexicaleTheme(stepData.letter || '')
               : activeModuleId === 4
                 ? getRootsTheme(stepData.rootKey || '')
-                : getLetterTheme(stepData.name || '');
+                : activeModuleId === 6
+                  ? getAsmaTheme(stepData.name || '')
+                  : getLetterTheme(stepData.name || '');
             return (
             <div className="flex flex-col items-center justify-center flex-1 animation-fade-in py-2 relative">
               <h2 className="text-base font-bold text-gray-800 mb-3 text-center leading-snug px-1">{stepData.instruction}</h2>
